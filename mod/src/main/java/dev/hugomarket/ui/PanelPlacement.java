@@ -14,6 +14,17 @@ public final class PanelPlacement {
         rightOf(screen, panel, preferredWidth, ((AbstractContainerScreenAccessor) screen).hugomarket$imageHeight());
     }
 
+    public static void leftOf(AbstractContainerScreen<?> screen, OverlayPanel panel, int preferredWidth, int height) {
+        AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
+        int available = accessor.hugomarket$leftPos() - GAP * 2;
+        if (available < 80) {
+            rightOf(screen, panel, preferredWidth, height);
+            return;
+        }
+        int width = Math.min(preferredWidth, available);
+        panel.setBounds(accessor.hugomarket$leftPos() - GAP - width, accessor.hugomarket$topPos(), width, height);
+    }
+
     public static void rightOf(AbstractContainerScreen<?> screen, OverlayPanel panel, int preferredWidth, int height) {
         AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
         int screenWidth = Minecraft.getInstance().getWindow().getGuiScaledWidth();

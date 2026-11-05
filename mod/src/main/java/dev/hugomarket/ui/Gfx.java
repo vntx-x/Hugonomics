@@ -45,6 +45,22 @@ public final class Gfx {
         graphics.drawString(font, text, x, y, argb, false);
     }
 
+    public void textScaled(String text, int x, int y, float scale, int argb) {
+        //? if >=1.21.6 {
+        /*graphics.pose().pushMatrix();
+        graphics.pose().translate(x, y);
+        graphics.pose().scale(scale, scale);
+        graphics.drawString(font, text, 0, 0, argb, false);
+        graphics.pose().popMatrix();
+        *///?} else {
+        graphics.pose().pushPose();
+        graphics.pose().translate(x, y, 0);
+        graphics.pose().scale(scale, scale, 1);
+        graphics.drawString(font, text, 0, 0, argb, false);
+        graphics.pose().popPose();
+        //?}
+    }
+
     public String clip(String text, int maxWidth) {
         if (font.width(text) <= maxWidth) {
             return text;

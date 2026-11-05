@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
-import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,12 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public final class OverlayManager {
     private static volatile OverlayManager instance;
 
+    public interface KeyHook {
+        boolean onKey(int key, int scancode, int modifiers);
+    }
+
     private final List<OverlayProvider> providers = new CopyOnWriteArrayList<>();
+    private final List<KeyHook> keyHooks = new CopyOnWriteArrayList<>();
     private ScreenSession session;
 
     public OverlayManager() {
@@ -30,6 +34,10 @@ public final class OverlayManager {
 
     public void removeProvider(OverlayProvider provider) {
         providers.remove(provider);
+    }
+
+    public void addKeyHook(KeyHook hook) {
+        keyHooks.add(hook);
     }
 
     public static boolean charTyped(int codePoint, int modifiers) {
@@ -107,7 +115,12 @@ public final class OverlayManager {
             for (OverlayPanel panel : panels) {
                 if (panel.hasFocus()) {
                     panel.keyPressed(key, scancode, modifiers);
-                    return key != GLFW.GLFW_KEY_ESCAPE || true;
+                    return true;
+                }
+            }
+            for (KeyHook hook : keyHooks) {
+                if (hook.onKey(key, scancode, modifiers)) {
+                    return true;
                 }
             }
             return false;
