@@ -36,6 +36,7 @@ import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStore;
 import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.KeyBindings;
+import dev.hugomarket.ui.MenuButtonPanel;
 import dev.hugomarket.ui.OverlayManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -110,5 +111,11 @@ public final class HugoMarketClient implements ClientModInitializer {
                 }
             }
         });
+        overlays.addProvider(screen -> server.active()
+                ? List.of(new MenuButtonPanel(screen, () -> {
+                    var client = net.minecraft.client.Minecraft.getInstance();
+                    client.setScreen(new MenuScreen(client.screen, registry, menuActions));
+                }))
+                : List.of());
     }
 }
