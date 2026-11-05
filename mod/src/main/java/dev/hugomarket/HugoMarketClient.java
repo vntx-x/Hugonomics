@@ -16,6 +16,7 @@ import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.dumper.DumperModule;
 import dev.hugomarket.module.farm.FarmModule;
 import dev.hugomarket.module.market.MarketModule;
+import dev.hugomarket.module.minutetest.MinuteTestModule;
 import dev.hugomarket.module.myauctions.MyAuctionsModule;
 import dev.hugomarket.module.orders.OrdersModule;
 import dev.hugomarket.module.sellassist.SellAssistModule;
@@ -72,12 +73,18 @@ public final class HugoMarketClient implements ClientModInitializer {
                 userData, backend, menuActions, dataDir);
         SellStatsModule sellStats = new SellStatsModule();
         FarmModule farm = new FarmModule();
+        MinuteTestModule minuteTest = new MinuteTestModule();
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), sellStats,
-                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, new SyncModule()));
+                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, new SyncModule()));
         registry.start();
-        if (registry.isRunning(sellStats.id()) && registry.isRunning(farm.id())) {
-            farm.attach(sellStats.stats());
+        if (registry.isRunning(sellStats.id())) {
+            if (registry.isRunning(farm.id())) {
+                farm.attach(sellStats.stats());
+            }
+            if (registry.isRunning(minuteTest.id())) {
+                minuteTest.attach(sellStats.stats());
+            }
         }
         KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_UNKNOWN);
         scheduler.onTick(client -> {
