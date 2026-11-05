@@ -1,6 +1,8 @@
 package dev.hugomarket;
 
 import dev.hugomarket.config.ConfigStore;
+import dev.hugomarket.config.FirstStartHint;
+import dev.hugomarket.config.HelpScreen;
 import dev.hugomarket.config.MenuScreen;
 import dev.hugomarket.container.ContainerTracker;
 import dev.hugomarket.container.ScreenStateTracker;
@@ -70,8 +72,13 @@ public final class HugoMarketClient implements ClientModInitializer {
         String backendUrl = config.get().backendUrl;
         BackendClient backend = backendUrl == null || backendUrl.isBlank() ? null : new BackendClient(backendUrl);
         menuActions = new MenuActions();
+        menuActions.add("hugomarket.help.open", () -> {
+            var client = net.minecraft.client.Minecraft.getInstance();
+            client.setScreen(new HelpScreen(client.screen));
+        });
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
                 userData, backend, menuActions, dataDir);
+        new FirstStartHint(config, server, scheduler).register();
         SellStatsModule sellStats = new SellStatsModule();
         FarmModule farm = new FarmModule();
         MinuteTestModule minuteTest = new MinuteTestModule();

@@ -8,6 +8,7 @@ public final class ModConfig {
     public boolean debugAnyServer = false;
     public String backendUrl = "";
     public String clientId = null;
+    public boolean tutorialShown = false;
 
     public boolean isModuleEnabled(String id, boolean fallback) {
         Boolean value = modules.get(id);
