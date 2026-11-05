@@ -8,6 +8,7 @@ import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.parse.ChatPatterns;
+import dev.hugomarket.store.AhTotalsTracker;
 import dev.hugomarket.store.SellStats;
 import dev.hugomarket.store.TradeLog;
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
@@ -23,6 +24,7 @@ public final class TradeLogModule implements Module {
     private ModuleContext context;
     private AhListingParser parser;
     private TradeLog log;
+    private AhTotalsTracker totals;
     private List<Listing> currentPage = List.of();
     private Listing clicked;
     private long clickedAt;
@@ -44,6 +46,8 @@ public final class TradeLogModule implements Module {
         parser = new AhListingParser(context.guiRules());
         log = new TradeLog(context.dataDir().resolve("trades.jsonl"));
         log.load(System.currentTimeMillis());
+        totals = new AhTotalsTracker(context.dataDir().resolve("ah-totals.json"));
+        totals.load();
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.screens().onClose(() -> currentPage = List.of());
@@ -72,6 +76,11 @@ public final class TradeLogModule implements Module {
         }
         AhListingParser.AhPage page = parser.parse(update.view());
         currentPage = page.isMarket() ? page.listings() : List.of();
+        if (page.totals() != null) {
+            for (TradeLog.Trade trade : totals.observe(page.totals().earnedCents(), page.totals().spentCents(), System.currentTimeMillis())) {
+                log.record(trade);
+            }
+        }
     }
 
     private void onClick(AbstractContainerScreen<?> screen, double mouseX, double mouseY, int button) {
@@ -101,6 +110,7 @@ public final class TradeLogModule implements Module {
         }
         log.record(new TradeLog.Trade(now, TradeLog.Kind.AH_BUY, clicked.key().toString(), clicked.item().displayName(),
                 clicked.item().count(), clicked.priceCents(), clicked.seller()));
+        totals.noteBuy(clicked.priceCents());
         clicked = null;
     }
 

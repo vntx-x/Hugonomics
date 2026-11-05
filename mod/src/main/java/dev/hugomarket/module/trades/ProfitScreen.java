@@ -1,6 +1,7 @@
 package dev.hugomarket.module.trades;
 
 import dev.hugomarket.model.Money;
+import dev.hugomarket.store.AhTotalsTracker;
 import dev.hugomarket.store.TradeLog;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
@@ -126,8 +127,14 @@ final class ProfitScreen extends Screen {
             String amount = (trade.isIncome() ? "+" : "-") + Money.compact(trade.priceCents());
             int amountWidth = gfx.textWidth(amount);
             String when = TIME.format(Instant.ofEpochMilli(trade.ts()).atZone(ZoneId.systemDefault()));
-            String what = trade.kind() == TradeLog.Kind.SHOP_SELL ? I18n.get("hugomarket.profit.shop")
-                    : (trade.count() > 1 ? trade.count() + "x " : "") + trade.displayName() + (trade.counterparty().isEmpty() ? "" : " · " + trade.counterparty());
+            String what;
+            if (trade.kind() == TradeLog.Kind.SHOP_SELL) {
+                what = I18n.get("hugomarket.profit.shop");
+            } else if (AhTotalsTracker.KEY.equals(trade.key())) {
+                what = I18n.get(trade.kind() == TradeLog.Kind.AH_SELL ? "hugomarket.profit.ah_sales" : "hugomarket.profit.ah_buys");
+            } else {
+                what = (trade.count() > 1 ? trade.count() + "x " : "") + trade.displayName() + (trade.counterparty().isEmpty() ? "" : " · " + trade.counterparty());
+            }
             gfx.textNoShadow(when, rowX + 1, rowY + 1, Theme.TEXT_DIM);
             gfx.textNoShadow(gfx.clip(what, rowWidth - amountWidth - 74), rowX + 68, rowY + 1, Theme.TEXT);
             gfx.textNoShadow(amount, rowX + rowWidth - amountWidth - 3, rowY + 1, trade.isIncome() ? Theme.PRICE : Theme.DANGER);
