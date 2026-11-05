@@ -15,6 +15,15 @@ class BalanceParserTest {
     }
 
     @Test
+    void readsHugoSidebarWithSuffix() {
+        List<String> lines = List.of("HugoSMP", " Geld 2,73M 14", " Gems 950 13", "Kills 61 12", "Spielzeit 12d 12h 8");
+        assertEquals(2_730_000_00L, BalanceParser.fromSidebar(lines).getAsLong());
+        assertEquals(45_500_00L, BalanceParser.fromSidebar(List.of("Geld 45,5K")).getAsLong());
+        assertEquals(1_200_00L, BalanceParser.fromSidebar(List.of("Geld 1.200 3")).getAsLong());
+        assertEquals(2_000_000_000_00L, BalanceParser.fromSidebar(List.of("Geld 2B")).getAsLong());
+    }
+
+    @Test
     void fallsBackToAnyDollarAmount() {
         assertEquals(42_00L, BalanceParser.fromSidebar(List.of("Server", "» $42", "Online: 120")).getAsLong());
         assertEquals(1_720_000_000_00L, BalanceParser.fromSidebar(List.of("1.720.000.000$")).getAsLong());
