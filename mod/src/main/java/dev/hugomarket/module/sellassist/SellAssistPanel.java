@@ -19,8 +19,8 @@ import java.util.List;
 import java.util.OptionalLong;
 
 final class SellAssistPanel extends OverlayPanel {
-    private static final int WARNING_COLOR = 0xFFFF6B6B;
-    private static final int LINE = 11;
+    private static final int WARNING_COLOR = Theme.DANGER;
+    private static final int LINE = Theme.LINE;
 
     private final AnvilScreen screen;
     private final PendingSale sale;
@@ -43,8 +43,9 @@ final class SellAssistPanel extends OverlayPanel {
         this.stats = market.stats(sale.key());
         this.lastPrice = userData.lastUnitPrice(sale.key().toString());
         String title = sale.count() > 1 ? sale.count() + "x " + sale.item().displayName() : sale.item().displayName();
+        setTitle(I18n.get("hugomarket.sell.title"));
         lines = List.of(
-                add(new Label(() -> title, Theme.TEXT)),
+                add(new Label(() -> title, Theme.GOLD)),
                 add(new Label(this::lowestText)),
                 add(new Label(this::medianText)),
                 add(new Label(this::seenText)),
@@ -68,7 +69,7 @@ final class SellAssistPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         for (int i = 0; i < 4; i++) {
             lines.get(i).setBounds(innerX, cursorY, innerWidth, LINE);
             cursorY += LINE;

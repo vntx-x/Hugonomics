@@ -37,6 +37,8 @@ public final class CalcPanel extends OverlayPanel {
     public CalcPanel(CalcState state, Runnable onClose) {
         this.state = state;
         this.onClose = onClose;
+        setTitle(I18n.get("hugomarket.calc.panel_title"));
+        setHeaderRight(() -> I18n.get("hugomarket.calc.key_hint"));
         display = add(new CalcDisplay(state, onClose));
         for (String[] row : KEYS) {
             for (String label : row) {
@@ -51,7 +53,7 @@ public final class CalcPanel extends OverlayPanel {
     }
 
     public static int preferredHeight() {
-        return Theme.PADDING * 2 + DISPLAY_HEIGHT + Theme.GAP + KEYS.length * (KEY_HEIGHT + Theme.GAP) + Theme.CHIP_HEIGHT + Theme.GAP + 10 * 4;
+        return Theme.PADDING * 2 + headerHeight() + DISPLAY_HEIGHT + Theme.GAP + KEYS.length * (KEY_HEIGHT + Theme.GAP) + Theme.CHIP_HEIGHT + Theme.GAP + 10 * 4;
     }
 
     public void focus() {
@@ -66,7 +68,7 @@ public final class CalcPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         display.setBounds(innerX, cursorY, innerWidth, DISPLAY_HEIGHT);
         cursorY += DISPLAY_HEIGHT + Theme.GAP;
         int keyWidth = (innerWidth - Theme.GAP * (COLUMNS - 1)) / COLUMNS;

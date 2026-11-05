@@ -96,7 +96,6 @@ public final class HelpScreen extends Screen {
 
     private static final class HelpPanel extends OverlayPanel {
         private static final int LINE_HEIGHT = 11;
-        private static final int HEADER_HEIGHT = 14;
 
         private final List<Chip> tabs = new ArrayList<>();
         private final List<String> tabLabels = new ArrayList<>();
@@ -109,6 +108,8 @@ public final class HelpScreen extends Screen {
         private int contentTop;
 
         HelpPanel() {
+            setTitle(I18n.get("hugomarket.help.title"));
+            setHeaderRight(() -> I18n.get("hugomarket.help.nav"));
             for (int i = 0; i < SECTIONS.length; i++) {
                 int index = i;
                 String section = SECTIONS[i];
@@ -141,7 +142,7 @@ public final class HelpScreen extends Screen {
             int innerX = x + Theme.PADDING;
             int innerWidth = width - Theme.PADDING * 2;
             int cursorX = innerX;
-            int cursorY = y + Theme.PADDING + HEADER_HEIGHT;
+            int cursorY = contentTop();
             int chipHeight = Theme.CHIP_HEIGHT + 2;
             Font font = Minecraft.getInstance().font;
             for (int i = 0; i < tabs.size(); i++) {
@@ -186,7 +187,6 @@ public final class HelpScreen extends Screen {
         @Override
         public void render(Gfx gfx, int mouseX, int mouseY) {
             super.render(gfx, mouseX, mouseY);
-            gfx.text(I18n.get("hugomarket.help.title"), x + Theme.PADDING, y + Theme.PADDING, Theme.ACCENT);
             wrap(gfx);
             int innerX = x + Theme.PADDING;
             int innerWidth = width - Theme.PADDING * 2;
@@ -211,8 +211,6 @@ public final class HelpScreen extends Screen {
                 int barY = listTop + (listHeight - barHeight) * scroll / maxScroll;
                 gfx.fill(innerX + innerWidth - 3, barY, 2, barHeight, Theme.TEXT_DIM);
             }
-            String hint = I18n.get("hugomarket.help.nav");
-            gfx.textNoShadow(hint, x + width - Theme.PADDING - gfx.textWidth(hint), y + Theme.PADDING + 1, Theme.TEXT_DIM);
         }
 
         @Override

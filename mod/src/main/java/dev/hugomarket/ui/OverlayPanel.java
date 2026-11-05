@@ -4,6 +4,7 @@ import dev.hugomarket.ui.widget.Widget;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 public abstract class OverlayPanel {
     protected final List<Widget> widgets = new ArrayList<>();
@@ -12,6 +13,12 @@ public abstract class OverlayPanel {
     protected int width;
     protected int height;
     private boolean visible = true;
+    private String title;
+    private Supplier<String> headerRight;
+
+    public static int headerHeight() {
+        return Theme.HEADER_HEIGHT + Theme.GAP;
+    }
 
     public void setVisible(boolean visible) {
         this.visible = visible;
@@ -19,6 +26,18 @@ public abstract class OverlayPanel {
 
     public boolean isVisible() {
         return visible;
+    }
+
+    protected void setTitle(String title) {
+        this.title = title;
+    }
+
+    protected void setHeaderRight(Supplier<String> headerRight) {
+        this.headerRight = headerRight;
+    }
+
+    protected int contentTop() {
+        return y + Theme.PADDING + (title == null ? 0 : headerHeight());
     }
 
     protected <W extends Widget> W add(W widget) {
@@ -43,12 +62,32 @@ public abstract class OverlayPanel {
         return visible && mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + height;
     }
 
+    protected void renderFrame(Gfx gfx) {
+        gfx.fill(x + 2, y + 2, width, height, Theme.PANEL_SHADOW);
+        gfx.fill(x, y, width, height, Theme.PANEL_BG);
+        gfx.border(x, y, width, height, Theme.PANEL_BORDER);
+        if (title == null) {
+            return;
+        }
+        gfx.fill(x + 1, y + 1, width - 2, Theme.HEADER_HEIGHT, Theme.HEADER_BG);
+        gfx.fill(x + 1, y + 1 + Theme.HEADER_HEIGHT, width - 2, 1, Theme.PANEL_BORDER);
+        int textY = y + 1 + (Theme.HEADER_HEIGHT - gfx.lineHeight()) / 2 + 1;
+        int rightWidth = 0;
+        if (headerRight != null) {
+            String right = headerRight.get();
+            if (!right.isEmpty()) {
+                rightWidth = gfx.textWidth(right) + Theme.GAP;
+                gfx.textNoShadow(right, x + width - Theme.PADDING - gfx.textWidth(right), textY, Theme.TEXT_DIM);
+            }
+        }
+        gfx.text(gfx.clip(title, width - Theme.PADDING * 2 - rightWidth), x + Theme.PADDING, textY, Theme.ACCENT);
+    }
+
     public void render(Gfx gfx, int mouseX, int mouseY) {
         if (!visible) {
             return;
         }
-        gfx.fill(x, y, width, height, Theme.PANEL_BG);
-        gfx.border(x, y, width, height, Theme.PANEL_BORDER);
+        renderFrame(gfx);
         for (Widget widget : widgets) {
             widget.render(gfx, mouseX, mouseY);
         }

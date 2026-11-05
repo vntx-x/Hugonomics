@@ -16,7 +16,7 @@ import java.util.List;
 
 public final class MinuteTestModule implements Module, OverlayProvider {
     private static final int PANEL_WIDTH = 170;
-    private static final int PANEL_OFFSET_Y = 134;
+    private static final int PANEL_OFFSET_Y = 144;
 
     private ModuleContext context;
     private final MinuteTest test = new MinuteTest();

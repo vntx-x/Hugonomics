@@ -33,7 +33,6 @@ final class OrdersPanel extends OverlayPanel {
 
     private final AbstractContainerScreen<?> screen;
     private final MarketSession market;
-    private final Label title;
     private final Label status;
     private final ListView<Row> list;
     private final BitSet profitable = new BitSet();
@@ -42,7 +41,7 @@ final class OrdersPanel extends OverlayPanel {
     OrdersPanel(AbstractContainerScreen<?> screen, MarketSession market) {
         this.screen = screen;
         this.market = market;
-        title = add(new Label(() -> I18n.get("hugomarket.orders.title"), Theme.ACCENT));
+        setTitle(I18n.get("hugomarket.orders.title"));
         status = add(new Label(this::statusText));
         list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, (row, button) -> {
         }));
@@ -74,9 +73,7 @@ final class OrdersPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
-        title.setBounds(innerX, cursorY, innerWidth, 10);
-        cursorY += 10 + Theme.GAP;
+        int cursorY = contentTop();
         status.setBounds(innerX, cursorY, innerWidth, 10);
         cursorY += 10 + Theme.GAP;
         list.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
@@ -93,7 +90,7 @@ final class OrdersPanel extends OverlayPanel {
         }
         int textX = rowX + ICON_SIZE + 4;
         String right = row.flip() == null ? "?" : (row.flip().marginUnitCents() >= 0 ? "+" : "") + Money.compact(row.flip().marginUnitCents());
-        int rightColor = row.flip() == null ? Theme.TEXT_DIM : row.flip().marginUnitCents() > 0 ? Theme.PRICE : 0xFFFF6B6B;
+        int rightColor = row.flip() == null ? Theme.TEXT_DIM : row.flip().marginUnitCents() > 0 ? Theme.PRICE : Theme.DANGER;
         int rightWidth = gfx.textWidth(right);
         int nameWidth = rowWidth - ICON_SIZE - 8 - rightWidth;
         gfx.textNoShadow(gfx.clip(row.order().item().displayName(), nameWidth), textX, rowY + 2, Theme.TEXT);

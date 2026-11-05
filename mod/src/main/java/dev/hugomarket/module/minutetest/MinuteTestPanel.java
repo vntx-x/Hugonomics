@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 final class MinuteTestPanel extends OverlayPanel {
-    static final int HEIGHT = Theme.PADDING * 2 + Theme.CHIP_HEIGHT + Theme.GAP + 11 * 2 + Theme.GAP + 10 * 4 + Theme.GAP + Theme.FIELD_HEIGHT + Theme.GAP + 10 * 8;
+    static final int HEIGHT = Theme.PADDING * 2 + headerHeight() + Theme.CHIP_HEIGHT + Theme.GAP + 11 * 2 + Theme.GAP + 10 * 4 + Theme.GAP + Theme.FIELD_HEIGHT + Theme.GAP + 10 * 8;
 
     private final MinuteTest test;
     private final MinuteTests saved;
@@ -33,7 +33,8 @@ final class MinuteTestPanel extends OverlayPanel {
     MinuteTestPanel(MinuteTest test, MinuteTests saved) {
         this.test = test;
         this.saved = saved;
-        startStop = add(new Chip("", test::isRunning, this::toggle));
+        setTitle(I18n.get("hugomarket.minute.title"));
+        startStop = add(new Chip(() -> test.isRunning() ? I18n.get("hugomarket.minute.stop") : I18n.get("hugomarket.minute.start"), test::isRunning, this::toggle));
         status = add(new Label(this::statusText, Theme.TEXT));
         resultLine = add(new Label(this::resultText, Theme.PRICE));
         for (double m : MinuteTest.MULTIPLIERS) {
@@ -113,7 +114,7 @@ final class MinuteTestPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         startStop.setBounds(innerX, cursorY, innerWidth, Theme.CHIP_HEIGHT);
         cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
         status.setBounds(innerX, cursorY, innerWidth, 11);
@@ -128,13 +129,6 @@ final class MinuteTestPanel extends OverlayPanel {
         rename.setBounds(innerX, cursorY, innerWidth, Theme.FIELD_HEIGHT);
         cursorY += Theme.FIELD_HEIGHT + Theme.GAP;
         history.setBounds(innerX, cursorY, innerWidth, Math.max(0, y + height - Theme.PADDING - cursorY));
-    }
-
-    @Override
-    public void render(Gfx gfx, int mouseX, int mouseY) {
-        super.render(gfx, mouseX, mouseY);
-        String label = test.isRunning() ? I18n.get("hugomarket.minute.stop") : I18n.get("hugomarket.minute.start");
-        gfx.textNoShadow(label, startStop.x() + (startStop.width() - gfx.textWidth(label)) / 2, startStop.y() + 2, Theme.TEXT);
     }
 
     @Override

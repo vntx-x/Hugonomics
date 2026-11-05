@@ -18,21 +18,27 @@ import java.util.List;
 
 final class AhSearchPanel extends OverlayPanel {
     private static final int ICON_SIZE = 16;
+    private static final int CAPTION_WIDTH = 34;
     private static final String STAR = "★ ";
 
     private final AhSearchState state;
     private final SlotHighlighter highlighter;
     private final TextField search;
-    private final List<Chip> chips;
-    private final Label status;
+    private final Label sortCaption;
+    private final Label filterCaption;
+    private final List<Chip> sortChips;
+    private final List<Chip> filterChips;
     private final ListView<ListingIndex.Entry> results;
 
     AhSearchPanel(AbstractContainerScreen<?> screen, AhSearchState state, MarketSession market) {
         this.state = state;
         this.highlighter = new SlotHighlighter(screen, state, market);
+        setTitle(I18n.get("hugomarket.ah.title"));
+        setHeaderRight(() -> I18n.get("hugomarket.ah.status", state.results().size(), state.indexedCount()));
         search = add(new TextField(I18n.get("hugomarket.ah.search"), state.query().text(),
                 text -> state.setQuery(state.query().withText(text))));
-        chips = List.of(
+        sortCaption = add(new Label(() -> I18n.get("hugomarket.ah.sort_caption")));
+        sortChips = List.of(
                 add(new Chip(I18n.get("hugomarket.ah.sort.unit_asc"), () -> state.query().sort() == SearchQuery.Sort.UNIT_ASC,
                         () -> state.setQuery(state.query().withSort(SearchQuery.Sort.UNIT_ASC)))),
                 add(new Chip(I18n.get("hugomarket.ah.sort.unit_desc"), () -> state.query().sort() == SearchQuery.Sort.UNIT_DESC,
@@ -40,12 +46,13 @@ final class AhSearchPanel extends OverlayPanel {
                 add(new Chip(I18n.get("hugomarket.ah.sort.expires"), () -> state.query().sort() == SearchQuery.Sort.EXPIRES_ASC,
                         () -> state.setQuery(state.query().withSort(SearchQuery.Sort.EXPIRES_ASC)))),
                 add(new Chip(I18n.get("hugomarket.ah.sort.newest"), () -> state.query().sort() == SearchQuery.Sort.NEWEST,
-                        () -> state.setQuery(state.query().withSort(SearchQuery.Sort.NEWEST)))),
+                        () -> state.setQuery(state.query().withSort(SearchQuery.Sort.NEWEST)))));
+        filterCaption = add(new Label(() -> I18n.get("hugomarket.ah.filter_caption")));
+        filterChips = List.of(
                 add(new Chip(I18n.get("hugomarket.ah.filter.enchanted"), () -> state.query().onlyEnchanted(),
                         () -> state.setQuery(state.query().toggleEnchanted()))),
                 add(new Chip(I18n.get("hugomarket.ah.filter.watched"), () -> state.query().onlyWatched(),
                         () -> state.setQuery(state.query().toggleWatched()))));
-        status = add(new Label(() -> I18n.get("hugomarket.ah.status", state.results().size(), state.indexedCount())));
         results = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, this::rowClicked));
         results.setHoverRenderer((gfx, entry, mouseX, mouseY) -> {
             ItemStack stack = state.icon(entry);
@@ -61,26 +68,23 @@ final class AhSearchPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         search.setBounds(innerX, cursorY, innerWidth, Theme.FIELD_HEIGHT);
         cursorY += Theme.FIELD_HEIGHT + Theme.GAP;
-        int chipX = innerX;
-        int chipWidth = (innerWidth - Theme.GAP) / 2;
-        for (int i = 0; i < chips.size(); i++) {
-            chips.get(i).setBounds(chipX, cursorY, chipWidth, Theme.CHIP_HEIGHT);
-            if (i % 2 == 0) {
-                chipX += chipWidth + Theme.GAP;
-            } else {
-                chipX = innerX;
-                cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
-            }
-        }
-        if (chips.size() % 2 == 1) {
-            cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
-        }
-        status.setBounds(innerX, cursorY, innerWidth, 10);
-        cursorY += 10 + Theme.GAP;
+        cursorY = chipRow(sortCaption, sortChips, innerX, cursorY, innerWidth);
+        cursorY = chipRow(filterCaption, filterChips, innerX, cursorY, innerWidth);
+        cursorY += Theme.GAP;
         results.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
+    }
+
+    private int chipRow(Label caption, List<Chip> chips, int innerX, int cursorY, int innerWidth) {
+        caption.setBounds(innerX, cursorY, CAPTION_WIDTH, Theme.CHIP_HEIGHT);
+        int chipsX = innerX + CAPTION_WIDTH;
+        int chipWidth = (innerWidth - CAPTION_WIDTH - Theme.GAP * (chips.size() - 1)) / chips.size();
+        for (int i = 0; i < chips.size(); i++) {
+            chips.get(i).setBounds(chipsX + i * (chipWidth + Theme.GAP), cursorY, chipWidth, Theme.CHIP_HEIGHT);
+        }
+        return cursorY + Theme.CHIP_HEIGHT + Theme.GAP;
     }
 
     private void refresh() {

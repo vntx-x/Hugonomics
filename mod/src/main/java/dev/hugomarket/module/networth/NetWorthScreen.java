@@ -79,23 +79,23 @@ final class NetWorthScreen extends Screen {
     //?}
 
     private static final class NetWorthPanel extends OverlayPanel {
-        static final int HEIGHT = Theme.PADDING * 2 + 11 * 8;
+        static final int HEIGHT = Theme.PADDING * 2 + headerHeight() + Theme.LINE * 7;
 
         private final List<Label> lines = new ArrayList<>();
 
         NetWorthPanel(NetWorthStore store, MarketSession market) {
+            setTitle(I18n.get("hugomarket.networth.title"));
             long now = System.currentTimeMillis();
             long inventory = inventoryValue(market);
             long total = inventory + store.balance().cents() + store.enderchest().cents() + store.auctions().cents();
             String balance = store.balance().known()
                     ? I18n.get("hugomarket.networth.line", Money.format(store.balance().cents()), age(now, store.balance().at()))
                     : I18n.get("hugomarket.networth.unknown");
-            lines.add(add(new Label(() -> I18n.get("hugomarket.networth.title"), Theme.ACCENT)));
             lines.add(add(new Label(() -> I18n.get("hugomarket.networth.balance", balance), Theme.TEXT)));
             lines.add(add(new Label(() -> I18n.get("hugomarket.networth.inventory", Money.format(inventory)), Theme.TEXT)));
             lines.add(add(new Label(() -> I18n.get("hugomarket.networth.enderchest", part(store.enderchest(), now)), Theme.TEXT)));
             lines.add(add(new Label(() -> I18n.get("hugomarket.networth.auctions", part(store.auctions(), now)), Theme.TEXT)));
-            lines.add(add(new Label(() -> I18n.get("hugomarket.networth.total", Money.format(total)), Theme.PRICE)));
+            lines.add(add(new Label(() -> I18n.get("hugomarket.networth.total", Money.format(total)), Theme.GOLD)));
             lines.add(add(new Label(() -> I18n.get("hugomarket.networth.hint_values"))));
             lines.add(add(new Label(() -> I18n.get(store.balance().known() ? "hugomarket.networth.hint_sources" : "hugomarket.networth.hint_balance"))));
         }
@@ -137,10 +137,10 @@ final class NetWorthScreen extends Screen {
 
         @Override
         protected void layout() {
-            int cursorY = y + Theme.PADDING;
+            int cursorY = contentTop();
             for (Label label : lines) {
-                label.setBounds(x + Theme.PADDING, cursorY, width - Theme.PADDING * 2, 11);
-                cursorY += 11;
+                label.setBounds(x + Theme.PADDING, cursorY, width - Theme.PADDING * 2, Theme.LINE);
+                cursorY += Theme.LINE;
             }
         }
     }

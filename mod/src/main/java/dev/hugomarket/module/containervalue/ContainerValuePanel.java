@@ -10,7 +10,7 @@ import net.minecraft.client.resources.language.I18n;
 import java.util.List;
 
 final class ContainerValuePanel extends OverlayPanel {
-    static final int HEIGHT = Theme.PADDING * 2 + 11 * 4;
+    static final int HEIGHT = Theme.PADDING * 2 + headerHeight() + Theme.LINE * 4;
 
     private final List<Label> labels;
     private String hugo = "";
@@ -19,6 +19,7 @@ final class ContainerValuePanel extends OverlayPanel {
     private String coverage = "";
 
     ContainerValuePanel() {
+        setTitle(I18n.get("hugomarket.value.title"));
         labels = List.of(
                 add(new Label(() -> hugo, Theme.TEXT)),
                 add(new Label(() -> ahLowest, Theme.PRICE)),
@@ -44,10 +45,10 @@ final class ContainerValuePanel extends OverlayPanel {
 
     @Override
     protected void layout() {
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         for (Label label : labels) {
-            label.setBounds(x + Theme.PADDING, cursorY, width - Theme.PADDING * 2, 11);
-            cursorY += 11;
+            label.setBounds(x + Theme.PADDING, cursorY, width - Theme.PADDING * 2, Theme.LINE);
+            cursorY += Theme.LINE;
         }
     }
 }

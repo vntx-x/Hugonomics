@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Locale;
 
 final class FarmPanel extends OverlayPanel {
-    static final int HEIGHT = Theme.PADDING * 2 + 11 * 7 + Theme.CHIP_HEIGHT + Theme.GAP * 2 + 10 * 3;
+    static final int HEIGHT = Theme.PADDING * 2 + headerHeight() + Theme.LINE * 6 + 10 * 3 + Theme.GAP * 2 + Theme.CHIP_HEIGHT;
     private static final long REFRESH_MS = 1_000;
 
     private final FarmSession session;
@@ -36,12 +36,13 @@ final class FarmPanel extends OverlayPanel {
         long now = System.currentTimeMillis();
         this.summary = session.summary(market, now);
         this.rate = inflow.rate(market, now);
+        setTitle(I18n.get("hugomarket.farm.inflow_title"));
+        setHeaderRight(() -> I18n.get("hugomarket.farm.title", formatDuration(summary.durationMs())));
         inflowLines = List.of(
-                add(new Label(() -> I18n.get("hugomarket.farm.inflow_title"), Theme.ACCENT)),
                 add(new Label(this::inflowLine, Theme.TEXT)),
                 add(new Label(this::inflowValueLine, Theme.PRICE)));
         lines = List.of(
-                add(new Label(() -> I18n.get("hugomarket.farm.title", formatDuration(summary.durationMs())), Theme.ACCENT)),
+                add(new Label(() -> I18n.get("hugomarket.farm.session_caption"), Theme.ACCENT)),
                 add(new Label(() -> I18n.get("hugomarket.farm.collected", summary.itemsCollected(), Money.compact(summary.collectedValueCents())), Theme.TEXT)),
                 add(new Label(() -> I18n.get("hugomarket.farm.income", Money.compact(summary.incomeCents()), Money.compact(summary.incomePerHourCents())), Theme.PRICE)),
                 add(new Label(() -> I18n.get("hugomarket.farm.value_rate", Money.compact(summary.collectedPerHourCents())))));
@@ -80,15 +81,15 @@ final class FarmPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         for (Label label : inflowLines) {
-            label.setBounds(innerX, cursorY, innerWidth, 11);
-            cursorY += 11;
+            label.setBounds(innerX, cursorY, innerWidth, Theme.LINE);
+            cursorY += Theme.LINE;
         }
         cursorY += Theme.GAP;
         for (Label label : lines) {
-            label.setBounds(innerX, cursorY, innerWidth, 11);
-            cursorY += 11;
+            label.setBounds(innerX, cursorY, innerWidth, Theme.LINE);
+            cursorY += Theme.LINE;
         }
         for (Label label : topLines) {
             label.setBounds(innerX, cursorY, innerWidth, 10);

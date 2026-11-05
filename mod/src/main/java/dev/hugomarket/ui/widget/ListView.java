@@ -58,6 +58,8 @@ public final class ListView<T> extends Widget {
             boolean hovered = i == hoveredIndex;
             if (hovered) {
                 gfx.fill(x, rowY, width, rowHeight, Theme.ROW_HOVER);
+            } else if (i % 2 == 1) {
+                gfx.fill(x, rowY, width, rowHeight, Theme.ROW_ALT);
             }
             rowRenderer.render(gfx, rows.get(i), x, rowY, width, rowHeight, hovered);
         }

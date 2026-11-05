@@ -41,6 +41,7 @@ final class ColorCodesPanel extends OverlayPanel {
     ColorCodesPanel(ColorCodesState state, Runnable onClose) {
         this.state = state;
         this.onClose = onClose;
+        setTitle(I18n.get("hugomarket.colors.title"));
         rename = add(new Chip("/rename", () -> state.target() == ColorCodesState.Target.RENAME, () -> state.setTarget(ColorCodesState.Target.RENAME)));
         sign = add(new Chip("/sign", () -> state.target() == ColorCodesState.Target.SIGN, () -> state.setTarget(ColorCodesState.Target.SIGN)));
         counter = add(new Label(this::counterText, Theme.TEXT_DIM));
@@ -59,7 +60,7 @@ final class ColorCodesPanel extends OverlayPanel {
     }
 
     static int preferredHeight() {
-        return Theme.PADDING * 2 + Theme.CHIP_HEIGHT + Theme.GAP + Theme.FIELD_HEIGHT + Theme.GAP + PREVIEW_HEIGHT + Theme.GAP
+        return Theme.PADDING * 2 + headerHeight() + Theme.CHIP_HEIGHT + Theme.GAP + Theme.FIELD_HEIGHT + Theme.GAP + PREVIEW_HEIGHT + Theme.GAP
                 + SWATCH_HEIGHT + Theme.GAP + Theme.CHIP_HEIGHT + Theme.GAP + Theme.CHIP_HEIGHT;
     }
 
@@ -71,7 +72,7 @@ final class ColorCodesPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         rename.setBounds(innerX, cursorY, 44, Theme.CHIP_HEIGHT);
         sign.setBounds(innerX + 44 + Theme.GAP, cursorY, 36, Theme.CHIP_HEIGHT);
         counter.setBounds(innerX + 86, cursorY, innerWidth - 86, Theme.CHIP_HEIGHT);

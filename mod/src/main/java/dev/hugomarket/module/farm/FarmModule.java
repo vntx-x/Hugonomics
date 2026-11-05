@@ -22,7 +22,7 @@ import java.util.Set;
 
 public final class FarmModule implements Module, OverlayProvider {
     private static final int PANEL_WIDTH = 170;
-    private static final int PANEL_OFFSET_Y = 56;
+    private static final int PANEL_OFFSET_Y = 74;
     private static final Set<ScreenKind> CONTAINERS = EnumSet.of(ScreenKind.VANILLA_CONTAINER, ScreenKind.ENDERCHEST);
 
     private ModuleContext context;

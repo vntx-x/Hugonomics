@@ -36,7 +36,6 @@ final class MarketPanel extends OverlayPanel {
     private final MarketData data;
     private final MarketSession market;
     private final TextField search;
-    private final Label status;
     private final ListView<PriceJson.ItemSummary> list;
     private final Label detailTitle;
     private final Chip back;
@@ -56,6 +55,8 @@ final class MarketPanel extends OverlayPanel {
         this.data = data;
         this.market = market;
         this.userData = userData;
+        setTitle(I18n.get("hugomarket.market.title"));
+        setHeaderRight(this::statusText);
         alertField = add(new TextField(I18n.get("hugomarket.market.alert_placeholder"), "", text -> {
         }));
         alertSet = add(new Chip(I18n.get("hugomarket.market.alert_set"), () -> selected != null && userData.alert(selected.key()).isPresent(), this::applyAlert));
@@ -64,7 +65,6 @@ final class MarketPanel extends OverlayPanel {
             query = text;
             refreshList();
         }));
-        status = add(new Label(this::statusText));
         list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, (item, button) -> select(item)));
         detailTitle = add(new Label(() -> selected == null ? "" : selected.displayName(), Theme.ACCENT));
         back = add(new Chip(I18n.get("hugomarket.market.back"), () -> false, () -> select(null)));
@@ -82,14 +82,12 @@ final class MarketPanel extends OverlayPanel {
     protected void layout() {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         search.setBounds(innerX, cursorY, innerWidth, Theme.FIELD_HEIGHT);
         cursorY += Theme.FIELD_HEIGHT + Theme.GAP;
-        status.setBounds(innerX, cursorY, innerWidth, 10);
-        cursorY += 10 + Theme.GAP;
         list.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
 
-        int detailY = y + Theme.PADDING;
+        int detailY = contentTop();
         back.setBounds(innerX, detailY, 60, Theme.CHIP_HEIGHT);
         detailTitle.setBounds(innerX + 64, detailY, innerWidth - 64, Theme.CHIP_HEIGHT);
         detailY += Theme.CHIP_HEIGHT + Theme.GAP;
@@ -108,11 +106,9 @@ final class MarketPanel extends OverlayPanel {
 
     @Override
     public void render(Gfx gfx, int mouseX, int mouseY) {
-        gfx.fill(x, y, width, height, Theme.PANEL_BG);
-        gfx.border(x, y, width, height, Theme.PANEL_BORDER);
+        renderFrame(gfx);
         if (selected == null) {
             search.render(gfx, mouseX, mouseY);
-            status.render(gfx, mouseX, mouseY);
             list.render(gfx, mouseX, mouseY);
             return;
         }

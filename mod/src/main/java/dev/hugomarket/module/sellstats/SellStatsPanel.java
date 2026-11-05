@@ -11,7 +11,7 @@ import net.minecraft.client.resources.language.I18n;
 import java.util.List;
 
 final class SellStatsPanel extends OverlayPanel {
-    static final int HEIGHT = Theme.PADDING * 2 + 11 * 5;
+    static final int HEIGHT = Theme.PADDING * 2 + headerHeight() + Theme.LINE * 4;
     private static final long REFRESH_MS = 1_000;
 
     private final SellStats stats;
@@ -22,8 +22,8 @@ final class SellStatsPanel extends OverlayPanel {
     SellStatsPanel(SellStats stats) {
         this.stats = stats;
         this.summary = stats.summary(System.currentTimeMillis());
+        setTitle(I18n.get("hugomarket.sellstats.title"));
         labels = List.of(
-                add(new Label(() -> I18n.get("hugomarket.sellstats.title"), Theme.ACCENT)),
                 add(new Label(() -> I18n.get("hugomarket.sellstats.session", Money.compact(summary.sessionCents()), summary.activeMinutesSession()), Theme.TEXT)),
                 add(new Label(() -> I18n.get("hugomarket.sellstats.rate", Money.compact(summary.ratePerHourCents())), Theme.PRICE)),
                 add(new Label(() -> I18n.get("hugomarket.sellstats.day", Money.compact(summary.last24hCents())))),
@@ -32,10 +32,10 @@ final class SellStatsPanel extends OverlayPanel {
 
     @Override
     protected void layout() {
-        int cursorY = y + Theme.PADDING;
+        int cursorY = contentTop();
         for (Label label : labels) {
-            label.setBounds(x + Theme.PADDING, cursorY, width - Theme.PADDING * 2, 11);
-            cursorY += 11;
+            label.setBounds(x + Theme.PADDING, cursorY, width - Theme.PADDING * 2, Theme.LINE);
+            cursorY += Theme.LINE;
         }
     }
 

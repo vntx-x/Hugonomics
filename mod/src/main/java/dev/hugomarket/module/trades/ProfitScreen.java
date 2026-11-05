@@ -107,8 +107,8 @@ final class ProfitScreen extends Screen {
             TradeLog.Summary today = log.today(now, ZoneId.systemDefault());
             TradeLog.Summary week = log.since(now - 7 * DAY_MS);
             TradeLog.Summary month = log.since(now - 30 * DAY_MS);
+            setTitle(I18n.get("hugomarket.profit.title"));
             lines = List.of(
-                    add(new Label(() -> I18n.get("hugomarket.profit.title"), Theme.ACCENT)),
                     add(new Label(() -> summaryLine("hugomarket.profit.today", today), Theme.TEXT)),
                     add(new Label(() -> summaryLine("hugomarket.profit.week", week), Theme.TEXT)),
                     add(new Label(() -> summaryLine("hugomarket.profit.month", month), Theme.TEXT)),
@@ -130,17 +130,17 @@ final class ProfitScreen extends Screen {
                     : (trade.count() > 1 ? trade.count() + "x " : "") + trade.displayName() + (trade.counterparty().isEmpty() ? "" : " · " + trade.counterparty());
             gfx.textNoShadow(when, rowX + 1, rowY + 1, Theme.TEXT_DIM);
             gfx.textNoShadow(gfx.clip(what, rowWidth - amountWidth - 74), rowX + 68, rowY + 1, Theme.TEXT);
-            gfx.textNoShadow(amount, rowX + rowWidth - amountWidth - 3, rowY + 1, trade.isIncome() ? Theme.PRICE : 0xFFFF6B6B);
+            gfx.textNoShadow(amount, rowX + rowWidth - amountWidth - 3, rowY + 1, trade.isIncome() ? Theme.PRICE : Theme.DANGER);
         }
 
         @Override
         protected void layout() {
             int innerX = x + Theme.PADDING;
             int innerWidth = width - Theme.PADDING * 2;
-            int cursorY = y + Theme.PADDING;
+            int cursorY = contentTop();
             for (Label label : lines) {
-                label.setBounds(innerX, cursorY, innerWidth, 11);
-                cursorY += 11;
+                label.setBounds(innerX, cursorY, innerWidth, Theme.LINE);
+                cursorY += Theme.LINE;
             }
             cursorY += Theme.GAP;
             trades.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
