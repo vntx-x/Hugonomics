@@ -1,5 +1,9 @@
 # Hugonomics
 
+[![CI](https://github.com/vntx-x/hugonomics/actions/workflows/ci.yml/badge.svg)](https://github.com/vntx-x/hugonomics/actions/workflows/ci.yml)
+[![Modrinth](https://img.shields.io/modrinth/dt/hugonomics?logo=modrinth&label=Modrinth)](https://modrinth.com/mod/hugonomics)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 Client-Mod für HugoSMP (Fabric, Minecraft 1.21.5 bis 1.21.11) mit eigenem Backend: Suche und
 Filter im Auktionshaus, Verkaufs-Vorschlag mit Gebühren, Preis-Tooltips, Kisten- und
 Shulker-Wert, Orders mit Flip-Marge, Markt-Übersicht mit Charts, Preis-Alarme, Rechner,
