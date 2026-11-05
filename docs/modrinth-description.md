@@ -1,4 +1,4 @@
-# HugoMarket – Better AH & Orders für HugoSMP
+# Hugonomics – Better AH & Orders für HugoSMP
 
 Client-Mod für HugoSMP. Macht das Auktionshaus durchsuchbar, zeigt Marktpreise überall dort,
 wo du sie brauchst, und rechnet mit: Gebühren, Flips, Kistenwerte, Farm-Raten.
@@ -39,7 +39,7 @@ sowieso sieht, und schreibt höchstens Text in ein Eingabefeld. Abgeschickt wird
 - Jedes Modul einzeln abschaltbar, Übersicht aller Funktionen im Menü
 
 ## Daten
-Gesehene AH-Listings werden anonym an den HugoMarket-Server gemeldet, damit alle Nutzer
+Gesehene AH-Listings werden anonym an den Hugonomics-Server gemeldet, damit alle Nutzer
 aktuelle Preise bekommen. Verkäufernamen gehen nur gehasht raus, Koordinaten und Accountdaten
 gar nicht. Im Menü abschaltbar ("Backend-Sync").
 
@@ -47,4 +47,4 @@ gar nicht. Im Menü abschaltbar ("Backend-Sync").
 Fabric Loader, Fabric API, Jar für deine Minecraft-Version (1.21.5, 1.21.6–1.21.8,
 1.21.9–1.21.10, 1.21.11). Mod Menu optional.
 
-HugoMarket ist Open Source (MIT) und kein offizielles Projekt von HugoSMP.
+Hugonomics ist Open Source (MIT) und kein offizielles Projekt von HugoSMP.

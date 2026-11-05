@@ -37,7 +37,7 @@ public final class FirstStartHint {
         done = true;
         config.get().tutorialShown = true;
         config.save();
-        client.gui.getChat().addMessage(Component.literal("[HugoMarket] ").withStyle(ChatFormatting.LIGHT_PURPLE)
+        client.gui.getChat().addMessage(Component.literal("[Hugonomics] ").withStyle(ChatFormatting.LIGHT_PURPLE)
                 .append(Component.translatable("hugomarket.help.first_start").withStyle(ChatFormatting.WHITE)));
     }
 }

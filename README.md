@@ -1,4 +1,4 @@
-# HugoMarket
+# Hugonomics
 
 Client-Mod für HugoSMP (Fabric, Minecraft 1.21.5 bis 1.21.11) mit eigenem Backend: Suche und
 Filter im Auktionshaus, Verkaufs-Vorschlag mit Gebühren, Preis-Tooltips, Kisten- und
@@ -7,17 +7,17 @@ Verkaufs-Statistik, Minutentest, Farm-Tracker, Trade-Log und Profit.
 
 Die Mod liest nur, was der Client ohnehin sieht. Sie kauft nicht automatisch, blättert nicht
 automatisch und sendet keine Klicks ohne den Spieler. Gesehene AH-Preise werden anonym an den
-HugoMarket-Server gemeldet und mit allen Nutzern geteilt; Verkäufernamen verlassen den Client
+Hugonomics-Server gemeldet und mit allen Nutzern geteilt; Verkäufernamen verlassen den Client
 nur gehasht, Koordinaten und Accountdaten gar nicht. Das lässt sich im Menü abschalten.
 
 ## Installation
 
 Fabric Loader 0.16 oder neuer, Fabric API, dazu die Jar für die eigene Minecraft-Version in den
-`mods`-Ordner. Mod Menu ist optional und öffnet das HugoMarket-Menü über das Zahnrad.
+`mods`-Ordner. Mod Menu ist optional und öffnet das Hugonomics-Menü über das Zahnrad.
 
 ## Bedienung
 
-Mod Menu → HugoMarket → Übersicht listet jede Funktion mit Ort und Taste. Kurzfassung:
+Mod Menu → Hugonomics → Übersicht listet jede Funktion mit Ort und Taste. Kurzfassung:
 
 - Auktionshaus: Such-Panel rechts, Rahmen für Treffer, Schnäppchen und Watchlist, Übersicht
   der eigenen Auktionen.
@@ -48,4 +48,4 @@ npm test
 
 ## Lizenz
 
-MIT, siehe `LICENSE`. HugoMarket ist kein offizielles Projekt von HugoSMP.
+MIT, siehe `LICENSE`. Hugonomics ist kein offizielles Projekt von HugoSMP.

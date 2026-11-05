@@ -1,8 +1,8 @@
 # Dump-Format (Phase 0)
 
 Das Modul `dumper` schreibt nach `<minecraft>/config/hugomarket/dumps/`. Aufzeichnung startet
-erst nach Druck auf die Dump-Taste (Standard F8, änderbar unter Steuerung → HugoMarket) und
-nur auf `hugosmp.net`. Solange aufgezeichnet wird, steht oben links rot "HugoMarket DUMP".
+erst nach Druck auf die Dump-Taste (Standard F8, änderbar unter Steuerung → Hugonomics) und
+nur auf `hugosmp.net`. Solange aufgezeichnet wird, steht oben links rot "Hugonomics DUMP".
 
 ## Container: `containers/<yyyyMMdd-HHmmss-SSS>_<Titel>_<Containerslots>.json`
 

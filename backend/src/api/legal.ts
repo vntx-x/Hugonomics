@@ -14,17 +14,17 @@ export function legalFromEnv(env: NodeJS.ProcessEnv = process.env): LegalInfo | 
 }
 
 export function registerLegalRoutes(app: FastifyInstance, info: LegalInfo | null): void {
-  app.get("/", async (_request, reply) => reply.type("text/html; charset=utf-8").send(page("HugoMarket", home())));
+  app.get("/", async (_request, reply) => reply.type("text/html; charset=utf-8").send(page("Hugonomics", home())));
   app.get("/impressum", async (_request, reply) => reply.type("text/html; charset=utf-8").send(page("Impressum", impressum(info))));
   app.get("/datenschutz", async (_request, reply) => reply.type("text/html; charset=utf-8").send(page("Datenschutz", datenschutz(info))));
 }
 
 function page(title: string, body: string): string {
-  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} – HugoMarket</title><style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.5;color:#1b1b1f}a{color:#5b2a86}footer{margin-top:40px;font-size:.9em;color:#666}</style></head><body>${body}<footer><a href="/">Start</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></footer></body></html>`;
+  return `<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} – Hugonomics</title><style>body{font-family:system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;line-height:1.5;color:#1b1b1f}a{color:#5b2a86}footer{margin-top:40px;font-size:.9em;color:#666}</style></head><body>${body}<footer><a href="/">Start</a> · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></footer></body></html>`;
 }
 
 function home(): string {
-  return `<h1>HugoMarket</h1><p>Preis-Server der HugoMarket-Mod für HugoSMP. Diese Adresse wird von der Mod benutzt, um gesehene Auktionshaus-Preise anonym zu teilen. Es gibt hier nichts zu klicken.</p>`;
+  return `<h1>Hugonomics</h1><p>Preis-Server der Hugonomics-Mod für HugoSMP. Diese Adresse wird von der Mod benutzt, um gesehene Auktionshaus-Preise anonym zu teilen. Es gibt hier nichts zu klicken.</p>`;
 }
 
 function escape(text: string): string {
@@ -35,7 +35,7 @@ function impressum(info: LegalInfo | null): string {
   if (!info) {
     return `<h1>Impressum</h1><p>Noch nicht hinterlegt.</p>`;
   }
-  return `<h1>Impressum</h1><p>Angaben gemäß § 5 DDG</p><p>${escape(info.name)}<br>${escape(info.address)}</p><p>Kontakt: <a href="mailto:${escape(info.email)}">${escape(info.email)}</a></p><p>HugoMarket ist ein privates, nicht kommerzielles Projekt und steht in keiner Verbindung zu HugoSMP oder Mojang.</p>`;
+  return `<h1>Impressum</h1><p>Angaben gemäß § 5 DDG</p><p>${escape(info.name)}<br>${escape(info.address)}</p><p>Kontakt: <a href="mailto:${escape(info.email)}">${escape(info.email)}</a></p><p>Hugonomics ist ein privates, nicht kommerzielles Projekt und steht in keiner Verbindung zu HugoSMP oder Mojang.</p>`;
 }
 
 function datenschutz(info: LegalInfo | null): string {
@@ -43,7 +43,7 @@ function datenschutz(info: LegalInfo | null): string {
   return `<h1>Datenschutzerklärung</h1>
 <p>Verantwortlich: ${responsible}</p>
 <h2>Was dieser Server verarbeitet</h2>
-<p>Die HugoMarket-Mod sendet Beobachtungen aus dem Auktionshaus von HugoSMP: Item, Anzahl, Preis, Restzeit und einen Hash des Verkäufernamens. Dazu eine zufällig erzeugte Client-ID, die Mod-Version und die Minecraft-Version. Es werden keine Minecraft-Accountnamen, keine Account-UUIDs und keine Koordinaten übertragen.</p>
+<p>Die Hugonomics-Mod sendet Beobachtungen aus dem Auktionshaus von HugoSMP: Item, Anzahl, Preis, Restzeit und einen Hash des Verkäufernamens. Dazu eine zufällig erzeugte Client-ID, die Mod-Version und die Minecraft-Version. Es werden keine Minecraft-Accountnamen, keine Account-UUIDs und keine Koordinaten übertragen.</p>
 <h2>Wofür</h2>
 <p>Aus den Beobachtungen werden Marktpreise und Preisverläufe berechnet und allen Nutzern der Mod bereitgestellt. Die Client-ID dient der Missbrauchsabwehr (Ratenbegrenzung, Plausibilitätsprüfung).</p>
 <h2>Speicherdauer</h2>

@@ -71,7 +71,7 @@ public final class AlertsModule implements Module {
             return;
         }
         Listing listing = hit.listing();
-        Component message = Component.literal("[HugoMarket] ").withStyle(ChatFormatting.LIGHT_PURPLE)
+        Component message = Component.literal("[Hugonomics] ").withStyle(ChatFormatting.LIGHT_PURPLE)
                 .append(Component.translatable("hugomarket.alert.hit", listing.item().displayName(), listing.item().count(),
                         Money.format(listing.unitPriceCents()), Money.format(hit.alertUnitCents()), listing.seller())
                         .withStyle(ChatFormatting.WHITE));

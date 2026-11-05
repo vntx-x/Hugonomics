@@ -4,8 +4,14 @@
   "version": "${version}",
   "name": "${name}",
   "description": "Auction house, orders and market tools for HugoSMP.",
-  "authors": [],
-  "contact": {},
+  "authors": [
+    "vntx-x"
+  ],
+  "contact": {
+    "homepage": "https://github.com/vntx-x/hugonomics",
+    "sources": "https://github.com/vntx-x/hugonomics",
+    "issues": "https://github.com/vntx-x/hugonomics/issues"
+  },
   "license": "MIT",
   "icon": "assets/hugomarket/icon.png",
   "environment": "client",
