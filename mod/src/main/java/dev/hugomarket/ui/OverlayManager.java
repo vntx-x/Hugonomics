@@ -19,8 +19,13 @@ public final class OverlayManager {
         boolean onKey(int key, int scancode, int modifiers);
     }
 
+    public interface ClickHook {
+        void onClick(AbstractContainerScreen<?> screen, double mouseX, double mouseY, int button);
+    }
+
     private final List<OverlayProvider> providers = new CopyOnWriteArrayList<>();
     private final List<KeyHook> keyHooks = new CopyOnWriteArrayList<>();
+    private final List<ClickHook> clickHooks = new CopyOnWriteArrayList<>();
     private ScreenSession session;
 
     public OverlayManager() {
@@ -38,6 +43,10 @@ public final class OverlayManager {
 
     public void addKeyHook(KeyHook hook) {
         keyHooks.add(hook);
+    }
+
+    public void addClickHook(ClickHook hook) {
+        clickHooks.add(hook);
     }
 
     public static boolean charTyped(int codePoint, int modifiers) {
@@ -98,6 +107,11 @@ public final class OverlayManager {
             boolean consumed = false;
             for (OverlayPanel panel : panels) {
                 consumed |= panel.mouseClicked(mouseX, mouseY, button);
+            }
+            if (!consumed) {
+                for (ClickHook hook : clickHooks) {
+                    hook.onClick(screen, mouseX, mouseY, button);
+                }
             }
             return consumed;
         }

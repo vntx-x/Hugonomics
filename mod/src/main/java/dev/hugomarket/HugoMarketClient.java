@@ -23,6 +23,7 @@ import dev.hugomarket.module.sellassist.SellAssistModule;
 import dev.hugomarket.module.sellstats.SellStatsModule;
 import dev.hugomarket.module.sync.SyncModule;
 import dev.hugomarket.module.tooltips.TooltipsModule;
+import dev.hugomarket.module.trades.TradeLogModule;
 import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
@@ -74,9 +75,10 @@ public final class HugoMarketClient implements ClientModInitializer {
         SellStatsModule sellStats = new SellStatsModule();
         FarmModule farm = new FarmModule();
         MinuteTestModule minuteTest = new MinuteTestModule();
+        TradeLogModule trades = new TradeLogModule();
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), sellStats,
-                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, new SyncModule()));
+                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, trades, new SyncModule()));
         registry.start();
         if (registry.isRunning(sellStats.id())) {
             if (registry.isRunning(farm.id())) {
@@ -84,6 +86,9 @@ public final class HugoMarketClient implements ClientModInitializer {
             }
             if (registry.isRunning(minuteTest.id())) {
                 minuteTest.attach(sellStats.stats());
+            }
+            if (registry.isRunning(trades.id())) {
+                trades.attach(sellStats.stats());
             }
         }
         KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_UNKNOWN);
