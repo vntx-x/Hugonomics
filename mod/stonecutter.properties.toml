@@ -11,6 +11,7 @@ mod.mc_releases = ["1.21.5"]
 deps.fabric_api = "0.128.2+1.21.5"
 deps.parchment_mc = "1.21.5"
 deps.parchment = "2025.06.15"
+deps.modmenu = "14.0.2"
 
 ["1.21.8"]
 mod.mc_compat = ">=1.21.6 <=1.21.8"
@@ -18,6 +19,7 @@ mod.mc_releases = ["1.21.6", "1.21.7", "1.21.8"]
 deps.fabric_api = "0.136.1+1.21.8"
 deps.parchment_mc = "1.21.8"
 deps.parchment = "2025.09.14"
+deps.modmenu = "15.0.2"
 
 ["1.21.10"]
 mod.mc_compat = ">=1.21.9 <=1.21.10"
@@ -25,6 +27,7 @@ mod.mc_releases = ["1.21.9", "1.21.10"]
 deps.fabric_api = "0.138.4+1.21.10"
 deps.parchment_mc = "1.21.10"
 deps.parchment = "2025.10.12"
+deps.modmenu = "16.0.1"
 
 ["1.21.11"]
 mod.mc_compat = "1.21.11"
@@ -32,3 +35,4 @@ mod.mc_releases = ["1.21.11"]
 deps.fabric_api = "0.141.6+1.21.11"
 deps.parchment_mc = "1.21.11"
 deps.parchment = "2025.12.20"
+deps.modmenu = "17.0.1"

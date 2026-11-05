@@ -21,6 +21,7 @@ dependencies {
     })
     modImplementation("net.fabricmc:fabric-loader:${prop("deps.fabric_loader")}")
     modImplementation("net.fabricmc.fabric-api:fabric-api:${prop("deps.fabric_api")}")
+    modCompileOnly("com.terraformersmc:modmenu:${prop("deps.modmenu")}")
 
     testImplementation(platform("org.junit:junit-bom:5.11.4"))
     testImplementation("org.junit.jupiter:junit-jupiter")

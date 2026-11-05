@@ -1,6 +1,7 @@
 package dev.hugomarket;
 
 import dev.hugomarket.config.ConfigStore;
+import dev.hugomarket.config.MenuScreen;
 import dev.hugomarket.container.ContainerTracker;
 import dev.hugomarket.container.ScreenStateTracker;
 import dev.hugomarket.core.ClientScheduler;
@@ -16,14 +17,23 @@ import dev.hugomarket.module.tooltips.TooltipsModule;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.ui.KeyBindings;
 import dev.hugomarket.ui.OverlayManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.KeyMapping;
+import org.lwjgl.glfw.GLFW;
 
 import java.nio.file.Path;
 import java.util.List;
 
 public final class HugoMarketClient implements ClientModInitializer {
+    private static ModuleRegistry registry;
+
+    public static ModuleRegistry registry() {
+        return registry;
+    }
+
     @Override
     public void onInitializeClient() {
         Path dataDir = FabricLoader.getInstance().getConfigDir().resolve(HugoMarket.MOD_ID);
@@ -36,7 +46,16 @@ public final class HugoMarketClient implements ClientModInitializer {
         OverlayManager overlays = new OverlayManager();
         MarketSession market = new MarketSession();
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, dataDir);
-        new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
-                new TooltipsModule(), new ContainerValueModule(), new CalcModule())).start();
+        registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
+                new TooltipsModule(), new ContainerValueModule(), new CalcModule()));
+        registry.start();
+        KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_UNKNOWN);
+        scheduler.onTick(client -> {
+            while (menuKey.consumeClick()) {
+                if (client.screen == null) {
+                    client.setScreen(new MenuScreen(null, registry));
+                }
+            }
+        });
     }
 }

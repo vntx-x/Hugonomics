@@ -12,6 +12,9 @@
   "entrypoints": {
     "client": [
       "dev.hugomarket.HugoMarketClient"
+    ],
+    "modmenu": [
+      "dev.hugomarket.config.ModMenuEntry"
     ]
   },
   "mixins": [
