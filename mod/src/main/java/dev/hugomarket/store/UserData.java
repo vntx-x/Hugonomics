@@ -17,6 +17,7 @@ public final class UserData {
     private final Path file;
     private final Set<String> watchlist = new LinkedHashSet<>();
     private final Map<String, Long> lastPrices = new LinkedHashMap<>();
+    private final Map<String, Long> alerts = new LinkedHashMap<>();
 
     public UserData(Path file) {
         this.file = file;
@@ -37,6 +38,29 @@ public final class UserData {
                 lastPrices.put(entry.getKey(), entry.getValue().getAsLong());
             }
         }
+        if (root.has("alerts")) {
+            for (Map.Entry<String, JsonElement> entry : root.getAsJsonObject("alerts").entrySet()) {
+                alerts.put(entry.getKey(), entry.getValue().getAsLong());
+            }
+        }
+    }
+
+    public Map<String, Long> alerts() {
+        return alerts;
+    }
+
+    public void setAlert(String key, long unitCents) {
+        if (unitCents <= 0) {
+            alerts.remove(key);
+        } else {
+            alerts.put(key, unitCents);
+        }
+        save();
+    }
+
+    public OptionalLong alert(String key) {
+        Long cents = alerts.get(key);
+        return cents == null ? OptionalLong.empty() : OptionalLong.of(cents);
     }
 
     public void save() {
@@ -47,6 +71,9 @@ public final class UserData {
         JsonObject prices = new JsonObject();
         lastPrices.forEach(prices::addProperty);
         root.add("lastPrices", prices);
+        JsonObject alertJson = new JsonObject();
+        alerts.forEach(alertJson::addProperty);
+        root.add("alerts", alertJson);
         JsonFile.write(file, root);
     }
 

@@ -1,0 +1,81 @@
+package dev.hugomarket.module.alerts;
+
+import dev.hugomarket.container.ScreenUpdate;
+import dev.hugomarket.core.Module;
+import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.model.Listing;
+import dev.hugomarket.model.Money;
+import dev.hugomarket.model.ScreenKind;
+import dev.hugomarket.parse.AhListingParser;
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.SimpleSoundInstance;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public final class AlertsModule implements Module {
+    private ModuleContext context;
+    private AhListingParser parser;
+    private final AlertRules rules = new AlertRules();
+    private boolean enabled;
+
+    @Override
+    public String id() {
+        return "alerts";
+    }
+
+    @Override
+    public boolean enabledByDefault() {
+        return true;
+    }
+
+    @Override
+    public void onEnable(ModuleContext context) {
+        this.context = context;
+        parser = new AhListingParser(context.guiRules());
+        enabled = true;
+        context.screens().onUpdate(this::onScreenUpdate);
+    }
+
+    @Override
+    public void onDisable() {
+        enabled = false;
+    }
+
+    private void onScreenUpdate(ScreenUpdate update) {
+        if (!enabled || update.kind() != ScreenKind.AH_LIST || context.userData().alerts().isEmpty()) {
+            return;
+        }
+        AhListingParser.AhPage page = parser.parse(update.view());
+        if (!page.isMarket()) {
+            return;
+        }
+        List<Listing> listings = page.listings();
+        List<String> ids = new ArrayList<>(listings.size());
+        long now = update.snapshot().capturedAt();
+        for (Listing listing : listings) {
+            long expiryBucket = (now + listing.expiresInSeconds() * 1000) / 10_000;
+            ids.add(listing.seller() + "|" + listing.key() + "|" + listing.priceCents() + "|" + listing.item().count() + "|" + expiryBucket);
+        }
+        for (AlertRules.Hit hit : rules.check(listings, ids, context.userData().alerts(), now)) {
+            notify(hit);
+        }
+    }
+
+    private void notify(AlertRules.Hit hit) {
+        Minecraft client = Minecraft.getInstance();
+        if (client.player == null) {
+            return;
+        }
+        Listing listing = hit.listing();
+        Component message = Component.literal("[HugoMarket] ").withStyle(ChatFormatting.LIGHT_PURPLE)
+                .append(Component.translatable("hugomarket.alert.hit", listing.item().displayName(), listing.item().count(),
+                        Money.format(listing.unitPriceCents()), Money.format(hit.alertUnitCents()), listing.seller())
+                        .withStyle(ChatFormatting.WHITE));
+        client.gui.getChat().addMessage(message);
+        client.getSoundManager().play(SimpleSoundInstance.forUI(SoundEvents.EXPERIENCE_ORB_PICKUP, 1.4f));
+    }
+}

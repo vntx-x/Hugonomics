@@ -45,6 +45,6 @@ public final class MarketModule implements Module {
 
     private void open() {
         Minecraft client = Minecraft.getInstance();
-        client.setScreen(new MarketScreen(client.screen, new MarketPanel(data, context.market()), data));
+        client.setScreen(new MarketScreen(client.screen, new MarketPanel(data, context.market(), context.userData()), data));
     }
 }

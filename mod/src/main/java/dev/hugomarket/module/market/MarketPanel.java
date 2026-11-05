@@ -2,9 +2,12 @@ package dev.hugomarket.module.market;
 
 import dev.hugomarket.model.ItemKey;
 import dev.hugomarket.model.Money;
+import dev.hugomarket.module.calc.CalcEngine;
+import dev.hugomarket.module.calc.CalcFormat;
 import dev.hugomarket.module.sync.PriceJson;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStats;
+import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -39,15 +42,24 @@ final class MarketPanel extends OverlayPanel {
     private final Chip back;
     private final List<Chip> rangeChips = new ArrayList<>();
     private final ChartWidget chart;
+    private final TextField alertField;
+    private final Chip alertSet;
+    private final Chip alertClear;
+    private final UserData userData;
     private final Map<String, ItemStack> icons = new HashMap<>();
     private String query = "";
     private PriceJson.ItemSummary selected;
     private String range = "24h";
     private boolean chartLoading;
 
-    MarketPanel(MarketData data, MarketSession market) {
+    MarketPanel(MarketData data, MarketSession market, UserData userData) {
         this.data = data;
         this.market = market;
+        this.userData = userData;
+        alertField = add(new TextField(I18n.get("hugomarket.market.alert_placeholder"), "", text -> {
+        }));
+        alertSet = add(new Chip(I18n.get("hugomarket.market.alert_set"), () -> selected != null && userData.alert(selected.key()).isPresent(), this::applyAlert));
+        alertClear = add(new Chip(I18n.get("hugomarket.market.alert_clear"), () -> false, this::clearAlert));
         search = add(new TextField(I18n.get("hugomarket.market.search"), "", text -> {
             query = text;
             refreshList();
@@ -86,6 +98,11 @@ final class MarketPanel extends OverlayPanel {
             rangeChips.get(i).setBounds(innerX + i * (chipWidth + Theme.GAP), detailY, chipWidth, Theme.CHIP_HEIGHT);
         }
         detailY += Theme.CHIP_HEIGHT + Theme.GAP + 24;
+        int fieldWidth = innerWidth - 2 * (60 + Theme.GAP);
+        alertField.setBounds(innerX, detailY, fieldWidth, Theme.FIELD_HEIGHT);
+        alertSet.setBounds(innerX + fieldWidth + Theme.GAP, detailY + 1, 60, Theme.CHIP_HEIGHT);
+        alertClear.setBounds(innerX + fieldWidth + Theme.GAP * 2 + 60, detailY + 1, 60, Theme.CHIP_HEIGHT);
+        detailY += Theme.FIELD_HEIGHT + Theme.GAP;
         chart.setBounds(innerX, detailY, innerWidth, y + height - Theme.PADDING - detailY);
     }
 
@@ -113,7 +130,28 @@ final class MarketPanel extends OverlayPanel {
         } else {
             gfx.textNoShadow(chartLoading ? I18n.get("hugomarket.market.loading") : I18n.get("hugomarket.market.no_prices"), x + Theme.PADDING, infoY, Theme.TEXT_DIM);
         }
+        alertField.render(gfx, mouseX, mouseY);
+        alertSet.render(gfx, mouseX, mouseY);
+        alertClear.render(gfx, mouseX, mouseY);
         chart.render(gfx, mouseX, mouseY);
+    }
+
+    private void applyAlert() {
+        if (selected == null) {
+            return;
+        }
+        CalcEngine.Result result = CalcEngine.evaluate(alertField.value());
+        if (result.ok() && result.value() > 0) {
+            userData.setAlert(selected.key(), Math.round(result.value() * 100));
+            alertField.setFocused(false);
+        }
+    }
+
+    private void clearAlert() {
+        if (selected != null) {
+            userData.setAlert(selected.key(), 0);
+            alertField.setValue("");
+        }
     }
 
     @Override
@@ -133,7 +171,11 @@ final class MarketPanel extends OverlayPanel {
                 return true;
             }
         }
-        return true;
+        if (!alertField.contains(mouseX, mouseY)) {
+            alertField.setFocused(false);
+        }
+        return alertField.mouseClicked(mouseX, mouseY, button) || alertSet.mouseClicked(mouseX, mouseY, button)
+                || alertClear.mouseClicked(mouseX, mouseY, button) || true;
     }
 
     @Override
@@ -143,17 +185,26 @@ final class MarketPanel extends OverlayPanel {
 
     @Override
     public boolean keyPressed(int key, int scancode, int modifiers) {
-        return selected == null && search.isFocused() && search.keyPressed(key, scancode, modifiers);
+        TextField field = selected == null ? search : alertField;
+        if (!field.isFocused()) {
+            return false;
+        }
+        if (field == alertField && (key == org.lwjgl.glfw.GLFW.GLFW_KEY_ENTER || key == org.lwjgl.glfw.GLFW.GLFW_KEY_KP_ENTER)) {
+            applyAlert();
+            return true;
+        }
+        return field.keyPressed(key, scancode, modifiers);
     }
 
     @Override
     public boolean charTyped(char character) {
-        return selected == null && search.isFocused() && search.charTyped(character);
+        TextField field = selected == null ? search : alertField;
+        return field.isFocused() && field.charTyped(character);
     }
 
     @Override
     public boolean hasFocus() {
-        return selected == null && search.isFocused();
+        return (selected == null ? search : alertField).isFocused();
     }
 
     void focusSearch() {
@@ -162,7 +213,10 @@ final class MarketPanel extends OverlayPanel {
 
     private void select(PriceJson.ItemSummary item) {
         selected = item;
+        search.setFocused(false);
+        alertField.setFocused(false);
         if (item != null) {
+            alertField.setValue(userData.alert(item.key()).isPresent() ? CalcFormat.asInput(userData.alert(item.key()).getAsLong() / 100.0) : "");
             loadChart();
         }
     }
