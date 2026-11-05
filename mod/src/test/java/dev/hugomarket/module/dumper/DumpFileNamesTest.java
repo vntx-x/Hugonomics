@@ -18,8 +18,13 @@ class DumpFileNamesTest {
     }
 
     @Test
+    void sanitizeDropsCustomFontGlyphs() {
+        assertEquals("gui", DumpFileNames.sanitize("ꐭ"));
+    }
+
+    @Test
     void sanitizeFallsBackForEmptyTitles() {
-        assertEquals("container", DumpFileNames.sanitize("  ***  "));
+        assertEquals("gui", DumpFileNames.sanitize("  ***  "));
     }
 
     @Test
@@ -29,9 +34,9 @@ class DumpFileNamesTest {
     }
 
     @Test
-    void containerFileNameHasStampAndTitle() {
+    void containerFileNameHasStampTitleAndSlots() {
         LocalDateTime time = LocalDateTime.of(2026, 11, 5, 14, 3, 9, 7_000_000);
-        assertEquals("20261105-140309-007_Orders.json", DumpFileNames.container(time, "Orders"));
+        assertEquals("20261105-140309-007_Orders_54.json", DumpFileNames.container(time, "Orders", 54));
     }
 
     @Test

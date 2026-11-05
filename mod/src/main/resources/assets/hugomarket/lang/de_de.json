@@ -3,5 +3,5 @@
   "key.hugomarket.dumper_toggle": "Dump-Aufzeichnung an/aus",
   "hugomarket.dumper.on": "[HugoMarket] Dump-Aufzeichnung AN. Container und Chat werden gespeichert.",
   "hugomarket.dumper.off": "[HugoMarket] Dump-Aufzeichnung AUS.",
-  "hugomarket.dumper.hud": "HugoMarket DUMP"
+  "hugomarket.dumper.hud": "HugoMarket DUMP  %s Container  %s Chat"
 }

@@ -2,9 +2,11 @@ package dev.hugomarket.container;
 
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.Container;
 import net.minecraft.world.inventory.AbstractContainerMenu;
+import net.minecraft.world.inventory.InventoryMenu;
 import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.ItemStack;
 
@@ -15,6 +17,7 @@ public record ContainerSnapshot(
         Component title,
         String menuType,
         int containerId,
+        int containerSlots,
         List<SlotSnapshot> slots,
         long capturedAt
 ) {
@@ -22,11 +25,23 @@ public record ContainerSnapshot(
         AbstractContainerMenu menu = screen.getMenu();
         Container playerInventory = player.getInventory();
         List<SlotSnapshot> slots = new ArrayList<>(menu.slots.size());
+        int containerSlots = 0;
         for (Slot slot : menu.slots) {
-            slots.add(new SlotSnapshot(slot.index, slot.container == playerInventory, slot.getItem().copy()));
+            boolean inPlayerInventory = slot.container == playerInventory;
+            if (!inPlayerInventory) {
+                containerSlots++;
+            }
+            slots.add(new SlotSnapshot(slot.index, inPlayerInventory, slot.getItem().copy()));
         }
-        return new ContainerSnapshot(screen.getTitle(), menu.getClass().getSimpleName(), menu.containerId,
+        return new ContainerSnapshot(screen.getTitle(), menuTypeName(menu), menu.containerId, containerSlots,
                 List.copyOf(slots), System.currentTimeMillis());
+    }
+
+    private static String menuTypeName(AbstractContainerMenu menu) {
+        if (menu instanceof InventoryMenu) {
+            return "inventory";
+        }
+        return BuiltInRegistries.MENU.getKey(menu.getType()).toString();
     }
 
     public int contentHash() {

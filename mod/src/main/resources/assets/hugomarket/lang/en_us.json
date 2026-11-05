@@ -3,5 +3,5 @@
   "key.hugomarket.dumper_toggle": "Toggle dump recording",
   "hugomarket.dumper.on": "[HugoMarket] Dump recording ON. Containers and chat are being saved.",
   "hugomarket.dumper.off": "[HugoMarket] Dump recording OFF.",
-  "hugomarket.dumper.hud": "HugoMarket DUMP"
+  "hugomarket.dumper.hud": "HugoMarket DUMP  %s containers  %s chat"
 }

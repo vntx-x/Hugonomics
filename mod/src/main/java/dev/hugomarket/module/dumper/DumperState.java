@@ -1,8 +1,12 @@
 package dev.hugomarket.module.dumper;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 public final class DumperState {
     private volatile boolean enabled = true;
     private volatile boolean recording;
+    private final AtomicInteger containers = new AtomicInteger();
+    private final AtomicInteger chatLines = new AtomicInteger();
 
     public boolean isRecording() {
         return enabled && recording;
@@ -19,5 +23,21 @@ public final class DumperState {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public void countContainer() {
+        containers.incrementAndGet();
+    }
+
+    public void countChatLine() {
+        chatLines.incrementAndGet();
+    }
+
+    public int containerCount() {
+        return containers.get();
+    }
+
+    public int chatLineCount() {
+        return chatLines.get();
     }
 }

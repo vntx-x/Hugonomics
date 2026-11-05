@@ -42,5 +42,6 @@ final class ChatDumper {
         json.addProperty("text", message.getString());
         json.add("json", ComponentJson.of(message));
         writer.appendChat(DumpFileNames.chat(LocalDateTime.now()), json);
+        state.countChatLine();
     }
 }

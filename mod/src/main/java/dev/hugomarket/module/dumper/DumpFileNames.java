@@ -11,8 +11,8 @@ public final class DumpFileNames {
     private DumpFileNames() {
     }
 
-    public static String container(LocalDateTime time, String title) {
-        return STAMP.format(time) + "_" + sanitize(title) + ".json";
+    public static String container(LocalDateTime time, String title, int containerSlots) {
+        return STAMP.format(time) + "_" + sanitize(title) + "_" + containerSlots + ".json";
     }
 
     public static String chat(LocalDateTime time) {
@@ -24,7 +24,7 @@ public final class DumpFileNames {
         boolean lastUnderscore = true;
         for (int i = 0; i < title.length() && out.length() < MAX_TITLE; i++) {
             char c = title.charAt(i);
-            boolean keep = Character.isLetterOrDigit(c) || c == '-';
+            boolean keep = c < 0x2E80 && (Character.isLetterOrDigit(c) || c == '-');
             if (keep) {
                 out.append(c);
                 lastUnderscore = false;
@@ -37,6 +37,6 @@ public final class DumpFileNames {
         while (end > 0 && out.charAt(end - 1) == '_') {
             end--;
         }
-        return end == 0 ? "container" : out.substring(0, end);
+        return end == 0 ? "gui" : out.substring(0, end);
     }
 }

@@ -4,7 +4,11 @@ Das Modul `dumper` schreibt nach `<minecraft>/config/hugomarket/dumps/`. Aufzeic
 erst nach Druck auf die Dump-Taste (Standard F8, änderbar unter Steuerung → HugoMarket) und
 nur auf `hugosmp.net`. Solange aufgezeichnet wird, steht oben links rot "HugoMarket DUMP".
 
-## Container: `containers/<yyyyMMdd-HHmmss-SSS>_<Titel>.json`
+## Container: `containers/<yyyyMMdd-HHmmss-SSS>_<Titel>_<Containerslots>.json`
+
+Hugo setzt GUI-Titel oft aus Zeichen einer eigenen Schriftart zusammen (z. B. `ꐭ` für das
+AH). Solche Zeichen fallen aus dem Dateinamen heraus (`gui`), der Titel steht unverändert in
+`title` und `titleJson`.
 
 Eine Datei pro Inhaltsänderung eines geöffneten Containers (Debounce 2 Ticks, identische
 Inhalte werden nicht doppelt geschrieben).
@@ -17,8 +21,9 @@ Inhalte werden nicht doppelt geschrieben).
   "mod": "0.0.1+1.21.5",
   "title": "Auktionshaus (1/12)",
   "titleJson": { "text": "..." },
-  "menuType": "ChestMenu",
+  "menuType": "minecraft:generic_9x6",
   "containerId": 7,
+  "containerSlots": 54,
   "slotCount": 90,
   "slots": [
     {

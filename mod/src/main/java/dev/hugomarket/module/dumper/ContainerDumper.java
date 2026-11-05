@@ -52,6 +52,7 @@ final class ContainerDumper implements ContainerListener {
         json.add("titleJson", ComponentJson.of(snapshot.title(), ops));
         json.addProperty("menuType", snapshot.menuType());
         json.addProperty("containerId", snapshot.containerId());
+        json.addProperty("containerSlots", snapshot.containerSlots());
         json.addProperty("slotCount", snapshot.slots().size());
         JsonArray slots = new JsonArray();
         for (SlotSnapshot slot : snapshot.slots()) {
@@ -60,7 +61,9 @@ final class ContainerDumper implements ContainerListener {
             }
         }
         json.add("slots", slots);
-        writer.writeContainer(DumpFileNames.container(LocalDateTime.now(), snapshot.title().getString()), json);
+        writer.writeContainer(DumpFileNames.container(LocalDateTime.now(), snapshot.title().getString(),
+                snapshot.containerSlots()), json);
+        state.countContainer();
     }
 
     @Override
