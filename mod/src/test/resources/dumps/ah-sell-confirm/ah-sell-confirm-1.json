@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-05T10:00:21.869Z",
+  "ts": "2026-11-05T10:07:21.270Z",
   "server": "hugosmp.net",
   "minecraft": "1.21.5",
   "mod": "0.0.1",
@@ -9,7 +9,7 @@
     "color": "white"
   },
   "menuType": "minecraft:generic_9x1",
-  "containerId": 42,
+  "containerId": 73,
   "containerSlots": 9,
   "slotCount": 45,
   "slots": [
@@ -66,19 +66,19 @@
     {
       "index": 4,
       "player": false,
-      "id": "minecraft:cobbled_deepslate",
-      "count": 64,
-      "name": "Cobbled Deepslate",
+      "id": "minecraft:redstone",
+      "count": 56,
+      "name": "Redstone Dust",
       "nameJson": {
-        "translate": "block.minecraft.cobbled_deepslate"
+        "translate": "item.minecraft.redstone"
       },
       "lore": [],
       "tooltip": [
-        "Cobbled Deepslate"
+        "Redstone Dust"
       ],
       "stack": {
-        "id": "minecraft:cobbled_deepslate",
-        "count": 64,
+        "id": "minecraft:redstone",
+        "count": 56,
         "components": {
           "minecraft:custom_data": {
             "PublicBukkitValues": {
@@ -193,78 +193,6 @@
       }
     },
     {
-      "index": 14,
-      "player": true,
-      "id": "minecraft:cobbled_deepslate",
-      "count": 64,
-      "name": "Cobbled Deepslate",
-      "nameJson": {
-        "translate": "block.minecraft.cobbled_deepslate"
-      },
-      "lore": [],
-      "tooltip": [
-        "Cobbled Deepslate"
-      ],
-      "stack": {
-        "id": "minecraft:cobbled_deepslate",
-        "count": 64
-      }
-    },
-    {
-      "index": 15,
-      "player": true,
-      "id": "minecraft:deepslate",
-      "count": 13,
-      "name": "Deepslate",
-      "nameJson": {
-        "translate": "block.minecraft.deepslate"
-      },
-      "lore": [],
-      "tooltip": [
-        "Deepslate"
-      ],
-      "stack": {
-        "id": "minecraft:deepslate",
-        "count": 13
-      }
-    },
-    {
-      "index": 16,
-      "player": true,
-      "id": "minecraft:gravel",
-      "count": 9,
-      "name": "Gravel",
-      "nameJson": {
-        "translate": "block.minecraft.gravel"
-      },
-      "lore": [],
-      "tooltip": [
-        "Gravel"
-      ],
-      "stack": {
-        "id": "minecraft:gravel",
-        "count": 9
-      }
-    },
-    {
-      "index": 17,
-      "player": true,
-      "id": "minecraft:tuff",
-      "count": 9,
-      "name": "Tuff",
-      "nameJson": {
-        "translate": "block.minecraft.tuff"
-      },
-      "lore": [],
-      "tooltip": [
-        "Tuff"
-      ],
-      "stack": {
-        "id": "minecraft:tuff",
-        "count": 9
-      }
-    },
-    {
       "index": 18,
       "player": true,
       "id": "minecraft:totem_of_undying",
@@ -337,24 +265,6 @@
       }
     },
     {
-      "index": 23,
-      "player": true,
-      "id": "minecraft:flint",
-      "count": 3,
-      "name": "Flint",
-      "nameJson": {
-        "translate": "item.minecraft.flint"
-      },
-      "lore": [],
-      "tooltip": [
-        "Flint"
-      ],
-      "stack": {
-        "id": "minecraft:flint",
-        "count": 3
-      }
-    },
-    {
       "index": 27,
       "player": true,
       "id": "minecraft:totem_of_undying",
@@ -388,24 +298,6 @@
       "stack": {
         "id": "minecraft:totem_of_undying",
         "count": 1
-      }
-    },
-    {
-      "index": 29,
-      "player": true,
-      "id": "minecraft:redstone",
-      "count": 56,
-      "name": "Redstone Dust",
-      "nameJson": {
-        "translate": "item.minecraft.redstone"
-      },
-      "lore": [],
-      "tooltip": [
-        "Redstone Dust"
-      ],
-      "stack": {
-        "id": "minecraft:redstone",
-        "count": 56
       }
     },
     {
@@ -499,6 +391,24 @@
       }
     },
     {
+      "index": 37,
+      "player": true,
+      "id": "minecraft:rotten_flesh",
+      "count": 4,
+      "name": "Rotten Flesh",
+      "nameJson": {
+        "translate": "item.minecraft.rotten_flesh"
+      },
+      "lore": [],
+      "tooltip": [
+        "Rotten Flesh"
+      ],
+      "stack": {
+        "id": "minecraft:rotten_flesh",
+        "count": 4
+      }
+    },
+    {
       "index": 40,
       "player": true,
       "id": "minecraft:glass",
@@ -532,24 +442,6 @@
       "stack": {
         "id": "minecraft:ender_pearl",
         "count": 3
-      }
-    },
-    {
-      "index": 43,
-      "player": true,
-      "id": "minecraft:cobbled_deepslate",
-      "count": 54,
-      "name": "Cobbled Deepslate",
-      "nameJson": {
-        "translate": "block.minecraft.cobbled_deepslate"
-      },
-      "lore": [],
-      "tooltip": [
-        "Cobbled Deepslate"
-      ],
-      "stack": {
-        "id": "minecraft:cobbled_deepslate",
-        "count": 54
       }
     },
     {

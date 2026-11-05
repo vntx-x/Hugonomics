@@ -1,0 +1,5511 @@
+{
+  "ts": "2026-11-05T10:08:13.819Z",
+  "server": "hugosmp.net",
+  "minecraft": "1.21.5",
+  "mod": "0.0.1",
+  "title": "Enderchest",
+  "titleJson": {
+    "text": "Enderchest",
+    "strikethrough": false,
+    "obfuscated": false,
+    "bold": false,
+    "italic": false,
+    "underlined": false,
+    "color": "dark_purple"
+  },
+  "menuType": "minecraft:generic_9x6",
+  "containerId": 82,
+  "containerSlots": 54,
+  "slotCount": 90,
+  "slots": [
+    {
+      "index": 0,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $362,10 (+$1,50 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $362,10 (+$1,50 durch 1.1x)",
+        "Contains 27 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 20,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 24,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 25,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 26,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$362,10 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,50 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $362,10 (+$1,50 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $362,10 (+$1,50 durch 1.1x)",
+        "Contains 27 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 20,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 24,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 25,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 26,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$362,10 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,50 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 2,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $362,10 (+$1,50 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $362,10 (+$1,50 durch 1.1x)",
+        "Contains 27 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 20,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 24,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 25,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 26,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$362,10 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,50 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $362,10 (+$1,50 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $362,10 (+$1,50 durch 1.1x)",
+        "Contains 27 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 20,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 24,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 25,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 26,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$362,10 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,50 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $358,70 (+$1,50 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $358,70 (+$1,50 durch 1.1x)",
+        "Contains 27 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 20,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 24,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 25,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 26,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 47
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$358,70 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,50 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 5,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $345,90 (+$1,50 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $345,90 (+$1,50 durch 1.1x)",
+        "Contains 26 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 20,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 24,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 64
+              }
+            },
+            {
+              "slot": 25,
+              "item": {
+                "id": "minecraft:bone",
+                "count": 47
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$345,90 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,50 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 6,
+      "player": false,
+      "id": "minecraft:observer",
+      "count": 42,
+      "name": "Observer",
+      "nameJson": {
+        "translate": "block.minecraft.observer"
+      },
+      "lore": [
+        "Wert: $1.155 (+$105 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Observer",
+        "Wert: $1.155 (+$105 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:observer",
+        "count": 42,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$1.155 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$105 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 8,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: $2.825,30 (+$74,30 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: $2.825,30 (+$74,30 durch 1.1x)",
+        "Contains 6 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:tnt",
+                "count": 64
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:tnt",
+                "count": 27
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:emerald_block",
+                "count": 64
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:ominous_bottle",
+                "count": 64,
+                "components": {
+                  "minecraft:ominous_bottle_amplifier": 2
+                }
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:ominous_bottle",
+                "count": 24,
+                "components": {
+                  "minecraft:ominous_bottle_amplifier": 2
+                }
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:emerald_block",
+                "count": 64
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$2.825,30 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$74,30 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 21,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [],
+      "tooltip": [
+        "Shulker Box",
+        "Contains 19 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:oak_slab",
+                "count": 54
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:hopper",
+                "count": 58
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:jungle_planks",
+                "count": 32
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:cobbled_deepslate",
+                "count": 14
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:piston",
+                "count": 3
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:powered_rail",
+                "count": 19
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:note_block",
+                "count": 1
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:comparator",
+                "count": 1
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:packed_ice",
+                "count": 59
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:dispenser",
+                "count": 2
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:stone_brick_slab",
+                "count": 1
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:chest",
+                "count": 52
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:waxed_copper_bulb",
+                "count": 2
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:dirt",
+                "count": 64
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:stone_bricks",
+                "count": 61
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:cobblestone",
+                "count": 27
+              }
+            },
+            {
+              "slot": 19,
+              "item": {
+                "id": "minecraft:stone_bricks",
+                "count": 64
+              }
+            },
+            {
+              "slot": 22,
+              "item": {
+                "id": "minecraft:stone_bricks",
+                "count": 64
+              }
+            },
+            {
+              "slot": 23,
+              "item": {
+                "id": "minecraft:stone_bricks",
+                "count": 64
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 22,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Contains 11 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:piston",
+                "count": 60
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:slime_block",
+                "count": 34
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:sticky_piston",
+                "count": 2
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:cobbled_deepslate",
+                "count": 64
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:cobbled_deepslate",
+                "count": 64
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:cobbled_deepslate",
+                "count": 28
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:rail",
+                "count": 64
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:redstone_block",
+                "count": 1
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:rail",
+                "count": 64
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:spruce_sign",
+                "count": 6
+              }
+            },
+            {
+              "slot": 21,
+              "item": {
+                "id": "minecraft:diamond_pickaxe",
+                "count": 1,
+                "components": {
+                  "minecraft:custom_data": {
+                    "PublicBukkitValues": {
+                      "minecraft:disable_worth": 1
+                    }
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:efficiency": 2,
+                    "minecraft:fortune": 1
+                  },
+                  "minecraft:damage": 628
+                }
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 26,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Empty"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 30,
+      "player": false,
+      "id": "minecraft:netherite_pickaxe",
+      "count": 1,
+      "name": "sᴛᴀʀ ᴘɪᴄᴋᴀxᴇ",
+      "nameJson": {
+        "text": "",
+        "extra": [
+          {
+            "text": "s",
+            "color": "#6ED7D8"
+          },
+          {
+            "text": "ᴛ",
+            "color": "#7BDCDE"
+          },
+          {
+            "text": "ᴀ",
+            "color": "#87E2E4"
+          },
+          {
+            "text": "ʀ",
+            "color": "#94E7E9"
+          },
+          {
+            "text": " ",
+            "color": "#A0ECEF"
+          },
+          {
+            "text": "ᴘɪ",
+            "color": "#ADF1F5"
+          },
+          {
+            "text": "ᴄ",
+            "color": "#A0ECEF"
+          },
+          {
+            "text": "ᴋ",
+            "color": "#94E7E9"
+          },
+          {
+            "text": "ᴀ",
+            "color": "#87E2E4"
+          },
+          {
+            "text": "x",
+            "color": "#7BDCDE"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#6ED7D8"
+          }
+        ],
+        "bold": true,
+        "italic": false
+      },
+      "lore": [
+        "Baut 9 Blöcke im 3x3 Bereich ab",
+        "Läuft ab in:",
+        "2d 2h 24m"
+      ],
+      "tooltip": [
+        "sᴛᴀʀ ᴘɪᴄᴋᴀxᴇ",
+        "§2 Efficiency §f5",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "Baut 9 Blöcke im 3x3 Bereich ab",
+        "Läuft ab in:",
+        "2d 2h 24m"
+      ],
+      "stack": {
+        "id": "minecraft:netherite_pickaxe",
+        "count": 1,
+        "components": {
+          "minecraft:enchantments": {
+            "minecraft:efficiency": 5,
+            "minecraft:unbreaking": 3,
+            "minecraft:mending": 1
+          },
+          "minecraft:item_name": {
+            "text": "",
+            "extra": [
+              {
+                "text": "",
+                "extra": [
+                  {
+                    "text": "s",
+                    "color": "#6ED7D8"
+                  },
+                  {
+                    "text": "ᴛ",
+                    "color": "#7BDCDE"
+                  },
+                  {
+                    "text": "ᴀ",
+                    "color": "#87E2E4"
+                  },
+                  {
+                    "text": "ʀ",
+                    "color": "#94E7E9"
+                  },
+                  {
+                    "text": " ",
+                    "color": "#A0ECEF"
+                  },
+                  {
+                    "text": "ᴘɪ",
+                    "color": "#ADF1F5"
+                  },
+                  {
+                    "text": "ᴄ",
+                    "color": "#A0ECEF"
+                  },
+                  {
+                    "text": "ᴋ",
+                    "color": "#94E7E9"
+                  },
+                  {
+                    "text": "ᴀ",
+                    "color": "#87E2E4"
+                  },
+                  {
+                    "text": "x",
+                    "color": "#7BDCDE"
+                  },
+                  {
+                    "text": "ᴇ",
+                    "color": "#6ED7D8"
+                  }
+                ],
+                "bold": true
+              }
+            ]
+          },
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/4e/90/8d5ccafc14557d1e",
+          "minecraft:damage": 408,
+          "minecraft:tooltip_display": {
+            "hidden_components": [
+              "minecraft:attribute_modifiers"
+            ]
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "extra": [
+                {
+                  "text": "Baut 9 Blöcke im 3x3 Bereich ab",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "bold": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "gray"
+                }
+              ]
+            },
+            {
+              "text": "",
+              "extra": [
+                {
+                  "text": "Läuft ab in:",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "bold": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "dark_gray"
+                }
+              ]
+            },
+            {
+              "text": "",
+              "extra": [
+                {
+                  "text": "2d 2h 24m",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "bold": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ]
+            }
+          ],
+          "minecraft:custom_model_data": {
+            "floats": [
+              1025.0
+            ]
+          },
+          "minecraft:custom_data": {
+            "CustomItems": {
+              "ExpireAt": 1794054760660,
+              "Type": "star_pickaxe"
+            },
+            "PublicBukkitValues": {
+              "addons:purchased_item_unique_id": "86b40b1c-b253-4d71-8a16-9e64c5e96852",
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "",
+            "extra": [
+              {
+                "text": "s",
+                "color": "#6ED7D8"
+              },
+              {
+                "text": "ᴛ",
+                "color": "#7BDCDE"
+              },
+              {
+                "text": "ᴀ",
+                "color": "#87E2E4"
+              },
+              {
+                "text": "ʀ",
+                "color": "#94E7E9"
+              },
+              {
+                "text": " ",
+                "color": "#A0ECEF"
+              },
+              {
+                "text": "ᴘɪ",
+                "color": "#ADF1F5"
+              },
+              {
+                "text": "ᴄ",
+                "color": "#A0ECEF"
+              },
+              {
+                "text": "ᴋ",
+                "color": "#94E7E9"
+              },
+              {
+                "text": "ᴀ",
+                "color": "#87E2E4"
+              },
+              {
+                "text": "x",
+                "color": "#7BDCDE"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#6ED7D8"
+              }
+            ],
+            "bold": true,
+            "italic": false
+          }
+        }
+      }
+    },
+    {
+      "index": 31,
+      "player": false,
+      "id": "minecraft:diamond_axe",
+      "count": 1,
+      "name": "Diamond Axe",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_axe"
+      },
+      "lore": [
+        "Wert: $50"
+      ],
+      "tooltip": [
+        "Diamond Axe",
+        "§2 Efficiency §f5",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "Wert: $50",
+        "",
+        "When in Main Hand:",
+        " 9 Attack Damage",
+        " 1 Attack Speed",
+        "+26 Mining Efficiency"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_axe",
+        "count": 1,
+        "components": {
+          "minecraft:repair_cost": 7,
+          "minecraft:enchantments": {
+            "minecraft:efficiency": 5,
+            "minecraft:unbreaking": 3,
+            "minecraft:mending": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$50",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ],
+          "minecraft:damage": 70
+        }
+      }
+    },
+    {
+      "index": 32,
+      "player": false,
+      "id": "minecraft:diamond_shovel",
+      "count": 1,
+      "name": "Diamond Shovel",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_shovel"
+      },
+      "lore": [
+        "Wert: $25"
+      ],
+      "tooltip": [
+        "Diamond Shovel",
+        "§2 Efficiency §f5",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "Wert: $25",
+        "",
+        "When in Main Hand:",
+        " 5.5 Attack Damage",
+        " 1 Attack Speed",
+        "+26 Mining Efficiency"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_shovel",
+        "count": 1,
+        "components": {
+          "minecraft:repair_cost": 3,
+          "minecraft:enchantments": {
+            "minecraft:efficiency": 5,
+            "minecraft:unbreaking": 3,
+            "minecraft:mending": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$25",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ],
+          "minecraft:damage": 255
+        }
+      }
+    },
+    {
+      "index": 34,
+      "player": false,
+      "id": "minecraft:pearlescent_froglight",
+      "count": 63,
+      "name": "Pearlescent Froglight",
+      "nameJson": {
+        "translate": "block.minecraft.pearlescent_froglight"
+      },
+      "lore": [
+        "Wert: $252"
+      ],
+      "tooltip": [
+        "Pearlescent Froglight",
+        "Wert: $252"
+      ],
+      "stack": {
+        "id": "minecraft:pearlescent_froglight",
+        "count": 63,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$252",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 35,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Empty"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 36,
+      "player": false,
+      "id": "minecraft:trident",
+      "count": 1,
+      "name": "Trident",
+      "nameJson": {
+        "translate": "item.minecraft.trident"
+      },
+      "lore": [
+        "Wert: $5.000"
+      ],
+      "tooltip": [
+        "Trident",
+        "§3 Riptide §f3",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "Wert: $5.000",
+        "",
+        "When in Main Hand:",
+        " 9 Attack Damage",
+        " 1.1 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:trident",
+        "count": 1,
+        "components": {
+          "minecraft:repair_cost": 7,
+          "minecraft:enchantments": {
+            "minecraft:riptide": 3,
+            "minecraft:unbreaking": 3,
+            "minecraft:mending": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$5.000",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ],
+          "minecraft:damage": 109
+        }
+      }
+    },
+    {
+      "index": 37,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Contains 18 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 0,
+              "item": {
+                "id": "minecraft:trident",
+                "count": 1
+              }
+            },
+            {
+              "slot": 1,
+              "item": {
+                "id": "minecraft:trident",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 7,
+                  "minecraft:enchantments": {
+                    "minecraft:riptide": 3,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  }
+                }
+              }
+            },
+            {
+              "slot": 2,
+              "item": {
+                "id": "minecraft:trident",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 7,
+                  "minecraft:enchantments": {
+                    "minecraft:riptide": 3,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  }
+                }
+              }
+            },
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:trident",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 7,
+                  "minecraft:enchantments": {
+                    "minecraft:riptide": 3,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  },
+                  "minecraft:damage": 181
+                }
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:netherite_boots",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:amethyst",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:depth_strider": 3,
+                    "minecraft:feather_falling": 4
+                  },
+                  "minecraft:damage": 18,
+                  "minecraft:repair_cost": 31
+                }
+              }
+            },
+            {
+              "slot": 6,
+              "item": {
+                "id": "minecraft:netherite_leggings",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:quartz",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:swift_sneak": 3
+                  },
+                  "minecraft:custom_name": {
+                    "text": "",
+                    "extra": [
+                      {
+                        "text": "NETHERITE LEGGINGS",
+                        "strikethrough": false,
+                        "obfuscated": false,
+                        "bold": true,
+                        "italic": false,
+                        "underlined": false,
+                        "color": "dark_red"
+                      }
+                    ]
+                  },
+                  "minecraft:damage": 67,
+                  "minecraft:repair_cost": 15
+                }
+              }
+            },
+            {
+              "slot": 7,
+              "item": {
+                "id": "minecraft:netherite_leggings",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:amethyst",
+                    "pattern": "minecraft:silence"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  },
+                  "minecraft:repair_cost": 7
+                }
+              }
+            },
+            {
+              "slot": 8,
+              "item": {
+                "id": "minecraft:netherite_leggings",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:amethyst",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:swift_sneak": 3
+                  },
+                  "minecraft:repair_cost": 15
+                }
+              }
+            },
+            {
+              "slot": 9,
+              "item": {
+                "id": "minecraft:netherite_chestplate",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:quartz",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  },
+                  "minecraft:custom_name": {
+                    "text": "",
+                    "extra": [
+                      {
+                        "text": "NETHERITE CHESTPLATE",
+                        "strikethrough": false,
+                        "obfuscated": false,
+                        "bold": true,
+                        "italic": false,
+                        "underlined": false,
+                        "color": "dark_red"
+                      }
+                    ]
+                  },
+                  "minecraft:damage": 70,
+                  "minecraft:repair_cost": 7
+                }
+              }
+            },
+            {
+              "slot": 10,
+              "item": {
+                "id": "minecraft:diamond_boots",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 7,
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  },
+                  "minecraft:damage": 7
+                }
+              }
+            },
+            {
+              "slot": 11,
+              "item": {
+                "id": "minecraft:heavy_core",
+                "count": 1
+              }
+            },
+            {
+              "slot": 12,
+              "item": {
+                "id": "minecraft:mace",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 31,
+                  "minecraft:enchantments": {
+                    "minecraft:fire_aspect": 2,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:density": 5,
+                    "minecraft:wind_burst": 1
+                  },
+                  "minecraft:damage": 6
+                }
+              }
+            },
+            {
+              "slot": 13,
+              "item": {
+                "id": "minecraft:mace",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 15,
+                  "minecraft:enchantments": {
+                    "minecraft:fire_aspect": 2,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:breach": 4
+                  },
+                  "minecraft:damage": 7
+                }
+              }
+            },
+            {
+              "slot": 14,
+              "item": {
+                "id": "minecraft:netherite_boots",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:quartz",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:feather_falling": 4
+                  },
+                  "minecraft:damage": 82,
+                  "minecraft:repair_cost": 15
+                }
+              }
+            },
+            {
+              "slot": 15,
+              "item": {
+                "id": "minecraft:netherite_helmet",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:quartz",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:respiration": 3,
+                    "minecraft:aqua_affinity": 1
+                  },
+                  "minecraft:custom_data": {
+                    "PublicBukkitValues": {
+                      "minecraft:disable_worth": 1
+                    }
+                  },
+                  "minecraft:damage": 131
+                }
+              }
+            },
+            {
+              "slot": 16,
+              "item": {
+                "id": "minecraft:netherite_helmet",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:amethyst",
+                    "pattern": "minecraft:bolt"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:respiration": 3,
+                    "minecraft:aqua_affinity": 1
+                  },
+                  "minecraft:damage": 49,
+                  "minecraft:repair_cost": 15
+                }
+              }
+            },
+            {
+              "slot": 17,
+              "item": {
+                "id": "minecraft:netherite_helmet",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:amethyst",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:respiration": 3,
+                    "minecraft:aqua_affinity": 1
+                  },
+                  "minecraft:custom_data": {
+                    "PublicBukkitValues": {
+                      "minecraft:disable_worth": 1
+                    }
+                  },
+                  "minecraft:damage": 27
+                }
+              }
+            },
+            {
+              "slot": 18,
+              "item": {
+                "id": "minecraft:netherite_chestplate",
+                "count": 1,
+                "components": {
+                  "minecraft:trim": {
+                    "material": "minecraft:amethyst",
+                    "pattern": "minecraft:flow"
+                  },
+                  "minecraft:enchantments": {
+                    "minecraft:protection": 4,
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1
+                  },
+                  "minecraft:damage": 49,
+                  "minecraft:repair_cost": 7
+                }
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 38,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Contains 3 stack(s)",
+        "Left Shift: view contents"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:container": [
+            {
+              "slot": 3,
+              "item": {
+                "id": "minecraft:diamond_axe",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 1,
+                  "minecraft:enchantments": {
+                    "minecraft:efficiency": 5
+                  },
+                  "minecraft:damage": 188
+                }
+              }
+            },
+            {
+              "slot": 4,
+              "item": {
+                "id": "minecraft:diamond_pickaxe",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 15,
+                  "minecraft:enchantments": {
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:silk_touch": 1,
+                    "minecraft:efficiency": 5
+                  },
+                  "minecraft:damage": 162
+                }
+              }
+            },
+            {
+              "slot": 5,
+              "item": {
+                "id": "minecraft:netherite_pickaxe",
+                "count": 1,
+                "components": {
+                  "minecraft:repair_cost": 7,
+                  "minecraft:enchantments": {
+                    "minecraft:unbreaking": 3,
+                    "minecraft:mending": 1,
+                    "minecraft:efficiency": 5,
+                    "minecraft:fortune": 3
+                  },
+                  "minecraft:damage": 246
+                }
+              }
+            }
+          ],
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 39,
+      "player": false,
+      "id": "minecraft:diamond_pickaxe",
+      "count": 1,
+      "name": "Diamond Pickaxe",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_pickaxe"
+      },
+      "lore": [
+        "Wert: $50"
+      ],
+      "tooltip": [
+        "Diamond Pickaxe",
+        "§b Silk Touch",
+        "§2 Efficiency §f5",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "Wert: $50",
+        "",
+        "When in Main Hand:",
+        " 5 Attack Damage",
+        " 1.2 Attack Speed",
+        "+26 Mining Efficiency"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_pickaxe",
+        "count": 1,
+        "components": {
+          "minecraft:repair_cost": 15,
+          "minecraft:enchantments": {
+            "minecraft:unbreaking": 3,
+            "minecraft:mending": 1,
+            "minecraft:silk_touch": 1,
+            "minecraft:efficiency": 5
+          },
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$50",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ],
+          "minecraft:damage": 323
+        }
+      }
+    },
+    {
+      "index": 40,
+      "player": false,
+      "id": "minecraft:diamond_hoe",
+      "count": 1,
+      "name": "Diamond Hoe",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_hoe"
+      },
+      "lore": [
+        "Wert: $40"
+      ],
+      "tooltip": [
+        "Diamond Hoe",
+        "Wert: $40",
+        "",
+        "When in Main Hand:",
+        " 1 Attack Damage",
+        " 4 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_hoe",
+        "count": 1,
+        "components": {
+          "minecraft:damage": 159,
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$40",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 42,
+      "player": false,
+      "id": "minecraft:iron_horse_armor",
+      "count": 1,
+      "name": "Iron Horse Armor",
+      "nameJson": {
+        "translate": "item.minecraft.iron_horse_armor"
+      },
+      "lore": [
+        "Wert: $20"
+      ],
+      "tooltip": [
+        "Iron Horse Armor",
+        "Wert: $20",
+        "",
+        "When equipped:",
+        "+5 Armor"
+      ],
+      "stack": {
+        "id": "minecraft:iron_horse_armor",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$20",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 43,
+      "player": false,
+      "id": "minecraft:diamond",
+      "count": 51,
+      "name": "Diamond",
+      "nameJson": {
+        "translate": "item.minecraft.diamond"
+      },
+      "lore": [
+        "Wert: $2.550"
+      ],
+      "tooltip": [
+        "Diamond",
+        "Wert: $2.550"
+      ],
+      "stack": {
+        "id": "minecraft:diamond",
+        "count": 51,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$2.550",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 44,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Empty"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 45,
+      "player": false,
+      "id": "minecraft:deepslate_diamond_ore",
+      "count": 64,
+      "name": "Deepslate Diamond Ore",
+      "nameJson": {
+        "translate": "block.minecraft.deepslate_diamond_ore"
+      },
+      "lore": [
+        "Wert: $6.400"
+      ],
+      "tooltip": [
+        "Deepslate Diamond Ore",
+        "Wert: $6.400"
+      ],
+      "stack": {
+        "id": "minecraft:deepslate_diamond_ore",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$6.400",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 46,
+      "player": false,
+      "id": "minecraft:deepslate_diamond_ore",
+      "count": 42,
+      "name": "Deepslate Diamond Ore",
+      "nameJson": {
+        "translate": "block.minecraft.deepslate_diamond_ore"
+      },
+      "lore": [
+        "Wert: $4.200"
+      ],
+      "tooltip": [
+        "Deepslate Diamond Ore",
+        "Wert: $4.200"
+      ],
+      "stack": {
+        "id": "minecraft:deepslate_diamond_ore",
+        "count": 42,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$4.200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 47,
+      "player": false,
+      "id": "minecraft:netherite_ingot",
+      "count": 58,
+      "name": "Netherite Ingot",
+      "nameJson": {
+        "translate": "item.minecraft.netherite_ingot"
+      },
+      "lore": [
+        "Wert: $29.000"
+      ],
+      "tooltip": [
+        "Netherite Ingot",
+        "Wert: $29.000"
+      ],
+      "stack": {
+        "id": "minecraft:netherite_ingot",
+        "count": 58,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$29.000",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 48,
+      "player": false,
+      "id": "minecraft:spawner",
+      "count": 1,
+      "name": "sᴋᴇʟᴇᴛᴏɴ sᴘᴀᴡɴᴇʀ",
+      "nameJson": {
+        "text": "",
+        "extra": [
+          {
+            "text": "s",
+            "color": "#D8C58F"
+          },
+          {
+            "text": "ᴋ",
+            "color": "#DAC896"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#DCCC9D"
+          },
+          {
+            "text": "ʟ",
+            "color": "#DECFA4"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#E0D2AB"
+          },
+          {
+            "text": "ᴛ",
+            "color": "#E2D6B2"
+          },
+          {
+            "text": "ᴏ",
+            "color": "#E4D9B9"
+          },
+          {
+            "text": "ɴ",
+            "color": "#E6DCC0"
+          },
+          {
+            "text": " ",
+            "color": "#E9E0C6"
+          },
+          {
+            "text": "s",
+            "color": "#EBE3CD"
+          },
+          {
+            "text": "ᴘ",
+            "color": "#EDE6D4"
+          },
+          {
+            "text": "ᴀ",
+            "color": "#EFEADB"
+          },
+          {
+            "text": "ᴡ",
+            "color": "#F1EDE2"
+          },
+          {
+            "text": "ɴ",
+            "color": "#F3F0E9"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#F5F4F0"
+          },
+          {
+            "text": "ʀ",
+            "color": "#F7F7F7"
+          }
+        ],
+        "bold": true,
+        "italic": false
+      },
+      "lore": [
+        "",
+        "Erzeugt Loot ohne echte Mobs",
+        "",
+        "Anzahl: x1",
+        "",
+        "Gleiche Spawner können gestackt werden.",
+        "Rechtsklick auf einen platzierten Spawner",
+        "mit gleichem Typ, um ihn zu stacken.",
+        "",
+        "Rechtsklick zum Verwalten"
+      ],
+      "tooltip": [
+        "sᴋᴇʟᴇᴛᴏɴ sᴘᴀᴡɴᴇʀ",
+        "",
+        "Erzeugt Loot ohne echte Mobs",
+        "",
+        "Anzahl: x1",
+        "",
+        "Gleiche Spawner können gestackt werden.",
+        "Rechtsklick auf einen platzierten Spawner",
+        "mit gleichem Typ, um ihn zu stacken.",
+        "",
+        "Rechtsklick zum Verwalten",
+        "",
+        "Interact with Spawn Egg:",
+        " Sets Mob Type"
+      ],
+      "stack": {
+        "id": "minecraft:spawner",
+        "count": 1,
+        "components": {
+          "minecraft:item_name": "skeleton_spawner",
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/f4/b4/84417e4dab98fc08",
+          "minecraft:enchantment_glint_override": true,
+          "minecraft:tooltip_display": {
+            "hidden_components": [
+              "minecraft:attribute_modifiers",
+              "minecraft:enchantments"
+            ]
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Erzeugt Loot ohne echte Mobs",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Anzahl: ",
+              "extra": [
+                {
+                  "text": "x1",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Gleiche Spawner können gestackt werden.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Rechtsklick auf einen platzierten Spawner",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "mit gleichem Typ, um ihn zu stacken.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Rechtsklick zum Verwalten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ],
+          "minecraft:custom_model_data": {
+            "floats": [
+              1027.0
+            ]
+          },
+          "minecraft:custom_data": {
+            "CustomItems": {
+              "SpawnerType": "skeleton",
+              "SpawnerVersion": 3,
+              "SpawnerToken": "fa116e1e-12f5-4b89-b93d-6ca94c8b1463",
+              "SpawnerStackSize": 1,
+              "Type": "skeleton_spawner"
+            },
+            "PublicBukkitValues": {
+              "addons:purchased_item_unique_id": "0ff3ce84-9362-4b4f-95c1-4a668fc814be",
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "",
+            "extra": [
+              {
+                "text": "s",
+                "color": "#D8C58F"
+              },
+              {
+                "text": "ᴋ",
+                "color": "#DAC896"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#DCCC9D"
+              },
+              {
+                "text": "ʟ",
+                "color": "#DECFA4"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#E0D2AB"
+              },
+              {
+                "text": "ᴛ",
+                "color": "#E2D6B2"
+              },
+              {
+                "text": "ᴏ",
+                "color": "#E4D9B9"
+              },
+              {
+                "text": "ɴ",
+                "color": "#E6DCC0"
+              },
+              {
+                "text": " ",
+                "color": "#E9E0C6"
+              },
+              {
+                "text": "s",
+                "color": "#EBE3CD"
+              },
+              {
+                "text": "ᴘ",
+                "color": "#EDE6D4"
+              },
+              {
+                "text": "ᴀ",
+                "color": "#EFEADB"
+              },
+              {
+                "text": "ᴡ",
+                "color": "#F1EDE2"
+              },
+              {
+                "text": "ɴ",
+                "color": "#F3F0E9"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#F5F4F0"
+              },
+              {
+                "text": "ʀ",
+                "color": "#F7F7F7"
+              }
+            ],
+            "bold": true,
+            "italic": false
+          }
+        }
+      }
+    },
+    {
+      "index": 49,
+      "player": false,
+      "id": "minecraft:spawner",
+      "count": 1,
+      "name": "sᴋᴇʟᴇᴛᴏɴ sᴘᴀᴡɴᴇʀ",
+      "nameJson": {
+        "text": "",
+        "extra": [
+          {
+            "text": "s",
+            "color": "#D8C58F"
+          },
+          {
+            "text": "ᴋ",
+            "color": "#DAC896"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#DCCC9D"
+          },
+          {
+            "text": "ʟ",
+            "color": "#DECFA4"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#E0D2AB"
+          },
+          {
+            "text": "ᴛ",
+            "color": "#E2D6B2"
+          },
+          {
+            "text": "ᴏ",
+            "color": "#E4D9B9"
+          },
+          {
+            "text": "ɴ",
+            "color": "#E6DCC0"
+          },
+          {
+            "text": " ",
+            "color": "#E9E0C6"
+          },
+          {
+            "text": "s",
+            "color": "#EBE3CD"
+          },
+          {
+            "text": "ᴘ",
+            "color": "#EDE6D4"
+          },
+          {
+            "text": "ᴀ",
+            "color": "#EFEADB"
+          },
+          {
+            "text": "ᴡ",
+            "color": "#F1EDE2"
+          },
+          {
+            "text": "ɴ",
+            "color": "#F3F0E9"
+          },
+          {
+            "text": "ᴇ",
+            "color": "#F5F4F0"
+          },
+          {
+            "text": "ʀ",
+            "color": "#F7F7F7"
+          }
+        ],
+        "bold": true,
+        "italic": false
+      },
+      "lore": [
+        "",
+        "Erzeugt Loot ohne echte Mobs",
+        "",
+        "Anzahl: x8",
+        "",
+        "Gleiche Spawner können gestackt werden.",
+        "Rechtsklick auf einen platzierten Spawner",
+        "mit gleichem Typ, um ihn zu stacken.",
+        "",
+        "Rechtsklick zum Verwalten"
+      ],
+      "tooltip": [
+        "sᴋᴇʟᴇᴛᴏɴ sᴘᴀᴡɴᴇʀ",
+        "",
+        "Erzeugt Loot ohne echte Mobs",
+        "",
+        "Anzahl: x8",
+        "",
+        "Gleiche Spawner können gestackt werden.",
+        "Rechtsklick auf einen platzierten Spawner",
+        "mit gleichem Typ, um ihn zu stacken.",
+        "",
+        "Rechtsklick zum Verwalten",
+        "",
+        "Interact with Spawn Egg:",
+        " Sets Mob Type"
+      ],
+      "stack": {
+        "id": "minecraft:spawner",
+        "count": 1,
+        "components": {
+          "minecraft:item_name": "skeleton_spawner",
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/f4/b4/84417e4dab98fc08",
+          "minecraft:enchantment_glint_override": true,
+          "minecraft:tooltip_display": {
+            "hidden_components": [
+              "minecraft:attribute_modifiers",
+              "minecraft:enchantments"
+            ]
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Erzeugt Loot ohne echte Mobs",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Anzahl: ",
+              "extra": [
+                {
+                  "text": "x8",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Gleiche Spawner können gestackt werden.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Rechtsklick auf einen platzierten Spawner",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "mit gleichem Typ, um ihn zu stacken.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Rechtsklick zum Verwalten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ],
+          "minecraft:custom_model_data": {
+            "floats": [
+              1027.0
+            ]
+          },
+          "minecraft:custom_data": {
+            "CustomItems": {
+              "SpawnerType": "skeleton",
+              "SpawnerVersion": 3,
+              "SpawnerToken": "984a2cb4-a7f5-43cc-bfe2-7582622311b7",
+              "SpawnerStackSize": 8,
+              "Type": "skeleton_spawner"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "",
+            "extra": [
+              {
+                "text": "s",
+                "color": "#D8C58F"
+              },
+              {
+                "text": "ᴋ",
+                "color": "#DAC896"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#DCCC9D"
+              },
+              {
+                "text": "ʟ",
+                "color": "#DECFA4"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#E0D2AB"
+              },
+              {
+                "text": "ᴛ",
+                "color": "#E2D6B2"
+              },
+              {
+                "text": "ᴏ",
+                "color": "#E4D9B9"
+              },
+              {
+                "text": "ɴ",
+                "color": "#E6DCC0"
+              },
+              {
+                "text": " ",
+                "color": "#E9E0C6"
+              },
+              {
+                "text": "s",
+                "color": "#EBE3CD"
+              },
+              {
+                "text": "ᴘ",
+                "color": "#EDE6D4"
+              },
+              {
+                "text": "ᴀ",
+                "color": "#EFEADB"
+              },
+              {
+                "text": "ᴡ",
+                "color": "#F1EDE2"
+              },
+              {
+                "text": "ɴ",
+                "color": "#F3F0E9"
+              },
+              {
+                "text": "ᴇ",
+                "color": "#F5F4F0"
+              },
+              {
+                "text": "ʀ",
+                "color": "#F7F7F7"
+              }
+            ],
+            "bold": true,
+            "italic": false
+          }
+        }
+      }
+    },
+    {
+      "index": 50,
+      "player": false,
+      "id": "minecraft:netherite_sword",
+      "count": 1,
+      "name": "Netherite Sword",
+      "nameJson": {
+        "translate": "item.minecraft.netherite_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Netherite Sword",
+        "§a Sharpness §f5",
+        "§b Sweeping Edge §f3",
+        "§c Fire Aspect §f2",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "",
+        "When in Main Hand:",
+        " 8 Attack Damage",
+        " 1.6 Attack Speed",
+        "+0.75 Sweeping Damage Ratio"
+      ],
+      "stack": {
+        "id": "minecraft:netherite_sword",
+        "count": 1,
+        "components": {
+          "minecraft:repair_cost": 31,
+          "minecraft:enchantments": {
+            "minecraft:fire_aspect": 2,
+            "minecraft:unbreaking": 3,
+            "minecraft:mending": 1,
+            "minecraft:sweeping_edge": 3,
+            "minecraft:sharpness": 5
+          }
+        }
+      }
+    },
+    {
+      "index": 51,
+      "player": false,
+      "id": "minecraft:netherite_sword",
+      "count": 1,
+      "name": "Netherite Sword",
+      "nameJson": {
+        "translate": "item.minecraft.netherite_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Netherite Sword",
+        "§a Sharpness §f5",
+        "§c Fire Aspect §f2",
+        "§d Looting §f3",
+        "§e Unbreaking §f3",
+        "§e Mending",
+        "",
+        "When in Main Hand:",
+        " 8 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:netherite_sword",
+        "count": 1,
+        "components": {
+          "minecraft:repair_cost": 31,
+          "minecraft:enchantments": {
+            "minecraft:fire_aspect": 2,
+            "minecraft:unbreaking": 3,
+            "minecraft:looting": 3,
+            "minecraft:mending": 1,
+            "minecraft:sharpness": 5
+          }
+        }
+      }
+    },
+    {
+      "index": 52,
+      "player": false,
+      "id": "minecraft:diamond",
+      "count": 64,
+      "name": "Diamond",
+      "nameJson": {
+        "translate": "item.minecraft.diamond"
+      },
+      "lore": [
+        "Wert: $3.200"
+      ],
+      "tooltip": [
+        "Diamond",
+        "Wert: $3.200"
+      ],
+      "stack": {
+        "id": "minecraft:diamond",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$3.200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 53,
+      "player": false,
+      "id": "minecraft:shulker_box",
+      "count": 1,
+      "name": "Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.shulker_box"
+      },
+      "lore": [
+        "Wert: nicht berechnet (zu viele Shulker)"
+      ],
+      "tooltip": [
+        "Shulker Box",
+        "Wert: nicht berechnet (zu viele Shulker)",
+        "Empty"
+      ],
+      "stack": {
+        "id": "minecraft:shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "nicht berechnet ",
+                  "extra": [
+                    {
+                      "text": "(zu viele Shulker)",
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "yellow"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 54,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 55,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 40,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [
+        "Wert: $200"
+      ],
+      "tooltip": [
+        "Crying Obsidian",
+        "Wert: $200"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 40,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 56,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 64,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [
+        "Wert: $320"
+      ],
+      "tooltip": [
+        "Crying Obsidian",
+        "Wert: $320"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$320",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 63,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 64,
+      "player": true,
+      "id": "minecraft:bucket",
+      "count": 2,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [
+        "Wert: $6"
+      ],
+      "tooltip": [
+        "Bucket",
+        "Wert: $6"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 2,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$6",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 65,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 61,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [
+        "Wert: $67,10 (+$6,10 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate",
+        "Wert: $67,10 (+$6,10 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 61,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$67,10 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$6,10 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 67,
+      "player": true,
+      "id": "minecraft:slime_block",
+      "count": 18,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [
+        "Wert: $54"
+      ],
+      "tooltip": [
+        "Slime Block",
+        "Wert: $54"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 18,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$54",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 72,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 73,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 75,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 18,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [
+        "Wert: $19,80 (+$1,80 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate Stairs",
+        "Wert: $19,80 (+$1,80 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 18,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$19,80 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,80 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 76,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 64,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [
+        "Wert: $70,40 (+$6,40 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate Stairs",
+        "Wert: $70,40 (+$6,40 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$70,40 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$6,40 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 80,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 53,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [
+        "Wert: $53"
+      ],
+      "tooltip": [
+        "Steak",
+        "Wert: $53"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 53,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$53",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 81,
+      "player": true,
+      "id": "minecraft:diamond_sword",
+      "count": 1,
+      "name": "Diamond Sword",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Diamond Sword",
+        "§a Sharpness ",
+        "§d Looting §f2",
+        "",
+        "When in Main Hand:",
+        " 7 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:looting": 2,
+            "minecraft:sharpness": 1
+          },
+          "minecraft:damage": 1192
+        }
+      }
+    },
+    {
+      "index": 82,
+      "player": true,
+      "id": "minecraft:rotten_flesh",
+      "count": 4,
+      "name": "Rotten Flesh",
+      "nameJson": {
+        "translate": "item.minecraft.rotten_flesh"
+      },
+      "lore": [
+        "Wert: $0,80"
+      ],
+      "tooltip": [
+        "Rotten Flesh",
+        "Wert: $0,80"
+      ],
+      "stack": {
+        "id": "minecraft:rotten_flesh",
+        "count": 4,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$0,80",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 85,
+      "player": true,
+      "id": "minecraft:glass",
+      "count": 42,
+      "name": "Glass",
+      "nameJson": {
+        "translate": "block.minecraft.glass"
+      },
+      "lore": [
+        "Wert: $184,80 (+$16,80 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Glass",
+        "Wert: $184,80 (+$16,80 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 42,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$184,80 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$16,80 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 87,
+      "player": true,
+      "id": "minecraft:ender_pearl",
+      "count": 3,
+      "name": "Ender Pearl",
+      "nameJson": {
+        "translate": "item.minecraft.ender_pearl"
+      },
+      "lore": [
+        "Wert: $15"
+      ],
+      "tooltip": [
+        "Ender Pearl",
+        "Wert: $15"
+      ],
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 3,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$15",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 89,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 61,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [
+        "Wert: $61"
+      ],
+      "tooltip": [
+        "Steak",
+        "Wert: $61"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 61,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$61",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

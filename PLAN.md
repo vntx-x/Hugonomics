@@ -373,7 +373,7 @@ Container-Snapshots beim Öffnen/Schließen und das Spielerinventar bei Änderun
 | `auctions` (Streamer) | 4 | aus | keine; sendet nichts automatisch |
 | `giveaways` | 4 | aus | keine |
 | `rtpmap` | 4 | aus | keine |
-| `tradeoverlay` | 4 (falls Trade-GUI) | an | keine |
+| `tradeoverlay` | entfällt, Hugo hat kein Trade-Fenster (geprüft 2026-11-05) | – | – |
 | `hud` | 4 | aus | keine |
 | `monitor` | 4 (gesperrt, separater Build) | aus | AH öffnen + Seite 1 lesen, nach Freigabe |
 
@@ -493,7 +493,7 @@ ROI, Index-Berechnung, Color-Code-Ausgabe.
 - Streamer-Auktionen (`/pay`-Parser, Bieter-Fenster, TPA/HERE/Copy, Advertise-Text,
   verdeckte Einnahmen), Giveaways (`/msg`-Stichwort, Reel, Pause/Resume/Cancel/Early-Draw)
 - RTP-Map (lokal + opt-in Upload), Minimap-Overlay (aus)
-- Trade-Overlay, Scam-Warnung, Item-Check (nur falls Trade-GUI existiert)
+- Item-Check im AH-Tooltip (echtes Custom-Item vs. umbenanntes Vanilla-Item)
 - HUD-Ticker, Geld-Verlauf
 - Monitoring-Account: separater Gradle-Build `monitor` ohne UI-Module, Headless-Fabric auf
   VPS, nur erste AH-Seite "neu gelistet", Refresh 30–60 s, nach Freigabe
@@ -550,7 +550,8 @@ Hugo-Team:
 6. Gebührensätze: AH-Einstellgebühr, AH-Verkaufssteuer, Order-Gebühr, Shop-Spanne.
 
 Im Spiel feststellen (Phase 0), Stand 2026-11-05 nach erstem Dump-Tag (`docs/hugo-formats.md`):
-7. Gibt es ein Trade-Fenster? (offen)
+7. Geklärt: kein Trade-Fenster. Trade-Overlay und Scam-Warnung entfallen; der Item-Check
+   (echtes Custom-Item vs. umbenanntes Vanilla-Item) bleibt als Tooltip-Hinweis im AH.
 8. Geklärt: Sell-GUI 9x4 mit Verkaufen-Button, Einstell-Dialog mit Anvil-Preiseingabe,
    Orders sind reine Kauf-Orders mit 1 % Erstellgebühr, AH hat eigene Suche, Sortierung
    (neu/alt/billig/teuer) und Stack-Filter. Shop-GUI offen.

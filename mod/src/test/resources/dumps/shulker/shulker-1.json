@@ -1,0 +1,2229 @@
+{
+  "ts": "2026-11-05T10:08:03.769Z",
+  "server": "hugosmp.net",
+  "minecraft": "1.21.5",
+  "mod": "0.0.1",
+  "title": "Shulker Box",
+  "titleJson": {
+    "translate": "container.shulkerBox"
+  },
+  "menuType": "minecraft:shulker_box",
+  "containerId": 80,
+  "containerSlots": 27,
+  "slotCount": 63,
+  "slots": [
+    {
+      "index": 0,
+      "player": false,
+      "id": "minecraft:glass_bottle",
+      "count": 64,
+      "name": "Glass Bottle",
+      "nameJson": {
+        "translate": "item.minecraft.glass_bottle"
+      },
+      "lore": [],
+      "tooltip": [
+        "Glass Bottle"
+      ],
+      "stack": {
+        "id": "minecraft:glass_bottle",
+        "count": 64
+      }
+    },
+    {
+      "index": 1,
+      "player": false,
+      "id": "minecraft:glass_bottle",
+      "count": 62,
+      "name": "Glass Bottle",
+      "nameJson": {
+        "translate": "item.minecraft.glass_bottle"
+      },
+      "lore": [],
+      "tooltip": [
+        "Glass Bottle"
+      ],
+      "stack": {
+        "id": "minecraft:glass_bottle",
+        "count": 62
+      }
+    },
+    {
+      "index": 3,
+      "player": false,
+      "id": "minecraft:stone_bricks",
+      "count": 2,
+      "name": "Stone Bricks",
+      "nameJson": {
+        "translate": "block.minecraft.stone_bricks"
+      },
+      "lore": [
+        "Wert: $1,76 (+$0,16 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Stone Bricks",
+        "Wert: $1,76 (+$0,16 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:stone_bricks",
+        "count": 2,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$1,76 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,16 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "player": false,
+      "id": "minecraft:stone_bricks",
+      "count": 64,
+      "name": "Stone Bricks",
+      "nameJson": {
+        "translate": "block.minecraft.stone_bricks"
+      },
+      "lore": [
+        "Wert: $56,32 (+$5,12 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Stone Bricks",
+        "Wert: $56,32 (+$5,12 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:stone_bricks",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$56,32 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$5,12 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 5,
+      "player": false,
+      "id": "minecraft:sticky_piston",
+      "count": 19,
+      "name": "Sticky Piston",
+      "nameJson": {
+        "translate": "block.minecraft.sticky_piston"
+      },
+      "lore": [
+        "Wert: $418 (+$38 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Sticky Piston",
+        "Wert: $418 (+$38 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:sticky_piston",
+        "count": 19,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$418 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$38 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 6,
+      "player": false,
+      "id": "minecraft:bucket",
+      "count": 10,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [
+        "Wert: $30"
+      ],
+      "tooltip": [
+        "Bucket",
+        "Wert: $30"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 10,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$30",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 7,
+      "player": false,
+      "id": "minecraft:oak_sign",
+      "count": 2,
+      "name": "Oak Sign",
+      "nameJson": {
+        "translate": "block.minecraft.oak_sign"
+      },
+      "lore": [
+        "Wert: $2,20 (+$0,20 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Oak Sign",
+        "Wert: $2,20 (+$0,20 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:oak_sign",
+        "count": 2,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$2,20 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,20 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 8,
+      "player": false,
+      "id": "minecraft:stone",
+      "count": 1,
+      "name": "Stone",
+      "nameJson": {
+        "translate": "block.minecraft.stone"
+      },
+      "lore": [
+        "Wert: $0,88 (+$0,08 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Stone",
+        "Wert: $0,88 (+$0,08 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:stone",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$0,88 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,08 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 9,
+      "player": false,
+      "id": "minecraft:oak_slab",
+      "count": 6,
+      "name": "Oak Slab",
+      "nameJson": {
+        "translate": "block.minecraft.oak_slab"
+      },
+      "lore": [
+        "Wert: $6,60 (+$0,60 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Oak Slab",
+        "Wert: $6,60 (+$0,60 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:oak_slab",
+        "count": 6,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$6,60 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,60 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 13,
+      "player": false,
+      "id": "minecraft:moss_block",
+      "count": 7,
+      "name": "Moss Block",
+      "nameJson": {
+        "translate": "block.minecraft.moss_block"
+      },
+      "lore": [
+        "Wert: $3,08 (+$0,28 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Moss Block",
+        "Wert: $3,08 (+$0,28 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:moss_block",
+        "count": 7,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$3,08 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,28 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 14,
+      "player": false,
+      "id": "minecraft:cobblestone_wall",
+      "count": 18,
+      "name": "Cobblestone Wall",
+      "nameJson": {
+        "translate": "block.minecraft.cobblestone_wall"
+      },
+      "lore": [
+        "Wert: $1,19 (+$0,11 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobblestone Wall",
+        "Wert: $1,19 (+$0,11 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobblestone_wall",
+        "count": 18,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$1,19 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,11 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 15,
+      "player": false,
+      "id": "minecraft:glowstone",
+      "count": 23,
+      "name": "Glowstone",
+      "nameJson": {
+        "translate": "block.minecraft.glowstone"
+      },
+      "lore": [
+        "Wert: $13,80"
+      ],
+      "tooltip": [
+        "Glowstone",
+        "Wert: $13,80"
+      ],
+      "stack": {
+        "id": "minecraft:glowstone",
+        "count": 23,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$13,80",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 16,
+      "player": false,
+      "id": "minecraft:redstone_torch",
+      "count": 1,
+      "name": "Redstone Torch",
+      "nameJson": {
+        "translate": "block.minecraft.redstone_torch"
+      },
+      "lore": [
+        "Wert: $2,75 (+$0,25 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Redstone Torch",
+        "Wert: $2,75 (+$0,25 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:redstone_torch",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$2,75 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$0,25 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 17,
+      "player": false,
+      "id": "minecraft:quartz",
+      "count": 54,
+      "name": "Nether Quartz",
+      "nameJson": {
+        "translate": "item.minecraft.quartz"
+      },
+      "lore": [
+        "Wert: $54"
+      ],
+      "tooltip": [
+        "Nether Quartz",
+        "Wert: $54"
+      ],
+      "stack": {
+        "id": "minecraft:quartz",
+        "count": 54,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$54",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 18,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 64,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "Wert: $640"
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "Wert: $640"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$640",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 19,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 64,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "Wert: $640"
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "Wert: $640"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$640",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 20,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 64,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "Wert: $640"
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "Wert: $640"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$640",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 21,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 64,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "Wert: $640"
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "Wert: $640"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$640",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 22,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 64,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "Wert: $640"
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "Wert: $640"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$640",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 27,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 28,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 40,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [
+        "Wert: $200"
+      ],
+      "tooltip": [
+        "Crying Obsidian",
+        "Wert: $200"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 40,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 29,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 64,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [
+        "Wert: $320"
+      ],
+      "tooltip": [
+        "Crying Obsidian",
+        "Wert: $320"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$320",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 36,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 37,
+      "player": true,
+      "id": "minecraft:bucket",
+      "count": 2,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [
+        "Wert: $6"
+      ],
+      "tooltip": [
+        "Bucket",
+        "Wert: $6"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 2,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$6",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 38,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 61,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [
+        "Wert: $67,10 (+$6,10 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate",
+        "Wert: $67,10 (+$6,10 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 61,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$67,10 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$6,10 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 40,
+      "player": true,
+      "id": "minecraft:slime_block",
+      "count": 18,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [
+        "Wert: $54"
+      ],
+      "tooltip": [
+        "Slime Block",
+        "Wert: $54"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 18,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$54",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 45,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 46,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [
+        "Wert: $10"
+      ],
+      "tooltip": [
+        "Totem of Undying",
+        "Wert: $10"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$10",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 48,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 18,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [
+        "Wert: $19,80 (+$1,80 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate Stairs",
+        "Wert: $19,80 (+$1,80 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 18,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$19,80 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$1,80 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 49,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 64,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [
+        "Wert: $70,40 (+$6,40 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate Stairs",
+        "Wert: $70,40 (+$6,40 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 64,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$70,40 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$6,40 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 53,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 53,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [
+        "Wert: $53"
+      ],
+      "tooltip": [
+        "Steak",
+        "Wert: $53"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 53,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$53",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 54,
+      "player": true,
+      "id": "minecraft:diamond_sword",
+      "count": 1,
+      "name": "Diamond Sword",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Diamond Sword",
+        "§a Sharpness ",
+        "§d Looting §f2",
+        "",
+        "When in Main Hand:",
+        " 7 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:looting": 2,
+            "minecraft:sharpness": 1
+          },
+          "minecraft:damage": 1192
+        }
+      }
+    },
+    {
+      "index": 55,
+      "player": true,
+      "id": "minecraft:rotten_flesh",
+      "count": 4,
+      "name": "Rotten Flesh",
+      "nameJson": {
+        "translate": "item.minecraft.rotten_flesh"
+      },
+      "lore": [
+        "Wert: $0,80"
+      ],
+      "tooltip": [
+        "Rotten Flesh",
+        "Wert: $0,80"
+      ],
+      "stack": {
+        "id": "minecraft:rotten_flesh",
+        "count": 4,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$0,80",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 58,
+      "player": true,
+      "id": "minecraft:glass",
+      "count": 42,
+      "name": "Glass",
+      "nameJson": {
+        "translate": "block.minecraft.glass"
+      },
+      "lore": [
+        "Wert: $184,80 (+$16,80 durch 1.1x)"
+      ],
+      "tooltip": [
+        "Glass",
+        "Wert: $184,80 (+$16,80 durch 1.1x)"
+      ],
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 42,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$184,80 ",
+                  "extra": [
+                    {
+                      "text": "(",
+                      "extra": [
+                        {
+                          "text": "+$16,80 ",
+                          "extra": [
+                            {
+                              "text": "durch ",
+                              "extra": [
+                                {
+                                  "text": "1.1x",
+                                  "extra": [
+                                    {
+                                      "text": ")",
+                                      "strikethrough": false,
+                                      "obfuscated": false,
+                                      "bold": false,
+                                      "italic": false,
+                                      "underlined": false,
+                                      "color": "gray"
+                                    }
+                                  ],
+                                  "strikethrough": false,
+                                  "obfuscated": false,
+                                  "italic": false,
+                                  "underlined": false,
+                                  "color": "green"
+                                }
+                              ],
+                              "strikethrough": false,
+                              "obfuscated": false,
+                              "bold": false,
+                              "italic": false,
+                              "underlined": false,
+                              "color": "gray"
+                            }
+                          ],
+                          "strikethrough": false,
+                          "obfuscated": false,
+                          "italic": false,
+                          "underlined": false,
+                          "color": "green"
+                        }
+                      ],
+                      "strikethrough": false,
+                      "obfuscated": false,
+                      "bold": false,
+                      "italic": false,
+                      "underlined": false,
+                      "color": "gray"
+                    }
+                  ],
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 60,
+      "player": true,
+      "id": "minecraft:ender_pearl",
+      "count": 3,
+      "name": "Ender Pearl",
+      "nameJson": {
+        "translate": "item.minecraft.ender_pearl"
+      },
+      "lore": [
+        "Wert: $15"
+      ],
+      "tooltip": [
+        "Ender Pearl",
+        "Wert: $15"
+      ],
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 3,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$15",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 62,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 61,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [
+        "Wert: $61"
+      ],
+      "tooltip": [
+        "Steak",
+        "Wert: $61"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 61,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "Wert: ",
+              "extra": [
+                {
+                  "text": "$61",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

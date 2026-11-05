@@ -87,11 +87,20 @@ auszuwählen / Rechtsklick, um Anpassungen zu bearbeiten`. Slot 45 Zurück, 46 S
 Slots 0–34 frei für Items, Slot 35 Verkaufen (`minecraft:disable_worth = 1`), Lore
 `Verkauft alle Items in diesem Menü.`
 
-### Kisten (Vanilla-Titel, z. B. `container.chestDouble`)
+### Kisten (Vanilla-Titel, z. B. `container.chestDouble`, `container.shulkerBox`)
 
 Hugo hängt an verkaufbare Items eine Lore-Zeile: `Wert: $42,24 (+$3,84 durch 1.1x)` oder
 `Wert: $4` ohne Bonus. Der Wert gilt für den ganzen Stack. `1.1x` ist der persönliche
-Verkaufsmultiplikator des Spielers. Items ohne Zeile sind nicht an den Server verkaufbar.
+Verkaufsmultiplikator des Spielers; der Bonus erscheint nur bei einem Teil der Items (Blöcke,
+Pflanzen, Redstone-Bauteile), bei anderen (Eimer, Flint, Smaragd, Redstone-Staub,
+Glowstone) nicht. Items ohne Zeile sind nicht an den Server verkaufbar.
+
+### Enderchest: Titel `Enderchest` (dark_purple), `generic_9x6`
+
+Hugos eigene Enderchest mit 54 Slots statt 27. Keine Steuer-Items, kein `secured`.
+Shulker-Boxen darin tragen `minecraft:container` mit dem kompletten Inhalt und eine eigene
+`Wert:`-Zeile (`$362,10 (+$1,50 durch 1.1x)`), vermutlich Inhalt plus Box. Vanilla-Tooltip
+ergänzt `Contains 27 stack(s)` und `Left Shift: view contents`.
 
 ## Chat
 
@@ -99,6 +108,9 @@ Verkaufsmultiplikator des Spielers. Items ohne Zeile sind nicht an den Server ve
 - Payout: `[HugoSMP] +$159,16 (Basis: $144,80, Bonus: +$14,36 durch 1.1x)` nach dem
   Verkaufen-Klick. Basis = Summe der Wert-Zeilen ohne Bonus.
 - `[HugoSMP] Order erstellt.`
+- `[HugoSMP] Du hast die Auktion erfolgreich gekauft!` nach einem AH-Kauf. Kein
+  Bestätigungsdialog gesehen, die Meldung nennt weder Item noch Preis. Das Trade-Log muss
+  sich Item und Preis vom zuletzt angeklickten Listing merken.
 - `[HugoSMP] Befehl nicht gefunden.`
 - `[Info] …` Servertipps.
 - Keine Actionbar-Nachrichten gesehen.
@@ -110,6 +122,6 @@ Dollarzeichen vorangestellt, Tausenderpunkt, Dezimalkomma: `$1.720.000.000`, `$4
 
 ## Noch nicht gesehen
 
-Deine-Auktionen-Liste, AH-Kaufdialog und Kauf-/Verkaufsmeldungen im Chat, AH-Gebühr beim
-Einstellen oder Verkauf, Shop, Enderchest, Shulker-Tooltip, `/pay`, `/msg`, Trade-Fenster,
-Spawner-Items, Oraxen/Nexo-Custom-Items.
+Deine-Auktionen-Liste, Verkaufsmeldung für den Verkäufer, AH-Gebühr beim Einstellen oder
+Verkauf (`Auktion erstellt`-Meldung), Shop, `/pay`, `/msg`, Spawner-Items,
+Oraxen/Nexo-Custom-Items. Ein Trade-Fenster gibt es auf Hugo nicht.
