@@ -17,6 +17,7 @@ fi
 cp "$MAIN/portablemc_auth.json" "$WORK/portablemc_auth.json"
 cp -n /home/mc/options.txt "$WORK/options.txt" || true
 rm -f /tmp/.X99-lock /tmp/.X11-unix/X99
+rm -f "$WORK/mods"/*.jar
 cp /home/mc/mods/*.jar "$WORK/mods/" 2>/dev/null || true
 if [ -f /home/mc/config.json ]; then
   cp /home/mc/config.json "$WORK/config/hugomarket/config.json"
