@@ -43,6 +43,16 @@ class AhTotalsTrackerTest {
     }
 
     @Test
+    void salesSeenInActionbarAreNotCountedTwice() {
+        AhTotalsTracker tracker = new AhTotalsTracker(dir.resolve("t.json"));
+        tracker.observe(100_00, 0, 1_000);
+        tracker.noteSale(40_00);
+        List<TradeLog.Trade> trades = tracker.observe(160_00, 0, 2_000);
+        assertEquals(1, trades.size());
+        assertEquals(20_00, trades.get(0).priceCents());
+    }
+
+    @Test
     void fullyRecordedBuysProduceNothing() {
         AhTotalsTracker tracker = new AhTotalsTracker(dir.resolve("t.json"));
         tracker.observe(0, 100_00, 1_000);

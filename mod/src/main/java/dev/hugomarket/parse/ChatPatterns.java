@@ -13,8 +13,15 @@ public final class ChatPatterns {
             + "(?: \\(Basis: " + MONEY + ", Bonus: \\+" + MONEY + " durch ([0-9.]+)x\\))?$");
     private static final Pattern AUCTION_BOUGHT = Pattern.compile(PREFIX + "Du hast die Auktion erfolgreich gekauft!$");
     private static final Pattern ORDER_CREATED = Pattern.compile(PREFIX + "Order erstellt\\.$");
+    private static final Pattern SOLD_WORD = Pattern.compile("(?i)\\bverkauft\\b");
+    private static final Pattern ANY_MONEY = Pattern.compile("\\$\\s?([0-9][0-9.]*(?:,[0-9]{1,2})?)");
+    private static final Pattern SOLD_STACK = Pattern.compile("(?i)(\\d+)x\\s+([^$]+?)\\s+(?:für|for)\\s+\\$");
+    private static final Pattern SOLD_SINGLE = Pattern.compile("(?i)(?:du hast|deine auktion|auktion|dein|deine)\\s+([^$]+?)\\s+(?:für|for)\\s+\\$");
 
     public record Payout(long totalCents, long baseCents, long bonusCents, double multiplier) {
+    }
+
+    public record Sale(long priceCents, int count, String item) {
     }
 
     private ChatPatterns() {
@@ -47,5 +54,29 @@ public final class ChatPatterns {
 
     public static boolean isOrderCreated(String text) {
         return ORDER_CREATED.matcher(normalize(text)).matches();
+    }
+
+    public static Optional<Sale> auctionSold(String text) {
+        String line = normalize(text);
+        if (!SOLD_WORD.matcher(line).find() || line.contains("gekauft")) {
+            return Optional.empty();
+        }
+        Matcher money = ANY_MONEY.matcher(line);
+        if (!money.find()) {
+            return Optional.empty();
+        }
+        long cents = Money.parseCents(money.group(1)).orElse(-1);
+        if (cents <= 0) {
+            return Optional.empty();
+        }
+        Matcher stack = SOLD_STACK.matcher(line);
+        if (stack.find()) {
+            return Optional.of(new Sale(cents, Integer.parseInt(stack.group(1)), stack.group(2).trim()));
+        }
+        Matcher single = SOLD_SINGLE.matcher(line);
+        if (single.find()) {
+            return Optional.of(new Sale(cents, 1, single.group(1).trim()));
+        }
+        return Optional.of(new Sale(cents, 0, ""));
     }
 }

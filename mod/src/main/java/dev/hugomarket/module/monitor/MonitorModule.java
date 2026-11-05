@@ -10,6 +10,7 @@ import dev.hugomarket.model.HugoControl;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.model.SlotView;
 import dev.hugomarket.parse.AhListingParser;
+import dev.hugomarket.store.TextLog;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.inventory.ClickType;
 import net.minecraft.client.gui.screens.PauseScreen;
@@ -51,7 +52,7 @@ public final class MonitorModule implements Module {
     private boolean sneak;
     private List<String> queries = List.of("");
     private int queryIndex;
-    private MonitorLog log;
+    private TextLog log;
     private boolean blockedLogged;
     private AhListingParser parser;
     private AbstractContainerScreen<?> ahScreen;
@@ -97,7 +98,7 @@ public final class MonitorModule implements Module {
                 queries.add(query.trim());
             }
         }
-        log = new MonitorLog(context.dataDir().resolve("monitor.log"));
+        log = new TextLog(context.dataDir().resolve("monitor.log"));
         parser = new AhListingParser(context.guiRules());
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);

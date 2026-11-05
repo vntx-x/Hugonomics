@@ -36,6 +36,19 @@ class ChatPatternsTest {
     }
 
     @Test
+    void readsAuctionSaleFromActionbar() {
+        ChatPatterns.Sale sale = ChatPatterns.auctionSold("Du hast 64x Diamant für $5.120,50 verkauft!").orElseThrow();
+        assertEquals(512_050, sale.priceCents());
+        assertEquals(64, sale.count());
+        assertEquals("Diamant", sale.item());
+        ChatPatterns.Sale bare = ChatPatterns.auctionSold("Deine Auktion wurde verkauft: +$300").orElseThrow();
+        assertEquals(30_000, bare.priceCents());
+        assertEquals("", bare.item());
+        assertTrue(ChatPatterns.auctionSold("[HugoSMP] Du hast die Auktion erfolgreich gekauft!").isEmpty());
+        assertTrue(ChatPatterns.auctionSold("Spieler123: ich hab alles verkauft lol").isEmpty());
+    }
+
+    @Test
     void matchesRecordedServerLines() {
         List<String> lines = DumpLoader.chatLines("chat/hugosmp-system.jsonl");
         assertEquals(1, lines.stream().filter(l -> ChatPatterns.payout(l).isPresent()).count());

@@ -1,4 +1,4 @@
-package dev.hugomarket.module.monitor;
+package dev.hugomarket.store;
 
 import dev.hugomarket.HugoMarket;
 
@@ -10,17 +10,17 @@ import java.nio.file.StandardOpenOption;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-final class MonitorLog {
+public final class TextLog {
     private static final long MAX_BYTES = 1_000_000;
     private static final DateTimeFormatter TIME = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     private final Path file;
 
-    MonitorLog(Path file) {
+    public TextLog(Path file) {
         this.file = file;
     }
 
-    void line(String text) {
+    public void line(String text) {
         try {
             Files.createDirectories(file.getParent());
             if (Files.exists(file) && Files.size(file) > MAX_BYTES) {
@@ -29,7 +29,7 @@ final class MonitorLog {
             Files.writeString(file, TIME.format(LocalTime.now()) + " " + text + System.lineSeparator(), StandardCharsets.UTF_8,
                     StandardOpenOption.CREATE, StandardOpenOption.APPEND);
         } catch (IOException e) {
-            HugoMarket.LOGGER.warn("monitor log failed: {}", e.toString());
+            HugoMarket.LOGGER.warn("{} append failed: {}", file.getFileName(), e.toString());
         }
     }
 }

@@ -131,7 +131,8 @@ final class ProfitScreen extends Screen {
             if (trade.kind() == TradeLog.Kind.SHOP_SELL) {
                 what = I18n.get("hugomarket.profit.shop");
             } else if (AhTotalsTracker.KEY.equals(trade.key())) {
-                what = I18n.get(trade.kind() == TradeLog.Kind.AH_SELL ? "hugomarket.profit.ah_sales" : "hugomarket.profit.ah_buys");
+                String label = I18n.get(trade.kind() == TradeLog.Kind.AH_SELL ? "hugomarket.profit.ah_sales" : "hugomarket.profit.ah_buys");
+                what = trade.displayName().isEmpty() ? label : (trade.count() > 1 ? trade.count() + "x " : "") + trade.displayName();
             } else {
                 what = (trade.count() > 1 ? trade.count() + "x " : "") + trade.displayName() + (trade.counterparty().isEmpty() ? "" : " · " + trade.counterparty());
             }

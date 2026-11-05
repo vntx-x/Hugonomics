@@ -10,6 +10,7 @@ import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.parse.ChatPatterns;
 import dev.hugomarket.store.AhTotalsTracker;
 import dev.hugomarket.store.SellStats;
+import dev.hugomarket.store.TextLog;
 import dev.hugomarket.store.TradeLog;
 import net.fabricmc.fabric.api.client.message.v1.ClientReceiveMessageEvents;
 import net.minecraft.client.Minecraft;
@@ -25,6 +26,8 @@ public final class TradeLogModule implements Module {
     private AhListingParser parser;
     private TradeLog log;
     private AhTotalsTracker totals;
+    private TextLog samples;
+    private String lastActionbar = "";
     private List<Listing> currentPage = List.of();
     private Listing clicked;
     private long clickedAt;
@@ -52,7 +55,8 @@ public final class TradeLogModule implements Module {
         context.screens().onUpdate(this::onScreenUpdate);
         context.screens().onClose(() -> currentPage = List.of());
         context.overlays().addClickHook(this::onClick);
-        ClientReceiveMessageEvents.GAME.register((message, overlay) -> onGameMessage(message.getString()));
+        samples = new TextLog(context.dataDir().resolve("actionbar-samples.log"));
+        ClientReceiveMessageEvents.GAME.register((message, overlay) -> onGameMessage(message.getString(), overlay));
         context.menu().add("hugomarket.profit.open", this::openProfit);
     }
 
@@ -100,8 +104,15 @@ public final class TradeLogModule implements Module {
         }
     }
 
-    private void onGameMessage(String text) {
-        if (!enabled || !ChatPatterns.isAuctionBought(text)) {
+    private void onGameMessage(String text, boolean overlay) {
+        if (!enabled) {
+            return;
+        }
+        if (overlay) {
+            onActionbar(text);
+            return;
+        }
+        if (!ChatPatterns.isAuctionBought(text)) {
             return;
         }
         long now = System.currentTimeMillis();
@@ -112,6 +123,22 @@ public final class TradeLogModule implements Module {
                 clicked.item().count(), clicked.priceCents(), clicked.seller()));
         totals.noteBuy(clicked.priceCents());
         clicked = null;
+    }
+
+    private void onActionbar(String text) {
+        String line = ChatPatterns.normalize(text);
+        if (line.equals(lastActionbar) || !context.server().active()) {
+            return;
+        }
+        lastActionbar = line;
+        if (line.contains("$")) {
+            samples.line(line);
+        }
+        ChatPatterns.auctionSold(line).ifPresent(sale -> {
+            log.record(new TradeLog.Trade(System.currentTimeMillis(), TradeLog.Kind.AH_SELL, AhTotalsTracker.KEY, sale.item(),
+                    sale.count(), sale.priceCents(), ""));
+            totals.noteSale(sale.priceCents());
+        });
     }
 
     private void openProfit() {

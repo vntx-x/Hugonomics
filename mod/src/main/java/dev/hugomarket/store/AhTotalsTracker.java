@@ -13,6 +13,7 @@ public final class AhTotalsTracker {
     private long lastEarnedCents = -1;
     private long lastSpentCents = -1;
     private long buysSinceCents;
+    private long salesSinceCents;
 
     public AhTotalsTracker(Path file) {
         this.file = file;
@@ -26,12 +27,17 @@ public final class AhTotalsTracker {
         lastEarnedCents = root.get("earned").getAsLong();
         lastSpentCents = root.get("spent").getAsLong();
         buysSinceCents = root.get("buysSince").getAsLong();
+        salesSinceCents = root.has("salesSince") ? root.get("salesSince").getAsLong() : 0;
     }
 
     public List<TradeLog.Trade> observe(long earnedCents, long spentCents, long now) {
         List<TradeLog.Trade> trades = new ArrayList<>(2);
         if (lastEarnedCents >= 0 && earnedCents > lastEarnedCents) {
-            trades.add(new TradeLog.Trade(now, TradeLog.Kind.AH_SELL, KEY, "", 0, earnedCents - lastEarnedCents, ""));
+            long unaccounted = earnedCents - lastEarnedCents - salesSinceCents;
+            if (unaccounted > 0) {
+                trades.add(new TradeLog.Trade(now, TradeLog.Kind.AH_SELL, KEY, "", 0, unaccounted, ""));
+            }
+            salesSinceCents = 0;
         }
         if (lastSpentCents >= 0 && spentCents > lastSpentCents) {
             long unaccounted = spentCents - lastSpentCents - buysSinceCents;
@@ -54,11 +60,17 @@ public final class AhTotalsTracker {
         save();
     }
 
+    public void noteSale(long priceCents) {
+        salesSinceCents += priceCents;
+        save();
+    }
+
     private void save() {
         JsonObject root = new JsonObject();
         root.addProperty("earned", lastEarnedCents);
         root.addProperty("spent", lastSpentCents);
         root.addProperty("buysSince", buysSinceCents);
+        root.addProperty("salesSince", salesSinceCents);
         JsonFile.write(file, root);
     }
 }
