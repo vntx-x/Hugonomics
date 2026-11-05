@@ -138,6 +138,7 @@ public final class MonitorModule implements Module {
             }
             case WAITING_FOR_AH -> {
                 if (++phaseTicks > OPEN_TIMEOUT_TICKS) {
+                    HugoMarket.LOGGER.warn("monitor: AH did not open within 10 s (screen {})", client.screen == null ? "none" : client.screen.getClass().getSimpleName());
                     reset(client);
                 }
             }
@@ -154,6 +155,9 @@ public final class MonitorModule implements Module {
             phase = Phase.VIEWING;
             phaseTicks = 0;
             pagesReported++;
+            if (pagesReported % 10 == 1) {
+                HugoMarket.LOGGER.info("monitor saw AH page {} (query index {})", pagesReported, queryIndex);
+            }
         }
     }
 

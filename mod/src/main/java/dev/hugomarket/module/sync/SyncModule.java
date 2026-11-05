@@ -15,6 +15,7 @@ import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.store.PriceStats;
 import net.minecraft.client.Minecraft;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.List;
@@ -66,7 +67,7 @@ public final class SyncModule implements Module {
             config.clientId = UUID.randomUUID().toString();
             context.config().save();
         }
-        clientId = config.clientId;
+        clientId = clientIdFor(config, Minecraft.getInstance().getUser().getName());
         parser = new AhListingParser(context.guiRules());
         client = context.backend();
         enabled = true;
@@ -80,6 +81,14 @@ public final class SyncModule implements Module {
         enabled = false;
         queue.clear();
         context.market().backend().saveIfDirty();
+    }
+
+    static String clientIdFor(ModConfig config, String account) {
+        String monitor = config.monitorAccount == null ? "" : config.monitorAccount.trim();
+        if (monitor.isEmpty() || !monitor.equalsIgnoreCase(account)) {
+            return config.clientId;
+        }
+        return UUID.nameUUIDFromBytes((config.clientId + "|" + monitor.toLowerCase(java.util.Locale.ROOT)).getBytes(StandardCharsets.UTF_8)).toString();
     }
 
     private void loadMeta() {
