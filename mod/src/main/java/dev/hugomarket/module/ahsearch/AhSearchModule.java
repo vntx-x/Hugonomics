@@ -18,7 +18,7 @@ import java.util.List;
 public final class AhSearchModule implements Module, OverlayProvider {
     private static final int PANEL_WIDTH = 170;
 
-    private final AhSearchState state = new AhSearchState();
+    private AhSearchState state;
     private ModuleContext context;
     private AhListingParser parser;
     private AhSearchPanel panel;
@@ -37,6 +37,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
     @Override
     public void onEnable(ModuleContext context) {
         this.context = context;
+        state = new AhSearchState(context.market());
         parser = new AhListingParser(context.guiRules());
         context.screens().onUpdate(this::onScreenUpdate);
         context.screens().onClose(this::onScreenClosed);

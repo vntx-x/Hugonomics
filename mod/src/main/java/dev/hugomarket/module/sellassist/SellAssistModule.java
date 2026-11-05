@@ -1,0 +1,84 @@
+package dev.hugomarket.module.sellassist;
+
+import dev.hugomarket.container.ScreenUpdate;
+import dev.hugomarket.core.Module;
+import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.model.ScreenKind;
+import dev.hugomarket.model.SlotView;
+import dev.hugomarket.parse.HugoGuiRules;
+import dev.hugomarket.parse.ItemKeyFactory;
+import dev.hugomarket.store.Fees;
+import dev.hugomarket.ui.OverlayPanel;
+import dev.hugomarket.ui.OverlayProvider;
+import dev.hugomarket.ui.PanelPlacement;
+import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
+import net.minecraft.client.gui.screens.inventory.AnvilScreen;
+
+import java.util.List;
+
+public final class SellAssistModule implements Module, OverlayProvider {
+    private static final int PANEL_WIDTH = 190;
+
+    private ModuleContext context;
+    private Fees fees;
+    private PendingSale pending;
+
+    @Override
+    public String id() {
+        return "sellassist";
+    }
+
+    @Override
+    public boolean enabledByDefault() {
+        return true;
+    }
+
+    @Override
+    public void onEnable(ModuleContext context) {
+        this.context = context;
+        fees = Fees.load();
+        context.screens().onUpdate(this::onScreenUpdate);
+        context.overlays().addProvider(this);
+    }
+
+    @Override
+    public void onDisable() {
+        context.overlays().removeProvider(this);
+        pending = null;
+    }
+
+    @Override
+    public List<OverlayPanel> createPanels(AbstractContainerScreen<?> screen) {
+        if (pending == null || !(screen instanceof AnvilScreen anvil) || !isPriceInput(screen)) {
+            return List.of();
+        }
+        SellAssistPanel panel = new SellAssistPanel(anvil, pending, context.market(), fees);
+        PanelPlacement.rightOf(screen, panel, PANEL_WIDTH);
+        return List.of(panel);
+    }
+
+    private boolean isPriceInput(AbstractContainerScreen<?> screen) {
+        HugoGuiRules.ScreenRule rule = context.guiRules().rule(ScreenKind.PRICE_INPUT);
+        return rule != null && rule.title().equals(screen.getTitle().getString());
+    }
+
+    private void onScreenUpdate(ScreenUpdate update) {
+        switch (update.kind()) {
+            case AH_SELL_CONFIRM -> capture(update);
+            case PRICE_INPUT, AH_CREATE_CONFIRM -> {
+            }
+            default -> pending = null;
+        }
+    }
+
+    private void capture(ScreenUpdate update) {
+        HugoGuiRules.ScreenRule rule = context.guiRules().rule(ScreenKind.AH_SELL_CONFIRM);
+        for (SlotView slot : update.view().slots()) {
+            if (!slot.playerInventory() && !slot.isEmpty() && rule.isContentSlot(slot.index())
+                    && context.guiRules().controlOf(slot.item()) == null) {
+                pending = new PendingSale(slot.item(), ItemKeyFactory.of(slot.item()));
+                return;
+            }
+        }
+    }
+}

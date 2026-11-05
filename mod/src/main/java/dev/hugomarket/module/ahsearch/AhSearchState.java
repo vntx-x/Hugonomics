@@ -1,6 +1,7 @@
 package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Listing;
+import dev.hugomarket.store.MarketSession;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -9,14 +10,16 @@ import java.util.List;
 import java.util.Map;
 
 public final class AhSearchState {
-    private static final long MAX_AGE_MS = 15 * 60_000;
-
-    private final ListingIndex index = new ListingIndex(MAX_AGE_MS);
+    private final MarketSession session;
     private final Map<String, ItemStack> icons = new HashMap<>();
     private SearchQuery query = SearchQuery.EMPTY;
     private List<ListingIndex.Entry> results = List.of();
     private List<Listing> currentPage = List.of();
     private final List<Runnable> changeListeners = new ArrayList<>();
+
+    public AhSearchState(MarketSession session) {
+        this.session = session;
+    }
 
     public void onChange(Runnable listener) {
         changeListeners.add(listener);
@@ -40,7 +43,7 @@ public final class AhSearchState {
     }
 
     public int indexedCount() {
-        return index.size();
+        return session.size();
     }
 
     public ItemStack icon(ListingIndex.Entry entry) {
@@ -50,11 +53,11 @@ public final class AhSearchState {
 
     public void pageSeen(List<Listing> listings, List<ItemStack> stacks, long seenAt) {
         currentPage = listings;
-        List<String> ids = index.addPage(listings, seenAt);
+        List<String> ids = session.addPage(listings, seenAt);
         for (int i = 0; i < ids.size(); i++) {
             icons.put(ids.get(i), stacks.get(i));
         }
-        icons.keySet().removeIf(id -> index.get(id) == null);
+        icons.keySet().removeIf(id -> session.index().get(id) == null);
         requery();
     }
 
@@ -68,7 +71,7 @@ public final class AhSearchState {
     }
 
     private void requery() {
-        results = index.query(query);
+        results = session.index().query(query);
         notifyChange();
     }
 

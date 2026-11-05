@@ -11,5 +11,16 @@
   "hugomarket.ah.sort.newest": "New",
   "hugomarket.ah.filter.enchanted": "Enchanted",
   "hugomarket.ah.filter.spawner": "Spawner",
-  "hugomarket.ah.status": "%s matches of %s seen"
+  "hugomarket.ah.status": "%s matches of %s seen",
+  "hugomarket.sell.undercut": "−5 %",
+  "hugomarket.sell.lowest": "Lowest",
+  "hugomarket.sell.median": "Median",
+  "hugomarket.sell.lowest_line": "Lowest: %s/pc · %s",
+  "hugomarket.sell.median_line": "Median: %s/pc · %s",
+  "hugomarket.sell.seen_line": "%s listings, last seen %s min ago",
+  "hugomarket.sell.no_data": "No market data this session",
+  "hugomarket.sell.no_data_hint": "Search the item in the AH first",
+  "hugomarket.sell.fees": "Fee %s · Tax %s · Net %s",
+  "hugomarket.sell.warn_below": "Warning: more than 10x below market",
+  "hugomarket.sell.warn_above": "Warning: more than 10x above market"
 }

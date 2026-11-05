@@ -9,8 +9,10 @@ import dev.hugomarket.core.ModuleRegistry;
 import dev.hugomarket.core.ServerDetector;
 import dev.hugomarket.module.ahsearch.AhSearchModule;
 import dev.hugomarket.module.dumper.DumperModule;
+import dev.hugomarket.module.sellassist.SellAssistModule;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
+import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.ui.OverlayManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
@@ -29,7 +31,8 @@ public final class HugoMarketClient implements ClientModInitializer {
         HugoGuiRules guiRules = HugoGuiRules.load();
         ScreenStateTracker screens = new ScreenStateTracker(new ScreenClassifier(guiRules), containers);
         OverlayManager overlays = new OverlayManager();
-        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, dataDir);
-        new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule())).start();
+        MarketSession market = new MarketSession();
+        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, dataDir);
+        new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule())).start();
     }
 }

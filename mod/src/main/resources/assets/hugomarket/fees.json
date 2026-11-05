@@ -1,0 +1,9 @@
+{
+  "auctionListingFeePercent": 1.0,
+  "auctionSaleTaxTiers": [
+    { "upToCents": 1000000, "percent": 1.0 },
+    { "upToCents": 100000000, "percent": 2.0 },
+    { "upToCents": -1, "percent": 3.0 }
+  ],
+  "orderCreationFeePercent": 1.0
+}
