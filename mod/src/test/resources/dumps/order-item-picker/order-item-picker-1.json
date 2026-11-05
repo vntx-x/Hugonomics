@@ -1,0 +1,2466 @@
+{
+  "ts": "2026-11-05T10:00:55.320Z",
+  "server": "hugosmp.net",
+  "minecraft": "1.21.5",
+  "mod": "0.0.1",
+  "title": "ꐹ",
+  "titleJson": {
+    "text": "ꐹ",
+    "color": "white"
+  },
+  "menuType": "minecraft:generic_9x6",
+  "containerId": 50,
+  "containerSlots": 54,
+  "slotCount": 90,
+  "slots": [
+    {
+      "index": 0,
+      "player": false,
+      "id": "minecraft:red_concrete",
+      "count": 1,
+      "name": "Red Concrete",
+      "nameJson": {
+        "translate": "block.minecraft.red_concrete"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Concrete",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_concrete",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1,
+      "player": false,
+      "id": "minecraft:red_concrete_powder",
+      "count": 1,
+      "name": "Red Concrete Powder",
+      "nameJson": {
+        "translate": "block.minecraft.red_concrete_powder"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Concrete Powder",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_concrete_powder",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 2,
+      "player": false,
+      "id": "minecraft:red_glazed_terracotta",
+      "count": 1,
+      "name": "Red Glazed Terracotta",
+      "nameJson": {
+        "translate": "block.minecraft.red_glazed_terracotta"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Glazed Terracotta",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_glazed_terracotta",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "player": false,
+      "id": "minecraft:red_stained_glass",
+      "count": 1,
+      "name": "Red Stained Glass",
+      "nameJson": {
+        "translate": "block.minecraft.red_stained_glass"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Stained Glass",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_stained_glass",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "player": false,
+      "id": "minecraft:red_stained_glass_pane",
+      "count": 1,
+      "name": "Red Stained Glass Pane",
+      "nameJson": {
+        "translate": "block.minecraft.red_stained_glass_pane"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Stained Glass Pane",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_stained_glass_pane",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 5,
+      "player": false,
+      "id": "minecraft:red_shulker_box",
+      "count": 1,
+      "name": "Red Shulker Box",
+      "nameJson": {
+        "translate": "block.minecraft.red_shulker_box"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Shulker Box",
+        "",
+        "Klicken, um auszuwählen",
+        "Empty"
+      ],
+      "stack": {
+        "id": "minecraft:red_shulker_box",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 6,
+      "player": false,
+      "id": "minecraft:red_bed",
+      "count": 1,
+      "name": "Red Bed",
+      "nameJson": {
+        "translate": "block.minecraft.red_bed"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Bed",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_bed",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 7,
+      "player": false,
+      "id": "minecraft:red_candle",
+      "count": 1,
+      "name": "Red Candle",
+      "nameJson": {
+        "translate": "block.minecraft.red_candle"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Candle",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_candle",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 8,
+      "player": false,
+      "id": "minecraft:red_banner",
+      "count": 1,
+      "name": "Red Banner",
+      "nameJson": {
+        "translate": "block.minecraft.red_banner"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Banner",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_banner",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 9,
+      "player": false,
+      "id": "minecraft:red_sand",
+      "count": 1,
+      "name": "Red Sand",
+      "nameJson": {
+        "translate": "block.minecraft.red_sand"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Sand",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_sand",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 10,
+      "player": false,
+      "id": "minecraft:redstone_ore",
+      "count": 1,
+      "name": "Redstone Ore",
+      "nameJson": {
+        "translate": "block.minecraft.redstone_ore"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Redstone Ore",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:redstone_ore",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 11,
+      "player": false,
+      "id": "minecraft:deepslate_redstone_ore",
+      "count": 1,
+      "name": "Deepslate Redstone Ore",
+      "nameJson": {
+        "translate": "block.minecraft.deepslate_redstone_ore"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Deepslate Redstone Ore",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:deepslate_redstone_ore",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 12,
+      "player": false,
+      "id": "minecraft:red_mushroom_block",
+      "count": 1,
+      "name": "Red Mushroom Block",
+      "nameJson": {
+        "translate": "block.minecraft.red_mushroom_block"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Mushroom Block",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_mushroom_block",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 13,
+      "player": false,
+      "id": "minecraft:red_mushroom",
+      "count": 1,
+      "name": "Red Mushroom",
+      "nameJson": {
+        "translate": "block.minecraft.red_mushroom"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Mushroom",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_mushroom",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 14,
+      "player": false,
+      "id": "minecraft:red_tulip",
+      "count": 1,
+      "name": "Red Tulip",
+      "nameJson": {
+        "translate": "block.minecraft.red_tulip"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Tulip",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_tulip",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 15,
+      "player": false,
+      "id": "minecraft:redstone_torch",
+      "count": 1,
+      "name": "Redstone Torch",
+      "nameJson": {
+        "translate": "block.minecraft.redstone_torch"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Redstone Torch",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:redstone_torch",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 16,
+      "player": false,
+      "id": "minecraft:redstone_lamp",
+      "count": 1,
+      "name": "Redstone Lamp",
+      "nameJson": {
+        "translate": "block.minecraft.redstone_lamp"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Redstone Lamp",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:redstone_lamp",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 17,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 1,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 18,
+      "player": false,
+      "id": "minecraft:repeater",
+      "count": 1,
+      "name": "Redstone Repeater",
+      "nameJson": {
+        "translate": "block.minecraft.repeater"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Redstone Repeater",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:repeater",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 19,
+      "player": false,
+      "id": "minecraft:comparator",
+      "count": 1,
+      "name": "Redstone Comparator",
+      "nameJson": {
+        "translate": "block.minecraft.comparator"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Redstone Comparator",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:comparator",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 20,
+      "player": false,
+      "id": "minecraft:trapped_chest",
+      "count": 1,
+      "name": "Trapped Chest",
+      "nameJson": {
+        "translate": "block.minecraft.trapped_chest"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Trapped Chest",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:trapped_chest",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 21,
+      "player": false,
+      "id": "minecraft:powered_rail",
+      "count": 1,
+      "name": "Powered Rail",
+      "nameJson": {
+        "translate": "block.minecraft.powered_rail"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Powered Rail",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:powered_rail",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 22,
+      "player": false,
+      "id": "minecraft:red_bundle",
+      "count": 1,
+      "name": "Red Bundle",
+      "nameJson": {
+        "translate": "item.minecraft.red_bundle"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Bundle",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_bundle",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 23,
+      "player": false,
+      "id": "minecraft:wolf_armor",
+      "count": 1,
+      "name": "1.21.6 Red Harness",
+      "nameJson": {
+        "translate": "vb.item.red_harness",
+        "fallback": "1.21.6 Red Harness",
+        "italic": false,
+        "color": "white"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "1.21.6 Red Harness",
+        "",
+        "Klicken, um auszuwählen",
+        "",
+        "When equipped:",
+        "+11 Armor"
+      ],
+      "stack": {
+        "id": "minecraft:wolf_armor",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ],
+          "minecraft:custom_model_data": {
+            "floats": [
+              739.0
+            ],
+            "strings": [
+              "minecraft:red_harness"
+            ]
+          },
+          "minecraft:custom_data": {
+            "VB|Protocol1_21_6To1_21_5|added_custom_model_data": 1,
+            "VV|original_hashes": {
+              "removed": [],
+              "id": 816,
+              "8": 729463190,
+              "0": -13139192,
+              "backup_tag": "VB|Protocol1_21_6To1_21_5"
+            },
+            "VB|Protocol1_21_6To1_21_5|id": 816,
+            "VB|injected_cmd": 1,
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            },
+            "VB|Protocol1_21_6To1_21_5|added_custom_name": 1
+          },
+          "minecraft:custom_name": {
+            "translate": "vb.item.red_harness",
+            "fallback": "1.21.6 Red Harness",
+            "italic": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 24,
+      "player": false,
+      "id": "minecraft:red_dye",
+      "count": 1,
+      "name": "Red Dye",
+      "nameJson": {
+        "translate": "item.minecraft.red_dye"
+      },
+      "lore": [
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "tooltip": [
+        "Red Dye",
+        "",
+        "Klicken, um auszuwählen"
+      ],
+      "stack": {
+        "id": "minecraft:red_dye",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 25,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§2 Blast Protection ",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:blast_protection": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 26,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§2 Blast Protection §f2",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:blast_protection": 2
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 27,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§2 Blast Protection §f3",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:blast_protection": 3
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 28,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§2 Blast Protection §f4",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:blast_protection": 4
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 29,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§c Fire Protection ",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:fire_protection": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 30,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§c Fire Protection §f2",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:fire_protection": 2
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 31,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§c Fire Protection §f3",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:fire_protection": 3
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 32,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§c Fire Protection §f4",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:fire_protection": 4
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 33,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§6 Piercing ",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:piercing": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 34,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§6 Piercing §f2",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:piercing": 2
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 35,
+      "player": false,
+      "id": "minecraft:enchanted_book",
+      "count": 1,
+      "name": "Enchanted Book",
+      "nameJson": {
+        "translate": "item.minecraft.enchanted_book"
+      },
+      "lore": [
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "tooltip": [
+        "Enchanted Book",
+        "§6 Piercing §f3",
+        "",
+        "Linksklick, um direkt auszuwählen",
+        "Rechtsklick, um Anpassungen zu bearbeiten"
+      ],
+      "stack": {
+        "id": "minecraft:enchanted_book",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:stored_enchantments": {
+            "minecraft:piercing": 3
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Linksklick, um direkt auszuwählen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            },
+            {
+              "text": "Rechtsklick, um Anpassungen zu bearbeiten",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 45,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Zurück",
+      "nameJson": {
+        "text": "Zurück",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "red"
+      },
+      "lore": [],
+      "tooltip": [
+        "Zurück"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/8c/45/4987bf94c97105f4",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20007.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "gray_back_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Zurück",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "red"
+          }
+        }
+      }
+    },
+    {
+      "index": 46,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Suche",
+      "nameJson": {
+        "text": "Suche",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Suche"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b6/d0/c0da212ea32a70ea",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20000.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "red_search_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Suche",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 48,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Vorherige Seite",
+      "nameJson": {
+        "text": "Vorherige Seite",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Vorherige Seite"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/92/33/5aa873d8601ba138",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20001.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "blue_previous_page_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Vorherige Seite",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 50,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Nächste Seite",
+      "nameJson": {
+        "text": "Nächste Seite",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Nächste Seite"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/85/41/fedfe38a568810d8",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20002.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "blue_next_page_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Nächste Seite",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 54,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 55,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 40,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 40
+      }
+    },
+    {
+      "index": 56,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 64,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 64
+      }
+    },
+    {
+      "index": 59,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 64,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 64
+      }
+    },
+    {
+      "index": 60,
+      "player": true,
+      "id": "minecraft:deepslate",
+      "count": 13,
+      "name": "Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:deepslate",
+        "count": 13
+      }
+    },
+    {
+      "index": 61,
+      "player": true,
+      "id": "minecraft:gravel",
+      "count": 9,
+      "name": "Gravel",
+      "nameJson": {
+        "translate": "block.minecraft.gravel"
+      },
+      "lore": [],
+      "tooltip": [
+        "Gravel"
+      ],
+      "stack": {
+        "id": "minecraft:gravel",
+        "count": 9
+      }
+    },
+    {
+      "index": 62,
+      "player": true,
+      "id": "minecraft:tuff",
+      "count": 9,
+      "name": "Tuff",
+      "nameJson": {
+        "translate": "block.minecraft.tuff"
+      },
+      "lore": [],
+      "tooltip": [
+        "Tuff"
+      ],
+      "stack": {
+        "id": "minecraft:tuff",
+        "count": 9
+      }
+    },
+    {
+      "index": 63,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 64,
+      "player": true,
+      "id": "minecraft:bucket",
+      "count": 2,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [],
+      "tooltip": [
+        "Bucket"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 2
+      }
+    },
+    {
+      "index": 65,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 61,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 61
+      }
+    },
+    {
+      "index": 67,
+      "player": true,
+      "id": "minecraft:slime_block",
+      "count": 18,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [],
+      "tooltip": [
+        "Slime Block"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 18
+      }
+    },
+    {
+      "index": 68,
+      "player": true,
+      "id": "minecraft:flint",
+      "count": 3,
+      "name": "Flint",
+      "nameJson": {
+        "translate": "item.minecraft.flint"
+      },
+      "lore": [],
+      "tooltip": [
+        "Flint"
+      ],
+      "stack": {
+        "id": "minecraft:flint",
+        "count": 3
+      }
+    },
+    {
+      "index": 72,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 73,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 74,
+      "player": true,
+      "id": "minecraft:redstone",
+      "count": 56,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [],
+      "tooltip": [
+        "Redstone Dust"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 56
+      }
+    },
+    {
+      "index": 75,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 18,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 18
+      }
+    },
+    {
+      "index": 76,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 64,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 64
+      }
+    },
+    {
+      "index": 80,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 53,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 53
+      }
+    },
+    {
+      "index": 81,
+      "player": true,
+      "id": "minecraft:diamond_sword",
+      "count": 1,
+      "name": "Diamond Sword",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Diamond Sword",
+        "§a Sharpness ",
+        "§d Looting §f2",
+        "",
+        "When in Main Hand:",
+        " 7 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:looting": 2,
+            "minecraft:sharpness": 1
+          },
+          "minecraft:damage": 1192
+        }
+      }
+    },
+    {
+      "index": 85,
+      "player": true,
+      "id": "minecraft:glass",
+      "count": 42,
+      "name": "Glass",
+      "nameJson": {
+        "translate": "block.minecraft.glass"
+      },
+      "lore": [],
+      "tooltip": [
+        "Glass"
+      ],
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 42
+      }
+    },
+    {
+      "index": 87,
+      "player": true,
+      "id": "minecraft:ender_pearl",
+      "count": 3,
+      "name": "Ender Pearl",
+      "nameJson": {
+        "translate": "item.minecraft.ender_pearl"
+      },
+      "lore": [],
+      "tooltip": [
+        "Ender Pearl"
+      ],
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 3
+      }
+    },
+    {
+      "index": 88,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 54,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 54
+      }
+    },
+    {
+      "index": 89,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 61,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 61
+      }
+    }
+  ]
+}

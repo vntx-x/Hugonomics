@@ -1,0 +1,885 @@
+{
+  "ts": "2026-11-05T10:01:04.418Z",
+  "server": "hugosmp.net",
+  "minecraft": "1.21.5",
+  "mod": "0.0.1",
+  "title": "ꐶ",
+  "titleJson": {
+    "text": "ꐶ",
+    "color": "white"
+  },
+  "menuType": "minecraft:generic_9x1",
+  "containerId": 51,
+  "containerSlots": 9,
+  "slotCount": 45,
+  "slots": [
+    {
+      "index": 2,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Zurück",
+      "nameJson": {
+        "text": "Zurück",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "red"
+      },
+      "lore": [],
+      "tooltip": [
+        "Zurück"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/4b/32/3e73be1572972ee8",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20011.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "red_abort_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Zurück",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "red"
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 1,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "Redstone-Staub",
+        "Anzahl: 64",
+        "Preis pro Stück: $100",
+        "",
+        "Einzahlung: $6.400",
+        "Erstellgebühr: $64",
+        "Gesamtzahlung: $6.464",
+        "",
+        "Die Erstellgebühr wird beim",
+        "Abbrechen nicht erstattet.",
+        "",
+        "Jede Lieferung muss innerhalb von 5d 0h abgeholt werden.",
+        "Nicht abgeholte Lieferungen verfallen endgültig."
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "Redstone-Staub",
+        "Anzahl: 64",
+        "Preis pro Stück: $100",
+        "",
+        "Einzahlung: $6.400",
+        "Erstellgebühr: $64",
+        "Gesamtzahlung: $6.464",
+        "",
+        "Die Erstellgebühr wird beim",
+        "Abbrechen nicht erstattet.",
+        "",
+        "Jede Lieferung muss innerhalb von 5d 0h abgeholt werden.",
+        "Nicht abgeholte Lieferungen verfallen endgültig."
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "Redstone-Staub",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Anzahl: ",
+              "extra": [
+                {
+                  "text": "64",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Preis pro Stück: ",
+              "extra": [
+                {
+                  "text": "$100",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Einzahlung: ",
+              "extra": [
+                {
+                  "text": "$6.400",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Erstellgebühr: ",
+              "extra": [
+                {
+                  "text": "$64",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Gesamtzahlung: ",
+              "extra": [
+                {
+                  "text": "$6.464",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Die Erstellgebühr wird beim",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "Abbrechen nicht erstattet.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Jede Lieferung muss innerhalb von 5d 0h abgeholt werden.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "red"
+            },
+            {
+              "text": "Nicht abgeholte Lieferungen verfallen endgültig.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "red"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 6,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Order aufgeben",
+      "nameJson": {
+        "text": "Order aufgeben",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "green"
+      },
+      "lore": [],
+      "tooltip": [
+        "Order aufgeben"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b3/ed/566d1faaa34596ef",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20009.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "green_check_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Order aufgeben",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "green"
+          }
+        }
+      }
+    },
+    {
+      "index": 8,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Erstellgebühr",
+      "nameJson": {
+        "text": "Erstellgebühr",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "gold"
+      },
+      "lore": [
+        "",
+        "Beim Erstellen einer Order",
+        "wird eine Erstellgebühr fällig.",
+        "Diese wird beim Abbrechen",
+        "nicht erstattet.",
+        "",
+        "Erstellgebühr: 1%"
+      ],
+      "tooltip": [
+        "Erstellgebühr",
+        "",
+        "Beim Erstellen einer Order",
+        "wird eine Erstellgebühr fällig.",
+        "Diese wird beim Abbrechen",
+        "nicht erstattet.",
+        "",
+        "Erstellgebühr: 1%"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Beim Erstellen einer Order",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "wird eine Erstellgebühr fällig.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Diese wird beim Abbrechen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "nicht erstattet.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Erstellgebühr: ",
+              "extra": [
+                {
+                  "text": "1%",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ],
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b9/3a/19d5b33ef22c804b",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20010.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "orange_info_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "order"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Erstellgebühr",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "gold"
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 10,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 40,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 40
+      }
+    },
+    {
+      "index": 11,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 64,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 64
+      }
+    },
+    {
+      "index": 14,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 64,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 64
+      }
+    },
+    {
+      "index": 15,
+      "player": true,
+      "id": "minecraft:deepslate",
+      "count": 13,
+      "name": "Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:deepslate",
+        "count": 13
+      }
+    },
+    {
+      "index": 16,
+      "player": true,
+      "id": "minecraft:gravel",
+      "count": 9,
+      "name": "Gravel",
+      "nameJson": {
+        "translate": "block.minecraft.gravel"
+      },
+      "lore": [],
+      "tooltip": [
+        "Gravel"
+      ],
+      "stack": {
+        "id": "minecraft:gravel",
+        "count": 9
+      }
+    },
+    {
+      "index": 17,
+      "player": true,
+      "id": "minecraft:tuff",
+      "count": 9,
+      "name": "Tuff",
+      "nameJson": {
+        "translate": "block.minecraft.tuff"
+      },
+      "lore": [],
+      "tooltip": [
+        "Tuff"
+      ],
+      "stack": {
+        "id": "minecraft:tuff",
+        "count": 9
+      }
+    },
+    {
+      "index": 18,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 19,
+      "player": true,
+      "id": "minecraft:bucket",
+      "count": 2,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [],
+      "tooltip": [
+        "Bucket"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 2
+      }
+    },
+    {
+      "index": 20,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 61,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 61
+      }
+    },
+    {
+      "index": 22,
+      "player": true,
+      "id": "minecraft:slime_block",
+      "count": 18,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [],
+      "tooltip": [
+        "Slime Block"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 18
+      }
+    },
+    {
+      "index": 23,
+      "player": true,
+      "id": "minecraft:flint",
+      "count": 3,
+      "name": "Flint",
+      "nameJson": {
+        "translate": "item.minecraft.flint"
+      },
+      "lore": [],
+      "tooltip": [
+        "Flint"
+      ],
+      "stack": {
+        "id": "minecraft:flint",
+        "count": 3
+      }
+    },
+    {
+      "index": 27,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 28,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 29,
+      "player": true,
+      "id": "minecraft:redstone",
+      "count": 56,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [],
+      "tooltip": [
+        "Redstone Dust"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 56
+      }
+    },
+    {
+      "index": 30,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 18,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 18
+      }
+    },
+    {
+      "index": 31,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 64,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 64
+      }
+    },
+    {
+      "index": 35,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 53,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 53
+      }
+    },
+    {
+      "index": 36,
+      "player": true,
+      "id": "minecraft:diamond_sword",
+      "count": 1,
+      "name": "Diamond Sword",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Diamond Sword",
+        "§a Sharpness ",
+        "§d Looting §f2",
+        "",
+        "When in Main Hand:",
+        " 7 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:looting": 2,
+            "minecraft:sharpness": 1
+          },
+          "minecraft:damage": 1192
+        }
+      }
+    },
+    {
+      "index": 40,
+      "player": true,
+      "id": "minecraft:glass",
+      "count": 42,
+      "name": "Glass",
+      "nameJson": {
+        "translate": "block.minecraft.glass"
+      },
+      "lore": [],
+      "tooltip": [
+        "Glass"
+      ],
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 42
+      }
+    },
+    {
+      "index": 42,
+      "player": true,
+      "id": "minecraft:ender_pearl",
+      "count": 3,
+      "name": "Ender Pearl",
+      "nameJson": {
+        "translate": "item.minecraft.ender_pearl"
+      },
+      "lore": [],
+      "tooltip": [
+        "Ender Pearl"
+      ],
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 3
+      }
+    },
+    {
+      "index": 43,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 54,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 54
+      }
+    },
+    {
+      "index": 44,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 61,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 61
+      }
+    }
+  ]
+}

@@ -195,7 +195,8 @@ Verdächtige Umbenennungen (Vanilla-Item mit Custom-Namen, der wie ein Custom-It
 - Trend = Median jetzt vs. Median vor 24 h / 7 d.
 - Frische-Ampel: grün ≤ 15 min, gelb ≤ 2 h, rot älter oder nur 1 Beobachter.
 - Tippfehler-Warnung: Eingabe < Median/10 oder > Median×10 bei ≥ 3 Beobachtungen.
-- Flip-Marge = AH-Lowest × (1 − AH-Gebühr) − Order-Preis × (1 + Order-Gebühr) − Einstellgebühr. Gebührensätze als Konfiguration, Standard unbekannt bis geklärt.
+- Flip-Marge = AH-Lowest × (1 − AH-Gebühr) − Order-Preis × (1 + Order-Gebühr) − Einstellgebühr. Order-Erstellgebühr ist 1 % (aus Dump), AH-Gebühr noch unbekannt, beides konfigurierbar.
+- Server-Verkaufswert: Hugos `Wert:`-Zeile ist Stack-Wert mal persönlichem Multiplikator (z. B. 1.1x). Basiswert = Wert / Multiplikator; für Vergleiche zwischen Spielern zählt der Basiswert.
 
 ### 3.7 Lokale Persistenz
 
@@ -548,13 +549,17 @@ Hugo-Team:
 5. Command-Hotkeys erlaubt (FWM hat sie entfernt)?
 6. Gebührensätze: AH-Einstellgebühr, AH-Verkaufssteuer, Order-Gebühr, Shop-Spanne.
 
-Im Spiel feststellen (Phase 0):
-7. Gibt es ein Trade-Fenster?
-8. Aufbau Sell-GUI, Einstell-Dialog (Preis per Chat/Anvil/Sign?), Orders-GUI, Shop-GUI.
-9. Welche Item-Kategorien hat das AH, welche Custom-Items gibt es (Oraxen/Nexo-IDs)?
-10. Werden Komponenten (Enchants, Spawner-Typ) in GUI-Items mitgesendet oder nur Lore?
-11. Chat-Formate: Payout, AH-Kauf/-Verkauf, Order-Fill, `/pay`, `/msg`, Geldstand.
-12. Maximale Auktionsdauer, Listing-Limit, Stack-Regeln (Spawner stapelbar?).
+Im Spiel feststellen (Phase 0), Stand 2026-11-05 nach erstem Dump-Tag (`docs/hugo-formats.md`):
+7. Gibt es ein Trade-Fenster? (offen)
+8. Geklärt: Sell-GUI 9x4 mit Verkaufen-Button, Einstell-Dialog mit Anvil-Preiseingabe,
+   Orders sind reine Kauf-Orders mit 1 % Erstellgebühr, AH hat eigene Suche, Sortierung
+   (neu/alt/billig/teuer) und Stack-Filter. Shop-GUI offen.
+9. AH hat keine Kategorien, nur eine Liste mit Suche. Custom-Items noch nicht gesehen.
+10. Geklärt: GUI-Items tragen alle Komponenten (Enchants, Custom-Namen), Hugo-Daten liegen in
+    `custom_data.PublicBukkitValues`. Steuer-Items haben stabile `custom_model_data`-IDs.
+11. Payout geklärt (`+$159,16 (Basis: $144,80, Bonus: +$14,36 durch 1.1x)`), Rest offen:
+    AH-Kauf/-Verkauf, Order-Fill, `/pay`, `/msg`, Geldstand (keine Actionbar).
+12. Auktionsdauer 24 h (Restzeiten bis 23h 56m gesehen). Listing-Limit, AH-Gebühr offen.
 
 Infrastruktur:
 13. Domain, Modrinth-Account, GitHub-Repo, endgültiger Mod-Name (Arbeitstitel `hugomarket`).

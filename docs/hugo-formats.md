@@ -1,0 +1,115 @@
+# Hugo-Formate (aus Dumps vom 2026-11-05, Client 1.21.5, Spielsprache Englisch)
+
+Alle Hugo-GUIs sind Chest-Menüs mit Steuer-Items aus `minecraft:paper`, die über
+`minecraft:item_model` (`hugosmp:…`) und `minecraft:custom_model_data.floats[0]` identifiziert
+werden. Die Float-ID ist stabil pro Funktion und über GUIs hinweg gleich, die Titel bestehen
+aus zwei Zeichen einer eigenen Schriftart: immer `U+F80E` (negativer Abstand) gefolgt vom
+GUI-Glyph (unten angegeben). Jedes Item eines Hugo-GUIs trägt
+`custom_data.PublicBukkitValues["minecraft:secured"]` mit dem GUI-Bereich (`auction`, `order`,
+`input`). Vanilla-Kisten haben das nicht.
+
+## Steuer-Items (custom_model_data)
+
+| ID | Name | Vorkommen |
+|---|---|---|
+| 20000 | Suche | AH, Orders, Order-Itemwahl |
+| 20001 | Vorherige Seite | Listen |
+| 20002 | Nächste Seite | Listen |
+| 20003 | Filter | AH (Sortierung + Stack-Filter), Orders (Sortierung) |
+| 20004 | Auktion erstellen / Order erstellen | AH, Orders |
+| 20005 | Aktualisieren | AH, Orders |
+| 20006 | Deine Auktionen / Deine Orders | AH, Orders |
+| 20007 | Zurück | Order-Itemwahl |
+| 20009 | Bestätigen / Order aufgeben / Verkaufen | Anvil, Order-Bestätigung, Sell-GUI |
+| 20010 | Erstellgebühr (Info) | Order-Bestätigung |
+| 20011 | Abbrechen / Zurück | Bestätigungsdialoge |
+| 20014 | Preis festlegen | AH-Einstell-Dialog |
+| 80017 | Eingabe-Item (leerer Name) | Anvil-Eingabe |
+
+## GUIs
+
+### AH-Liste: Titel `ꐭ` (U+A42D), `generic_9x6`, secured `auction`
+
+- Slots 0–44: Listings. Slot 45 Aktualisieren, 46 Suche, 48 Vorherige Seite, 49 Filter,
+  50 Nächste Seite, 52 Deine Auktionen, 53 Auktion erstellen. 47 und 51 leer.
+- Listing-Lore (Strings): `""`, `Preis: $23.323`, `Verkäufer: Teufels_Affe_YT`,
+  `Läuft ab in: 10h 43m 26s`. Dieselben Zeilen stehen roh in
+  `PublicBukkitValues["minecraft:display_extra_lore"]` mit §-Codes.
+- Der Stack ist das echte Item mit allen Komponenten (Enchants, Custom-Namen), plus
+  `custom_data`. Preis gilt für den ganzen Stack (`count`).
+- Filter-Lore: Sortierung `Neueste Auktionen / Älteste Auktionen / Niedrigster Preis /
+  Höchster Preis`, Stack-Filter `Alle / Nur ganze Stacks / Nur einzelne Items`, aktive Option
+  mit `> ` markiert. Linksklick Sortierung, Rechtsklick Stack-Filter.
+- "Deine Auktionen"-Lore: Ansichten `Alle / Laufende / Verkaufte / Gekaufte / Abgelaufene`,
+  dazu `Insgesamt ausgegeben: $7.454.495`, `Insgesamt verdient: $6.972.083`.
+
+### AH-Einstellen: Titel `ꐷ` (U+A437), `generic_9x1`, secured `auction`
+
+Slot 2 Abbrechen, 4 das einzustellende Item, 6 Preis festlegen. Klick auf 6 öffnet die
+Anvil-Eingabe.
+
+### Preiseingabe: Titel `Preis eingeben`, `minecraft:anvil`, secured `input`
+
+Slot 0 Eingabe-Item (ID 80017, `addons:anvil_session` UUID), Slot 2 Bestätigen mit Lore
+`Eingabe: 10000` und `addons:anvil_value = "10000"`, `addons:anvil_valid = 1`. Der Preis wird
+also über das Anvil-Textfeld getippt. Verkaufs-Vorschlag setzt dieses Textfeld, der Spieler
+klickt Bestätigen selbst.
+
+### Order anlegen, Bestätigung: Titel `ꐶ` (U+A436), `generic_9x1`, secured `order`
+
+Slot 2 Zurück, 4 Item mit Lore `Redstone-Staub / Anzahl: 64 / Preis pro Stück: $100 / "" /
+Einzahlung: $6.400 / Erstellgebühr: $64 / Gesamtzahlung: $6.464 / …`, 6 Order aufgeben,
+8 Info `Erstellgebühr: 1%`. Lieferungen müssen innerhalb `5d 0h` abgeholt werden.
+Chat danach: `[HugoSMP] Order erstellt.`
+
+### Order-Liste: Titel `ꐸ` (U+A438), `generic_9x6`, secured `order`
+
+- Slots 0–44 Orders, Steuer-Items wie AH (45 Aktualisieren, 46 Suche, 48/50 Seiten,
+  49 Filter, 52 Deine Orders, 53 Order erstellen).
+- Order-Item: Name `Order von Zyit77`, Stack ist das gesuchte Item mit Komponenten.
+  Lore: `Elytren Reparatur 1 Haltbarkeit 3` (Hugos deutsche Item-Beschreibung),
+  `Preis pro Stück: $1.720.000.000`, `""`, `0/1 Geliefert`, `$0/$1.720.000.000 Ausgezahlt`,
+  `""`, `Klicke, um Zyit77 Elytren Reparatur 1 Haltbarkeit 3 zu liefern`.
+- Filter: `Neueste Orders / Am meisten ausgezahlt / Am meisten geliefert / Am meisten Geld
+  pro Item`.
+- "Deine Orders": `Alle / Offene / Abgeschlossene / Geleerte / Stornierte`, Summen wie im AH.
+- Orders sind reine Kauf-Orders (Spieler liefert Items gegen Geld). Verkaufs-Orders gibt es
+  nicht, der Spread ist also Order-Preis gegen AH-Preis.
+
+### Order-Itemwahl: Titel `ꐹ` (U+A439), `generic_9x6`, secured `order`
+
+Items mit Lore `Klicken, um auszuwählen`, Enchanted Books mit `Linksklick, um direkt
+auszuwählen / Rechtsklick, um Anpassungen zu bearbeiten`. Slot 45 Zurück, 46 Suche,
+48/50 Seiten.
+
+### Sell-GUI: Titel `Items verkaufen` (dark_gray), `generic_9x4`, secured `input`
+
+Slots 0–34 frei für Items, Slot 35 Verkaufen (`minecraft:disable_worth = 1`), Lore
+`Verkauft alle Items in diesem Menü.`
+
+### Kisten (Vanilla-Titel, z. B. `container.chestDouble`)
+
+Hugo hängt an verkaufbare Items eine Lore-Zeile: `Wert: $42,24 (+$3,84 durch 1.1x)` oder
+`Wert: $4` ohne Bonus. Der Wert gilt für den ganzen Stack. `1.1x` ist der persönliche
+Verkaufsmultiplikator des Spielers. Items ohne Zeile sind nicht an den Server verkaufbar.
+
+## Chat
+
+- Prefix `[HugoSMP] ` als Farbverlauf (`H` #DE0307 … `P` #51257B), Nachricht danach.
+- Payout: `[HugoSMP] +$159,16 (Basis: $144,80, Bonus: +$14,36 durch 1.1x)` nach dem
+  Verkaufen-Klick. Basis = Summe der Wert-Zeilen ohne Bonus.
+- `[HugoSMP] Order erstellt.`
+- `[HugoSMP] Befehl nicht gefunden.`
+- `[Info] …` Servertipps.
+- Keine Actionbar-Nachrichten gesehen.
+
+## Zahlen
+
+Dollarzeichen vorangestellt, Tausenderpunkt, Dezimalkomma: `$1.720.000.000`, `$42,24`,
+`$0,66`. Zeiten `23h 33m 55s`, `5d 0h`.
+
+## Noch nicht gesehen
+
+Deine-Auktionen-Liste, AH-Kaufdialog und Kauf-/Verkaufsmeldungen im Chat, AH-Gebühr beim
+Einstellen oder Verkauf, Shop, Enderchest, Shulker-Tooltip, `/pay`, `/msg`, Trade-Fenster,
+Spawner-Items, Oraxen/Nexo-Custom-Items.
