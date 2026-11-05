@@ -10,6 +10,7 @@ public final class ModConfig {
     public String clientId = null;
     public boolean tutorialShown = false;
     public int monitorIntervalSeconds = 45;
+    public String monitorAccount = "";
 
     public boolean isModuleEnabled(String id, boolean fallback) {
         Boolean value = modules.get(id);

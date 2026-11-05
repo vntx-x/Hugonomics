@@ -22,6 +22,7 @@ public final class MonitorModule implements Module {
     }
 
     private ModuleContext context;
+    private String account = "";
     private boolean enabled;
     private boolean allowedByServer;
     private int intervalTicks;
@@ -51,6 +52,15 @@ public final class MonitorModule implements Module {
         ModConfig config = context.config().get();
         intervalTicks = Math.max(MIN_INTERVAL_SECONDS, config.monitorIntervalSeconds) * 20;
         ticksUntilNext = intervalTicks;
+        account = config.monitorAccount == null ? "" : config.monitorAccount.trim();
+        if (account.isEmpty()) {
+            HugoMarket.LOGGER.warn("monitor needs monitorAccount in the config, staying idle");
+            return;
+        }
+        if (!account.equalsIgnoreCase(Minecraft.getInstance().getUser().getName())) {
+            HugoMarket.LOGGER.info("monitor idle, logged in account is not {}", account);
+            return;
+        }
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(this::tick);

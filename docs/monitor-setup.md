@@ -5,25 +5,28 @@ Ein eigener Minecraft-Account, der nichts anderes tut, als regelmäßig die erst
 nicht geklärt (Ticket an das Team läuft). Nur mit einem Account machen, dessen Verlust zu
 verschmerzen wäre, und nicht mit dem Hauptaccount auf demselben Rechner gleichzeitig spielen.
 
-## Variante A: zweites Profil auf PC oder Mac (empfohlen)
+## Variante A: gleiches Profil, zweiter Account (empfohlen)
 
-1. Im NoRisk Launcher den Zweitaccount hinzufügen und ein eigenes Profil "NRC 1.21.5 Monitor"
-   anlegen, Fabric API drin lassen.
-2. `hugomarket-0.1.0+1.21.5.jar` in den `custom_mods`-Ordner dieses Profils legen.
-3. Einmal starten, auf Hugo verbinden, wieder beenden. Dann liegt
-   `config/hugomarket/config.json` im Profilordner.
-4. In dieser Datei setzen:
+Das Modul ist an einen Accountnamen gebunden und bleibt auf jedem anderen Account passiv.
+Deshalb reicht das normale Profil:
+
+1. Im NoRisk Launcher den Zweitaccount hinzufügen.
+2. In `config/hugomarket/config.json` des Profils setzen:
 
 ```json
-"modules": { "monitor": true, "ahsearch": false, "calculator": false, "tooltips": false,
-             "containervalue": false, "farm": false, "sellstats": false, "minutetest": false,
-             "alerts": false, "orders": false, "myauctions": false, "trades": false },
+"modules": { "monitor": true },
+"monitorAccount": "KOVAAV",
 "monitorIntervalSeconds": 45
 ```
 
-5. Starten, auf Hugo verbinden, an einen ruhigen Ort stellen (eigenes Grundstück, AFK-Zone).
-   Alle 45 Sekunden öffnet die Mod `/ah`, wartet auf die Seite, meldet sie und schließt sie.
-   Der Server-Flag `monitor` steht auf `true`, sonst bleibt das Modul passiv.
+3. Profil mit dem Zweitaccount starten, auf Hugo verbinden, an einen ruhigen Ort stellen
+   (eigenes Grundstück, AFK-Zone). Alle 45 Sekunden öffnet die Mod `/ah`, wartet auf die
+   Seite, meldet sie und schließt sie. Der Server-Flag `monitor` muss auf `true` stehen.
+4. Hauptaccount wie gewohnt aus demselben Profil starten; dort tut das Modul nichts.
+
+Läuft das Profil zweimal gleichzeitig, teilen sich beide Instanzen dieselbe Config und
+Client-ID. Falls der Launcher einen zweiten Start desselben Profils verweigert, ein zweites
+Profil anlegen und dort dieselbe Jar plus dieselbe Config-Zeile verwenden.
 
 Der Hauptaccount profitiert sofort: alles, was der Monitor meldet, bestätigt die eigenen
 Beobachtungen (zweiter Client), und neue Listings tauchen innerhalb einer Minute im
