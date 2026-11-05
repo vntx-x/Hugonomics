@@ -26,5 +26,5 @@
   "monitorIntervalSeconds": 20,
   "monitorAccount": "KOVAAV",
   "monitorHeadless": true,
-  "monitorQueries": ["elytra", "mace", "netherite", "totem", "shulker", "trident", "beacon", "enchanted"]
+  "monitorQueries": ["elytra", "mace", "netherite", "shulker", "trident", "beacon", "enchanted"]
 }

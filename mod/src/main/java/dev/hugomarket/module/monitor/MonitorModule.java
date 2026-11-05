@@ -7,6 +7,7 @@ import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.model.ScreenKind;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
 import java.util.ArrayList;
@@ -39,6 +40,8 @@ public final class MonitorModule implements Module {
     private boolean headless;
     private List<String> queries = List.of("");
     private int queryIndex;
+    private MonitorLog log;
+    private boolean blockedLogged;
 
     @Override
     public String id() {
@@ -77,11 +80,13 @@ public final class MonitorModule implements Module {
                 queries.add(query.trim());
             }
         }
+        log = new MonitorLog(context.dataDir().resolve("monitor.log"));
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(this::tick);
         checkMeta();
         HugoMarket.LOGGER.info("monitor enabled, interval {} s", intervalTicks / 20);
+        log.line("enabled as " + account + ", interval " + intervalTicks / 20 + " s, queries " + queries);
     }
 
     @Override
@@ -94,10 +99,12 @@ public final class MonitorModule implements Module {
         context.backend().get("/v1/meta").whenComplete((meta, error) -> context.scheduler().post(() -> {
             if (error != null) {
                 allowedByServer = false;
+                log.line("meta unavailable: " + error);
                 return;
             }
             allowedByServer = meta.has("flags") && meta.getAsJsonObject("flags").has("monitor")
                     && meta.getAsJsonObject("flags").get("monitor").getAsBoolean();
+            log.line("meta ok, monitor flag " + allowedByServer);
             if (!allowedByServer) {
                 HugoMarket.LOGGER.info("monitor not released by the server flag, idle");
             }
@@ -116,6 +123,7 @@ public final class MonitorModule implements Module {
             phase = Phase.IDLE;
             if (headless && ++offlineTicks >= OFFLINE_EXIT_TICKS) {
                 HugoMarket.LOGGER.warn("monitor offline for 60 s, exiting so the supervisor restarts the client");
+                log.line("offline for 60 s, exiting");
                 client.stop();
             }
             return;
@@ -127,18 +135,33 @@ public final class MonitorModule implements Module {
         }
         switch (phase) {
             case IDLE -> {
-                if (--ticksUntilNext > 0 || client.screen != null) {
+                if (--ticksUntilNext > 0) {
                     return;
                 }
+                if (client.screen instanceof PauseScreen) {
+                    client.setScreen(null);
+                }
+                if (client.screen != null) {
+                    if (!blockedLogged) {
+                        blockedLogged = true;
+                        log.line("waiting, screen open: " + client.screen.getClass().getSimpleName());
+                    }
+                    return;
+                }
+                blockedLogged = false;
                 String query = queries.get(queryIndex);
                 queryIndex = (queryIndex + 1) % queries.size();
-                client.player.connection.sendCommand(query.isEmpty() ? "ah" : "ah " + query);
+                String command = query.isEmpty() ? "ah" : "ah " + query;
+                client.player.connection.sendCommand(command);
+                log.line("sent /" + command);
                 phase = Phase.WAITING_FOR_AH;
                 phaseTicks = 0;
             }
             case WAITING_FOR_AH -> {
                 if (++phaseTicks > OPEN_TIMEOUT_TICKS) {
-                    HugoMarket.LOGGER.warn("monitor: AH did not open within 10 s (screen {})", client.screen == null ? "none" : client.screen.getClass().getSimpleName());
+                    String screen = client.screen == null ? "none" : client.screen.getClass().getSimpleName();
+                    HugoMarket.LOGGER.warn("monitor: AH did not open within 10 s (screen {})", screen);
+                    log.line("AH did not open within 10 s, screen " + screen);
                     reset(client);
                 }
             }
@@ -155,6 +178,7 @@ public final class MonitorModule implements Module {
             phase = Phase.VIEWING;
             phaseTicks = 0;
             pagesReported++;
+            log.line("AH page " + pagesReported + " seen (" + update.view().slots().size() + " slots)");
             if (pagesReported % 10 == 1) {
                 HugoMarket.LOGGER.info("monitor saw AH page {} (query index {})", pagesReported, queryIndex);
             }
