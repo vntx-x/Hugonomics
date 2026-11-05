@@ -394,6 +394,15 @@ Container-Snapshots beim Öffnen/Schließen und das Spielerinventar bei Änderun
 "Gesperrt" = Code vorhanden, aber nur aktivierbar, wenn `/v1/meta` ein Freigabe-Flag liefert
 und der Nutzer es lokal einschaltet. So lässt sich die Freigabe zentral zurückziehen.
 
+### Spawner-Börse zwischen Mod-Nutzern (Idee vom 2026-11-05, Phase 4 oder später)
+
+Spawner lassen sich auf Hugo nicht über das AH handeln, nur direkt zwischen Spielern. Idee:
+ein Kauf-/Verkaufs-Board im Backend, auf dem Mod-Nutzer Gesuche und Angebote (Spawner-Typ,
+Menge, Preis) einstellen; andere sehen die Liste im Spiel und bekommen per Klick eine
+vorbereitete `/msg`-Nachricht ins Chatfeld (nicht automatisch gesendet). Keine Abwicklung
+durch die Mod, nur Vermittlung. Braucht: Identität über Client-ID plus Verifikation des
+Ingame-Namens, Missbrauchsschutz, Ablauf nach 24 h.
+
 ## 7. Roadmap
 
 ### Phase 0 – Analyse (Woche 1)
