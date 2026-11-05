@@ -19,14 +19,14 @@ class UserDataTest {
     void watchlistAndPricesSurviveReload(@TempDir Path dir) {
         UserData data = new UserData(dir.resolve("templates.json"));
         assertTrue(data.toggleWatch("nether_star"));
-        data.rememberPrice("nether_star", 80_000_000);
-        data.rememberPrice("nether_star", 79_000_000);
+        data.rememberUnitPrice("nether_star", 80_000_000);
+        data.rememberUnitPrice("nether_star", 79_000_000);
 
         UserData reloaded = new UserData(dir.resolve("templates.json"));
         reloaded.load();
         assertTrue(reloaded.isWatched("nether_star"));
-        assertEquals(79_000_000, reloaded.lastPrice("nether_star").getAsLong());
-        assertTrue(reloaded.lastPrice("emerald").isEmpty());
+        assertEquals(79_000_000, reloaded.lastUnitPrice("nether_star").getAsLong());
+        assertTrue(reloaded.lastUnitPrice("emerald").isEmpty());
         assertFalse(reloaded.toggleWatch("nether_star"));
     }
 

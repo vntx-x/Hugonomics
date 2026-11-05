@@ -3,8 +3,11 @@ package dev.hugomarket.module.sellassist;
 import dev.hugomarket.container.ScreenUpdate;
 import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.model.AhView;
+import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.model.SlotView;
+import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.HugoLore;
 import dev.hugomarket.parse.ItemKeyFactory;
@@ -22,6 +25,7 @@ public final class SellAssistModule implements Module, OverlayProvider {
 
     private ModuleContext context;
     private Fees fees;
+    private AhListingParser listingParser;
     private PendingSale pending;
 
     @Override
@@ -38,6 +42,7 @@ public final class SellAssistModule implements Module, OverlayProvider {
     public void onEnable(ModuleContext context) {
         this.context = context;
         fees = Fees.load();
+        listingParser = new AhListingParser(context.guiRules());
         context.screens().onUpdate(this::onScreenUpdate);
         context.overlays().addProvider(this);
     }
@@ -67,6 +72,10 @@ public final class SellAssistModule implements Module, OverlayProvider {
         switch (update.kind()) {
             case AH_SELL_CONFIRM -> capture(update);
             case AH_CREATE_CONFIRM -> rememberPrice(update);
+            case AH_LIST -> {
+                pending = null;
+                rememberOwnListings(update);
+            }
             case PRICE_INPUT -> {
             }
             default -> pending = null;
@@ -82,7 +91,20 @@ public final class SellAssistModule implements Module, OverlayProvider {
             if (slot.playerInventory() || slot.isEmpty() || !rule.isContentSlot(slot.index())) {
                 continue;
             }
-            HugoLore.price(slot.item().lore()).ifPresent(cents -> context.userData().rememberPrice(pending.key().toString(), cents));
+            HugoLore.price(slot.item().lore()).ifPresent(cents ->
+                    context.userData().rememberUnitPrice(pending.key().toString(), Math.round((double) cents / pending.count())));
+        }
+    }
+
+    private void rememberOwnListings(ScreenUpdate update) {
+        AhListingParser.AhPage page = listingParser.parse(update.view());
+        if (page.view() != AhView.OWN_ACTIVE && page.view() != AhView.OWN_SOLD) {
+            return;
+        }
+        for (Listing listing : page.listings()) {
+            if (listing.own()) {
+                context.userData().rememberUnitPrice(listing.key().toString(), listing.unitPriceCents());
+            }
         }
     }
 

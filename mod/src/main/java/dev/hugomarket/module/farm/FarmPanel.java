@@ -2,6 +2,7 @@ package dev.hugomarket.module.farm;
 
 import dev.hugomarket.model.Money;
 import dev.hugomarket.store.FarmSession;
+import dev.hugomarket.store.Inflow;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
@@ -11,23 +12,34 @@ import dev.hugomarket.ui.widget.Label;
 import net.minecraft.client.resources.language.I18n;
 
 import java.util.List;
+import java.util.Locale;
 
 final class FarmPanel extends OverlayPanel {
-    static final int HEIGHT = Theme.PADDING * 2 + 11 * 4 + Theme.CHIP_HEIGHT + Theme.GAP + 10 * 3;
+    static final int HEIGHT = Theme.PADDING * 2 + 11 * 7 + Theme.CHIP_HEIGHT + Theme.GAP * 2 + 10 * 3;
     private static final long REFRESH_MS = 1_000;
 
     private final FarmSession session;
+    private final Inflow inflow;
     private final MarketSession market;
+    private final List<Label> inflowLines;
     private final List<Label> lines;
     private final List<Label> topLines;
     private final Chip reset;
     private FarmSession.Summary summary;
+    private Inflow.Rate rate;
     private long refreshedAt;
 
-    FarmPanel(FarmSession session, MarketSession market) {
+    FarmPanel(FarmSession session, Inflow inflow, MarketSession market) {
         this.session = session;
+        this.inflow = inflow;
         this.market = market;
-        this.summary = session.summary(market, System.currentTimeMillis());
+        long now = System.currentTimeMillis();
+        this.summary = session.summary(market, now);
+        this.rate = inflow.rate(market, now);
+        inflowLines = List.of(
+                add(new Label(() -> I18n.get("hugomarket.farm.inflow_title"), Theme.ACCENT)),
+                add(new Label(this::inflowLine, Theme.TEXT)),
+                add(new Label(this::inflowValueLine, Theme.PRICE)));
         lines = List.of(
                 add(new Label(() -> I18n.get("hugomarket.farm.title", formatDuration(summary.durationMs())), Theme.ACCENT)),
                 add(new Label(() -> I18n.get("hugomarket.farm.collected", summary.itemsCollected(), Money.compact(summary.collectedValueCents())), Theme.TEXT)),
@@ -35,6 +47,20 @@ final class FarmPanel extends OverlayPanel {
                 add(new Label(() -> I18n.get("hugomarket.farm.value_rate", Money.compact(summary.collectedPerHourCents())))));
         topLines = List.of(add(new Label(() -> topLine(0))), add(new Label(() -> topLine(1))), add(new Label(() -> topLine(2))));
         reset = add(new Chip(I18n.get("hugomarket.farm.reset"), () -> false, () -> session.reset(System.currentTimeMillis())));
+    }
+
+    private String inflowLine() {
+        if (!rate.ready()) {
+            return rate.items() == 0 ? I18n.get("hugomarket.farm.inflow_waiting", rate.observedMs() / 1000) : I18n.get("hugomarket.farm.inflow_measuring");
+        }
+        return I18n.get("hugomarket.farm.inflow_rate", String.format(Locale.ROOT, "%.1f", rate.itemsPerMinute()), rate.perHour(), rate.perDay());
+    }
+
+    private String inflowValueLine() {
+        if (!rate.ready() || rate.valuePerHourCents() == 0) {
+            return "";
+        }
+        return I18n.get("hugomarket.farm.inflow_value", Money.compact(rate.valuePerHourCents()), Money.compact(rate.valuePerHourCents() * 24), rate.topKey());
     }
 
     private String topLine(int index) {
@@ -55,6 +81,11 @@ final class FarmPanel extends OverlayPanel {
         int innerX = x + Theme.PADDING;
         int innerWidth = width - Theme.PADDING * 2;
         int cursorY = y + Theme.PADDING;
+        for (Label label : inflowLines) {
+            label.setBounds(innerX, cursorY, innerWidth, 11);
+            cursorY += 11;
+        }
+        cursorY += Theme.GAP;
         for (Label label : lines) {
             label.setBounds(innerX, cursorY, innerWidth, 11);
             cursorY += 11;
@@ -73,6 +104,7 @@ final class FarmPanel extends OverlayPanel {
         if (now - refreshedAt >= REFRESH_MS) {
             refreshedAt = now;
             summary = session.summary(market, now);
+            rate = inflow.rate(market, now);
         }
         super.render(gfx, mouseX, mouseY);
     }

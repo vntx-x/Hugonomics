@@ -22,6 +22,10 @@ public final class ContainerCounts {
         return counts;
     }
 
+    public static Map<String, Integer> added(Map<String, Integer> before, Map<String, Integer> after) {
+        return removed(after, before);
+    }
+
     public static Map<String, Integer> removed(Map<String, Integer> before, Map<String, Integer> after) {
         Map<String, Integer> removed = new HashMap<>();
         for (Map.Entry<String, Integer> entry : before.entrySet()) {

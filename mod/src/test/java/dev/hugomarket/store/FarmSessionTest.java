@@ -28,6 +28,25 @@ class FarmSessionTest {
     }
 
     @Test
+    void inflowRatesExtrapolatePerHourAndDay() {
+        Inflow inflow = new Inflow();
+        long opened = 5_000_000;
+        inflow.open(opened);
+        Inflow.Rate early = inflow.rate(market, opened + 10_000);
+        assertTrue(!early.ready());
+        inflow.added(Map.of("cactus", 30));
+        inflow.added(Map.of("cactus", 30, "sand", 6));
+        Inflow.Rate rate = inflow.rate(market, opened + 60_000);
+        assertTrue(rate.ready());
+        assertEquals(66, rate.items());
+        assertEquals(66.0, rate.itemsPerMinute(), 1e-9);
+        assertEquals(3_960, rate.perHour());
+        assertEquals(3_960 * 24, rate.perDay());
+        assertEquals("cactus", rate.topKey());
+        assertEquals(Map.of("sand", 6), ContainerCounts.added(Map.of("cactus", 60), Map.of("cactus", 60, "sand", 6)));
+    }
+
+    @Test
     void sessionAggregatesCollectedItemsAndIncome() {
         long start = 1_000_000;
         FarmSession session = new FarmSession(start);

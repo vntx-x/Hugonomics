@@ -33,8 +33,8 @@ public final class UserData {
                 watchlist.add(key.getAsString());
             }
         }
-        if (root.has("lastPrices")) {
-            for (Map.Entry<String, JsonElement> entry : root.getAsJsonObject("lastPrices").entrySet()) {
+        if (root.has("lastUnitPrices")) {
+            for (Map.Entry<String, JsonElement> entry : root.getAsJsonObject("lastUnitPrices").entrySet()) {
                 lastPrices.put(entry.getKey(), entry.getValue().getAsLong());
             }
         }
@@ -70,7 +70,7 @@ public final class UserData {
         root.add("watchlist", watch);
         JsonObject prices = new JsonObject();
         lastPrices.forEach(prices::addProperty);
-        root.add("lastPrices", prices);
+        root.add("lastUnitPrices", prices);
         JsonObject alertJson = new JsonObject();
         alerts.forEach(alertJson::addProperty);
         root.add("alerts", alertJson);
@@ -94,16 +94,20 @@ public final class UserData {
         return watchlist;
     }
 
-    public void rememberPrice(String key, long cents) {
+    public void rememberUnitPrice(String key, long unitCents) {
+        Long previous = lastPrices.get(key);
+        if (previous != null && previous == unitCents) {
+            return;
+        }
         lastPrices.remove(key);
-        lastPrices.put(key, cents);
+        lastPrices.put(key, unitCents);
         while (lastPrices.size() > MAX_PRICES) {
             lastPrices.remove(lastPrices.keySet().iterator().next());
         }
         save();
     }
 
-    public OptionalLong lastPrice(String key) {
+    public OptionalLong lastUnitPrice(String key) {
         Long cents = lastPrices.get(key);
         return cents == null ? OptionalLong.empty() : OptionalLong.of(cents);
     }

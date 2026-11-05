@@ -7,6 +7,7 @@ import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.store.ContainerCounts;
 import dev.hugomarket.store.FarmSession;
+import dev.hugomarket.store.Inflow;
 import dev.hugomarket.store.SellStats;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.OverlayProvider;
@@ -26,6 +27,7 @@ public final class FarmModule implements Module, OverlayProvider {
 
     private ModuleContext context;
     private FarmSession session;
+    private final Inflow inflow = new Inflow();
     private Map<String, Integer> lastCounts;
     private int lastContainerId = -1;
     private FarmPanel panel;
@@ -65,7 +67,7 @@ public final class FarmModule implements Module, OverlayProvider {
         if (screen instanceof AnvilScreen || isHugoTitle(screen.getTitle().getString())) {
             return List.of();
         }
-        panel = new FarmPanel(session, context.market());
+        panel = new FarmPanel(session, inflow, context.market());
         panel.setVisible(false);
         panelScreen = screen;
         PanelPlacement.rightOf(screen, panel, PANEL_WIDTH, FarmPanel.HEIGHT, PANEL_OFFSET_Y);
@@ -91,6 +93,9 @@ public final class FarmModule implements Module, OverlayProvider {
         Map<String, Integer> counts = ContainerCounts.of(update.view());
         if (update.snapshot().containerId() == lastContainerId && lastCounts != null) {
             session.collected(ContainerCounts.removed(lastCounts, counts), update.snapshot().capturedAt());
+            inflow.added(ContainerCounts.added(lastCounts, counts));
+        } else {
+            inflow.open(update.snapshot().capturedAt());
         }
         lastContainerId = update.snapshot().containerId();
         lastCounts = counts;

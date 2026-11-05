@@ -41,7 +41,7 @@ final class SellAssistPanel extends OverlayPanel {
         this.market = market;
         this.fees = fees;
         this.stats = market.stats(sale.key());
-        this.lastPrice = userData.lastPrice(sale.key().toString());
+        this.lastPrice = userData.lastUnitPrice(sale.key().toString());
         String title = sale.count() > 1 ? sale.count() + "x " + sale.item().displayName() : sale.item().displayName();
         lines = List.of(
                 add(new Label(() -> title, Theme.TEXT)),
@@ -55,7 +55,7 @@ final class SellAssistPanel extends OverlayPanel {
                 add(new Chip(I18n.get("hugomarket.sell.lowest"), () -> false, () -> applyStats(SellSuggestion::lowestStackDollars))),
                 add(new Chip(I18n.get("hugomarket.sell.median"), () -> false, () -> applyStats(SellSuggestion::medianStackDollars))));
         lastButton = add(new Chip(lastPrice.isPresent()
-                ? I18n.get("hugomarket.sell.last", Money.format(lastPrice.getAsLong()))
+                ? I18n.get("hugomarket.sell.last", Money.format(lastPrice.getAsLong()), Money.format(lastPrice.getAsLong() * sale.count()))
                 : I18n.get("hugomarket.sell.no_last"), () -> false, this::applyLast));
         market.onChange(() -> stats = market.stats(sale.key()));
     }
@@ -100,7 +100,7 @@ final class SellAssistPanel extends OverlayPanel {
 
     private void applyLast() {
         if (lastPrice.isPresent()) {
-            apply(Math.max(1, lastPrice.getAsLong() / 100));
+            apply(Math.max(1, lastPrice.getAsLong() * sale.count() / 100));
         }
     }
 
