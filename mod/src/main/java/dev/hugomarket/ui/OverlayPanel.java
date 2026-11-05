@@ -11,6 +11,15 @@ public abstract class OverlayPanel {
     protected int y;
     protected int width;
     protected int height;
+    private boolean visible = true;
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
 
     protected <W extends Widget> W add(W widget) {
         widgets.add(widget);
@@ -31,10 +40,13 @@ public abstract class OverlayPanel {
     protected abstract void layout();
 
     public boolean contains(double mouseX, double mouseY) {
-        return mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + height;
+        return visible && mouseX >= x && mouseX < x + width && mouseY >= y && mouseY < y + height;
     }
 
     public void render(Gfx gfx, int mouseX, int mouseY) {
+        if (!visible) {
+            return;
+        }
         gfx.fill(x, y, width, height, Theme.PANEL_BG);
         gfx.border(x, y, width, height, Theme.PANEL_BORDER);
         for (Widget widget : widgets) {
@@ -94,6 +106,9 @@ public abstract class OverlayPanel {
     }
 
     public boolean hasFocus() {
+        if (!visible) {
+            return false;
+        }
         for (Widget widget : widgets) {
             if (widget.isFocused()) {
                 return true;

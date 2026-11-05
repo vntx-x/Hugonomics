@@ -22,5 +22,15 @@
   "hugomarket.sell.no_data_hint": "Search the item in the AH first",
   "hugomarket.sell.fees": "Fee %s · Tax %s · Net %s",
   "hugomarket.sell.warn_below": "Warning: more than 10x below market",
-  "hugomarket.sell.warn_above": "Warning: more than 10x above market"
+  "hugomarket.sell.warn_above": "Warning: more than 10x above market",
+  "hugomarket.tooltip.unit_price": "≈ %s per piece",
+  "hugomarket.tooltip.ah": "AH: lowest %s · median %s (%s)",
+  "hugomarket.tooltip.ah_stack": "AH stack (lowest): %s",
+  "hugomarket.tooltip.contents": "Contents AH ≈ %s (%s priced, %s unpriced)",
+  "hugomarket.value.hugo": "Hugo worth: %s",
+  "hugomarket.value.hugo_bonus": "Hugo worth: %s (base %s)",
+  "hugomarket.value.ah_lowest": "AH lowest: %s",
+  "hugomarket.value.ah_median": "AH median: %s",
+  "hugomarket.value.ah_none": "AH: no prices this session",
+  "hugomarket.value.coverage": "%s items, %s without AH price"
 }

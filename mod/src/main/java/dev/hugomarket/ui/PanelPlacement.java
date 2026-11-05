@@ -11,6 +11,10 @@ public final class PanelPlacement {
     }
 
     public static void rightOf(AbstractContainerScreen<?> screen, OverlayPanel panel, int preferredWidth) {
+        rightOf(screen, panel, preferredWidth, ((AbstractContainerScreenAccessor) screen).hugomarket$imageHeight());
+    }
+
+    public static void rightOf(AbstractContainerScreen<?> screen, OverlayPanel panel, int preferredWidth, int height) {
         AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
         int screenWidth = Minecraft.getInstance().getWindow().getGuiScaledWidth();
         int left = accessor.hugomarket$leftPos() + accessor.hugomarket$imageWidth() + GAP;
@@ -19,6 +23,6 @@ public final class PanelPlacement {
             left = GAP;
             width = Math.max(80, accessor.hugomarket$leftPos() - GAP * 2);
         }
-        panel.setBounds(left, accessor.hugomarket$topPos(), width, accessor.hugomarket$imageHeight());
+        panel.setBounds(left, accessor.hugomarket$topPos(), width, height);
     }
 }

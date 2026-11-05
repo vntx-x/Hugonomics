@@ -17,6 +17,11 @@ public final class MarketSession {
     private final Map<String, PriceStats> statsByKey = new HashMap<>();
     private final List<Runnable> changeListeners = new ArrayList<>();
     private boolean statsDirty;
+    private int version;
+
+    public int version() {
+        return version;
+    }
 
     public void onChange(Runnable listener) {
         changeListeners.add(listener);
@@ -29,6 +34,7 @@ public final class MarketSession {
     public List<String> addPage(List<Listing> listings, long seenAt) {
         List<String> ids = index.addPage(listings, seenAt);
         statsDirty = true;
+        version++;
         for (Runnable listener : changeListeners) {
             listener.run();
         }

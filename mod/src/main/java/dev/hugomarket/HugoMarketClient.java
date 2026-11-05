@@ -8,8 +8,10 @@ import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.core.ModuleRegistry;
 import dev.hugomarket.core.ServerDetector;
 import dev.hugomarket.module.ahsearch.AhSearchModule;
+import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.dumper.DumperModule;
 import dev.hugomarket.module.sellassist.SellAssistModule;
+import dev.hugomarket.module.tooltips.TooltipsModule;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
@@ -33,6 +35,7 @@ public final class HugoMarketClient implements ClientModInitializer {
         OverlayManager overlays = new OverlayManager();
         MarketSession market = new MarketSession();
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, dataDir);
-        new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule())).start();
+        new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
+                new TooltipsModule(), new ContainerValueModule())).start();
     }
 }
