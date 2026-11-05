@@ -25,14 +25,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 43s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 43s"
       ],
       "stack": {
@@ -42,7 +42,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 43s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 43s"
             }
           },
           "minecraft:lore": [
@@ -70,7 +70,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -113,14 +113,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 41s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 41s"
       ],
       "stack": {
@@ -130,7 +130,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 41s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 41s"
             }
           },
           "minecraft:lore": [
@@ -158,7 +158,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -201,14 +201,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 39s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 39s"
       ],
       "stack": {
@@ -218,7 +218,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 39s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 39s"
             }
           },
           "minecraft:lore": [
@@ -246,7 +246,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -289,14 +289,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 37s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 37s"
       ],
       "stack": {
@@ -306,7 +306,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 37s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 37s"
             }
           },
           "minecraft:lore": [
@@ -334,7 +334,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -377,14 +377,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 34s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 34s"
       ],
       "stack": {
@@ -394,7 +394,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 34s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 34s"
             }
           },
           "minecraft:lore": [
@@ -422,7 +422,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -465,14 +465,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 32s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 32s"
       ],
       "stack": {
@@ -482,7 +482,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 32s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 32s"
             }
           },
           "minecraft:lore": [
@@ -510,7 +510,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -553,14 +553,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 28s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 28s"
       ],
       "stack": {
@@ -570,7 +570,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 28s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 28s"
             }
           },
           "minecraft:lore": [
@@ -598,7 +598,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -641,14 +641,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 26s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 26s"
       ],
       "stack": {
@@ -658,7 +658,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 26s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 26s"
             }
           },
           "minecraft:lore": [
@@ -686,7 +686,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -729,14 +729,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 23s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 23s"
       ],
       "stack": {
@@ -746,7 +746,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 23s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 23s"
             }
           },
           "minecraft:lore": [
@@ -774,7 +774,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -817,14 +817,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 20s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 20s"
       ],
       "stack": {
@@ -834,7 +834,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 20s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 20s"
             }
           },
           "minecraft:lore": [
@@ -862,7 +862,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -905,14 +905,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 17s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 17s"
       ],
       "stack": {
@@ -922,7 +922,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 17s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 17s"
             }
           },
           "minecraft:lore": [
@@ -950,7 +950,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -993,14 +993,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 15s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 15s"
       ],
       "stack": {
@@ -1010,7 +1010,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 15s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 15s"
             }
           },
           "minecraft:lore": [
@@ -1038,7 +1038,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1081,14 +1081,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 13s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 13s"
       ],
       "stack": {
@@ -1098,7 +1098,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 13s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 13s"
             }
           },
           "minecraft:lore": [
@@ -1126,7 +1126,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1169,14 +1169,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 10s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 10s"
       ],
       "stack": {
@@ -1186,7 +1186,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 10s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 10s"
             }
           },
           "minecraft:lore": [
@@ -1214,7 +1214,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1257,14 +1257,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 7s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 7s"
       ],
       "stack": {
@@ -1274,7 +1274,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 7s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 7s"
             }
           },
           "minecraft:lore": [
@@ -1302,7 +1302,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1345,14 +1345,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 5s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 5s"
       ],
       "stack": {
@@ -1362,7 +1362,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 5s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 5s"
             }
           },
           "minecraft:lore": [
@@ -1390,7 +1390,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1433,14 +1433,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 3s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 3s"
       ],
       "stack": {
@@ -1450,7 +1450,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 3s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 3s"
             }
           },
           "minecraft:lore": [
@@ -1478,7 +1478,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1521,14 +1521,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 1s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 33m 1s"
       ],
       "stack": {
@@ -1538,7 +1538,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 33m 1s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 33m 1s"
             }
           },
           "minecraft:lore": [
@@ -1566,7 +1566,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1609,14 +1609,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 59s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 59s"
       ],
       "stack": {
@@ -1626,7 +1626,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 32m 59s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 32m 59s"
             }
           },
           "minecraft:lore": [
@@ -1654,7 +1654,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1697,14 +1697,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 56s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 56s"
       ],
       "stack": {
@@ -1714,7 +1714,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 32m 56s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 32m 56s"
             }
           },
           "minecraft:lore": [
@@ -1742,7 +1742,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1785,14 +1785,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 54s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 54s"
       ],
       "stack": {
@@ -1802,7 +1802,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 32m 54s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 32m 54s"
             }
           },
           "minecraft:lore": [
@@ -1830,7 +1830,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1873,14 +1873,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 52s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 52s"
       ],
       "stack": {
@@ -1890,7 +1890,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 32m 52s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 32m 52s"
             }
           },
           "minecraft:lore": [
@@ -1918,7 +1918,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1961,14 +1961,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 50s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 50s"
       ],
       "stack": {
@@ -1978,7 +1978,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 32m 50s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 32m 50s"
             }
           },
           "minecraft:lore": [
@@ -2006,7 +2006,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -2049,14 +2049,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 48s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 32m 48s"
       ],
       "stack": {
@@ -2066,7 +2066,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 32m 48s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 32m 48s"
             }
           },
           "minecraft:lore": [
@@ -2094,7 +2094,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -2137,14 +2137,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 9m 55s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 9m 55s"
       ],
       "stack": {
@@ -2154,7 +2154,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 9m 55s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 9m 55s"
             }
           },
           "minecraft:lore": [
@@ -2182,7 +2182,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -2225,14 +2225,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 9m 53s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 9m 53s"
       ],
       "stack": {
@@ -2242,7 +2242,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 9m 53s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 9m 53s"
             }
           },
           "minecraft:lore": [
@@ -2270,7 +2270,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -2313,14 +2313,14 @@
       "lore": [
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 9m 51s"
       ],
       "tooltip": [
         "Nether Star",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_19
+        "Verkäufer: player_9",
         "Läuft ab in: 8h 9m 51s"
       ],
       "stack": {
@@ -2330,7 +2330,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_11 ab in: §b8h 9m 51s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_9\n§fLäuft ab in: §b8h 9m 51s"
             }
           },
           "minecraft:lore": [
@@ -2358,7 +2358,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_19
+              "text": "Verkäufer: player_9",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -2408,7 +2408,7 @@
         "Kopierte Karte",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_14
+        "Verkäufer: player_4",
         "Läuft ab in: 7h 13m 2s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -2421,7 +2421,7 @@
         "Kopierte Karte",
         "",
         "Preis: $800.000",
-        "Verkäufer: player_14
+        "Verkäufer: player_4",
         "Läuft ab in: 7h 13m 2s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -2521,7 +2521,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_14
+              "text": "Verkäufer: player_4",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -3591,7 +3591,7 @@
             "hugosmp-map-public-id": 735195,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_6 ab in: §b7h 13m 2s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$800.000\n§fVerkäufer: player_4\n§fLäuft ab in: §b7h 13m 2s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "9f3e6a06-b115-49b2-a2ec-0c84a35491b0",
@@ -3625,7 +3625,7 @@
         "Kopierte Karte",
         "",
         "Preis: $900.000",
-        "Verkäufer: player_12
+        "Verkäufer: player_3",
         "Läuft ab in: 9h 23m 23s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -3638,7 +3638,7 @@
         "Kopierte Karte",
         "",
         "Preis: $900.000",
-        "Verkäufer: player_12
+        "Verkäufer: player_3",
         "Läuft ab in: 9h 23m 23s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -3738,7 +3738,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_12
+              "text": "Verkäufer: player_3",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -4808,7 +4808,7 @@
             "hugosmp-map-public-id": 1078638,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$900.000\n§fVerkäufer: player_5 ab in: §b9h 23m 23s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$900.000\n§fVerkäufer: player_3\n§fLäuft ab in: §b9h 23m 23s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "474ccb46-6710-42d8-ad20-09a3abee9768",
@@ -4833,14 +4833,14 @@
       "lore": [
         "",
         "Preis: $1.000.000",
-        "Verkäufer: player_20
+        "Verkäufer: player_10",
         "Läuft ab in: 9h 34m 52s"
       ],
       "tooltip": [
         "netherite starter kit",
         "",
         "Preis: $1.000.000",
-        "Verkäufer: player_20
+        "Verkäufer: player_10",
         "Läuft ab in: 9h 34m 52s",
         "Contains 2 stack(s)",
         "Left Shift: view contents"
@@ -4874,7 +4874,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_20
+              "text": "Verkäufer: player_10",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -4927,7 +4927,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$1.000.000\n§fVerkäufer: player_13 ab in: §b9h 34m 52s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$1.000.000\n§fVerkäufer: player_10\n§fLäuft ab in: §b9h 34m 52s"
             }
           },
           "minecraft:custom_name": "netherite starter kit"
@@ -4943,12 +4943,12 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1110150",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Kopiert von: jango0071751",
         "Kopierte Karte",
         "",
         "Preis: $1.000.000",
-        "Verkäufer: player_16
+        "Verkäufer: player_6",
         "Läuft ab in: 7h 40m 39s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -4956,12 +4956,12 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1110150",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Kopiert von: jango0071751",
         "Kopierte Karte",
         "",
         "Preis: $1.000.000",
-        "Verkäufer: player_16
+        "Verkäufer: player_6",
         "Läuft ab in: 7h 40m 39s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -4994,7 +4994,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -5061,7 +5061,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_16
+              "text": "Verkäufer: player_6",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -6131,7 +6131,7 @@
             "hugosmp-map-public-id": 1110150,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$1.000.000\n§fVerkäufer: player_8 ab in: §b7h 40m 39s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$1.000.000\n§fVerkäufer: player_6\n§fLäuft ab in: §b7h 40m 39s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "57d73961-1d06-4a5a-95d1-25a598343cd2",
@@ -6153,11 +6153,11 @@
       "lore": [
         "Map-ID: 1105432",
         "Originalautor: .Killer_4NG",
-        "Kopiert von: player_15
+        "Kopiert von: player_5",
         "Kopierte Karte",
         "",
         "Preis: $1.000.000",
-        "Verkäufer: player_15
+        "Verkäufer: player_5",
         "Läuft ab in: 3h 47m 38s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -6166,11 +6166,11 @@
         "Unknown Map",
         "Map-ID: 1105432",
         "Originalautor: .Killer_4NG",
-        "Kopiert von: player_15
+        "Kopiert von: player_5",
         "Kopierte Karte",
         "",
         "Preis: $1.000.000",
-        "Verkäufer: player_15
+        "Verkäufer: player_5",
         "Läuft ab in: 3h 47m 38s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -6222,7 +6222,7 @@
               "text": "Kopiert von: ",
               "extra": [
                 {
-                  "text": "player_15
+                  "text": "player_5",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -6270,7 +6270,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_15
+              "text": "Verkäufer: player_5",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -7340,7 +7340,7 @@
             "hugosmp-map-public-id": 1105432,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$1.000.000\n§fVerkäufer: player_7 ab in: §b3h 47m 38s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$1.000.000\n§fVerkäufer: player_5\n§fLäuft ab in: §b3h 47m 38s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "27f29a90-94ee-43db-95e5-5ac446e69ee1",
@@ -7362,11 +7362,11 @@
       "lore": [
         "Map-ID: 1105428",
         "Originalautor: .Killer_4NG",
-        "Kopiert von: player_15
+        "Kopiert von: player_5",
         "Kopierte Karte",
         "",
         "Preis: $1.400.000",
-        "Verkäufer: player_17
+        "Verkäufer: player_7",
         "Läuft ab in: 4h 36m 59s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -7375,11 +7375,11 @@
         "Unknown Map",
         "Map-ID: 1105428",
         "Originalautor: .Killer_4NG",
-        "Kopiert von: player_15
+        "Kopiert von: player_5",
         "Kopierte Karte",
         "",
         "Preis: $1.400.000",
-        "Verkäufer: player_17
+        "Verkäufer: player_7",
         "Läuft ab in: 4h 36m 59s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -7431,7 +7431,7 @@
               "text": "Kopiert von: ",
               "extra": [
                 {
-                  "text": "player_15
+                  "text": "player_5",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -7479,7 +7479,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_17
+              "text": "Verkäufer: player_7",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -8549,7 +8549,7 @@
             "hugosmp-map-public-id": 1105428,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$1.400.000\n§fVerkäufer: player_9 ab in: §b4h 36m 59s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$1.400.000\n§fVerkäufer: player_7\n§fLäuft ab in: §b4h 36m 59s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "6e2517bc-42f2-4f86-99d1-4d6dbc303737",
@@ -8571,14 +8571,14 @@
       "lore": [
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_18
+        "Verkäufer: player_8",
         "Läuft ab in: 23h 28m 47s"
       ],
       "tooltip": [
         "Elytra Starter Kit",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_18
+        "Verkäufer: player_8",
         "Läuft ab in: 23h 28m 47s",
         "Contains 2 stack(s)",
         "Left Shift: view contents"
@@ -8612,7 +8612,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_18
+              "text": "Verkäufer: player_8",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -8665,7 +8665,7 @@
           "minecraft:custom_data": {
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_10 ab in: §b23h 28m 47s"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_8\n§fLäuft ab in: §b23h 28m 47s"
             }
           },
           "minecraft:custom_name": "Elytra Starter Kit"
@@ -8681,11 +8681,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034879",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 21s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -8693,11 +8693,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034879",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 21s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -8730,7 +8730,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -8778,7 +8778,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -9848,7 +9848,7 @@
             "hugosmp-map-public-id": 1034879,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 21s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 21s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "ffd980fd-5e04-4e63-805e-f1d0ca1880a2",
@@ -9873,7 +9873,7 @@
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 19s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -9885,7 +9885,7 @@
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 19s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -9966,7 +9966,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -11036,7 +11036,7 @@
             "hugosmp-map-public-id": 1034885,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 19s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 19s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "6ebfb4ac-36b2-4b34-b72e-556f06ce0909",

@@ -26,7 +26,7 @@
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 17s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -38,7 +38,7 @@
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 17s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -119,7 +119,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -1189,7 +1189,7 @@
             "hugosmp-map-public-id": 1034900,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 17s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 17s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "697f5d79-3b9a-4188-a905-09517bb2c73a",
@@ -1214,7 +1214,7 @@
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 16s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -1226,7 +1226,7 @@
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 16s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -1307,7 +1307,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -2377,7 +2377,7 @@
             "hugosmp-map-public-id": 1034897,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 16s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 16s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "3027f78b-64fb-401e-8248-e15c12398cb0",
@@ -2398,11 +2398,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034898",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 15s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -2410,11 +2410,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034898",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 15s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -2447,7 +2447,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -2495,7 +2495,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -3565,7 +3565,7 @@
             "hugosmp-map-public-id": 1034898,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 15s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 15s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "56758020-deba-45c5-9869-c603656f3bed",
@@ -3586,11 +3586,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034894",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 13s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -3598,11 +3598,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034894",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 13s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -3635,7 +3635,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -3683,7 +3683,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -4753,7 +4753,7 @@
             "hugosmp-map-public-id": 1034894,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 13s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 13s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "a5b8ded8-fb08-4913-ae61-654e874d7715",
@@ -4774,11 +4774,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034903",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 12s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -4786,11 +4786,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034903",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 12s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -4823,7 +4823,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -4871,7 +4871,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -5941,7 +5941,7 @@
             "hugosmp-map-public-id": 1034903,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 12s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 12s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "1c03866f-b628-45e9-a4e5-46c4c762e5b9",
@@ -5962,11 +5962,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034883",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 10s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -5974,11 +5974,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034883",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 38m 10s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -6011,7 +6011,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -6059,7 +6059,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -7129,7 +7129,7 @@
             "hugosmp-map-public-id": 1034883,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 38m 10s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 38m 10s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "3cc0f7c7-72ff-4f6d-bad7-bb50893528d1",
@@ -7150,11 +7150,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034512",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 55s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -7162,11 +7162,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034512",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 55s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -7199,7 +7199,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -7247,7 +7247,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -8317,7 +8317,7 @@
             "hugosmp-map-public-id": 1034512,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 55s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 55s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "7360f4bc-fd77-4085-83d7-5a6b64cd7fd4",
@@ -8338,11 +8338,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034594",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 54s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -8350,11 +8350,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034594",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 54s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -8387,7 +8387,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -8435,7 +8435,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -9505,7 +9505,7 @@
             "hugosmp-map-public-id": 1034594,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 54s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 54s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "cbefca8d-e9ed-4545-9996-7917670f67eb",
@@ -9526,11 +9526,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034627",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 52s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -9538,11 +9538,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034627",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 52s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -9575,7 +9575,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -9623,7 +9623,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -10693,7 +10693,7 @@
             "hugosmp-map-public-id": 1034627,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 52s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 52s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "02868e02-0701-431b-a8d8-730697f57185",
@@ -10714,11 +10714,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034604",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 50s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -10726,11 +10726,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034604",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 50s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -10763,7 +10763,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -10811,7 +10811,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -11881,7 +11881,7 @@
             "hugosmp-map-public-id": 1034604,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 50s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 50s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "6af2051a-9b26-4e72-b4fe-efa7531e4095",
@@ -11902,11 +11902,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034630",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 49s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -11914,11 +11914,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034630",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 49s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -11951,7 +11951,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -11999,7 +11999,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -13069,7 +13069,7 @@
             "hugosmp-map-public-id": 1034630,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 49s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 49s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "ad960944-82bb-41fb-bb61-2023a884e08b",
@@ -13090,11 +13090,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034643",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 47s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -13102,11 +13102,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034643",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 47s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -13139,7 +13139,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -13187,7 +13187,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -14257,7 +14257,7 @@
             "hugosmp-map-public-id": 1034643,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 47s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 47s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "57bcfb45-89ba-4af9-9f76-01b4e5e8f14e",
@@ -14278,11 +14278,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034638",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 45s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -14290,11 +14290,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034638",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 45s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -14327,7 +14327,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -14375,7 +14375,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -15445,7 +15445,7 @@
             "hugosmp-map-public-id": 1034638,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 45s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 45s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "f6b3d9ae-263f-4b43-bd9d-eb32e464074d",
@@ -15466,11 +15466,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034646",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 44s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -15478,11 +15478,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034646",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 44s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -15515,7 +15515,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -15563,7 +15563,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -16633,7 +16633,7 @@
             "hugosmp-map-public-id": 1034646,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 44s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 44s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "ec2e8ff4-0397-4720-a564-9953c6d176ce",
@@ -16654,11 +16654,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034736",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 33s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -16666,11 +16666,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034736",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 33s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -16703,7 +16703,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -16751,7 +16751,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -17821,7 +17821,7 @@
             "hugosmp-map-public-id": 1034736,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 33s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 33s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "338cad81-89b8-480a-a464-9ddc8b15dd0f",
@@ -17842,11 +17842,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwitherte",
       "lore": [
         "Map-ID: 1034517",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 32s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -17854,11 +17854,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwitherte",
         "Unknown Map",
         "Map-ID: 1034517",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 32s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -17891,7 +17891,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -17939,7 +17939,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -19009,7 +19009,7 @@
             "hugosmp-map-public-id": 1034517,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 32s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 32s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "c727aebd-76f7-4156-ac2d-9ed183f88199",
@@ -19030,11 +19030,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034653",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 29s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -19042,11 +19042,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034653",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 29s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -19079,7 +19079,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -19127,7 +19127,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -20197,7 +20197,7 @@
             "hugosmp-map-public-id": 1034653,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 29s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 29s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "6219ec39-b120-4e3a-b8a5-85f71f5fad3c",
@@ -20218,11 +20218,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034720",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 28s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -20230,11 +20230,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034720",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 28s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -20267,7 +20267,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -20315,7 +20315,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -21385,7 +21385,7 @@
             "hugosmp-map-public-id": 1034720,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 28s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 28s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "5af1412b-08d0-47f9-9728-0cfa59124680",
@@ -21406,11 +21406,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034725",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 26s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -21418,11 +21418,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034725",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 26s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -21455,7 +21455,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -21503,7 +21503,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -22573,7 +22573,7 @@
             "hugosmp-map-public-id": 1034725,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 26s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 26s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "afea7778-d83c-4d20-b35c-512b7661e56e",
@@ -22594,11 +22594,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034728",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 25s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -22606,11 +22606,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034728",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 25s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -22643,7 +22643,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -22691,7 +22691,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -23761,7 +23761,7 @@
             "hugosmp-map-public-id": 1034728,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 25s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 25s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "d2924370-33dc-4b7d-b1eb-78d24c13d698",
@@ -23782,11 +23782,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034635",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 24s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -23794,11 +23794,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034635",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 24s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -23831,7 +23831,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -23879,7 +23879,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -24949,7 +24949,7 @@
             "hugosmp-map-public-id": 1034635,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 24s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 24s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "2e976510-4b12-4fe6-a0a6-72ca1a357348",
@@ -24970,11 +24970,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034509",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 22s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -24982,11 +24982,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034509",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 22s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -25019,7 +25019,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -25067,7 +25067,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -26137,7 +26137,7 @@
             "hugosmp-map-public-id": 1034509,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 22s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 22s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "3d3abaaf-5a5b-465b-9889-649ee330c879",
@@ -26158,11 +26158,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034743",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 6s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -26170,11 +26170,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034743",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 6s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -26207,7 +26207,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -26255,7 +26255,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -27325,7 +27325,7 @@
             "hugosmp-map-public-id": 1034743,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 6s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 6s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "facadef2-5f6e-42e9-9f92-7ab877bcdc4f",
@@ -27346,11 +27346,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034733",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 5s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -27358,11 +27358,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034733",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 5s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -27395,7 +27395,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -27443,7 +27443,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -28513,7 +28513,7 @@
             "hugosmp-map-public-id": 1034733,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 5s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 5s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "792a2772-bafd-4ec7-a1aa-2277c8db45b6",
@@ -28534,11 +28534,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034748",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 3s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -28546,11 +28546,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034748",
-        "Originalautor: player_4
+        "Originalautor: player_2",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_4
+        "Verkäufer: player_2",
         "Läuft ab in: 10h 16m 3s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -28583,7 +28583,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_4
+                  "text": "player_2",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -28631,7 +28631,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_4
+              "text": "Verkäufer: player_2",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -29701,7 +29701,7 @@
             "hugosmp-map-public-id": 1034748,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2 ab in: §b10h 16m 3s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_2\n§fLäuft ab in: §b10h 16m 3s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "5c9938dc-1d4b-4a94-acdd-5c0390cefc28",
@@ -29722,11 +29722,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034606",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 14s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -29734,11 +29734,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034606",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 14s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -29771,7 +29771,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -29819,7 +29819,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -30889,7 +30889,7 @@
             "hugosmp-map-public-id": 1034606,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 14s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 14s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "ae26bba9-ca2d-4fc3-b0e1-7fbd4250f8d2",
@@ -30910,11 +30910,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034599",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 13s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -30922,11 +30922,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034599",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 13s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -30959,7 +30959,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -31007,7 +31007,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -32077,7 +32077,7 @@
             "hugosmp-map-public-id": 1034599,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 13s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 13s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "9b200360-bb61-4f00-9ab3-53562b7831f5",
@@ -32098,11 +32098,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034628",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 12s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -32110,11 +32110,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034628",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 12s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -32147,7 +32147,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -32195,7 +32195,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -33265,7 +33265,7 @@
             "hugosmp-map-public-id": 1034628,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 12s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 12s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "5049d898-014d-4304-a609-aab0f3ebf2c5",
@@ -33286,11 +33286,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034636",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 10s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -33298,11 +33298,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034636",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 10s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -33335,7 +33335,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -33383,7 +33383,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -34453,7 +34453,7 @@
             "hugosmp-map-public-id": 1034636,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 10s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 10s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "24c12379-e201-4e0e-a741-6b45c54e1431",
@@ -34474,11 +34474,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034650",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 9s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -34486,11 +34486,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034650",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 9s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -34523,7 +34523,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -34571,7 +34571,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -35641,7 +35641,7 @@
             "hugosmp-map-public-id": 1034650,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 9s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 9s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "ad4ae682-eb87-4eae-b497-b5f2bf357eee",
@@ -35662,11 +35662,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034641",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 7s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -35674,11 +35674,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034641",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 7s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -35711,7 +35711,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -35759,7 +35759,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -36829,7 +36829,7 @@
             "hugosmp-map-public-id": 1034641,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 7s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 7s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "3eb08b06-27d8-420a-a19e-63d2647184c2",
@@ -36850,11 +36850,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034719",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 4s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -36862,11 +36862,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034719",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 4s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -36899,7 +36899,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -36947,7 +36947,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -38017,7 +38017,7 @@
             "hugosmp-map-public-id": 1034719,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 4s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 4s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "51ec598a-d83b-4a8f-8cf8-6fa2bca0cd0d",
@@ -38038,11 +38038,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034654",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 2s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -38050,11 +38050,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034654",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 2s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -38087,7 +38087,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -38135,7 +38135,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -39205,7 +39205,7 @@
             "hugosmp-map-public-id": 1034654,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 2s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 2s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "be6de815-f2af-4c85-a84b-aa129c9ed80f",
@@ -39226,11 +39226,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034631",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 1s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -39238,11 +39238,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034631",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 6m 1s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -39275,7 +39275,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -39323,7 +39323,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -40393,7 +40393,7 @@
             "hugosmp-map-public-id": 1034631,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 6m 1s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 6m 1s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "70c33f8a-2905-47d1-a012-08c4f782eae9",
@@ -40414,11 +40414,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034739",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 5m 59s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -40426,11 +40426,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034739",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 5m 59s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -40463,7 +40463,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -40511,7 +40511,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -41581,7 +41581,7 @@
             "hugosmp-map-public-id": 1034739,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 5m 59s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 5m 59s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "825401b3-70e2-4bdf-a9a3-17b35b50e6ce",
@@ -41602,11 +41602,11 @@
       "nameJson": "Elymacedragonstargoldeneggnetheritetridentwithersk",
       "lore": [
         "Map-ID: 1034735",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 5m 58s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -41614,11 +41614,11 @@
         "Elymacedragonstargoldeneggnetheritetridentwithersk",
         "Unknown Map",
         "Map-ID: 1034735",
-        "Originalautor: player_3
+        "Originalautor: player_1",
         "Originale Karte",
         "",
         "Preis: $2.000.000",
-        "Verkäufer: player_3
+        "Verkäufer: player_1",
         "Läuft ab in: 10h 5m 58s",
         "Rechtsklick, um die Karte anzusehen"
       ],
@@ -41651,7 +41651,7 @@
               "text": "Originalautor: ",
               "extra": [
                 {
-                  "text": "player_3
+                  "text": "player_1",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -41699,7 +41699,7 @@
               "color": "white"
             },
             {
-              "text": "Verkäufer: player_3
+              "text": "Verkäufer: player_1",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -42769,7 +42769,7 @@
             "hugosmp-map-public-id": 1034735,
             "PublicBukkitValues": {
               "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1 ab in: §b10h 5m 58s\n§eRechtsklick, um die Karte anzusehen"
+              "minecraft:display_extra_lore": "\n§fPreis: §a$2.000.000\n§fVerkäufer: player_1\n§fLäuft ab in: §b10h 5m 58s\n§eRechtsklick, um die Karte anzusehen"
             },
             "hugosmp-map-type": "world-snapshot",
             "hugosmp-map-id": "458964ab-9d47-47c9-89c1-b6d484c61313",

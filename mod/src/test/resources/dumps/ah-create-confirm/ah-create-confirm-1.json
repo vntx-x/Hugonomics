@@ -1,0 +1,774 @@
+{
+  "ts": "2026-11-05T10:07:29.819Z",
+  "server": "hugosmp.net",
+  "minecraft": "1.21.5",
+  "mod": "0.0.1",
+  "title": "ꐶ",
+  "titleJson": {
+    "text": "ꐶ",
+    "color": "white"
+  },
+  "menuType": "minecraft:generic_9x1",
+  "containerId": 75,
+  "containerSlots": 9,
+  "slotCount": 45,
+  "slots": [
+    {
+      "index": 2,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Abbrechen",
+      "nameJson": {
+        "text": "Abbrechen",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "red"
+      },
+      "lore": [],
+      "tooltip": [
+        "Abbrechen"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/4b/32/3e73be1572972ee8",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20011.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "red_abort_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Abbrechen",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "red"
+          }
+        }
+      }
+    },
+    {
+      "index": 4,
+      "player": false,
+      "id": "minecraft:redstone",
+      "count": 56,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [
+        "",
+        "Preis: $60.000",
+        "Einstellgebühr: $600",
+        "",
+        "Die Einstellgebühr wird beim",
+        "Zurückholen nicht erstattet."
+      ],
+      "tooltip": [
+        "Redstone Dust",
+        "",
+        "Preis: $60.000",
+        "Einstellgebühr: $600",
+        "",
+        "Die Einstellgebühr wird beim",
+        "Zurückholen nicht erstattet."
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 56,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$60.000\n§fEinstellgebühr: §c$600\n\n§8Die Einstellgebühr wird beim\n§8Zurückholen nicht erstattet."
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$60.000",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Einstellgebühr: ",
+              "extra": [
+                {
+                  "text": "$600",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Die Einstellgebühr wird beim",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "Zurückholen nicht erstattet.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 6,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Angebot erstellen",
+      "nameJson": {
+        "text": "Angebot erstellen",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "green"
+      },
+      "lore": [],
+      "tooltip": [
+        "Angebot erstellen"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b3/ed/566d1faaa34596ef",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20009.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "green_check_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Angebot erstellen",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "green"
+          }
+        }
+      }
+    },
+    {
+      "index": 8,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Steuern",
+      "nameJson": {
+        "text": "Steuern",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "gold"
+      },
+      "lore": [
+        "",
+        "Beim Erstellen einer Auktion",
+        "wird eine Einstellgebühr fällig.",
+        "Die Einstellgebühr wird beim",
+        "Zurückholen nicht erstattet.",
+        "",
+        "Einstellgebühr: 1%",
+        "",
+        "Verkaufssteuer:",
+        "> bis $10.000: 1%",
+        "> bis $1.000.000: 2%",
+        "> über $1.000.000: 3%",
+        "",
+        "Die Verkaufssteuer wird nur",
+        "bei erfolgreichem Verkauf abgezogen."
+      ],
+      "tooltip": [
+        "Steuern",
+        "",
+        "Beim Erstellen einer Auktion",
+        "wird eine Einstellgebühr fällig.",
+        "Die Einstellgebühr wird beim",
+        "Zurückholen nicht erstattet.",
+        "",
+        "Einstellgebühr: 1%",
+        "",
+        "Verkaufssteuer:",
+        "> bis $10.000: 1%",
+        "> bis $1.000.000: 2%",
+        "> über $1.000.000: 3%",
+        "",
+        "Die Verkaufssteuer wird nur",
+        "bei erfolgreichem Verkauf abgezogen."
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Beim Erstellen einer Auktion",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "wird eine Einstellgebühr fällig.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Die Einstellgebühr wird beim",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "Zurückholen nicht erstattet.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Einstellgebühr: ",
+              "extra": [
+                {
+                  "text": "1%",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Verkaufssteuer:",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "> bis $10.000: ",
+              "extra": [
+                {
+                  "text": "1%",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "> bis $1.000.000: 2%",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "aqua"
+            },
+            {
+              "text": "> über $1.000.000: ",
+              "extra": [
+                {
+                  "text": "3%",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "red"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Die Verkaufssteuer wird nur",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            },
+            {
+              "text": "bei erfolgreichem Verkauf abgezogen.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "dark_gray"
+            }
+          ],
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b9/3a/19d5b33ef22c804b",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20010.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "orange_info_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Steuern",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "gold"
+          }
+        }
+      }
+    },
+    {
+      "index": 9,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 10,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 40,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 40
+      }
+    },
+    {
+      "index": 11,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 64,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 64
+      }
+    },
+    {
+      "index": 18,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 19,
+      "player": true,
+      "id": "minecraft:bucket",
+      "count": 2,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [],
+      "tooltip": [
+        "Bucket"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 2
+      }
+    },
+    {
+      "index": 20,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 61,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 61
+      }
+    },
+    {
+      "index": 22,
+      "player": true,
+      "id": "minecraft:slime_block",
+      "count": 18,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [],
+      "tooltip": [
+        "Slime Block"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 18
+      }
+    },
+    {
+      "index": 27,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 28,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 30,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 18,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 18
+      }
+    },
+    {
+      "index": 31,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 64,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 64
+      }
+    },
+    {
+      "index": 35,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 53,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 53
+      }
+    },
+    {
+      "index": 36,
+      "player": true,
+      "id": "minecraft:diamond_sword",
+      "count": 1,
+      "name": "Diamond Sword",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Diamond Sword",
+        "§a Sharpness ",
+        "§d Looting §f2",
+        "",
+        "When in Main Hand:",
+        " 7 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:looting": 2,
+            "minecraft:sharpness": 1
+          },
+          "minecraft:damage": 1192
+        }
+      }
+    },
+    {
+      "index": 37,
+      "player": true,
+      "id": "minecraft:rotten_flesh",
+      "count": 4,
+      "name": "Rotten Flesh",
+      "nameJson": {
+        "translate": "item.minecraft.rotten_flesh"
+      },
+      "lore": [],
+      "tooltip": [
+        "Rotten Flesh"
+      ],
+      "stack": {
+        "id": "minecraft:rotten_flesh",
+        "count": 4
+      }
+    },
+    {
+      "index": 40,
+      "player": true,
+      "id": "minecraft:glass",
+      "count": 42,
+      "name": "Glass",
+      "nameJson": {
+        "translate": "block.minecraft.glass"
+      },
+      "lore": [],
+      "tooltip": [
+        "Glass"
+      ],
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 42
+      }
+    },
+    {
+      "index": 42,
+      "player": true,
+      "id": "minecraft:ender_pearl",
+      "count": 3,
+      "name": "Ender Pearl",
+      "nameJson": {
+        "translate": "item.minecraft.ender_pearl"
+      },
+      "lore": [],
+      "tooltip": [
+        "Ender Pearl"
+      ],
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 3
+      }
+    },
+    {
+      "index": 44,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 61,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 61
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "ts": "2026-11-05T10:07:29.819Z",
+  "ts": "2026-11-05T10:01:04.418Z",
   "server": "hugosmp.net",
   "minecraft": "1.21.5",
   "mod": "0.0.1",
@@ -9,7 +9,7 @@
     "color": "white"
   },
   "menuType": "minecraft:generic_9x1",
-  "containerId": 75,
+  "containerId": 51,
   "containerSlots": 9,
   "slotCount": 45,
   "slots": [
@@ -18,9 +18,9 @@
       "player": false,
       "id": "minecraft:paper",
       "count": 1,
-      "name": "Abbrechen",
+      "name": "Zurück",
       "nameJson": {
-        "text": "Abbrechen",
+        "text": "Zurück",
         "strikethrough": false,
         "obfuscated": false,
         "bold": false,
@@ -30,7 +30,7 @@
       },
       "lore": [],
       "tooltip": [
-        "Abbrechen"
+        "Zurück"
       ],
       "stack": {
         "id": "minecraft:paper",
@@ -48,11 +48,11 @@
           },
           "minecraft:custom_data": {
             "PublicBukkitValues": {
-              "minecraft:secured": "auction"
+              "minecraft:secured": "order"
             }
           },
           "minecraft:custom_name": {
-            "text": "Abbrechen",
+            "text": "Zurück",
             "strikethrough": false,
             "obfuscated": false,
             "bold": false,
@@ -67,48 +67,85 @@
       "index": 4,
       "player": false,
       "id": "minecraft:redstone",
-      "count": 56,
+      "count": 1,
       "name": "Redstone Dust",
       "nameJson": {
         "translate": "item.minecraft.redstone"
       },
       "lore": [
+        "Redstone-Staub",
+        "Anzahl: 64",
+        "Preis pro Stück: $100",
         "",
-        "Preis: $60.000",
-        "Einstellgebühr: $600",
+        "Einzahlung: $6.400",
+        "Erstellgebühr: $64",
+        "Gesamtzahlung: $6.464",
         "",
-        "Die Einstellgebühr wird beim",
-        "Zurückholen nicht erstattet."
+        "Die Erstellgebühr wird beim",
+        "Abbrechen nicht erstattet.",
+        "",
+        "Jede Lieferung muss innerhalb von 5d 0h abgeholt werden.",
+        "Nicht abgeholte Lieferungen verfallen endgültig."
       ],
       "tooltip": [
         "Redstone Dust",
+        "Redstone-Staub",
+        "Anzahl: 64",
+        "Preis pro Stück: $100",
         "",
-        "Preis: $60.000",
-        "Einstellgebühr: $600",
+        "Einzahlung: $6.400",
+        "Erstellgebühr: $64",
+        "Gesamtzahlung: $6.464",
         "",
-        "Die Einstellgebühr wird beim",
-        "Zurückholen nicht erstattet."
+        "Die Erstellgebühr wird beim",
+        "Abbrechen nicht erstattet.",
+        "",
+        "Jede Lieferung muss innerhalb von 5d 0h abgeholt werden.",
+        "Nicht abgeholte Lieferungen verfallen endgültig."
       ],
       "stack": {
         "id": "minecraft:redstone",
-        "count": 56,
+        "count": 1,
         "components": {
           "minecraft:custom_data": {
             "PublicBukkitValues": {
-              "minecraft:secured": "auction",
-              "minecraft:display_extra_lore": "\n§fPreis: §a$60.000\n§fEinstellgebühr: §c$600\n\n§8Die Einstellgebühr wird beim\n§8Zurückholen nicht erstattet."
+              "minecraft:secured": "order"
             }
           },
           "minecraft:lore": [
             {
-              "text": "",
-              "italic": false
+              "text": "Redstone-Staub",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
             },
             {
-              "text": "Preis: ",
+              "text": "Anzahl: ",
               "extra": [
                 {
-                  "text": "$60.000",
+                  "text": "64",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Preis pro Stück: ",
+              "extra": [
+                {
+                  "text": "$100",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -124,10 +161,33 @@
               "color": "white"
             },
             {
-              "text": "Einstellgebühr: ",
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Einzahlung: ",
               "extra": [
                 {
-                  "text": "$600",
+                  "text": "$6.400",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Erstellgebühr: ",
+              "extra": [
+                {
+                  "text": "$64",
                   "strikethrough": false,
                   "obfuscated": false,
                   "italic": false,
@@ -143,11 +203,30 @@
               "color": "white"
             },
             {
+              "text": "Gesamtzahlung: ",
+              "extra": [
+                {
+                  "text": "$6.464",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
               "text": "",
               "italic": false
             },
             {
-              "text": "Die Einstellgebühr wird beim",
+              "text": "Die Erstellgebühr wird beim",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -156,13 +235,35 @@
               "color": "dark_gray"
             },
             {
-              "text": "Zurückholen nicht erstattet.",
+              "text": "Abbrechen nicht erstattet.",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
               "italic": false,
               "underlined": false,
               "color": "dark_gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Jede Lieferung muss innerhalb von 5d 0h abgeholt werden.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "red"
+            },
+            {
+              "text": "Nicht abgeholte Lieferungen verfallen endgültig.",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "red"
             }
           ]
         }
@@ -173,9 +274,9 @@
       "player": false,
       "id": "minecraft:paper",
       "count": 1,
-      "name": "Angebot erstellen",
+      "name": "Order aufgeben",
       "nameJson": {
-        "text": "Angebot erstellen",
+        "text": "Order aufgeben",
         "strikethrough": false,
         "obfuscated": false,
         "bold": false,
@@ -185,7 +286,7 @@
       },
       "lore": [],
       "tooltip": [
-        "Angebot erstellen"
+        "Order aufgeben"
       ],
       "stack": {
         "id": "minecraft:paper",
@@ -203,11 +304,11 @@
           },
           "minecraft:custom_data": {
             "PublicBukkitValues": {
-              "minecraft:secured": "auction"
+              "minecraft:secured": "order"
             }
           },
           "minecraft:custom_name": {
-            "text": "Angebot erstellen",
+            "text": "Order aufgeben",
             "strikethrough": false,
             "obfuscated": false,
             "bold": false,
@@ -223,9 +324,9 @@
       "player": false,
       "id": "minecraft:paper",
       "count": 1,
-      "name": "Steuern",
+      "name": "Erstellgebühr",
       "nameJson": {
-        "text": "Steuern",
+        "text": "Erstellgebühr",
         "strikethrough": false,
         "obfuscated": false,
         "bold": false,
@@ -235,38 +336,22 @@
       },
       "lore": [
         "",
-        "Beim Erstellen einer Auktion",
-        "wird eine Einstellgebühr fällig.",
-        "Die Einstellgebühr wird beim",
-        "Zurückholen nicht erstattet.",
+        "Beim Erstellen einer Order",
+        "wird eine Erstellgebühr fällig.",
+        "Diese wird beim Abbrechen",
+        "nicht erstattet.",
         "",
-        "Einstellgebühr: 1%",
-        "",
-        "Verkaufssteuer:",
-        "> bis $10.000: 1%",
-        "> bis $1.000.000: 2%",
-        "> über $1.000.000: 3%",
-        "",
-        "Die Verkaufssteuer wird nur",
-        "bei erfolgreichem Verkauf abgezogen."
+        "Erstellgebühr: 1%"
       ],
       "tooltip": [
-        "Steuern",
+        "Erstellgebühr",
         "",
-        "Beim Erstellen einer Auktion",
-        "wird eine Einstellgebühr fällig.",
-        "Die Einstellgebühr wird beim",
-        "Zurückholen nicht erstattet.",
+        "Beim Erstellen einer Order",
+        "wird eine Erstellgebühr fällig.",
+        "Diese wird beim Abbrechen",
+        "nicht erstattet.",
         "",
-        "Einstellgebühr: 1%",
-        "",
-        "Verkaufssteuer:",
-        "> bis $10.000: 1%",
-        "> bis $1.000.000: 2%",
-        "> über $1.000.000: 3%",
-        "",
-        "Die Verkaufssteuer wird nur",
-        "bei erfolgreichem Verkauf abgezogen."
+        "Erstellgebühr: 1%"
       ],
       "stack": {
         "id": "minecraft:paper",
@@ -278,7 +363,7 @@
               "italic": false
             },
             {
-              "text": "Beim Erstellen einer Auktion",
+              "text": "Beim Erstellen einer Order",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -287,7 +372,7 @@
               "color": "gray"
             },
             {
-              "text": "wird eine Einstellgebühr fällig.",
+              "text": "wird eine Erstellgebühr fällig.",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -296,7 +381,7 @@
               "color": "gray"
             },
             {
-              "text": "Die Einstellgebühr wird beim",
+              "text": "Diese wird beim Abbrechen",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -305,7 +390,7 @@
               "color": "dark_gray"
             },
             {
-              "text": "Zurückholen nicht erstattet.",
+              "text": "nicht erstattet.",
               "strikethrough": false,
               "obfuscated": false,
               "bold": false,
@@ -318,7 +403,7 @@
               "italic": false
             },
             {
-              "text": "Einstellgebühr: ",
+              "text": "Erstellgebühr: ",
               "extra": [
                 {
                   "text": "1%",
@@ -335,88 +420,6 @@
               "italic": false,
               "underlined": false,
               "color": "white"
-            },
-            {
-              "text": "",
-              "italic": false
-            },
-            {
-              "text": "Verkaufssteuer:",
-              "strikethrough": false,
-              "obfuscated": false,
-              "bold": false,
-              "italic": false,
-              "underlined": false,
-              "color": "white"
-            },
-            {
-              "text": "> bis $10.000: ",
-              "extra": [
-                {
-                  "text": "1%",
-                  "strikethrough": false,
-                  "obfuscated": false,
-                  "italic": false,
-                  "underlined": false,
-                  "color": "red"
-                }
-              ],
-              "strikethrough": false,
-              "obfuscated": false,
-              "bold": false,
-              "italic": false,
-              "underlined": false,
-              "color": "gray"
-            },
-            {
-              "text": "> bis $1.000.000: 2%",
-              "strikethrough": false,
-              "obfuscated": false,
-              "bold": false,
-              "italic": false,
-              "underlined": false,
-              "color": "aqua"
-            },
-            {
-              "text": "> über $1.000.000: ",
-              "extra": [
-                {
-                  "text": "3%",
-                  "strikethrough": false,
-                  "obfuscated": false,
-                  "italic": false,
-                  "underlined": false,
-                  "color": "red"
-                }
-              ],
-              "strikethrough": false,
-              "obfuscated": false,
-              "bold": false,
-              "italic": false,
-              "underlined": false,
-              "color": "gray"
-            },
-            {
-              "text": "",
-              "italic": false
-            },
-            {
-              "text": "Die Verkaufssteuer wird nur",
-              "strikethrough": false,
-              "obfuscated": false,
-              "bold": false,
-              "italic": false,
-              "underlined": false,
-              "color": "dark_gray"
-            },
-            {
-              "text": "bei erfolgreichem Verkauf abgezogen.",
-              "strikethrough": false,
-              "obfuscated": false,
-              "bold": false,
-              "italic": false,
-              "underlined": false,
-              "color": "dark_gray"
             }
           ],
           "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b9/3a/19d5b33ef22c804b",
@@ -431,11 +434,11 @@
           },
           "minecraft:custom_data": {
             "PublicBukkitValues": {
-              "minecraft:secured": "auction"
+              "minecraft:secured": "order"
             }
           },
           "minecraft:custom_name": {
-            "text": "Steuern",
+            "text": "Erstellgebühr",
             "strikethrough": false,
             "obfuscated": false,
             "bold": false,
@@ -498,6 +501,78 @@
       "stack": {
         "id": "minecraft:crying_obsidian",
         "count": 64
+      }
+    },
+    {
+      "index": 14,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 64,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 64
+      }
+    },
+    {
+      "index": 15,
+      "player": true,
+      "id": "minecraft:deepslate",
+      "count": 13,
+      "name": "Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:deepslate",
+        "count": 13
+      }
+    },
+    {
+      "index": 16,
+      "player": true,
+      "id": "minecraft:gravel",
+      "count": 9,
+      "name": "Gravel",
+      "nameJson": {
+        "translate": "block.minecraft.gravel"
+      },
+      "lore": [],
+      "tooltip": [
+        "Gravel"
+      ],
+      "stack": {
+        "id": "minecraft:gravel",
+        "count": 9
+      }
+    },
+    {
+      "index": 17,
+      "player": true,
+      "id": "minecraft:tuff",
+      "count": 9,
+      "name": "Tuff",
+      "nameJson": {
+        "translate": "block.minecraft.tuff"
+      },
+      "lore": [],
+      "tooltip": [
+        "Tuff"
+      ],
+      "stack": {
+        "id": "minecraft:tuff",
+        "count": 9
       }
     },
     {
@@ -573,6 +648,24 @@
       }
     },
     {
+      "index": 23,
+      "player": true,
+      "id": "minecraft:flint",
+      "count": 3,
+      "name": "Flint",
+      "nameJson": {
+        "translate": "item.minecraft.flint"
+      },
+      "lore": [],
+      "tooltip": [
+        "Flint"
+      ],
+      "stack": {
+        "id": "minecraft:flint",
+        "count": 3
+      }
+    },
+    {
       "index": 27,
       "player": true,
       "id": "minecraft:totem_of_undying",
@@ -606,6 +699,24 @@
       "stack": {
         "id": "minecraft:totem_of_undying",
         "count": 1
+      }
+    },
+    {
+      "index": 29,
+      "player": true,
+      "id": "minecraft:redstone",
+      "count": 56,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [],
+      "tooltip": [
+        "Redstone Dust"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 56
       }
     },
     {
@@ -699,24 +810,6 @@
       }
     },
     {
-      "index": 37,
-      "player": true,
-      "id": "minecraft:rotten_flesh",
-      "count": 4,
-      "name": "Rotten Flesh",
-      "nameJson": {
-        "translate": "item.minecraft.rotten_flesh"
-      },
-      "lore": [],
-      "tooltip": [
-        "Rotten Flesh"
-      ],
-      "stack": {
-        "id": "minecraft:rotten_flesh",
-        "count": 4
-      }
-    },
-    {
       "index": 40,
       "player": true,
       "id": "minecraft:glass",
@@ -750,6 +843,24 @@
       "stack": {
         "id": "minecraft:ender_pearl",
         "count": 3
+      }
+    },
+    {
+      "index": 43,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 54,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 54
       }
     },
     {

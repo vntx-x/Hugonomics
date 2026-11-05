@@ -1,0 +1,29 @@
+{
+  "titlePrefix": "",
+  "controls": {
+    "20000": "SEARCH",
+    "20001": "PREV_PAGE",
+    "20002": "NEXT_PAGE",
+    "20003": "FILTER",
+    "20004": "CREATE",
+    "20005": "REFRESH",
+    "20006": "OWN",
+    "20007": "BACK",
+    "20009": "CONFIRM",
+    "20010": "FEE_INFO",
+    "20011": "CANCEL",
+    "20014": "SET_PRICE",
+    "80017": "INPUT"
+  },
+  "screens": [
+    { "kind": "AH_LIST", "titleGlyph": "ꐭ", "menuType": "minecraft:generic_9x6", "secured": "auction", "contentSlots": [0, 44] },
+    { "kind": "AH_SELL_CONFIRM", "titleGlyph": "ꐷ", "menuType": "minecraft:generic_9x1", "secured": "auction", "contentSlots": [4, 4] },
+    { "kind": "AH_CREATE_CONFIRM", "titleGlyph": "ꐶ", "menuType": "minecraft:generic_9x1", "secured": "auction", "contentSlots": [4, 4] },
+    { "kind": "PRICE_INPUT", "title": "Preis eingeben", "menuType": "minecraft:anvil", "secured": "input" },
+    { "kind": "ORDER_CREATE_CONFIRM", "titleGlyph": "ꐶ", "menuType": "minecraft:generic_9x1", "secured": "order", "contentSlots": [4, 4] },
+    { "kind": "ORDER_LIST", "titleGlyph": "ꐸ", "menuType": "minecraft:generic_9x6", "secured": "order", "contentSlots": [0, 44] },
+    { "kind": "ORDER_ITEM_PICKER", "titleGlyph": "ꐹ", "menuType": "minecraft:generic_9x6", "secured": "order", "contentSlots": [0, 44] },
+    { "kind": "SELL_GUI", "title": "Items verkaufen", "menuType": "minecraft:generic_9x4", "contentSlots": [0, 34] },
+    { "kind": "ENDERCHEST", "title": "Enderchest", "menuType": "minecraft:generic_9x6", "contentSlots": [0, 53] }
+  ]
+}

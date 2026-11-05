@@ -195,7 +195,7 @@ Verdächtige Umbenennungen (Vanilla-Item mit Custom-Namen, der wie ein Custom-It
 - Trend = Median jetzt vs. Median vor 24 h / 7 d.
 - Frische-Ampel: grün ≤ 15 min, gelb ≤ 2 h, rot älter oder nur 1 Beobachter.
 - Tippfehler-Warnung: Eingabe < Median/10 oder > Median×10 bei ≥ 3 Beobachtungen.
-- Flip-Marge = AH-Lowest × (1 − AH-Gebühr) − Order-Preis × (1 + Order-Gebühr) − Einstellgebühr. Order-Erstellgebühr ist 1 % (aus Dump), AH-Gebühr noch unbekannt, beides konfigurierbar.
+- Flip-Marge = AH-Lowest × (1 − AH-Verkaufssteuer) − AH-Einstellgebühr − Order-Preis × (1 + Order-Erstellgebühr). Aus Dumps: Order-Erstellgebühr 1 %, AH-Einstellgebühr 1 % (verfällt beim Zurückholen), AH-Verkaufssteuer gestaffelt nach Preis: bis $10.000 1 %, bis $1.000.000 2 %, darüber 3 %, nur bei Verkauf. Sätze liegen in einer Datendatei und kommen später aus `/v1/meta`.
 - Server-Verkaufswert: Hugos `Wert:`-Zeile ist Stack-Wert mal persönlichem Multiplikator (z. B. 1.1x). Basiswert = Wert / Multiplikator; für Vergleiche zwischen Spielern zählt der Basiswert.
 
 ### 3.7 Lokale Persistenz
@@ -560,7 +560,8 @@ Im Spiel feststellen (Phase 0), Stand 2026-11-05 nach erstem Dump-Tag (`docs/hug
     `custom_data.PublicBukkitValues`. Steuer-Items haben stabile `custom_model_data`-IDs.
 11. Payout geklärt (`+$159,16 (Basis: $144,80, Bonus: +$14,36 durch 1.1x)`), Rest offen:
     AH-Kauf/-Verkauf, Order-Fill, `/pay`, `/msg`, Geldstand (keine Actionbar).
-12. Auktionsdauer 24 h (Restzeiten bis 23h 56m gesehen). Listing-Limit, AH-Gebühr offen.
+12. Auktionsdauer 24 h (Restzeiten bis 23h 56m gesehen). Gebühren vollständig bekannt
+    (siehe 3.6). Listing-Limit offen.
 
 Infrastruktur:
 13. Domain, Modrinth-Account, GitHub-Repo, endgültiger Mod-Name (Arbeitstitel `hugomarket`).

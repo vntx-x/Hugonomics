@@ -55,6 +55,25 @@ Slot 0 Eingabe-Item (ID 80017, `addons:anvil_session` UUID), Slot 2 Bestätigen 
 also über das Anvil-Textfeld getippt. Verkaufs-Vorschlag setzt dieses Textfeld, der Spieler
 klickt Bestätigen selbst.
 
+### Auktion erstellen, Bestätigung: Titel `ꐶ` (U+A436), `generic_9x1`, secured `auction`
+
+Gleiches Glyph wie die Order-Bestätigung, Unterscheidung nur über `secured`. Slot 2
+Abbrechen, Slot 4 Item mit Lore `Preis: $60.000 / Einstellgebühr: $600 / "" / Die
+Einstellgebühr wird beim / Zurückholen nicht erstattet.`, Slot 6 `Angebot erstellen`,
+Slot 8 Info `Steuern`:
+
+```
+Einstellgebühr: 1%
+Verkaufssteuer:
+> bis $10.000: 1%
+> bis $1.000.000: 2%
+> über $1.000.000: 3%
+Die Verkaufssteuer wird nur bei erfolgreichem Verkauf abgezogen.
+```
+
+Gebührenmodell AH also: 1 % beim Einstellen (verfällt beim Zurückholen) plus gestaffelte
+Verkaufssteuer auf den Verkaufspreis.
+
 ### Order anlegen, Bestätigung: Titel `ꐶ` (U+A436), `generic_9x1`, secured `order`
 
 Slot 2 Zurück, 4 Item mit Lore `Redstone-Staub / Anzahl: 64 / Preis pro Stück: $100 / "" /
@@ -122,6 +141,6 @@ Dollarzeichen vorangestellt, Tausenderpunkt, Dezimalkomma: `$1.720.000.000`, `$4
 
 ## Noch nicht gesehen
 
-Deine-Auktionen-Liste, Verkaufsmeldung für den Verkäufer, AH-Gebühr beim Einstellen oder
-Verkauf (`Auktion erstellt`-Meldung), Shop, `/pay`, `/msg`, Spawner-Items,
-Oraxen/Nexo-Custom-Items. Ein Trade-Fenster gibt es auf Hugo nicht.
+Deine-Auktionen-Liste, Verkaufsmeldung für den Verkäufer, Meldung nach dem Einstellen,
+Shop, `/pay`, `/msg`, Spawner-Items, Oraxen/Nexo-Custom-Items. Ein Trade-Fenster gibt es
+auf Hugo nicht.
