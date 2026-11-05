@@ -48,7 +48,7 @@ public final class SyncModule implements Module {
 
     @Override
     public boolean enabledByDefault() {
-        return false;
+        return true;
     }
 
     @Override

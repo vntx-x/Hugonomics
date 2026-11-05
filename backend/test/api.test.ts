@@ -46,6 +46,19 @@ describe("api", () => {
     expect(body.flags.sellmacro).toBe(false);
   });
 
+  it("serves legal pages", async () => {
+    const { app } = server();
+    const home = await app.inject({ method: "GET", url: "/" });
+    expect(home.statusCode).toBe(200);
+    expect(home.headers["content-type"]).toContain("text/html");
+    const impressum = await app.inject({ method: "GET", url: "/impressum" });
+    expect(impressum.body).toContain("Noch nicht hinterlegt");
+    const withInfo = buildServer({ config: loadConfig({}), store: new MemoryStore(), legal: { name: "Max", address: "Weg 1", email: "m@x.de" } });
+    const filled = await withInfo.inject({ method: "GET", url: "/datenschutz" });
+    expect(filled.body).toContain("Max");
+    expect(filled.body).toContain("30 Tagen");
+  });
+
   it("rejects malformed observations", async () => {
     const { app } = server();
     const response = await app.inject({ method: "POST", url: "/v1/observations", payload: { clientId: "x" } });

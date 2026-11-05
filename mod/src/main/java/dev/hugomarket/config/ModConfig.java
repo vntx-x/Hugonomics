@@ -6,7 +6,7 @@ import java.util.Map;
 public final class ModConfig {
     public Map<String, Boolean> modules = new HashMap<>();
     public boolean debugAnyServer = false;
-    public String backendUrl = "";
+    public String backendUrl = "https://hugomarket.duckdns.org";
     public String clientId = null;
     public boolean tutorialShown = false;
 

@@ -16,7 +16,7 @@ public final class DumperModule implements Module {
 
     @Override
     public boolean enabledByDefault() {
-        return true;
+        return false;
     }
 
     @Override

@@ -5,11 +5,13 @@ import { IngestService } from "../service/ingest.js";
 import { PriceService } from "../service/prices.js";
 import type { Store } from "../store/store.js";
 import { RateLimiter } from "./rateLimit.js";
+import { registerLegalRoutes, type LegalInfo } from "./legal.js";
 
 export interface ServerDeps {
   config: AppConfig;
   store: Store;
   now?: () => number;
+  legal?: LegalInfo | null;
 }
 
 const HOUR = 60 * 60 * 1000;
@@ -90,6 +92,7 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
   });
 
   app.get("/healthz", async () => ({ ok: true }));
+  registerLegalRoutes(app, deps.legal ?? null);
 
   return app;
 }

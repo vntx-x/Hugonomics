@@ -1,3 +1,4 @@
+import { legalFromEnv } from "./api/legal.js";
 import { buildServer } from "./api/server.js";
 import { loadConfig } from "./config.js";
 import { PgStore } from "./db/pgStore.js";
@@ -6,7 +7,7 @@ import { MemoryStore } from "./store/memoryStore.js";
 
 const config = loadConfig();
 const store = config.databaseUrl ? new PgStore(config.databaseUrl) : new MemoryStore();
-const app = buildServer({ config, store });
+const app = buildServer({ config, store, legal: legalFromEnv() });
 const stopJobs = startJobs(store, { confirmGapMs: config.confirmGapMs, activeWindowMs: config.activeWindowMs }, (message) =>
   console.log(`[jobs] ${message}`),
 );
