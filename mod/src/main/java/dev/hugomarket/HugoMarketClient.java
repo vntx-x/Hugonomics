@@ -18,6 +18,7 @@ import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.dumper.DumperModule;
 import dev.hugomarket.module.farm.FarmModule;
 import dev.hugomarket.module.market.MarketModule;
+import dev.hugomarket.module.colorcodes.ColorCodesModule;
 import dev.hugomarket.module.minutetest.MinuteTestModule;
 import dev.hugomarket.module.monitor.MonitorModule;
 import dev.hugomarket.module.myauctions.MyAuctionsModule;
@@ -86,8 +87,8 @@ public final class HugoMarketClient implements ClientModInitializer {
         TradeLogModule trades = new TradeLogModule();
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), sellStats,
-                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, trades, new SyncModule(),
-                new MonitorModule()));
+                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, trades, new ColorCodesModule(),
+                new SyncModule(), new MonitorModule()));
         registry.start();
         if (registry.isRunning(sellStats.id())) {
             if (registry.isRunning(farm.id())) {

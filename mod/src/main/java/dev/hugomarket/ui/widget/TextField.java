@@ -8,18 +8,24 @@ import org.lwjgl.glfw.GLFW;
 import java.util.function.Consumer;
 
 public final class TextField extends Widget {
-    private static final int MAX_LENGTH = 64;
+    private static final int DEFAULT_MAX_LENGTH = 64;
     private static final long BLINK_MS = 500;
 
     private final String placeholder;
     private final Consumer<String> onChange;
+    private final int maxLength;
     private final StringBuilder value = new StringBuilder();
     private int caret;
     private boolean focused;
 
     public TextField(String placeholder, String initial, Consumer<String> onChange) {
+        this(placeholder, initial, DEFAULT_MAX_LENGTH, onChange);
+    }
+
+    public TextField(String placeholder, String initial, int maxLength, Consumer<String> onChange) {
         this.placeholder = placeholder;
         this.onChange = onChange;
+        this.maxLength = maxLength;
         value.append(initial);
         caret = value.length();
     }
@@ -30,7 +36,7 @@ public final class TextField extends Widget {
 
     public void setValue(String text) {
         value.setLength(0);
-        value.append(text, 0, Math.min(text.length(), MAX_LENGTH));
+        value.append(text, 0, Math.min(text.length(), maxLength));
         caret = value.length();
         onChange.accept(value());
     }
@@ -138,8 +144,13 @@ public final class TextField extends Widget {
         changed();
     }
 
+    public void insertAtCaret(String text) {
+        focused = true;
+        insert(text);
+    }
+
     private void insert(String text) {
-        int room = MAX_LENGTH - value.length();
+        int room = maxLength - value.length();
         if (room <= 0) {
             return;
         }

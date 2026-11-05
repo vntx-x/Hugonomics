@@ -45,6 +45,14 @@ public final class Gfx {
         graphics.drawString(font, text, x, y, argb, false);
     }
 
+    public void component(Component text, int x, int y) {
+        graphics.drawString(font, text, x, y, 0xFFFFFFFF, false);
+    }
+
+    public int componentWidth(Component text) {
+        return font.width(text);
+    }
+
     public void textScaled(String text, int x, int y, float scale, int argb) {
         //? if >=1.21.6 {
         /*graphics.pose().pushMatrix();
