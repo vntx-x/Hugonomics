@@ -48,6 +48,7 @@ public final class MonitorModule implements Module {
     private int pagesReported;
     private int offlineTicks;
     private boolean headless;
+    private boolean sneak;
     private List<String> queries = List.of("");
     private int queryIndex;
     private MonitorLog log;
@@ -88,6 +89,7 @@ public final class MonitorModule implements Module {
             return;
         }
         headless = config.monitorHeadless;
+        sneak = config.monitorSneak;
         queries = new ArrayList<>();
         queries.add("");
         for (String query : config.monitorQueries) {
@@ -145,6 +147,9 @@ public final class MonitorModule implements Module {
             return;
         }
         offlineTicks = 0;
+        if (sneak && client.screen == null) {
+            client.options.keyShift.setDown(true);
+        }
         if (!allowedByServer) {
             phase = Phase.IDLE;
             return;

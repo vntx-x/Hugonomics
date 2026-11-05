@@ -15,6 +15,7 @@ public final class ModConfig {
     public int monitorIntervalSeconds = 45;
     public String monitorAccount = "";
     public boolean monitorHeadless = false;
+    public boolean monitorSneak = true;
     public List<String> monitorQueries = new ArrayList<>();
 
     public boolean isModuleEnabled(String id, boolean fallback) {
