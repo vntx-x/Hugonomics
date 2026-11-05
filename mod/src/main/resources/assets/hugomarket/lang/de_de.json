@@ -14,6 +14,7 @@
   "hugomarket.module.tooltips": "Preis-Tooltips",
   "hugomarket.module.containervalue": "Container-Wert",
   "hugomarket.module.calculator": "Rechner (N)",
+  "hugomarket.module.sync": "Backend-Sync (Preise teilen)",
   "hugomarket.calc.title": "HugoMarket Rechner",
   "hugomarket.calc.copy": "Kopieren",
   "hugomarket.calc.to_price": "→ Preis",

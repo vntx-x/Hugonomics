@@ -19,7 +19,7 @@ class ContainerValuationTest {
     @Test
     void sumsHugoWorthLinesOfAChest() {
         ContainerView chest = DumpLoader.container("chest/chest-1.json");
-        ContainerValuation value = ContainerValuation.of(chest, new MarketSession());
+        ContainerValuation value = ContainerValuation.of(chest, new MarketSession(new PriceStore(java.nio.file.Path.of("build", "unused-cache.json"))));
         long expected = chest.containerItems()
                 .mapToLong(s -> HugoLore.worth(s.item().lore()).map(HugoLore.Worth::valueCents).orElse(0L)).sum();
         assertEquals(expected, value.hugoWorthCents());
@@ -32,7 +32,7 @@ class ContainerValuationTest {
     void valuesListingsWithSessionPrices() {
         ContainerView page = DumpLoader.container("ah-list/ah-list-2.json");
         List<Listing> listings = parser.parse(page).listings();
-        MarketSession market = new MarketSession();
+        MarketSession market = new MarketSession(new PriceStore(java.nio.file.Path.of("build", "unused-cache.json")));
         market.addPage(listings, 1_000);
         ContainerValuation value = ContainerValuation.of(page, market);
         long expectedLowest = 0;
@@ -47,7 +47,7 @@ class ContainerValuationTest {
     @Test
     void shulkerContentsAreValuedWhenBoxItselfHasNoPrice() {
         ContainerView enderchest = DumpLoader.container("enderchest/enderchest-1.json");
-        MarketSession market = new MarketSession();
+        MarketSession market = new MarketSession(new PriceStore(java.nio.file.Path.of("build", "unused-cache.json")));
         ContainerValuation value = ContainerValuation.of(enderchest, market);
         assertTrue(value.hugoWorthCents() > 0);
         assertTrue(value.unvaluedByAh() > 0);

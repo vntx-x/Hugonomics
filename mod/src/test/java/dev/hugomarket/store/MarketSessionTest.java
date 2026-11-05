@@ -32,7 +32,7 @@ class MarketSessionTest {
 
     @Test
     void statsPerKeyFromSeenPages() {
-        MarketSession session = new MarketSession();
+        MarketSession session = new MarketSession(new PriceStore(java.nio.file.Path.of("build", "unused-cache.json")));
         List<Listing> page = parser.parse(DumpLoader.container("ah-list/ah-list-2.json")).listings();
         session.addPage(page, 1_000);
         PriceStats stars = session.stats(ItemKey.parse("nether_star"));
@@ -46,7 +46,7 @@ class MarketSessionTest {
 
     @Test
     void statsRefreshAfterNewPage() {
-        MarketSession session = new MarketSession();
+        MarketSession session = new MarketSession(new PriceStore(java.nio.file.Path.of("build", "unused-cache.json")));
         session.addPage(parser.parse(DumpLoader.container("ah-list/ah-list-1.json")).listings(), 1_000);
         int before = session.size();
         session.addPage(parser.parse(DumpLoader.container("ah-list/ah-list-2.json")).listings(), 2_000);
