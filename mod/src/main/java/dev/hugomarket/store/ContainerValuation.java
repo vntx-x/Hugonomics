@@ -6,6 +6,7 @@ import dev.hugomarket.model.SlotView;
 import dev.hugomarket.parse.HugoLore;
 import dev.hugomarket.parse.ItemKeyFactory;
 
+import java.util.List;
 import java.util.Optional;
 
 public record ContainerValuation(
@@ -31,6 +32,14 @@ public record ContainerValuation(
     public static ContainerValuation ofItem(ItemView item, MarketSession market) {
         Accumulator acc = new Accumulator();
         acc.add(item, market, true);
+        return acc.result();
+    }
+
+    public static ContainerValuation ofItems(List<ItemView> items, MarketSession market) {
+        Accumulator acc = new Accumulator();
+        for (ItemView item : items) {
+            acc.add(item, market, true);
+        }
         return acc.result();
     }
 

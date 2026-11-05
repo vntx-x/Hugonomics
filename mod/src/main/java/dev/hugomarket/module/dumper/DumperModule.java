@@ -26,6 +26,7 @@ public final class DumperModule implements Module {
         containers = new ContainerDumper(state, writer, context.server());
         context.containers().addListener(containers);
         new ChatDumper(state, writer, context.server()).register();
+        new SidebarDumper(state, writer, context.server()).register(context.scheduler());
         new DumperToggle(state, context.scheduler()).register();
         new DumperHud(state).register();
     }
