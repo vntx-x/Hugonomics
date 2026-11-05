@@ -97,7 +97,7 @@ public final class ListingIndex {
         Comparator<Entry> unit = Comparator.comparingLong(e -> e.listing().unitPriceCents());
         Comparator<Entry> expiry = Comparator.comparingLong(Entry::expiresAt);
         return switch (sort) {
-            case UNIT_ASC -> unit.thenComparing(expiry);
+            case UNIT_ASC, DEAL -> unit.thenComparing(expiry);
             case UNIT_DESC -> unit.reversed().thenComparing(expiry);
             case EXPIRES_ASC -> expiry.thenComparing(unit);
             case NEWEST -> expiry.reversed().thenComparing(unit);

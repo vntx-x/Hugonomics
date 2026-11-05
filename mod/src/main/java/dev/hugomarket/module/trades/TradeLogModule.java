@@ -6,6 +6,7 @@ import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.mixin.AbstractContainerScreenAccessor;
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ScreenKind;
+import dev.hugomarket.module.networth.BalanceParser;
 import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.parse.ChatPatterns;
 import dev.hugomarket.store.AhTotalsTracker;
@@ -111,6 +112,9 @@ public final class TradeLogModule implements Module {
         if (overlay) {
             onActionbar(text);
             return;
+        }
+        if (BalanceParser.mentionsBalance(text)) {
+            samples.line("chat " + ChatPatterns.normalize(text));
         }
         if (!ChatPatterns.isAuctionBought(text)) {
             return;

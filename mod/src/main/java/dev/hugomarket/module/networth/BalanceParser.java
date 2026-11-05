@@ -31,6 +31,10 @@ public final class BalanceParser {
         return unlabeled;
     }
 
+    public static boolean mentionsBalance(String text) {
+        return LABEL.matcher(text).find() && text.matches(".*[0-9].*");
+    }
+
     public static OptionalLong fromMessage(String text) {
         if (!LABEL.matcher(text).find() || text.contains("+") || text.contains("-$")) {
             return OptionalLong.empty();

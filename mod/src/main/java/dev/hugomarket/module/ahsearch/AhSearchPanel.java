@@ -15,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
+import java.util.OptionalDouble;
 
 final class AhSearchPanel extends OverlayPanel {
     private static final int ICON_SIZE = 16;
@@ -39,6 +40,8 @@ final class AhSearchPanel extends OverlayPanel {
                 text -> state.setQuery(state.query().withText(text))));
         sortCaption = add(new Label(() -> I18n.get("hugomarket.ah.sort_caption")));
         sortChips = List.of(
+                add(new Chip(I18n.get("hugomarket.ah.sort.deal"), () -> state.query().sort() == SearchQuery.Sort.DEAL,
+                        () -> state.setQuery(state.query().withSort(SearchQuery.Sort.DEAL)))),
                 add(new Chip(I18n.get("hugomarket.ah.sort.unit_asc"), () -> state.query().sort() == SearchQuery.Sort.UNIT_ASC,
                         () -> state.setQuery(state.query().withSort(SearchQuery.Sort.UNIT_ASC)))),
                 add(new Chip(I18n.get("hugomarket.ah.sort.unit_desc"), () -> state.query().sort() == SearchQuery.Sort.UNIT_DESC,
@@ -101,13 +104,19 @@ final class AhSearchPanel extends OverlayPanel {
     private void renderRow(Gfx gfx, ListingIndex.Entry entry, int rowX, int rowY, int rowWidth, int rowHeight, boolean hovered) {
         ItemStack stack = state.icon(entry);
         if (!stack.isEmpty()) {
-            gfx.item(stack, rowX + 1, rowY + (rowHeight - ICON_SIZE) / 2);
+            gfx.item(stack, rowX + 3, rowY + (rowHeight - ICON_SIZE) / 2);
         }
         String price = Money.compact(entry.listing().unitPriceCents());
-        int priceWidth = gfx.textWidth(price);
-        int textX = rowX + ICON_SIZE + 4;
-        int nameWidth = rowWidth - ICON_SIZE - 8 - priceWidth;
+        OptionalDouble ratio = state.deal(entry.listing());
+        String delta = ratio.isPresent() ? Deals.deltaText(ratio.getAsDouble()) : "";
+        int rightWidth = Math.max(gfx.textWidth(price), gfx.textWidth(delta));
+        int textX = rowX + ICON_SIZE + 6;
+        int nameWidth = rowWidth - ICON_SIZE - 12 - rightWidth;
         boolean watched = state.isWatched(entry.listing());
+        boolean bargain = ratio.isPresent() && ratio.getAsDouble() <= Deals.BARGAIN_FACTOR;
+        if (bargain) {
+            gfx.fill(rowX, rowY + 1, 2, rowHeight - 2, Theme.BARGAIN_FRAME);
+        }
         String name = entry.listing().item().displayName();
         if (entry.listing().item().count() > 1) {
             name = entry.listing().item().count() + "x " + name;
@@ -117,7 +126,12 @@ final class AhSearchPanel extends OverlayPanel {
         }
         gfx.textNoShadow(gfx.clip(name, nameWidth), textX, rowY + 2, watched ? Theme.WATCH_FRAME : Theme.TEXT);
         gfx.textNoShadow(gfx.clip(entry.listing().seller(), nameWidth), textX, rowY + 11, Theme.TEXT_DIM);
-        gfx.textNoShadow(price, rowX + rowWidth - priceWidth - 3, rowY + 6, Theme.PRICE);
+        int priceY = delta.isEmpty() ? rowY + 6 : rowY + 2;
+        gfx.textNoShadow(price, rowX + rowWidth - gfx.textWidth(price) - 3, priceY, Theme.PRICE);
+        if (!delta.isEmpty()) {
+            int deltaColor = bargain ? Theme.BARGAIN_FRAME : ratio.getAsDouble() > 1.15 ? Theme.DANGER : Theme.TEXT_DIM;
+            gfx.textNoShadow(delta, rowX + rowWidth - gfx.textWidth(delta) - 3, rowY + 11, deltaColor);
+        }
     }
 
     @Override

@@ -3,7 +3,6 @@ package dev.hugomarket.module.ahsearch;
 import dev.hugomarket.mixin.AbstractContainerScreenAccessor;
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.store.MarketSession;
-import dev.hugomarket.store.PriceStats;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.Theme;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
@@ -14,8 +13,6 @@ import java.util.List;
 
 final class SlotHighlighter {
     private static final int SLOT_SIZE = 16;
-    private static final double BARGAIN_FACTOR = 0.85;
-    private static final int MIN_LISTINGS_FOR_BARGAIN = 3;
 
     private final AbstractContainerScreen<?> screen;
     private final AhSearchState state;
@@ -43,21 +40,13 @@ final class SlotHighlighter {
             if (state.matchesCurrentPage(listing)) {
                 matching.set(listing.slot());
             }
-            if (isBargain(listing)) {
+            if (Deals.isBargain(market.stats(listing.key()), listing)) {
                 bargain.set(listing.slot());
             }
             if (state.isWatched(listing)) {
                 watched.set(listing.slot());
             }
         }
-    }
-
-    private boolean isBargain(Listing listing) {
-        PriceStats stats = market.stats(listing.key());
-        if (stats == null || stats.listings() < MIN_LISTINGS_FOR_BARGAIN) {
-            return false;
-        }
-        return listing.unitPriceCents() <= stats.medianUnitCents() * BARGAIN_FACTOR;
     }
 
     void render(Gfx gfx) {

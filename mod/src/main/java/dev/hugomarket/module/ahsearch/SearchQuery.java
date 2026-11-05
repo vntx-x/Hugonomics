@@ -10,7 +10,8 @@ public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boo
         UNIT_ASC,
         UNIT_DESC,
         EXPIRES_ASC,
-        NEWEST
+        NEWEST,
+        DEAL
     }
 
     public static final SearchQuery EMPTY = new SearchQuery("", 0, Long.MAX_VALUE, false, false, Sort.UNIT_ASC);

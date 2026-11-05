@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public final class AhSearchModule implements Module, OverlayProvider {
-    private static final int PANEL_WIDTH = 170;
+    private static final int PANEL_WIDTH = 186;
 
     private AhSearchState state;
     private ModuleContext context;

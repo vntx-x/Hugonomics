@@ -6,9 +6,11 @@ import dev.hugomarket.store.UserData;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 
 public final class AhSearchState {
     private final MarketSession session;
@@ -82,8 +84,17 @@ public final class AhSearchState {
         return query.matches(listing, userData::isWatched);
     }
 
+    public OptionalDouble deal(Listing listing) {
+        return Deals.ratio(session.stats(listing.key()), listing);
+    }
+
     private void requery() {
-        results = session.index().query(query, userData::isWatched);
+        List<ListingIndex.Entry> found = session.index().query(query, userData::isWatched);
+        if (query.sort() == SearchQuery.Sort.DEAL) {
+            found = new ArrayList<>(found);
+            found.sort(Comparator.comparingDouble(e -> deal(e.listing()).orElse(Double.MAX_VALUE)));
+        }
+        results = found;
         notifyChange();
     }
 
