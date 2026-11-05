@@ -30,6 +30,9 @@ public final class SyncModule implements Module {
     private static final int MAX_UPLOADS_PER_FLUSH = 5;
     private static final int MAX_KEYS_PER_REQUEST = 200;
     private static final long MIN_RESEND_GAP_MS = 60_000;
+    private static final int LISTINGS_INTERVAL_TICKS = 20 * 30;
+    private static final long LISTINGS_MIN_GAP_MS = 25_000;
+    private static final long LISTINGS_MAX_AGE_MS = 20 * 60_000;
 
     private ModuleContext context;
     private AhListingParser parser;
@@ -44,6 +47,8 @@ public final class SyncModule implements Module {
     private int ticks;
     private boolean uploading;
     private boolean fetching;
+    private boolean fetchingListings;
+    private long lastListingsFetch;
 
     @Override
     public String id() {
@@ -108,7 +113,11 @@ public final class SyncModule implements Module {
     }
 
     private void onScreenUpdate(ScreenUpdate update) {
-        if (!enabled || update.kind() != ScreenKind.AH_LIST || !metaLoaded || !uploadsAllowed) {
+        if (!enabled || update.kind() != ScreenKind.AH_LIST) {
+            return;
+        }
+        fetchListings();
+        if (!metaLoaded || !uploadsAllowed) {
             return;
         }
         AhListingParser.AhPage page = parser.parse(update.view());
@@ -145,6 +154,12 @@ public final class SyncModule implements Module {
         if (ticks % PRICE_INTERVAL_TICKS == 0) {
             fetchPrices();
         }
+        if (ticks % LISTINGS_INTERVAL_TICKS == 0) {
+            ScreenUpdate current = context.screens().current();
+            if (current != null && current.kind() == ScreenKind.AH_LIST) {
+                fetchListings();
+            }
+        }
         if (ticks % SAVE_INTERVAL_TICKS == 0) {
             context.market().backend().saveIfDirty();
         }
@@ -171,6 +186,23 @@ public final class SyncModule implements Module {
                 return;
             }
             uploadNext(remaining - 1);
+        }));
+    }
+
+    private void fetchListings() {
+        long now = System.currentTimeMillis();
+        if (fetchingListings || now - lastListingsFetch < LISTINGS_MIN_GAP_MS || !client.available()) {
+            return;
+        }
+        fetchingListings = true;
+        lastListingsFetch = now;
+        client.get("/v1/listings?maxAge=" + LISTINGS_MAX_AGE_MS).whenComplete((result, error) -> context.scheduler().post(() -> {
+            fetchingListings = false;
+            if (error != null) {
+                return;
+            }
+            long received = System.currentTimeMillis();
+            context.market().replaceRemoteListings(ListingsJson.parse(result, received), received);
         }));
     }
 

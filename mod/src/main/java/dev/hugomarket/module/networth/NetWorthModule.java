@@ -26,6 +26,7 @@ public final class NetWorthModule implements Module {
     private boolean enabled;
     private int ticks;
     private List<String> lastSidebar = List.of();
+    private long lastSidebarCents = Long.MIN_VALUE;
 
     @Override
     public String id() {
@@ -69,7 +70,8 @@ public final class NetWorthModule implements Module {
         }
         lastSidebar = lines;
         OptionalLong balance = BalanceParser.fromSidebar(lines);
-        if (balance.isPresent()) {
+        if (balance.isPresent() && balance.getAsLong() != lastSidebarCents) {
+            lastSidebarCents = balance.getAsLong();
             store.setBalance(balance.getAsLong(), System.currentTimeMillis());
         }
     }

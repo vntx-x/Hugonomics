@@ -218,6 +218,7 @@
   "hugomarket.dumper.hud": "Hugonomics DUMP  %s containers  %s chat",
   "hugomarket.ah.search": "Search (name, enchant, seller)",
   "hugomarket.ah.sort.deal": "Deal",
+  "hugomarket.ah.remote": "Server · %s min ago",
   "hugomarket.ah.sort.unit_asc": "$ ↑",
   "hugomarket.ah.sort.unit_desc": "$ ↓",
   "hugomarket.ah.sort.expires": "Time",

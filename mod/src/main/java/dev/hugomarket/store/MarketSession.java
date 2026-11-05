@@ -68,6 +68,13 @@ public final class MarketSession {
         notifyChange();
     }
 
+    public void replaceRemoteListings(List<ListingIndex.RemoteEntry> remote, long now) {
+        index.replaceRemote(remote, now);
+        statsDirty = true;
+        version++;
+        notifyChange();
+    }
+
     public PriceStats stats(ItemKey key) {
         if (statsDirty) {
             rebuildStats();

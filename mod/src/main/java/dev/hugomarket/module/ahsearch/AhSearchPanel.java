@@ -125,7 +125,10 @@ final class AhSearchPanel extends OverlayPanel {
             name = STAR + name;
         }
         gfx.textNoShadow(gfx.clip(name, nameWidth), textX, rowY + 2, watched ? Theme.WATCH_FRAME : Theme.TEXT);
-        gfx.textNoShadow(gfx.clip(entry.listing().seller(), nameWidth), textX, rowY + 11, Theme.TEXT_DIM);
+        String origin = ListingIndex.isRemote(entry)
+                ? I18n.get("hugomarket.ah.remote", Math.max(0, (System.currentTimeMillis() - entry.lastSeen()) / 60_000))
+                : entry.listing().seller();
+        gfx.textNoShadow(gfx.clip(origin, nameWidth), textX, rowY + 11, ListingIndex.isRemote(entry) ? Theme.TEXT_PLACEHOLDER : Theme.TEXT_DIM);
         int priceY = delta.isEmpty() ? rowY + 6 : rowY + 2;
         gfx.textNoShadow(price, rowX + rowWidth - gfx.textWidth(price) - 3, priceY, Theme.PRICE);
         if (!delta.isEmpty()) {

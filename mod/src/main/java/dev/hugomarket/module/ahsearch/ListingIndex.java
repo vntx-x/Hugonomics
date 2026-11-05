@@ -18,6 +18,7 @@ public final class ListingIndex {
 
     private static final long[] SECOND_TOLERANCE = {0, -1, 1};
     private static final int MAX_DUPLICATES = 64;
+    private static final String REMOTE_PREFIX = "remote:";
 
     private final long maxAgeMillis;
     private final Map<String, Entry> entries = new LinkedHashMap<>();
@@ -66,6 +67,38 @@ public final class ListingIndex {
         }
     }
 
+    public record RemoteEntry(String id, Listing listing, long lastSeen, long expiresAt) {
+    }
+
+    public static boolean isRemote(Entry entry) {
+        return entry.id().startsWith(REMOTE_PREFIX);
+    }
+
+    public void replaceRemote(List<RemoteEntry> remote, long now) {
+        entries.keySet().removeIf(id -> id.startsWith(REMOTE_PREFIX));
+        Set<String> local = new HashSet<>();
+        for (Entry entry : entries.values()) {
+            long second = entry.expiresAt() / 1000;
+            for (long delta = -2; delta <= 2; delta++) {
+                local.add(localKey(entry.listing(), second + delta));
+            }
+        }
+        for (RemoteEntry entry : remote) {
+            if (entry.expiresAt() > 0 && entry.expiresAt() <= now) {
+                continue;
+            }
+            if (local.contains(localKey(entry.listing(), entry.expiresAt() / 1000))) {
+                continue;
+            }
+            String id = REMOTE_PREFIX + entry.id();
+            entries.put(id, new Entry(id, entry.listing(), entry.lastSeen(), entry.lastSeen(), entry.expiresAt()));
+        }
+    }
+
+    private static String localKey(Listing listing, long second) {
+        return listing.key() + "|" + listing.item().count() + "|" + listing.priceCents() + "|" + second;
+    }
+
     public void clear() {
         entries.clear();
     }
@@ -109,7 +142,7 @@ public final class ListingIndex {
         while (it.hasNext()) {
             Entry entry = it.next();
             boolean expired = entry.expiresAt() > 0 && entry.expiresAt() <= now;
-            if (expired || now - entry.lastSeen() > maxAgeMillis) {
+            if (expired || (!isRemote(entry) && now - entry.lastSeen() > maxAgeMillis)) {
                 it.remove();
             }
         }

@@ -3,7 +3,11 @@ package dev.hugomarket.module.ahsearch;
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.UserData;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -20,10 +24,16 @@ public final class AhSearchState {
     private List<ListingIndex.Entry> results = List.of();
     private List<Listing> currentPage = List.of();
     private final List<Runnable> changeListeners = new ArrayList<>();
+    private boolean requerying;
 
     public AhSearchState(MarketSession session, UserData userData) {
         this.session = session;
         this.userData = userData;
+        session.onChange(() -> {
+            if (!requerying) {
+                requery();
+            }
+        });
     }
 
     public void onChange(Runnable listener) {
@@ -53,7 +63,17 @@ public final class AhSearchState {
 
     public ItemStack icon(ListingIndex.Entry entry) {
         ItemStack stack = icons.get(entry.id());
-        return stack == null ? ItemStack.EMPTY : stack;
+        if (stack != null) {
+            return stack;
+        }
+        if (!ListingIndex.isRemote(entry)) {
+            return ItemStack.EMPTY;
+        }
+        ResourceLocation id = ResourceLocation.tryParse(entry.listing().item().id());
+        Item item = id == null ? Items.AIR : BuiltInRegistries.ITEM.getValue(id);
+        ItemStack created = item == Items.AIR ? ItemStack.EMPTY : new ItemStack(item, entry.listing().item().count());
+        icons.put(entry.id(), created);
+        return created;
     }
 
     public boolean isWatched(Listing listing) {
@@ -89,6 +109,15 @@ public final class AhSearchState {
     }
 
     private void requery() {
+        requerying = true;
+        try {
+            runQuery();
+        } finally {
+            requerying = false;
+        }
+    }
+
+    private void runQuery() {
         List<ListingIndex.Entry> found = session.index().query(query, userData::isWatched);
         if (query.sort() == SearchQuery.Sort.DEAL) {
             found = new ArrayList<>(found);

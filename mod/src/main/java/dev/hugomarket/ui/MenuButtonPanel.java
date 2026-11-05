@@ -16,7 +16,7 @@ public final class MenuButtonPanel extends OverlayPanel {
         AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
         int width = 72;
         int left = accessor.hugomarket$leftPos();
-        int top = Math.max(GAP_ABOVE, accessor.hugomarket$topPos() - HEIGHT - GAP_ABOVE);
+        int top = accessor.hugomarket$topPos() + accessor.hugomarket$imageHeight() + GAP_ABOVE;
         setBounds(left, top, width, HEIGHT);
     }
 

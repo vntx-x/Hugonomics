@@ -46,6 +46,20 @@ describe("api", () => {
     expect(body.flags.sellmacro).toBe(false);
   });
 
+  it("lists active listings without seller hashes", async () => {
+    const { app, advance } = server();
+    await app.inject({ method: "POST", url: "/v1/observations", payload: batch(CLIENT_A, "2026-11-05T12:00:00Z") });
+    await app.inject({ method: "POST", url: "/v1/observations", payload: batch(CLIENT_B, "2026-11-05T12:00:00Z", 90_000_000, 5) });
+    advance(60_000);
+    const response = await app.inject({ method: "GET", url: "/v1/listings?maxAge=600000" });
+    expect(response.statusCode).toBe(200);
+    const body = response.json();
+    expect(body.listings).toHaveLength(1);
+    expect(body.listings[0].priceCents).toBe(80_000_000);
+    expect(body.listings[0].sellerHash).toBeUndefined();
+    expect(body.listings[0].id).toHaveLength(32);
+  });
+
   it("serves legal pages", async () => {
     const { app } = server();
     const home = await app.inject({ method: "GET", url: "/" });
