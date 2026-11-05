@@ -24,7 +24,7 @@ cd ~/hugomarket/monitor
 mkdir -p data/main mods
 # fabric-api-<version>+1.21.5.jar und hugomarket-<version>+1.21.5.jar nach mods/
 # config.json: clientId auf eine neue UUID setzen, monitorAccount prüfen
-echo 'MC_LOGIN=<microsoft-mail>' > .env
+printf 'MC_LOGIN=<microsoft-mail>\nMC_UID=%s\n' "$(id -u)" > .env
 docker compose up -d --build
 docker compose logs -f
 ```

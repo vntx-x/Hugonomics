@@ -1,6 +1,9 @@
 services:
   monitor:
-    build: .
+    build:
+      context: .
+      args:
+        UID: ${MC_UID:-1000}
     image: hugonomics-monitor
     restart: unless-stopped
     environment:

@@ -5,7 +5,8 @@ RUN apt-get update \
     && pip3 install --no-cache-dir portablemc==4.4.0 \
     && rm -rf /var/lib/apt/lists/*
 
-RUN useradd -m -u 1000 mc
+ARG UID=1000
+RUN useradd -m -u "$UID" mc
 USER mc
 WORKDIR /home/mc
 
