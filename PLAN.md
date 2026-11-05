@@ -27,12 +27,13 @@ Fertig und ingame getestet: Dumper, AH-Such-Panel (Suche, Sortierung, Filter, Ma
 Session-Index). Fertig, gebaut, noch ohne Ingame-Rückmeldung: Verkaufs-Vorschlag im Amboss,
 Preis-Tooltips, Container-Wert-Panel, Rechner (Panel, eigener Screen, Chat-Kurzform
 `=…`), Modul-Menü mit Mod-Menu-Eintrag, Backend-Sync (aus, bis `backendUrl` gesetzt ist),
-Unter-Marktpreis-Rahmen. Backend-MVP (Fastify, Postgres, Konsens, Preise, Meta) mit Tests,
-noch nicht deployt (`docs/deploy.md`).
+Unter-Marktpreis-Rahmen, Watchlist (Rechtsklick auf Treffer), Preis-Vorlage pro Item im
+Amboss, Orders-Panel mit Flip-Marge (AH kaufen, Order liefern) und Order-Zeile im Tooltip.
+Backend-MVP (Fastify, Postgres, Konsens, Preise, Meta) mit Tests, noch nicht deployt
+(`docs/deploy.md`).
 
-Offen aus dem MVP: automatisches Blättern (gesperrt bis Freigabe), Watchlist, Preis-Vorlagen
-pro Item, Kategorie-Panel neben dem Rechner (braucht Backend-Volumen), Sprachumschaltung
-unabhängig von der Spielsprache, Tutorial.
+Offen aus dem MVP: automatisches Blättern (gesperrt bis Freigabe), Kategorie-Panel neben dem
+Rechner (braucht Backend-Volumen), Sprachumschaltung unabhängig von der Spielsprache, Tutorial.
 
 ## 2. Recherche-Stand
 
