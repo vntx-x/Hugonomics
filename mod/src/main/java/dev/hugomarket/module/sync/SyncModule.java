@@ -35,6 +35,7 @@ public final class SyncModule implements Module {
     private String pepper;
     private boolean uploadsAllowed;
     private boolean metaLoaded;
+    private boolean enabled;
     private final Deque<JsonObject> queue = new ArrayDeque<>();
     private int ticks;
     private boolean uploading;
@@ -53,18 +54,19 @@ public final class SyncModule implements Module {
     @Override
     public void onEnable(ModuleContext context) {
         this.context = context;
-        ModConfig config = context.config().get();
-        if (config.backendUrl == null || config.backendUrl.isBlank()) {
+        if (!context.hasBackend()) {
             HugoMarket.LOGGER.info("sync enabled but backendUrl is empty, staying idle");
             return;
         }
+        ModConfig config = context.config().get();
         if (config.clientId == null || config.clientId.isBlank()) {
             config.clientId = UUID.randomUUID().toString();
             context.config().save();
         }
         clientId = config.clientId;
         parser = new AhListingParser(context.guiRules());
-        client = new BackendClient(config.backendUrl);
+        client = context.backend();
+        enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(mc -> tick());
         loadMeta();
@@ -72,10 +74,7 @@ public final class SyncModule implements Module {
 
     @Override
     public void onDisable() {
-        if (client != null) {
-            client.close();
-            client = null;
-        }
+        enabled = false;
         queue.clear();
         context.market().backend().saveIfDirty();
     }
@@ -97,7 +96,7 @@ public final class SyncModule implements Module {
     }
 
     private void onScreenUpdate(ScreenUpdate update) {
-        if (client == null || update.kind() != ScreenKind.AH_LIST || !metaLoaded || !uploadsAllowed) {
+        if (!enabled || update.kind() != ScreenKind.AH_LIST || !metaLoaded || !uploadsAllowed) {
             return;
         }
         AhListingParser.AhPage page = parser.parse(update.view());
@@ -116,7 +115,7 @@ public final class SyncModule implements Module {
     }
 
     private void tick() {
-        if (client == null) {
+        if (!enabled) {
             return;
         }
         ticks++;
@@ -185,10 +184,7 @@ public final class SyncModule implements Module {
             if (entry.getValue().isJsonNull()) {
                 continue;
             }
-            JsonObject p = entry.getValue().getAsJsonObject();
-            context.market().backend().put(entry.getKey(), new PriceStats(p.get("lowestUnitCents").getAsLong(),
-                    p.get("medianUnitCents").getAsLong(), p.get("listings").getAsInt(), p.get("units").getAsInt(),
-                    p.get("lastSeen").getAsLong()));
+            context.market().backend().put(entry.getKey(), PriceJson.stats(entry.getValue().getAsJsonObject()));
         }
         context.market().backendUpdated();
     }

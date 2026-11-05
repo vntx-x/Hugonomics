@@ -5,6 +5,7 @@ import dev.hugomarket.config.MenuScreen;
 import dev.hugomarket.container.ContainerTracker;
 import dev.hugomarket.container.ScreenStateTracker;
 import dev.hugomarket.core.ClientScheduler;
+import dev.hugomarket.core.MenuActions;
 import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.core.ModuleRegistry;
 import dev.hugomarket.core.ServerDetector;
@@ -12,11 +13,13 @@ import dev.hugomarket.module.ahsearch.AhSearchModule;
 import dev.hugomarket.module.calc.CalcModule;
 import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.dumper.DumperModule;
+import dev.hugomarket.module.market.MarketModule;
 import dev.hugomarket.module.orders.OrdersModule;
 import dev.hugomarket.module.sellassist.SellAssistModule;
 import dev.hugomarket.module.sellstats.SellStatsModule;
 import dev.hugomarket.module.sync.SyncModule;
 import dev.hugomarket.module.tooltips.TooltipsModule;
+import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
@@ -34,9 +37,14 @@ import java.util.List;
 
 public final class HugoMarketClient implements ClientModInitializer {
     private static ModuleRegistry registry;
+    private static MenuActions menuActions;
 
     public static ModuleRegistry registry() {
         return registry;
+    }
+
+    public static MenuActions menuActions() {
+        return menuActions;
     }
 
     @Override
@@ -54,16 +62,20 @@ public final class HugoMarketClient implements ClientModInitializer {
         MarketSession market = new MarketSession(priceStore);
         UserData userData = new UserData(dataDir.resolve("templates.json"));
         userData.load();
-        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, userData, dataDir);
+        String backendUrl = config.get().backendUrl;
+        BackendClient backend = backendUrl == null || backendUrl.isBlank() ? null : new BackendClient(backendUrl);
+        menuActions = new MenuActions();
+        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
+                userData, backend, menuActions, dataDir);
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), new SellStatsModule(),
-                new SyncModule()));
+                new MarketModule(), new SyncModule()));
         registry.start();
         KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_UNKNOWN);
         scheduler.onTick(client -> {
             while (menuKey.consumeClick()) {
                 if (client.screen == null) {
-                    client.setScreen(new MenuScreen(null, registry));
+                    client.setScreen(new MenuScreen(null, registry, menuActions));
                 }
             }
         });

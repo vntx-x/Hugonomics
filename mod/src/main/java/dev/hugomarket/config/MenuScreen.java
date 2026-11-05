@@ -1,5 +1,6 @@
 package dev.hugomarket.config;
 
+import dev.hugomarket.core.MenuActions;
 import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleRegistry;
 import dev.hugomarket.ui.Gfx;
@@ -28,10 +29,10 @@ public final class MenuScreen extends Screen {
     private final Screen parent;
     private final MenuPanel panel;
 
-    public MenuScreen(Screen parent, ModuleRegistry registry) {
+    public MenuScreen(Screen parent, ModuleRegistry registry, MenuActions actions) {
         super(Component.translatable("hugomarket.menu.title"));
         this.parent = parent;
-        this.panel = new MenuPanel(registry);
+        this.panel = new MenuPanel(registry, actions);
     }
 
     @Override
@@ -91,11 +92,15 @@ public final class MenuScreen extends Screen {
         private final List<Module> modules;
         private final List<Chip> toggles = new ArrayList<>();
         private final List<Label> names = new ArrayList<>();
+        private final List<Chip> actionChips = new ArrayList<>();
         private final Label hint;
 
-        MenuPanel(ModuleRegistry registry) {
+        MenuPanel(ModuleRegistry registry, MenuActions actions) {
             this.registry = registry;
             this.modules = registry.modules();
+            for (MenuActions.Action action : actions.all()) {
+                actionChips.add(add(new Chip(I18n.get(action.labelKey()), () -> false, action.run())));
+            }
             for (Module module : modules) {
                 names.add(add(new Label(() -> I18n.get("hugomarket.module." + module.id()), Theme.TEXT)));
                 toggles.add(add(new Chip("", () -> registry.isEnabled(module.id()), () -> toggle(module))));
@@ -104,7 +109,8 @@ public final class MenuScreen extends Screen {
         }
 
         int preferredHeight() {
-            return Theme.PADDING * 2 + 14 + modules.size() * TILE_HEIGHT + 12;
+            int actionRows = (actionChips.size() + 1) / 2;
+            return Theme.PADDING * 2 + 14 + actionRows * (Theme.CHIP_HEIGHT + Theme.GAP) + modules.size() * TILE_HEIGHT + 12;
         }
 
         private void toggle(Module module) {
@@ -116,6 +122,11 @@ public final class MenuScreen extends Screen {
             int innerX = x + Theme.PADDING;
             int innerWidth = width - Theme.PADDING * 2;
             int cursorY = y + Theme.PADDING + 14;
+            int half = (innerWidth - Theme.GAP) / 2;
+            for (int i = 0; i < actionChips.size(); i++) {
+                actionChips.get(i).setBounds(innerX + (i % 2) * (half + Theme.GAP), cursorY + (i / 2) * (Theme.CHIP_HEIGHT + Theme.GAP), half, Theme.CHIP_HEIGHT);
+            }
+            cursorY += ((actionChips.size() + 1) / 2) * (Theme.CHIP_HEIGHT + Theme.GAP);
             for (int i = 0; i < modules.size(); i++) {
                 names.get(i).setBounds(innerX, cursorY, innerWidth - 60, TILE_HEIGHT - 4);
                 toggles.get(i).setBounds(innerX + innerWidth - 56, cursorY + (TILE_HEIGHT - 4 - Theme.CHIP_HEIGHT) / 2, 56, Theme.CHIP_HEIGHT);

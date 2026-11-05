@@ -7,6 +7,6 @@ import dev.hugomarket.HugoMarketClient;
 public final class ModMenuEntry implements ModMenuApi {
     @Override
     public ConfigScreenFactory<?> getModConfigScreenFactory() {
-        return parent -> new MenuScreen(parent, HugoMarketClient.registry());
+        return parent -> new MenuScreen(parent, HugoMarketClient.registry(), HugoMarketClient.menuActions());
     }
 }

@@ -3,6 +3,7 @@ package dev.hugomarket.core;
 import dev.hugomarket.config.ConfigStore;
 import dev.hugomarket.container.ContainerTracker;
 import dev.hugomarket.container.ScreenStateTracker;
+import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.UserData;
@@ -20,6 +21,11 @@ public record ModuleContext(
         OverlayManager overlays,
         MarketSession market,
         UserData userData,
+        BackendClient backend,
+        MenuActions menu,
         Path dataDir
 ) {
+    public boolean hasBackend() {
+        return backend != null;
+    }
 }
