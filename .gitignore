@@ -18,3 +18,4 @@ dist/
 .DS_Store
 Thumbs.db
 docs/deploy.local.md
+CLAUDE.md

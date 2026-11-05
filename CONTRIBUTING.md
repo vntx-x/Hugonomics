@@ -1,4 +1,4 @@
-# CLAUDE.md
+# Mitmachen
 
 Monorepo für die HugoSMP Markt-Mod (`mod/`, Fabric, Java 25) und ihr Backend (`backend/`,
 Node 24, TypeScript). Architektur, Datenmodell und Roadmap stehen in `PLAN.md`; dieses

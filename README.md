@@ -30,7 +30,7 @@ Mod Menu → Hugonomics → Übersicht listet jede Funktion mit Ort und Taste. K
 
 ## Entwicklung
 
-Siehe `CLAUDE.md` für Build-Befehle und Code-Regeln, `PLAN.md` für Architektur und Roadmap,
+Siehe `CONTRIBUTING.md` für Build-Befehle und Code-Regeln, `PLAN.md` für Architektur und Roadmap,
 `docs/` für Hugo-Formate und Deployment.
 
 ```

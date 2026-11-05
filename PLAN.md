@@ -109,7 +109,7 @@ vorhanden.
 ```
 hugosmp-mod/
   PLAN.md
-  CLAUDE.md
+  CONTRIBUTING.md
   mod/                     Fabric-Mod (Gradle, Java 21, Stonecutter 1.21.5/1.21.8/1.21.10/1.21.11)
     stonecutter.properties.toml   zentrale Versions- und Abhängigkeitsliste
     src/main/java/dev/hugomarket/
