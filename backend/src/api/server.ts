@@ -47,7 +47,7 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
     serverTime: new Date(now()).toISOString(),
     pepper: deps.config.pepper,
     fees: FEES,
-    flags: { ahpaging: false, sellmacro: false, monitor: false, cmdhotkeys: false },
+    flags: { ahpaging: false, sellmacro: false, monitor: deps.config.monitorFlag, cmdhotkeys: false },
   }));
 
   app.post("/v1/observations", async (request, reply) => {

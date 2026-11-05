@@ -76,6 +76,7 @@
   "hugomarket.module.farm": "Farm-Tracker",
   "hugomarket.module.minutetest": "Minutentest",
   "hugomarket.module.trades": "Trade-Log und Profit",
+  "hugomarket.module.monitor": "Monitor (nur Zweitaccount, öffnet /ah selbst)",
   "hugomarket.profit.open": "Profit",
   "hugomarket.profit.title": "Profit",
   "hugomarket.profit.today": "Heute: +%s ein · %s aus · %s",
