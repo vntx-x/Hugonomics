@@ -8,7 +8,7 @@ Client-side mod for the HugoSMP server. Makes the auction house searchable, show
 
 ## Auction house
 - Search panel next to the AH: name, enchantment or seller, several words at once
-- Sort by unit price, time left or newly listed; filters for enchanted, spawners, watchlist
+- Sort by unit price, time left or newly listed; filters for enchanted and watchlist
 - Results across every page you have seen in the last minutes
 - Frames right on the page: purple match, green below market price, yellow watchlist
 - Overview of your own auctions: list value, net after tax, market value, overpriced entries
@@ -56,7 +56,7 @@ Client-Mod für HugoSMP. Macht das Auktionshaus durchsuchbar, zeigt Marktpreise 
 
 ## Auktionshaus
 - Suchfeld rechts neben dem AH: Name, Enchant oder Verkäufer, mehrere Wörter gleichzeitig
-- Sortierung nach Stückpreis, Restzeit oder "neu gelistet", Filter Enchanted, Spawner, Watchlist
+- Sortierung nach Stückpreis, Restzeit oder "neu gelistet", Filter Enchanted, Watchlist
 - Treffer über alle Seiten, die du in den letzten Minuten gesehen hast
 - Rahmen direkt auf der Seite: lila Treffer, grün unter Marktpreis, gelb Watchlist
 - Übersicht deiner Auktionen: Listenwert, Netto nach Steuer, Marktwert, zu teure Einträge

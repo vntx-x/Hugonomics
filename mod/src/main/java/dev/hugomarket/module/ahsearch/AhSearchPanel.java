@@ -43,8 +43,6 @@ final class AhSearchPanel extends OverlayPanel {
                         () -> state.setQuery(state.query().withSort(SearchQuery.Sort.NEWEST)))),
                 add(new Chip(I18n.get("hugomarket.ah.filter.enchanted"), () -> state.query().onlyEnchanted(),
                         () -> state.setQuery(state.query().toggleEnchanted()))),
-                add(new Chip(I18n.get("hugomarket.ah.filter.spawner"), () -> state.query().onlySpawner(),
-                        () -> state.setQuery(state.query().toggleSpawner()))),
                 add(new Chip(I18n.get("hugomarket.ah.filter.watched"), () -> state.query().onlyWatched(),
                         () -> state.setQuery(state.query().toggleWatched()))));
         status = add(new Label(() -> I18n.get("hugomarket.ah.status", state.results().size(), state.indexedCount())));

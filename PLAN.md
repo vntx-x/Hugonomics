@@ -36,7 +36,7 @@ Preis-Alarme, Orders-Flip-Panel, eigene Auktionen, Farm-Tracker (Kisten-Diff).
 
 Offen: automatisches Blättern (gesperrt bis Freigabe), Kategorie-Panel neben dem Rechner
 (braucht Backend-Volumen), Sprachumschaltung unabhängig von der Spielsprache, Tutorial,
-Command-Hotkeys (nach Rückfrage), Minutentest, Spawner-Tabelle, Profit-Tracker,
+Command-Hotkeys (nach Rückfrage), Minutentest, Profit-Tracker,
 Inflations-Index, Dashboard, Discord-Bot, Color-Codes, Modrinth-Release.
 
 ## 2. Recherche-Stand
@@ -284,7 +284,6 @@ liegt; Caddy nur, wenn kein anderer Reverse-Proxy den Port 443 hält (prüfen). 
 | GET | `/v1/items` | Item-Liste mit Kategorie, Anzeigename, Volumen-Rang (ETag) |
 | GET | `/v1/items/:key/history?range=1h..31d` | Zeitreihe für Chart |
 | GET | `/v1/categories` | Kategorien + Meta-Ranking |
-| GET | `/v1/spawners` | Spawner-Tabelle |
 | GET | `/v1/index` | Inflations-Index-Verlauf |
 | GET/POST | `/v1/rtp` | RTP-Punkte lesen / beitragen (opt-in) |
 | GET | `/v1/contrib/:clientId` | eigener Scan-Beitrag |
@@ -384,7 +383,6 @@ Container-Snapshots beim Öffnen/Schließen und das Spielerinventar bei Änderun
 | `cmdhotkeys` | 2 (nach Rückfrage) | an | sendet Befehl auf Tastendruck des Spielers |
 | `sellmacro` | 3 (gesperrt) | aus | Shift-Klicks + Sell-Button, nach Freigabe |
 | `minutetest` | 3 | an | keine |
-| `spawners` | 3 | an | keine |
 | `profit` | 3 | an | keine |
 | `inflation` | 3 | an | keine |
 | `colorcodes` | 3 | an | keine (Befehl kopieren) |
@@ -398,14 +396,10 @@ Container-Snapshots beim Öffnen/Schließen und das Spielerinventar bei Änderun
 "Gesperrt" = Code vorhanden, aber nur aktivierbar, wenn `/v1/meta` ein Freigabe-Flag liefert
 und der Nutzer es lokal einschaltet. So lässt sich die Freigabe zentral zurückziehen.
 
-### Spawner-Börse zwischen Mod-Nutzern (Idee vom 2026-11-05, Phase 4 oder später)
+### Gestrichen (2026-11-05)
 
-Spawner lassen sich auf Hugo nicht über das AH handeln, nur direkt zwischen Spielern. Idee:
-ein Kauf-/Verkaufs-Board im Backend, auf dem Mod-Nutzer Gesuche und Angebote (Spawner-Typ,
-Menge, Preis) einstellen; andere sehen die Liste im Spiel und bekommen per Klick eine
-vorbereitete `/msg`-Nachricht ins Chatfeld (nicht automatisch gesendet). Keine Abwicklung
-durch die Mod, nur Vermittlung. Braucht: Identität über Client-ID plus Verifikation des
-Ingame-Namens, Missbrauchsschutz, Ablauf nach 24 h.
+Spawner-Items gibt es auf Hugo nicht, damit entfallen Spawner-Filter, Spawner-Tabelle, ROI
+und die Spawner-Börse. Der Discord-Bot ist auf Wunsch des Betreibers gestrichen.
 
 ## 7. Roadmap
 
@@ -445,7 +439,7 @@ Mod-Dateien:
 - `net/BackendClient`, `net/PriceCacheFile`
 - `ui/OverlayPanel`, `ui/widget/*`, `ui/Theme`, `ui/SlotHighlighter`
 - `module/ahsearch/`: `AhSearchPanel` (Suchfeld, Filterchips, Sortierung), `ListingIndex`
-  (alle gesehenen Listings der aktuellen AH-Sitzung, Volltext über Name/Enchant/Spawner),
+  (alle gesehenen Listings der aktuellen AH-Sitzung, Volltext über Name/Enchant/Verkäufer),
   `ResultList` (virtuell, zeigt Seite/Slot), `UnderMarketMarker`, `Watchlist`
 - `module/ahpaging/`: `PageWalker` (gesperrt, Delay 1,5–3 s pro Seite, Stop bei Mausbewegung
   über Container, Hotkey)
@@ -504,12 +498,11 @@ Tests: Order-Parser und Payout-Parser gegen Dumps, `FlipCalculator` mit Gebühre
   Abbruch bei jedem unerwarteten Screen; Build-Flag `-Pmodules.exclude=sellmacro`
 - `module/minutetest/`: 60 s nur mit echten Verkaufs-Ticks, Speichern/Umbenennen,
   `SellMultiCalculator` (Basis = Basismenge)
-- `module/spawners/`: Preistabelle, `RoiCalculator` mit Drop-Raten aus Farm-Tracker
 - `module/profit/`: Tag/Woche, Netto-Vermögen-Schätzung (Geldstand aus Chat/Actionbar +
   Container-Wert)
 - `module/inflation/`: Index-Anzeige
 - `module/colorcodes/`: Editor, Zähler (35/30), Templates
-- Backend: `/spawners`, `/index`, Dashboard (`web/`), Discord-Bot `/preis`
+- Backend: `/index`, Dashboard (`web/`)
 - Comfort: Chat-Kompakt, letzte Suche merken, Tutorial
 
 Tests: `MacroStateMachine` als reiner Zustandsautomat ohne Minecraft, Minutentest-Zählung,
