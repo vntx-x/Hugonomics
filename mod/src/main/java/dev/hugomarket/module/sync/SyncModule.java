@@ -32,7 +32,6 @@ public final class SyncModule implements Module {
     private static final long MIN_RESEND_GAP_MS = 60_000;
     private static final int LISTINGS_INTERVAL_TICKS = 20 * 30;
     private static final long LISTINGS_MIN_GAP_MS = 25_000;
-    private static final long LISTINGS_MAX_AGE_MS = 20 * 60_000;
 
     private ModuleContext context;
     private AhListingParser parser;
@@ -47,8 +46,6 @@ public final class SyncModule implements Module {
     private int ticks;
     private boolean uploading;
     private boolean fetching;
-    private boolean fetchingListings;
-    private long lastListingsFetch;
 
     @Override
     public String id() {
@@ -190,20 +187,7 @@ public final class SyncModule implements Module {
     }
 
     private void fetchListings() {
-        long now = System.currentTimeMillis();
-        if (fetchingListings || now - lastListingsFetch < LISTINGS_MIN_GAP_MS || !client.available()) {
-            return;
-        }
-        fetchingListings = true;
-        lastListingsFetch = now;
-        client.get("/v1/listings?maxAge=" + LISTINGS_MAX_AGE_MS).whenComplete((result, error) -> context.scheduler().post(() -> {
-            fetchingListings = false;
-            if (error != null) {
-                return;
-            }
-            long received = System.currentTimeMillis();
-            context.market().replaceRemoteListings(ListingsJson.parse(result, received), received);
-        }));
+        context.listings().request(LISTINGS_MIN_GAP_MS);
     }
 
     private void fetchPrices() {

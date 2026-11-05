@@ -1,4 +1,4 @@
-package dev.hugomarket.module.sync;
+package dev.hugomarket.store;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

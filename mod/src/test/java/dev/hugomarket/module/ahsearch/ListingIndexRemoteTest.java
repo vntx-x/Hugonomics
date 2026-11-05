@@ -45,9 +45,9 @@ class ListingIndexRemoteTest {
 
     @Test
     void parsesEnchantmentsFromKeyVariant() {
-        Map<String, Integer> enchants = dev.hugomarket.module.sync.ListingsJson.enchantments("efficiency5;mending1;unbreaking3");
+        Map<String, Integer> enchants = dev.hugomarket.store.ListingsJson.enchantments("efficiency5;mending1;unbreaking3");
         assertEquals(3, enchants.size());
         assertEquals(5, enchants.get("efficiency"));
-        assertTrue(dev.hugomarket.module.sync.ListingsJson.enchantments("").isEmpty());
+        assertTrue(dev.hugomarket.store.ListingsJson.enchantments("").isEmpty());
     }
 }

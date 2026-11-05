@@ -8,6 +8,8 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 public final class MarketModule implements Module {
+    private static final long LISTINGS_MAX_STALE_MS = 20_000;
+
     private ModuleContext context;
     private MarketData data;
     private KeyMapping key;
@@ -45,6 +47,7 @@ public final class MarketModule implements Module {
 
     private void open() {
         Minecraft client = Minecraft.getInstance();
-        client.setScreen(new MarketScreen(client.screen, new MarketPanel(data, context.market(), context.userData()), data));
+        Runnable requestListings = context.listings() == null ? () -> { } : () -> context.listings().request(LISTINGS_MAX_STALE_MS);
+        client.setScreen(new MarketScreen(client.screen, new MarketPanel(data, context.market(), context.userData(), requestListings), data));
     }
 }

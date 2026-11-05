@@ -15,6 +15,7 @@ import dev.hugomarket.module.ahsearch.AhSearchModule;
 import dev.hugomarket.module.alerts.AlertsModule;
 import dev.hugomarket.module.calc.CalcModule;
 import dev.hugomarket.module.containervalue.ContainerValueModule;
+import dev.hugomarket.module.deals.DealsModule;
 import dev.hugomarket.module.dumper.DumperModule;
 import dev.hugomarket.module.farm.FarmModule;
 import dev.hugomarket.module.market.MarketModule;
@@ -34,6 +35,7 @@ import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStore;
+import dev.hugomarket.store.RemoteListingsFeed;
 import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.KeyBindings;
 import dev.hugomarket.ui.MenuButtonPanel;
@@ -80,8 +82,9 @@ public final class HugoMarketClient implements ClientModInitializer {
             var client = net.minecraft.client.Minecraft.getInstance();
             client.setScreen(new HelpScreen(client.screen));
         });
+        RemoteListingsFeed listings = backend == null ? null : new RemoteListingsFeed(backend, scheduler, market);
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
-                userData, backend, menuActions, dataDir);
+                userData, backend, listings, menuActions, dataDir);
         new FirstStartHint(config, server, scheduler).register();
         SellStatsModule sellStats = new SellStatsModule();
         FarmModule farm = new FarmModule();
@@ -90,7 +93,7 @@ public final class HugoMarketClient implements ClientModInitializer {
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), sellStats,
                 new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, trades, new ColorCodesModule(),
-                new NetWorthModule(), new SyncModule(), new MonitorModule()));
+                new NetWorthModule(), new DealsModule(), new SyncModule(), new MonitorModule()));
         registry.start();
         if (registry.isRunning(sellStats.id())) {
             if (registry.isRunning(farm.id())) {

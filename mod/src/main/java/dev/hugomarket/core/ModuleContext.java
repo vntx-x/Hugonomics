@@ -6,6 +6,7 @@ import dev.hugomarket.container.ScreenStateTracker;
 import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.store.RemoteListingsFeed;
 import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.OverlayManager;
 
@@ -22,6 +23,7 @@ public record ModuleContext(
         MarketSession market,
         UserData userData,
         BackendClient backend,
+        RemoteListingsFeed listings,
         MenuActions menu,
         Path dataDir
 ) {

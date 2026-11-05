@@ -2,6 +2,8 @@ package dev.hugomarket.module.market;
 
 import dev.hugomarket.model.ItemKey;
 import dev.hugomarket.model.Money;
+import dev.hugomarket.module.ahsearch.ListingIndex;
+import dev.hugomarket.module.ahsearch.SearchQuery;
 import dev.hugomarket.module.calc.CalcEngine;
 import dev.hugomarket.module.calc.CalcFormat;
 import dev.hugomarket.module.sync.PriceJson;
@@ -24,6 +26,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -45,16 +48,22 @@ final class MarketPanel extends OverlayPanel {
     private final Chip alertSet;
     private final Chip alertClear;
     private final UserData userData;
+    private final Runnable requestListings;
+    private final ListView<ListingIndex.Entry> live;
     private final Map<String, ItemStack> icons = new HashMap<>();
     private String query = "";
     private PriceJson.ItemSummary selected;
     private String range = "24h";
     private boolean chartLoading;
 
-    MarketPanel(MarketData data, MarketSession market, UserData userData) {
+    MarketPanel(MarketData data, MarketSession market, UserData userData, Runnable requestListings) {
         this.data = data;
         this.market = market;
         this.userData = userData;
+        this.requestListings = requestListings;
+        live = add(new ListView<>(Theme.ROW_HEIGHT, this::renderLiveRow, (entry, button) -> {
+        }));
+        market.onChange(this::refreshLive);
         setTitle(I18n.get("hugomarket.market.title"));
         setHeaderRight(this::statusText);
         alertField = add(new TextField(I18n.get("hugomarket.market.alert_placeholder"), "", text -> {
@@ -101,7 +110,38 @@ final class MarketPanel extends OverlayPanel {
         alertSet.setBounds(innerX + fieldWidth + Theme.GAP, detailY + 1, 60, Theme.CHIP_HEIGHT);
         alertClear.setBounds(innerX + fieldWidth + Theme.GAP * 2 + 60, detailY + 1, 60, Theme.CHIP_HEIGHT);
         detailY += Theme.FIELD_HEIGHT + Theme.GAP;
-        chart.setBounds(innerX, detailY, innerWidth, y + height - Theme.PADDING - detailY);
+        int remaining = y + height - Theme.PADDING - detailY;
+        int chartHeight = Math.max(50, Math.min(90, remaining / 2));
+        chart.setBounds(innerX, detailY, innerWidth, chartHeight);
+        detailY += chartHeight + Theme.GAP + Theme.LINE;
+        live.setBounds(innerX, detailY, innerWidth, Math.max(0, y + height - Theme.PADDING - detailY));
+    }
+
+    private void refreshLive() {
+        if (selected == null) {
+            live.setRows(List.of());
+            return;
+        }
+        List<ListingIndex.Entry> rows = new ArrayList<>();
+        for (ListingIndex.Entry entry : market.index().query(SearchQuery.EMPTY)) {
+            if (entry.listing().isMarketListing() && entry.listing().key().toString().equals(selected.key())) {
+                rows.add(entry);
+            }
+        }
+        rows.sort(Comparator.comparingLong(e -> e.listing().unitPriceCents()));
+        live.setRows(rows);
+    }
+
+    private void renderLiveRow(Gfx gfx, ListingIndex.Entry entry, int rowX, int rowY, int rowWidth, int rowHeight, boolean hovered) {
+        String origin = ListingIndex.isRemote(entry)
+                ? I18n.get("hugomarket.ah.remote", Math.max(0, (System.currentTimeMillis() - entry.lastSeen()) / 60_000))
+                : entry.listing().seller();
+        String price = Money.compact(entry.listing().unitPriceCents());
+        int priceWidth = gfx.textWidth(price);
+        gfx.textNoShadow(gfx.clip(I18n.get("hugomarket.market.live_row", entry.listing().item().count(),
+                Money.format(entry.listing().priceCents()), Money.format(entry.listing().unitPriceCents())), rowWidth - priceWidth - 8), rowX + 3, rowY + 2, Theme.TEXT);
+        gfx.textNoShadow(gfx.clip(origin, rowWidth - priceWidth - 8), rowX + 3, rowY + 11, Theme.TEXT_DIM);
+        gfx.textNoShadow(price, rowX + rowWidth - priceWidth - 3, rowY + 6, Theme.PRICE);
     }
 
     @Override
@@ -130,6 +170,12 @@ final class MarketPanel extends OverlayPanel {
         alertSet.render(gfx, mouseX, mouseY);
         alertClear.render(gfx, mouseX, mouseY);
         chart.render(gfx, mouseX, mouseY);
+        int liveTitleY = live.y() - Theme.LINE;
+        gfx.textNoShadow(I18n.get("hugomarket.market.live_title") + " (" + live.rowCount() + ")", x + Theme.PADDING, liveTitleY + 1, Theme.ACCENT);
+        if (live.rowCount() == 0) {
+            gfx.textNoShadow(I18n.get("hugomarket.market.live_empty"), x + Theme.PADDING + 3, live.y() + 2, Theme.TEXT_DIM);
+        }
+        live.render(gfx, mouseX, mouseY);
     }
 
     private void applyAlert() {
@@ -176,7 +222,7 @@ final class MarketPanel extends OverlayPanel {
 
     @Override
     public boolean mouseScrolled(double mouseX, double mouseY, double delta) {
-        return selected == null && list.mouseScrolled(mouseX, mouseY, delta);
+        return selected == null ? list.mouseScrolled(mouseX, mouseY, delta) : live.mouseScrolled(mouseX, mouseY, delta);
     }
 
     @Override
@@ -214,7 +260,9 @@ final class MarketPanel extends OverlayPanel {
         if (item != null) {
             alertField.setValue(userData.alert(item.key()).isPresent() ? CalcFormat.asInput(userData.alert(item.key()).getAsLong() / 100.0) : "");
             loadChart();
+            requestListings.run();
         }
+        refreshLive();
     }
 
     private void setRange(String newRange) {
