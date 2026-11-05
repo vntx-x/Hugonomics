@@ -34,6 +34,11 @@ public final class SellStats {
     private long sessionCents;
     private long lastActiveMinute = Long.MIN_VALUE;
     private int activeMinutes;
+    private final List<java.util.function.Consumer<Payout>> listeners = new java.util.ArrayList<>();
+
+    public void onPayout(java.util.function.Consumer<Payout> listener) {
+        listeners.add(listener);
+    }
 
     public SellStats(Path dir, long now) {
         this.logFile = dir.resolve("payouts.jsonl");
@@ -81,6 +86,9 @@ public final class SellStats {
             recent.pollFirst();
         }
         append(payout);
+        for (java.util.function.Consumer<Payout> listener : listeners) {
+            listener.accept(payout);
+        }
     }
 
     public Summary summary(long now) {

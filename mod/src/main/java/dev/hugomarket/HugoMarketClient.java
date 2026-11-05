@@ -14,6 +14,7 @@ import dev.hugomarket.module.alerts.AlertsModule;
 import dev.hugomarket.module.calc.CalcModule;
 import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.dumper.DumperModule;
+import dev.hugomarket.module.farm.FarmModule;
 import dev.hugomarket.module.market.MarketModule;
 import dev.hugomarket.module.myauctions.MyAuctionsModule;
 import dev.hugomarket.module.orders.OrdersModule;
@@ -69,10 +70,15 @@ public final class HugoMarketClient implements ClientModInitializer {
         menuActions = new MenuActions();
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
                 userData, backend, menuActions, dataDir);
+        SellStatsModule sellStats = new SellStatsModule();
+        FarmModule farm = new FarmModule();
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
-                new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), new SellStatsModule(),
-                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), new SyncModule()));
+                new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), sellStats,
+                new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, new SyncModule()));
         registry.start();
+        if (registry.isRunning(sellStats.id()) && registry.isRunning(farm.id())) {
+            farm.attach(sellStats.stats());
+        }
         KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_UNKNOWN);
         scheduler.onTick(client -> {
             while (menuKey.consumeClick()) {
