@@ -27,6 +27,6 @@
   "monitorAccount": "KOVAAV",
   "monitorHeadless": true,
   "monitorQueries": ["elytra", "mace", "netherite", "shulker", "trident", "beacon", "enchanted", "diamond", "emerald",
-    "golden apple", "nether star", "dragon", "ancient debris", "heavy core", "breeze", "wither", "sponge", "trim",
+    "golden apple", "dragon", "ancient debris", "heavy core", "breeze", "wither", "sponge", "trim",
     "disc", "pickaxe", "sword", "axe", "bow", "potion", "pearl", "rocket", "obsidian", "xp"]
 }
