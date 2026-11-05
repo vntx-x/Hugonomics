@@ -25,6 +25,16 @@ const statements = [
      seen_at bigint not null
    )`,
   `create index if not exists observations_seen_at on observations (seen_at)`,
+  `create table if not exists price_snapshots (
+     item_key varchar(200) not null,
+     bucket_ts bigint not null,
+     lowest_unit_cents bigint not null,
+     median_unit_cents bigint not null,
+     listings integer not null,
+     units integer not null,
+     confirmed boolean not null,
+     primary key (item_key, bucket_ts)
+   )`,
   `create table if not exists clients (
      client_id varchar(36) primary key,
      first_seen bigint not null,

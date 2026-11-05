@@ -1,9 +1,10 @@
 import type { ItemSummary, ListingRecord } from "../domain/types.js";
-import type { ClientRecord, Store } from "./store.js";
+import type { ClientRecord, SnapshotRecord, Store } from "./store.js";
 
 export class MemoryStore implements Store {
   private readonly listings = new Map<string, ListingRecord>();
   private readonly clients = new Map<string, ClientRecord>();
+  private readonly snapshots = new Map<string, SnapshotRecord>();
   readonly observations: { clientId: string; listingId: string; seenAt: number }[] = [];
 
   async getListings(ids: string[]): Promise<Map<string, ListingRecord>> {
@@ -32,6 +33,10 @@ export class MemoryStore implements Store {
   async activeListingsByKeys(keys: string[], since: number): Promise<ListingRecord[]> {
     const wanted = new Set(keys);
     return [...this.listings.values()].filter((r) => wanted.has(r.key) && r.lastSeen >= since);
+  }
+
+  async activeListings(since: number): Promise<ListingRecord[]> {
+    return [...this.listings.values()].filter((r) => r.lastSeen >= since);
   }
 
   async items(since: number): Promise<ItemSummary[]> {
@@ -63,5 +68,32 @@ export class MemoryStore implements Store {
 
   async client(clientId: string): Promise<ClientRecord | null> {
     return this.clients.get(clientId) ?? null;
+  }
+
+  async putSnapshots(snapshots: SnapshotRecord[]): Promise<void> {
+    for (const snapshot of snapshots) {
+      this.snapshots.set(`${snapshot.key}|${snapshot.bucketTs}`, snapshot);
+    }
+  }
+
+  async history(key: string, from: number, to: number): Promise<SnapshotRecord[]> {
+    return [...this.snapshots.values()]
+      .filter((s) => s.key === key && s.bucketTs >= from && s.bucketTs <= to)
+      .sort((a, b) => a.bucketTs - b.bucketTs);
+  }
+
+  async purge(observationsBefore: number, listingsLastSeenBefore: number): Promise<{ observations: number; listings: number }> {
+    const keptObservations = this.observations.filter((o) => o.seenAt >= observationsBefore);
+    const removedObservations = this.observations.length - keptObservations.length;
+    this.observations.length = 0;
+    this.observations.push(...keptObservations);
+    let removedListings = 0;
+    for (const [id, record] of this.listings) {
+      if (record.lastSeen < listingsLastSeenBefore) {
+        this.listings.delete(id);
+        removedListings++;
+      }
+    }
+    return { observations: removedObservations, listings: removedListings };
   }
 }

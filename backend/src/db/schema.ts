@@ -1,4 +1,4 @@
-import { bigint, boolean, index, integer, jsonb, pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
+import { bigint, boolean, index, integer, jsonb, pgTable, primaryKey, serial, text, varchar } from "drizzle-orm/pg-core";
 
 export const listings = pgTable(
   "listings",
@@ -29,6 +29,20 @@ export const observations = pgTable(
     seenAt: bigint("seen_at", { mode: "number" }).notNull(),
   },
   (table) => [index("observations_seen_at").on(table.seenAt)],
+);
+
+export const priceSnapshots = pgTable(
+  "price_snapshots",
+  {
+    itemKey: varchar("item_key", { length: 200 }).notNull(),
+    bucketTs: bigint("bucket_ts", { mode: "number" }).notNull(),
+    lowestUnitCents: bigint("lowest_unit_cents", { mode: "number" }).notNull(),
+    medianUnitCents: bigint("median_unit_cents", { mode: "number" }).notNull(),
+    listings: integer("listings").notNull(),
+    units: integer("units").notNull(),
+    confirmed: boolean("confirmed").notNull(),
+  },
+  (table) => [primaryKey({ columns: [table.itemKey, table.bucketTs] })],
 );
 
 export const clients = pgTable("clients", {

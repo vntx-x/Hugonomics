@@ -1,9 +1,9 @@
-import { and, desc, eq, gte, inArray, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gte, inArray, lt, lte, sql } from "drizzle-orm";
 import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 import type { ItemSummary, ListingRecord } from "../domain/types.js";
-import type { ClientRecord, Store } from "../store/store.js";
-import { clients, listings, observations } from "./schema.js";
+import type { ClientRecord, SnapshotRecord, Store } from "../store/store.js";
+import { clients, listings, observations, priceSnapshots } from "./schema.js";
 
 export class PgStore implements Store {
   private readonly db: PostgresJsDatabase;
@@ -59,6 +59,52 @@ export class PgStore implements Store {
       .from(listings)
       .where(and(inArray(listings.itemKey, keys), gte(listings.lastSeen, since)));
     return rows.map(toRecord);
+  }
+
+  async activeListings(since: number): Promise<ListingRecord[]> {
+    const rows = await this.db.select().from(listings).where(gte(listings.lastSeen, since));
+    return rows.map(toRecord);
+  }
+
+  async putSnapshots(snapshots: SnapshotRecord[]): Promise<void> {
+    if (snapshots.length === 0) {
+      return;
+    }
+    await this.db
+      .insert(priceSnapshots)
+      .values(snapshots.map((s) => ({
+        itemKey: s.key,
+        bucketTs: s.bucketTs,
+        lowestUnitCents: s.lowestUnitCents,
+        medianUnitCents: s.medianUnitCents,
+        listings: s.listings,
+        units: s.units,
+        confirmed: s.confirmed,
+      })))
+      .onConflictDoNothing();
+  }
+
+  async history(key: string, from: number, to: number): Promise<SnapshotRecord[]> {
+    const rows = await this.db
+      .select()
+      .from(priceSnapshots)
+      .where(and(eq(priceSnapshots.itemKey, key), gte(priceSnapshots.bucketTs, from), lte(priceSnapshots.bucketTs, to)))
+      .orderBy(asc(priceSnapshots.bucketTs));
+    return rows.map((row) => ({
+      key: row.itemKey,
+      bucketTs: Number(row.bucketTs),
+      lowestUnitCents: Number(row.lowestUnitCents),
+      medianUnitCents: Number(row.medianUnitCents),
+      listings: row.listings,
+      units: row.units,
+      confirmed: row.confirmed,
+    }));
+  }
+
+  async purge(observationsBefore: number, listingsLastSeenBefore: number): Promise<{ observations: number; listings: number }> {
+    const removedObservations = await this.db.delete(observations).where(lt(observations.seenAt, observationsBefore)).returning({ id: observations.id });
+    const removedListings = await this.db.delete(listings).where(lt(listings.lastSeen, listingsLastSeenBefore)).returning({ id: listings.listingId });
+    return { observations: removedObservations.length, listings: removedListings.length };
   }
 
   async items(since: number): Promise<ItemSummary[]> {

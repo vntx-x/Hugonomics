@@ -12,6 +12,15 @@ export interface ServerDeps {
   now?: () => number;
 }
 
+const HOUR = 60 * 60 * 1000;
+const HISTORY_RANGES: Record<string, number> = {
+  "1h": HOUR,
+  "6h": 6 * HOUR,
+  "24h": 24 * HOUR,
+  "7d": 7 * 24 * HOUR,
+  "31d": 31 * 24 * HOUR,
+};
+
 const FEES = {
   auctionListingFeePercent: 1,
   auctionSaleTaxTiers: [
@@ -66,6 +75,19 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
     serverTime: now(),
     items: await deps.store.items(now() - deps.config.activeWindowMs),
   }));
+
+  app.get<{ Params: { key: string }; Querystring: { range?: string } }>("/v1/items/:key/history", async (request, reply) => {
+    const rangeMs = HISTORY_RANGES[request.query.range ?? "24h"];
+    if (!rangeMs) {
+      return reply.code(400).send({ error: "invalid_range", ranges: Object.keys(HISTORY_RANGES) });
+    }
+    if (!queryLimiter.allow(request.ip, now())) {
+      return reply.code(429).send({ error: "rate_limited" });
+    }
+    const to = now();
+    const points = await deps.store.history(request.params.key, to - rangeMs, to);
+    return { key: request.params.key, from: to - rangeMs, to, points };
+  });
 
   app.get("/healthz", async () => ({ ok: true }));
 
