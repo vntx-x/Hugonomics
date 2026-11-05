@@ -5,6 +5,7 @@ import dev.hugomarket.model.Money;
 import dev.hugomarket.store.Fees;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStats;
+import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -25,19 +26,22 @@ final class SellAssistPanel extends OverlayPanel {
     private final PendingSale sale;
     private final MarketSession market;
     private final Fees fees;
+    private final OptionalLong lastPrice;
     private final List<Chip> buttons;
+    private final Chip lastButton;
     private final List<Label> lines;
     private PriceStats stats;
     private String typed = "";
     private String feeText = "";
     private String warningText = "";
 
-    SellAssistPanel(AnvilScreen screen, PendingSale sale, MarketSession market, Fees fees) {
+    SellAssistPanel(AnvilScreen screen, PendingSale sale, MarketSession market, Fees fees, UserData userData) {
         this.screen = screen;
         this.sale = sale;
         this.market = market;
         this.fees = fees;
         this.stats = market.stats(sale.key());
+        this.lastPrice = userData.lastPrice(sale.key().toString());
         String title = sale.count() > 1 ? sale.count() + "x " + sale.item().displayName() : sale.item().displayName();
         lines = List.of(
                 add(new Label(() -> title, Theme.TEXT)),
@@ -47,10 +51,17 @@ final class SellAssistPanel extends OverlayPanel {
                 add(new Label(() -> feeText)),
                 add(new Label(() -> warningText, WARNING_COLOR)));
         buttons = List.of(
-                add(new Chip(I18n.get("hugomarket.sell.undercut"), () -> false, () -> apply(SellSuggestion.undercutStackDollars(stats, sale.count())))),
-                add(new Chip(I18n.get("hugomarket.sell.lowest"), () -> false, () -> apply(SellSuggestion.lowestStackDollars(stats, sale.count())))),
-                add(new Chip(I18n.get("hugomarket.sell.median"), () -> false, () -> apply(SellSuggestion.medianStackDollars(stats, sale.count())))));
+                add(new Chip(I18n.get("hugomarket.sell.undercut"), () -> false, () -> applyStats(SellSuggestion::undercutStackDollars))),
+                add(new Chip(I18n.get("hugomarket.sell.lowest"), () -> false, () -> applyStats(SellSuggestion::lowestStackDollars))),
+                add(new Chip(I18n.get("hugomarket.sell.median"), () -> false, () -> applyStats(SellSuggestion::medianStackDollars))));
+        lastButton = add(new Chip(lastPrice.isPresent()
+                ? I18n.get("hugomarket.sell.last", Money.format(lastPrice.getAsLong()))
+                : I18n.get("hugomarket.sell.no_last"), () -> false, this::applyLast));
         market.onChange(() -> stats = market.stats(sale.key()));
+    }
+
+    private interface Suggestion {
+        long dollars(PriceStats stats, int count);
     }
 
     @Override
@@ -68,6 +79,8 @@ final class SellAssistPanel extends OverlayPanel {
             buttons.get(i).setBounds(innerX + i * (chipWidth + Theme.GAP), cursorY, chipWidth, Theme.CHIP_HEIGHT);
         }
         cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
+        lastButton.setBounds(innerX, cursorY, innerWidth, Theme.CHIP_HEIGHT);
+        cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
         lines.get(4).setBounds(innerX, cursorY, innerWidth, LINE);
         cursorY += LINE;
         lines.get(5).setBounds(innerX, cursorY, innerWidth, LINE * 2);
@@ -79,15 +92,16 @@ final class SellAssistPanel extends OverlayPanel {
         super.render(gfx, mouseX, mouseY);
     }
 
-    @Override
-    public boolean mouseClicked(double mouseX, double mouseY, int button) {
-        if (!contains(mouseX, mouseY)) {
-            return false;
+    private void applyStats(Suggestion suggestion) {
+        if (stats != null) {
+            apply(suggestion.dollars(stats, sale.count()));
         }
-        if (stats == null) {
-            return true;
+    }
+
+    private void applyLast() {
+        if (lastPrice.isPresent()) {
+            apply(Math.max(1, lastPrice.getAsLong() / 100));
         }
-        return super.mouseClicked(mouseX, mouseY, button);
     }
 
     private void apply(long dollars) {

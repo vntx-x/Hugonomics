@@ -5,6 +5,7 @@ import dev.hugomarket.container.ContainerTracker;
 import dev.hugomarket.container.ScreenStateTracker;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.OverlayManager;
 
 import java.nio.file.Path;
@@ -18,6 +19,7 @@ public record ModuleContext(
         HugoGuiRules guiRules,
         OverlayManager overlays,
         MarketSession market,
+        UserData userData,
         Path dataDir
 ) {
 }

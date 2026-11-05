@@ -19,6 +19,7 @@ import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStore;
+import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.KeyBindings;
 import dev.hugomarket.ui.OverlayManager;
 import net.fabricmc.api.ClientModInitializer;
@@ -49,7 +50,9 @@ public final class HugoMarketClient implements ClientModInitializer {
         PriceStore priceStore = new PriceStore(dataDir.resolve("price-cache.json"));
         priceStore.load();
         MarketSession market = new MarketSession(priceStore);
-        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, dataDir);
+        UserData userData = new UserData(dataDir.resolve("templates.json"));
+        userData.load();
+        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, userData, dataDir);
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new SyncModule()));
         registry.start();

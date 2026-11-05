@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public final class ListingIndex {
     public record Entry(String id, Listing listing, long firstSeen, long lastSeen, long expiresAt) {
@@ -78,9 +79,13 @@ public final class ListingIndex {
     }
 
     public List<Entry> query(SearchQuery query) {
+        return query(query, SearchQuery.NOTHING_WATCHED);
+    }
+
+    public List<Entry> query(SearchQuery query, Predicate<String> isWatched) {
         List<Entry> result = new ArrayList<>();
         for (Entry entry : entries.values()) {
-            if (query.matches(entry.listing())) {
+            if (query.matches(entry.listing(), isWatched)) {
                 result.add(entry);
             }
         }

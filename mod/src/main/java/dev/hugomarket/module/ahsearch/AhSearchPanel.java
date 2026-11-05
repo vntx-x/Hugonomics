@@ -12,11 +12,13 @@ import dev.hugomarket.ui.widget.TextField;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.world.item.ItemStack;
+import org.lwjgl.glfw.GLFW;
 
 import java.util.List;
 
 final class AhSearchPanel extends OverlayPanel {
     private static final int ICON_SIZE = 16;
+    private static final String STAR = "★ ";
 
     private final AhSearchState state;
     private final SlotHighlighter highlighter;
@@ -24,7 +26,6 @@ final class AhSearchPanel extends OverlayPanel {
     private final List<Chip> chips;
     private final Label status;
     private final ListView<ListingIndex.Entry> results;
-    private final Runnable changeListener = this::refresh;
 
     AhSearchPanel(AbstractContainerScreen<?> screen, AhSearchState state, MarketSession market) {
         this.state = state;
@@ -43,17 +44,18 @@ final class AhSearchPanel extends OverlayPanel {
                 add(new Chip(I18n.get("hugomarket.ah.filter.enchanted"), () -> state.query().onlyEnchanted(),
                         () -> state.setQuery(state.query().toggleEnchanted()))),
                 add(new Chip(I18n.get("hugomarket.ah.filter.spawner"), () -> state.query().onlySpawner(),
-                        () -> state.setQuery(state.query().toggleSpawner()))));
+                        () -> state.setQuery(state.query().toggleSpawner()))),
+                add(new Chip(I18n.get("hugomarket.ah.filter.watched"), () -> state.query().onlyWatched(),
+                        () -> state.setQuery(state.query().toggleWatched()))));
         status = add(new Label(() -> I18n.get("hugomarket.ah.status", state.results().size(), state.indexedCount())));
-        results = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, entry -> {
-        }));
+        results = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, this::rowClicked));
         results.setHoverRenderer((gfx, entry, mouseX, mouseY) -> {
             ItemStack stack = state.icon(entry);
             if (!stack.isEmpty()) {
                 gfx.itemTooltip(stack, mouseX, mouseY);
             }
         });
-        state.onChange(changeListener);
+        state.onChange(this::refresh);
         refresh();
     }
 
@@ -75,6 +77,9 @@ final class AhSearchPanel extends OverlayPanel {
                 cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
             }
         }
+        if (chips.size() % 2 == 1) {
+            cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
+        }
         status.setBounds(innerX, cursorY, innerWidth, 10);
         cursorY += 10 + Theme.GAP;
         results.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
@@ -83,6 +88,12 @@ final class AhSearchPanel extends OverlayPanel {
     private void refresh() {
         results.setRows(state.results());
         highlighter.refresh();
+    }
+
+    private void rowClicked(ListingIndex.Entry entry, int button) {
+        if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
+            state.toggleWatch(entry.listing());
+        }
     }
 
     private void renderRow(Gfx gfx, ListingIndex.Entry entry, int rowX, int rowY, int rowWidth, int rowHeight, boolean hovered) {
@@ -94,11 +105,15 @@ final class AhSearchPanel extends OverlayPanel {
         int priceWidth = gfx.textWidth(price);
         int textX = rowX + ICON_SIZE + 4;
         int nameWidth = rowWidth - ICON_SIZE - 8 - priceWidth;
+        boolean watched = state.isWatched(entry.listing());
         String name = entry.listing().item().displayName();
         if (entry.listing().item().count() > 1) {
             name = entry.listing().item().count() + "x " + name;
         }
-        gfx.textNoShadow(gfx.clip(name, nameWidth), textX, rowY + 2, Theme.TEXT);
+        if (watched) {
+            name = STAR + name;
+        }
+        gfx.textNoShadow(gfx.clip(name, nameWidth), textX, rowY + 2, watched ? Theme.WATCH_FRAME : Theme.TEXT);
         gfx.textNoShadow(gfx.clip(entry.listing().seller(), nameWidth), textX, rowY + 11, Theme.TEXT_DIM);
         gfx.textNoShadow(price, rowX + rowWidth - priceWidth - 3, rowY + 6, Theme.PRICE);
     }

@@ -37,7 +37,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
     @Override
     public void onEnable(ModuleContext context) {
         this.context = context;
-        state = new AhSearchState(context.market());
+        state = new AhSearchState(context.market(), context.userData());
         parser = new AhListingParser(context.guiRules());
         context.screens().onUpdate(this::onScreenUpdate);
         context.screens().onClose(this::onScreenClosed);

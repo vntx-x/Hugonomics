@@ -23,6 +23,7 @@ final class SlotHighlighter {
     private final BitSet matching = new BitSet();
     private final BitSet listed = new BitSet();
     private final BitSet bargain = new BitSet();
+    private final BitSet watched = new BitSet();
 
     SlotHighlighter(AbstractContainerScreen<?> screen, AhSearchState state, MarketSession market) {
         this.screen = screen;
@@ -35,6 +36,7 @@ final class SlotHighlighter {
         matching.clear();
         listed.clear();
         bargain.clear();
+        watched.clear();
         List<Listing> page = state.currentPage();
         for (Listing listing : page) {
             listed.set(listing.slot());
@@ -43,6 +45,9 @@ final class SlotHighlighter {
             }
             if (isBargain(listing)) {
                 bargain.set(listing.slot());
+            }
+            if (state.isWatched(listing)) {
+                watched.set(listing.slot());
             }
         }
     }
@@ -57,7 +62,7 @@ final class SlotHighlighter {
 
     void render(Gfx gfx) {
         boolean filtering = !state.query().isDefault();
-        if (listed.isEmpty() || (!filtering && bargain.isEmpty())) {
+        if (listed.isEmpty() || (!filtering && bargain.isEmpty() && watched.isEmpty())) {
             return;
         }
         AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
@@ -75,6 +80,8 @@ final class SlotHighlighter {
             }
             if (bargain.get(slot.index)) {
                 gfx.border(x - 1, y - 1, SLOT_SIZE + 2, SLOT_SIZE + 2, Theme.BARGAIN_FRAME);
+            } else if (watched.get(slot.index)) {
+                gfx.border(x - 1, y - 1, SLOT_SIZE + 2, SLOT_SIZE + 2, Theme.WATCH_FRAME);
             } else if (filtering) {
                 gfx.border(x - 1, y - 1, SLOT_SIZE + 2, SLOT_SIZE + 2, Theme.MATCH_FRAME);
             }

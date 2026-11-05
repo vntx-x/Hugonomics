@@ -4,7 +4,6 @@ import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.Theme;
 
 import java.util.List;
-import java.util.function.Consumer;
 
 public final class ListView<T> extends Widget {
     public interface RowRenderer<T> {
@@ -15,14 +14,18 @@ public final class ListView<T> extends Widget {
         void render(Gfx gfx, T row, int mouseX, int mouseY);
     }
 
+    public interface RowClick<T> {
+        void click(T row, int button);
+    }
+
     private final int rowHeight;
     private final RowRenderer<T> rowRenderer;
-    private final Consumer<T> onClick;
+    private final RowClick<T> onClick;
     private HoverRenderer<T> hoverRenderer;
     private List<T> rows = List.of();
     private int scroll;
 
-    public ListView(int rowHeight, RowRenderer<T> rowRenderer, Consumer<T> onClick) {
+    public ListView(int rowHeight, RowRenderer<T> rowRenderer, RowClick<T> onClick) {
         this.rowHeight = rowHeight;
         this.rowRenderer = rowRenderer;
         this.onClick = onClick;
@@ -76,7 +79,7 @@ public final class ListView<T> extends Widget {
         if (index < 0) {
             return contains(mouseX, mouseY);
         }
-        onClick.accept(rows.get(index));
+        onClick.click(rows.get(index), button);
         return true;
     }
 

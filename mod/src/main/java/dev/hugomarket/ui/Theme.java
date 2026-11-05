@@ -17,6 +17,7 @@ public final class Theme {
     public static final int PRICE = 0xFF7FE07F;
     public static final int MATCH_FRAME = 0xFFC77DFF;
     public static final int BARGAIN_FRAME = 0xFF55FF55;
+    public static final int WATCH_FRAME = 0xFFFFD75E;
     public static final int DIM_SLOT = 0xA0000000;
 
     public static final int PADDING = 4;

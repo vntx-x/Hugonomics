@@ -2,6 +2,7 @@ package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.store.UserData;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.ArrayList;
@@ -11,14 +12,16 @@ import java.util.Map;
 
 public final class AhSearchState {
     private final MarketSession session;
+    private final UserData userData;
     private final Map<String, ItemStack> icons = new HashMap<>();
     private SearchQuery query = SearchQuery.EMPTY;
     private List<ListingIndex.Entry> results = List.of();
     private List<Listing> currentPage = List.of();
     private final List<Runnable> changeListeners = new ArrayList<>();
 
-    public AhSearchState(MarketSession session) {
+    public AhSearchState(MarketSession session, UserData userData) {
         this.session = session;
+        this.userData = userData;
     }
 
     public void onChange(Runnable listener) {
@@ -51,6 +54,15 @@ public final class AhSearchState {
         return stack == null ? ItemStack.EMPTY : stack;
     }
 
+    public boolean isWatched(Listing listing) {
+        return userData.isWatched(listing.key().toString());
+    }
+
+    public void toggleWatch(Listing listing) {
+        userData.toggleWatch(listing.key().toString());
+        requery();
+    }
+
     public void pageSeen(List<Listing> listings, List<ItemStack> stacks, long seenAt) {
         currentPage = listings;
         List<String> ids = session.addPage(listings, seenAt);
@@ -67,11 +79,11 @@ public final class AhSearchState {
     }
 
     public boolean matchesCurrentPage(Listing listing) {
-        return query.matches(listing);
+        return query.matches(listing, userData::isWatched);
     }
 
     private void requery() {
-        results = session.index().query(query);
+        results = session.index().query(query, userData::isWatched);
         notifyChange();
     }
 

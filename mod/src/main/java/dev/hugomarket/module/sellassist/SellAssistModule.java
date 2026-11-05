@@ -6,6 +6,7 @@ import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.model.SlotView;
 import dev.hugomarket.parse.HugoGuiRules;
+import dev.hugomarket.parse.HugoLore;
 import dev.hugomarket.parse.ItemKeyFactory;
 import dev.hugomarket.store.Fees;
 import dev.hugomarket.ui.OverlayPanel;
@@ -52,7 +53,7 @@ public final class SellAssistModule implements Module, OverlayProvider {
         if (pending == null || !(screen instanceof AnvilScreen anvil) || !isPriceInput(screen)) {
             return List.of();
         }
-        SellAssistPanel panel = new SellAssistPanel(anvil, pending, context.market(), fees);
+        SellAssistPanel panel = new SellAssistPanel(anvil, pending, context.market(), fees, context.userData());
         PanelPlacement.rightOf(screen, panel, PANEL_WIDTH);
         return List.of(panel);
     }
@@ -65,9 +66,23 @@ public final class SellAssistModule implements Module, OverlayProvider {
     private void onScreenUpdate(ScreenUpdate update) {
         switch (update.kind()) {
             case AH_SELL_CONFIRM -> capture(update);
-            case PRICE_INPUT, AH_CREATE_CONFIRM -> {
+            case AH_CREATE_CONFIRM -> rememberPrice(update);
+            case PRICE_INPUT -> {
             }
             default -> pending = null;
+        }
+    }
+
+    private void rememberPrice(ScreenUpdate update) {
+        if (pending == null) {
+            return;
+        }
+        HugoGuiRules.ScreenRule rule = context.guiRules().rule(ScreenKind.AH_CREATE_CONFIRM);
+        for (SlotView slot : update.view().slots()) {
+            if (slot.playerInventory() || slot.isEmpty() || !rule.isContentSlot(slot.index())) {
+                continue;
+            }
+            HugoLore.price(slot.item().lore()).ifPresent(cents -> context.userData().rememberPrice(pending.key().toString(), cents));
         }
     }
 

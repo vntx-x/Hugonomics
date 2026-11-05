@@ -3,8 +3,10 @@ package dev.hugomarket.module.ahsearch;
 import dev.hugomarket.model.Listing;
 
 import java.util.Locale;
+import java.util.function.Predicate;
 
-public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boolean onlyEnchanted, boolean onlySpawner, Sort sort) {
+public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boolean onlyEnchanted, boolean onlySpawner,
+                          boolean onlyWatched, Sort sort) {
     public enum Sort {
         UNIT_ASC,
         UNIT_DESC,
@@ -12,29 +14,41 @@ public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boo
         NEWEST
     }
 
-    public static final SearchQuery EMPTY = new SearchQuery("", 0, Long.MAX_VALUE, false, false, Sort.UNIT_ASC);
+    public static final SearchQuery EMPTY = new SearchQuery("", 0, Long.MAX_VALUE, false, false, false, Sort.UNIT_ASC);
+    public static final Predicate<String> NOTHING_WATCHED = key -> false;
 
     public SearchQuery withText(String newText) {
-        return new SearchQuery(newText, minUnitCents, maxUnitCents, onlyEnchanted, onlySpawner, sort);
+        return new SearchQuery(newText, minUnitCents, maxUnitCents, onlyEnchanted, onlySpawner, onlyWatched, sort);
     }
 
     public SearchQuery withSort(Sort newSort) {
-        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, onlySpawner, newSort);
+        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, onlySpawner, onlyWatched, newSort);
     }
 
     public SearchQuery toggleEnchanted() {
-        return new SearchQuery(text, minUnitCents, maxUnitCents, !onlyEnchanted, onlySpawner, sort);
+        return new SearchQuery(text, minUnitCents, maxUnitCents, !onlyEnchanted, onlySpawner, onlyWatched, sort);
     }
 
     public SearchQuery toggleSpawner() {
-        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, !onlySpawner, sort);
+        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, !onlySpawner, onlyWatched, sort);
+    }
+
+    public SearchQuery toggleWatched() {
+        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, onlySpawner, !onlyWatched, sort);
     }
 
     public boolean isDefault() {
-        return text.isBlank() && !onlyEnchanted && !onlySpawner && minUnitCents <= 0 && maxUnitCents == Long.MAX_VALUE;
+        return text.isBlank() && !onlyEnchanted && !onlySpawner && !onlyWatched && minUnitCents <= 0 && maxUnitCents == Long.MAX_VALUE;
     }
 
     public boolean matches(Listing listing) {
+        return matches(listing, NOTHING_WATCHED);
+    }
+
+    public boolean matches(Listing listing, Predicate<String> isWatched) {
+        if (onlyWatched && !isWatched.test(listing.key().toString())) {
+            return false;
+        }
         if (onlyEnchanted && listing.item().enchantments().isEmpty() && listing.item().storedEnchantments().isEmpty()) {
             return false;
         }

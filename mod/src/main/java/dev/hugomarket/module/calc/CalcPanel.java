@@ -45,7 +45,7 @@ public final class CalcPanel extends OverlayPanel {
         }
         copy = add(new Chip(I18n.get("hugomarket.calc.copy"), () -> false, this::copyResult));
         toPrice = add(new Chip(I18n.get("hugomarket.calc.to_price"), CalcPanel::anvilOpen, this::applyToPrice));
-        history = add(new ListView<>(10, this::renderHistory, state::recall));
+        history = add(new ListView<>(10, this::renderHistory, (entry, button) -> state.recall(entry)));
         state.onChange(() -> history.setRows(List.copyOf(state.history())));
         setVisible(state.isOpen());
     }
