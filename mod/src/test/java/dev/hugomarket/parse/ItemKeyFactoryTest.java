@@ -51,6 +51,19 @@ class ItemKeyFactoryTest {
     }
 
     @Test
+    void hugoHashedModelUsesReadableNameSlug() {
+        ItemKey key = ItemKeyFactory.of(item("minecraft:diamond_pickaxe", Map.of("minecraft:efficiency", 5), Map.of(), null,
+                "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/4e/90/8d5ccafc14557d1e", List.of(), null,
+                "sᴛᴀʀ ᴘɪᴄᴋᴀxᴇ"));
+        assertEquals("hugosmp:star_pickaxe#efficiency5", key.toString());
+        assertFalse(key.renamed());
+        ItemKey unnamed = ItemKeyFactory.of(item("minecraft:paper", Map.of(), Map.of(), null,
+                "hugosmp:668dbfbac74c/0ce8607e06cf/item/59/07/7c3b96a05f018f56", List.of(), null, null));
+        assertEquals("hugosmp:7c3b96a05f018f56", unnamed.toString());
+        assertEquals("maras_laterne", NameSlug.of("Maras Laterne ★★"));
+    }
+
+    @Test
     void renamedVanillaItemKeepsBaseAndFlags() {
         ItemKey key = ItemKeyFactory.of(item("minecraft:armadillo_scute", Map.of(), Map.of(), null, null, List.of(), null,
                 "x_sucuk_x´s Haarschuppen"));
