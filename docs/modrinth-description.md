@@ -1,10 +1,58 @@
+# Hugonomics – Better AH & Orders for HugoSMP
+
+*(Deutsche Beschreibung weiter unten.)*
+
+Client-side mod for the HugoSMP server. Makes the auction house searchable, shows market prices wherever you need them, and does the math for you: fees, flips, chest values, farm rates.
+
+**No auto-buy, no sniping, no clicks without you.** The mod only reads what your client already sees and at most puts text into an input field. Sending is always your click.
+
+## Auction house
+- Search panel next to the AH: name, enchantment or seller, several words at once
+- Sort by unit price, time left or newly listed; filters for enchanted, spawners, watchlist
+- Results across every page you have seen in the last minutes
+- Frames right on the page: purple match, green below market price, yellow watchlist
+- Overview of your own auctions: list value, net after tax, market value, overpriced entries
+
+## Listing
+- In the price field: lowest, median, your last price, one click fills the amount
+- Live preview of listing fee, sale tax and net
+- Typo warning (ten times off)
+
+## Prices everywhere
+- Tooltip on every item: unit price, AH lowest and median, best order price
+- Chests, barrels, ender chest: total value by Hugo and by AH
+- Shulker boxes: content value in the tooltip
+- Market screen: all items, search, chart from 1 hour to 31 days, price alert with sound
+
+## Orders
+- Margin per order when buying in the AH and delivering, profitable orders highlighted
+
+## Farming and selling
+- Inflow into open chests per minute, hour and day
+- Farm session: items taken, income, hourly rates
+- Sell statistics: session, 24 h, all time, rate of the last 5 minutes
+- Minute test with sell multiplier table up to 3.0x
+
+## Tools
+- Calculator with K/M/B and percent (key N), chat shortcut `=12*48k`
+- Trade log and profit overview for today, 7 and 30 days
+- Every module can be switched off, overview of all features in the menu
+
+## Data
+AH listings you see are reported anonymously to the Hugonomics server so every user gets current prices. Seller names leave the client only as hashes, coordinates and account data never. Can be disabled in the menu ("Backend sync").
+
+## Installation
+Fabric Loader, Fabric API, the jar for your Minecraft version (1.21.5, 1.21.6–1.21.8, 1.21.9–1.21.10, 1.21.11). Mod Menu optional.
+
+Hugonomics is open source (MIT) and not an official HugoSMP project.
+
+---
+
 # Hugonomics – Better AH & Orders für HugoSMP
 
-Client-Mod für HugoSMP. Macht das Auktionshaus durchsuchbar, zeigt Marktpreise überall dort,
-wo du sie brauchst, und rechnet mit: Gebühren, Flips, Kistenwerte, Farm-Raten.
+Client-Mod für HugoSMP. Macht das Auktionshaus durchsuchbar, zeigt Marktpreise überall dort, wo du sie brauchst, und rechnet mit: Gebühren, Flips, Kistenwerte, Farm-Raten.
 
-**Kein Auto-Kauf, kein Sniping, keine Klicks ohne dich.** Die Mod liest nur, was dein Client
-sowieso sieht, und schreibt höchstens Text in ein Eingabefeld. Abgeschickt wird nur durch dich.
+**Kein Auto-Kauf, kein Sniping, keine Klicks ohne dich.** Die Mod liest nur, was dein Client sowieso sieht, und schreibt höchstens Text in ein Eingabefeld. Abgeschickt wird nur durch dich.
 
 ## Auktionshaus
 - Suchfeld rechts neben dem AH: Name, Enchant oder Verkäufer, mehrere Wörter gleichzeitig
@@ -39,12 +87,9 @@ sowieso sieht, und schreibt höchstens Text in ein Eingabefeld. Abgeschickt wird
 - Jedes Modul einzeln abschaltbar, Übersicht aller Funktionen im Menü
 
 ## Daten
-Gesehene AH-Listings werden anonym an den Hugonomics-Server gemeldet, damit alle Nutzer
-aktuelle Preise bekommen. Verkäufernamen gehen nur gehasht raus, Koordinaten und Accountdaten
-gar nicht. Im Menü abschaltbar ("Backend-Sync").
+Gesehene AH-Listings werden anonym an den Hugonomics-Server gemeldet, damit alle Nutzer aktuelle Preise bekommen. Verkäufernamen gehen nur gehasht raus, Koordinaten und Accountdaten gar nicht. Im Menü abschaltbar ("Backend-Sync").
 
 ## Installation
-Fabric Loader, Fabric API, Jar für deine Minecraft-Version (1.21.5, 1.21.6–1.21.8,
-1.21.9–1.21.10, 1.21.11). Mod Menu optional.
+Fabric Loader, Fabric API, Jar für deine Minecraft-Version (1.21.5, 1.21.6–1.21.8, 1.21.9–1.21.10, 1.21.11). Mod Menu optional.
 
 Hugonomics ist Open Source (MIT) und kein offizielles Projekt von HugoSMP.
