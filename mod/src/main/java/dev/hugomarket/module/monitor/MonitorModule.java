@@ -9,6 +9,9 @@ import dev.hugomarket.model.ScreenKind;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public final class MonitorModule implements Module {
     private static final int MIN_INTERVAL_SECONDS = 15;
     private static final int OPEN_TIMEOUT_TICKS = 20 * 10;
@@ -34,6 +37,8 @@ public final class MonitorModule implements Module {
     private int pagesReported;
     private int offlineTicks;
     private boolean headless;
+    private List<String> queries = List.of("");
+    private int queryIndex;
 
     @Override
     public String id() {
@@ -65,6 +70,13 @@ public final class MonitorModule implements Module {
             return;
         }
         headless = config.monitorHeadless;
+        queries = new ArrayList<>();
+        queries.add("");
+        for (String query : config.monitorQueries) {
+            if (query != null && !query.isBlank() && !queries.contains(query.trim())) {
+                queries.add(query.trim());
+            }
+        }
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(this::tick);
@@ -118,7 +130,9 @@ public final class MonitorModule implements Module {
                 if (--ticksUntilNext > 0 || client.screen != null) {
                     return;
                 }
-                client.player.connection.sendCommand("ah");
+                String query = queries.get(queryIndex);
+                queryIndex = (queryIndex + 1) % queries.size();
+                client.player.connection.sendCommand(query.isEmpty() ? "ah" : "ah " + query);
                 phase = Phase.WAITING_FOR_AH;
                 phaseTicks = 0;
             }
