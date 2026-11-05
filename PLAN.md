@@ -29,11 +29,15 @@ Preis-Tooltips, Container-Wert-Panel, Rechner (Panel, eigener Screen, Chat-Kurzf
 `=…`), Modul-Menü mit Mod-Menu-Eintrag, Backend-Sync (aus, bis `backendUrl` gesetzt ist),
 Unter-Marktpreis-Rahmen, Watchlist (Rechtsklick auf Treffer), Preis-Vorlage pro Item im
 Amboss, Orders-Panel mit Flip-Marge (AH kaufen, Order liefern) und Order-Zeile im Tooltip.
-Backend-MVP (Fastify, Postgres, Konsens, Preise, Meta) mit Tests, noch nicht deployt
-(`docs/deploy.md`).
+Backend läuft auf dem Contabo-VPS unter `https://hugomarket.duckdns.org` (Konsens, Preise,
+Meta, 5-Minuten-Snapshots, Historie, Retention, DuckDNS-Refresh per Cron), Mod-Sync aktiv,
+erste echte Daten vorhanden. Phase 2 bereits gebaut: Sell-Stats, Markt-Screen mit Charts,
+Preis-Alarme, Orders-Flip-Panel, eigene Auktionen, Farm-Tracker (Kisten-Diff).
 
-Offen aus dem MVP: automatisches Blättern (gesperrt bis Freigabe), Kategorie-Panel neben dem
-Rechner (braucht Backend-Volumen), Sprachumschaltung unabhängig von der Spielsprache, Tutorial.
+Offen: automatisches Blättern (gesperrt bis Freigabe), Kategorie-Panel neben dem Rechner
+(braucht Backend-Volumen), Sprachumschaltung unabhängig von der Spielsprache, Tutorial,
+Command-Hotkeys (nach Rückfrage), Minutentest, Spawner-Tabelle, Profit-Tracker,
+Inflations-Index, Dashboard, Discord-Bot, Color-Codes, Modrinth-Release.
 
 ## 2. Recherche-Stand
 
