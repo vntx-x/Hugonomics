@@ -48,6 +48,12 @@ describe("consensus", () => {
   });
 
   it("confirms after the same client sees it again a minute later", () => {
+    const trustedRules = { ...rules, trustedClients: new Set(["owner"]) };
+    const byOwner = mergeObservation(undefined, observation(), "owner", 1_000, trustedRules);
+    expect(byOwner.confirmed).toBe(true);
+    const byOther = mergeObservation(undefined, observation(), "c9", 1_000, trustedRules);
+    expect(byOther.confirmed).toBe(false);
+    expect(mergeObservation(byOther, observation(), "owner", 2_000, trustedRules).confirmed).toBe(true);
     const first = mergeObservation(undefined, observation(), "c1", 1_000, rules);
     const again = mergeObservation(first, observation(), "c1", 30_000, rules);
     expect(again.confirmed).toBe(false);

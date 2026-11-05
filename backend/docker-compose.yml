@@ -34,6 +34,7 @@ services:
       IMPRESSUM_ADDRESS: ${IMPRESSUM_ADDRESS:-}
       IMPRESSUM_EMAIL: ${IMPRESSUM_EMAIL:-}
       MONITOR_FLAG: ${MONITOR_FLAG:-false}
+      TRUSTED_CLIENTS: ${TRUSTED_CLIENTS:-}
     ports:
       - "${API_BIND:-127.0.0.1}:${API_PORT:-8080}:8080"
     mem_limit: 192m

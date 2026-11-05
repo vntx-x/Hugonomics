@@ -8,6 +8,7 @@ import dev.hugomarket.config.ModConfig;
 import dev.hugomarket.container.ScreenUpdate;
 import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.AhListingParser;
@@ -27,6 +28,7 @@ public final class SyncModule implements Module {
     private static final int MAX_QUEUE = 200;
     private static final int MAX_UPLOADS_PER_FLUSH = 5;
     private static final int MAX_KEYS_PER_REQUEST = 200;
+    private static final long MIN_RESEND_GAP_MS = 60_000;
 
     private ModuleContext context;
     private AhListingParser parser;
@@ -37,6 +39,7 @@ public final class SyncModule implements Module {
     private boolean metaLoaded;
     private boolean enabled;
     private final Deque<JsonObject> queue = new ArrayDeque<>();
+    private final UploadThrottle throttle = new UploadThrottle(MIN_RESEND_GAP_MS);
     private int ticks;
     private boolean uploading;
     private boolean fetching;
@@ -103,8 +106,13 @@ public final class SyncModule implements Module {
         if (!page.isMarket() || page.listings().isEmpty()) {
             return;
         }
-        JsonObject batch = ObservationBatch.build(page.listings(), clientId, HugoMarket.modVersion(),
-                HugoMarket.minecraftVersion(), update.snapshot().capturedAt(), pepper);
+        long capturedAt = update.snapshot().capturedAt();
+        List<Listing> due = throttle.filter(page.listings(), capturedAt);
+        if (due.isEmpty()) {
+            return;
+        }
+        JsonObject batch = ObservationBatch.build(due, clientId, HugoMarket.modVersion(),
+                HugoMarket.minecraftVersion(), capturedAt, pepper);
         if (batch.getAsJsonArray("listings").isEmpty()) {
             return;
         }

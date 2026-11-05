@@ -7,6 +7,11 @@ const OUTLIER_FACTOR = 10;
 export interface ConsensusRules {
   confirmGapMs: number;
   activeWindowMs: number;
+  trustedClients?: ReadonlySet<string>;
+}
+
+function trusted(rules: ConsensusRules, clientId: string): boolean {
+  return rules.trustedClients?.has(clientId) ?? false;
 }
 
 export function mergeObservation(
@@ -32,14 +37,15 @@ export function mergeObservation(
       firstSeen: observedAt,
       lastSeen: observedAt,
       observers: [clientId],
-      confirmed: false,
+      confirmed: trusted(rules, clientId),
     };
   }
   const observers = existing.observers.includes(clientId)
     ? existing.observers
     : [...existing.observers, clientId].slice(0, MAX_OBSERVERS);
   const lastSeen = Math.max(existing.lastSeen, observedAt);
-  const confirmed = observers.length >= 2 || lastSeen - existing.firstSeen >= rules.confirmGapMs;
+  const confirmed = existing.confirmed || trusted(rules, clientId) || observers.length >= 2
+    || lastSeen - existing.firstSeen >= rules.confirmGapMs;
   return { ...existing, lastSeen, observers, confirmed };
 }
 

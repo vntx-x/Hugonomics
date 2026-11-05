@@ -35,7 +35,11 @@ const FEES = {
 
 export function buildServer(deps: ServerDeps): FastifyInstance {
   const now = deps.now ?? (() => Date.now());
-  const rules = { confirmGapMs: deps.config.confirmGapMs, activeWindowMs: deps.config.activeWindowMs };
+  const rules = {
+    confirmGapMs: deps.config.confirmGapMs,
+    activeWindowMs: deps.config.activeWindowMs,
+    trustedClients: deps.config.trustedClients,
+  };
   const ingest = new IngestService(deps.store, rules);
   const prices = new PriceService(deps.store, rules);
   const uploadLimiter = new RateLimiter(30, 60_000);

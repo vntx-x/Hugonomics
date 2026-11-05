@@ -6,6 +6,7 @@ export interface AppConfig {
   activeWindowMs: number;
   confirmGapMs: number;
   monitorFlag: boolean;
+  trustedClients: ReadonlySet<string>;
 }
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
@@ -17,5 +18,6 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     activeWindowMs: Number(env.ACTIVE_WINDOW_MS ?? 6 * 60 * 60 * 1000),
     confirmGapMs: Number(env.CONFIRM_GAP_MS ?? 60 * 1000),
     monitorFlag: env.MONITOR_FLAG === "true",
+    trustedClients: new Set((env.TRUSTED_CLIENTS ?? "").split(",").map((s) => s.trim()).filter((s) => s.length > 0)),
   };
 }
