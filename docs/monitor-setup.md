@@ -32,12 +32,13 @@ Der Hauptaccount profitiert sofort: alles, was der Monitor meldet, bestätigt di
 Beobachtungen (zweiter Client), und neue Listings tauchen innerhalb einer Minute im
 Markt-Screen auf.
 
-## Variante B: auf dem VPS
+## Variante B: auf dem VPS (läuft seit 2026-11-05)
 
-Braucht einen virtuellen Bildschirm (Xvfb), Software-OpenGL (Mesa llvmpipe), einen Fabric-
-Client mit Login per Microsoft-Token und etwa 2 GB RAM plus einen Kern dauerhaft. Machbar,
-aber Wartungsaufwand bei jedem Minecraft-Update. Erst sinnvoll, wenn PC und Mac nicht
-durchgehend laufen sollen.
+Headless-Client in Docker, Anleitung in `monitor/README.md`. Gemessen: etwa 1,2 GB RAM und
+ein Drittel Kern im Betrieb, Login aus dem Rechenzentrum funktioniert. Wichtig: Der
+Monitor-Account darf währenddessen nirgendwo sonst eingeloggt sein, ein zweiter Login
+desselben Accounts bleibt beim Beitritt stumm hängen und der Container startet dann alle
+90 s neu. Statusdatei im Container: `/home/mc/data/work/config/hugomarket/monitor.log`.
 
 ## Abschalten
 
