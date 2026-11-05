@@ -49,7 +49,7 @@ async function main(): Promise<void> {
   if (!config.databaseUrl) {
     throw new Error("DATABASE_URL is not set");
   }
-  const sql = postgres(config.databaseUrl, { max: 1 });
+  const sql = postgres(config.databaseUrl, { max: 1, onnotice: () => {} });
   for (const statement of statements) {
     await sql.unsafe(statement);
   }
