@@ -4,7 +4,9 @@
   "package": "dev.hugomarket.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
-    "ContainerPacketMixin"
+    "AbstractContainerScreenAccessor",
+    "ContainerPacketMixin",
+    "KeyboardHandlerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

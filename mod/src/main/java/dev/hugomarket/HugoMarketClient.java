@@ -2,11 +2,16 @@ package dev.hugomarket;
 
 import dev.hugomarket.config.ConfigStore;
 import dev.hugomarket.container.ContainerTracker;
+import dev.hugomarket.container.ScreenStateTracker;
 import dev.hugomarket.core.ClientScheduler;
 import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.core.ModuleRegistry;
 import dev.hugomarket.core.ServerDetector;
+import dev.hugomarket.module.ahsearch.AhSearchModule;
 import dev.hugomarket.module.dumper.DumperModule;
+import dev.hugomarket.parse.HugoGuiRules;
+import dev.hugomarket.parse.ScreenClassifier;
+import dev.hugomarket.ui.OverlayManager;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 
@@ -21,7 +26,10 @@ public final class HugoMarketClient implements ClientModInitializer {
         ClientScheduler scheduler = new ClientScheduler();
         ServerDetector server = new ServerDetector(() -> config.get().debugAnyServer);
         ContainerTracker containers = new ContainerTracker(server, scheduler);
-        ModuleContext context = new ModuleContext(config, scheduler, server, containers, dataDir);
-        new ModuleRegistry(context, List.of(new DumperModule())).start();
+        HugoGuiRules guiRules = HugoGuiRules.load();
+        ScreenStateTracker screens = new ScreenStateTracker(new ScreenClassifier(guiRules), containers);
+        OverlayManager overlays = new OverlayManager();
+        ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, dataDir);
+        new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule())).start();
     }
 }

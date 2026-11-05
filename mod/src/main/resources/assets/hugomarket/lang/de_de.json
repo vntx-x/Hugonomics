@@ -3,5 +3,13 @@
   "key.hugomarket.dumper_toggle": "Dump-Aufzeichnung an/aus",
   "hugomarket.dumper.on": "[HugoMarket] Dump-Aufzeichnung AN. Container und Chat werden gespeichert.",
   "hugomarket.dumper.off": "[HugoMarket] Dump-Aufzeichnung AUS.",
-  "hugomarket.dumper.hud": "HugoMarket DUMP  %s Container  %s Chat"
+  "hugomarket.dumper.hud": "HugoMarket DUMP  %s Container  %s Chat",
+  "hugomarket.ah.search": "Suchen (Name, Enchant, Verkäufer)",
+  "hugomarket.ah.sort.unit_asc": "Stück ↑",
+  "hugomarket.ah.sort.unit_desc": "Stück ↓",
+  "hugomarket.ah.sort.expires": "Restzeit",
+  "hugomarket.ah.sort.newest": "Neu",
+  "hugomarket.ah.filter.enchanted": "Enchanted",
+  "hugomarket.ah.filter.spawner": "Spawner",
+  "hugomarket.ah.status": "%s Treffer von %s gesehenen"
 }
