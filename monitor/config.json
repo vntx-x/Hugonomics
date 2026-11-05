@@ -23,8 +23,10 @@
   "backendUrl": "https://hugomarket.duckdns.org",
   "clientId": "MONITOR_CLIENT_ID",
   "tutorialShown": true,
-  "monitorIntervalSeconds": 20,
+  "monitorIntervalSeconds": 15,
   "monitorAccount": "KOVAAV",
   "monitorHeadless": true,
-  "monitorQueries": ["elytra", "mace", "netherite", "shulker", "trident", "beacon", "enchanted"]
+  "monitorQueries": ["elytra", "mace", "netherite", "shulker", "trident", "beacon", "enchanted", "diamond", "emerald",
+    "golden apple", "nether star", "dragon", "ancient debris", "heavy core", "breeze", "wither", "sponge", "trim",
+    "disc", "pickaxe", "sword", "axe", "bow", "potion", "pearl", "rocket", "obsidian", "xp"]
 }

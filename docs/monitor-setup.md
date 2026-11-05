@@ -32,6 +32,14 @@ Der Hauptaccount profitiert sofort: alles, was der Monitor meldet, bestätigt di
 Beobachtungen (zweiter Client), und neue Listings tauchen innerhalb einer Minute im
 Markt-Screen auf.
 
+## Ablauf pro Zyklus
+
+Alle `monitorIntervalSeconds` (mindestens 15) schickt der Monitor den nächsten Eintrag aus
+`monitorQueries` als `/ah <suchwort>` (zuerst das leere `/ah`). Zeigt der Filter-Button der
+geöffneten Seite nicht "Niedrigster Preis", klickt er ihn mit 0,5 s Abstand weiter, höchstens
+dreimal, bis die günstigsten Angebote vorne stehen. Dann meldet die Sync-Logik die Seite und
+der Monitor schließt sie. Alles steht in `config/hugomarket/monitor.log`.
+
 ## Variante B: auf dem VPS (läuft seit 2026-11-05)
 
 Headless-Client in Docker, Anleitung in `monitor/README.md`. Gemessen: etwa 1,2 GB RAM und

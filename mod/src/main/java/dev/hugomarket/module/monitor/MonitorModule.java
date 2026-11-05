@@ -5,8 +5,13 @@ import dev.hugomarket.config.ModConfig;
 import dev.hugomarket.container.ScreenUpdate;
 import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.model.ContainerView;
+import dev.hugomarket.model.HugoControl;
 import dev.hugomarket.model.ScreenKind;
+import dev.hugomarket.model.SlotView;
+import dev.hugomarket.parse.AhListingParser;
 import net.minecraft.client.Minecraft;
+import net.minecraft.world.inventory.ClickType;
 import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
@@ -20,10 +25,15 @@ public final class MonitorModule implements Module {
     private static final int META_RECHECK_TICKS = 20 * 60 * 5;
     private static final int OFFLINE_EXIT_TICKS = 20 * 60;
 
+    private static final String CHEAPEST_FIRST = "Niedrigster Preis";
+    private static final int MAX_SORT_CLICKS = 3;
+    private static final int SORT_CLICK_DELAY_TICKS = 10;
+
     private enum Phase {
         IDLE,
         WAITING_FOR_AH,
-        VIEWING
+        VIEWING,
+        SORTING
     }
 
     private ModuleContext context;
@@ -42,6 +52,11 @@ public final class MonitorModule implements Module {
     private int queryIndex;
     private MonitorLog log;
     private boolean blockedLogged;
+    private AhListingParser parser;
+    private AbstractContainerScreen<?> ahScreen;
+    private int filterSlot = -1;
+    private int sortClicks;
+    private boolean awaitingRefresh;
 
     @Override
     public String id() {
@@ -81,6 +96,7 @@ public final class MonitorModule implements Module {
             }
         }
         log = new MonitorLog(context.dataDir().resolve("monitor.log"));
+        parser = new AhListingParser(context.guiRules());
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(this::tick);
@@ -154,6 +170,22 @@ public final class MonitorModule implements Module {
                 String command = query.isEmpty() ? "ah" : "ah " + query;
                 client.player.connection.sendCommand(command);
                 log.line("sent /" + command);
+                sortClicks = 0;
+                awaitingRefresh = false;
+                phase = Phase.WAITING_FOR_AH;
+                phaseTicks = 0;
+            }
+            case SORTING -> {
+                if (++phaseTicks < SORT_CLICK_DELAY_TICKS) {
+                    return;
+                }
+                if (client.gameMode == null || ahScreen == null || client.screen != ahScreen || filterSlot < 0) {
+                    reset(client);
+                    return;
+                }
+                client.gameMode.handleInventoryMouseClick(ahScreen.getMenu().containerId, filterSlot, 0, ClickType.PICKUP, client.player);
+                sortClicks++;
+                awaitingRefresh = true;
                 phase = Phase.WAITING_FOR_AH;
                 phaseTicks = 0;
             }
@@ -174,15 +206,40 @@ public final class MonitorModule implements Module {
     }
 
     private void onScreenUpdate(ScreenUpdate update) {
-        if (phase == Phase.WAITING_FOR_AH && update.kind() == ScreenKind.AH_LIST) {
-            phase = Phase.VIEWING;
-            phaseTicks = 0;
+        if (phase != Phase.WAITING_FOR_AH || update.kind() != ScreenKind.AH_LIST) {
+            return;
+        }
+        phase = Phase.VIEWING;
+        phaseTicks = 0;
+        if (!awaitingRefresh) {
             pagesReported++;
             log.line("AH page " + pagesReported + " seen (" + update.view().slots().size() + " slots)");
             if (pagesReported % 10 == 1) {
                 HugoMarket.LOGGER.info("monitor saw AH page {} (query index {})", pagesReported, queryIndex);
             }
         }
+        awaitingRefresh = false;
+        AhListingParser.AhPage page = parser.parse(update.view());
+        if (page.filter() == null || CHEAPEST_FIRST.equals(page.filter().sort()) || sortClicks >= MAX_SORT_CLICKS) {
+            return;
+        }
+        filterSlot = filterSlot(update.view());
+        if (filterSlot < 0) {
+            return;
+        }
+        ahScreen = update.screen();
+        log.line("sort is '" + page.filter().sort() + "', clicking filter (" + (sortClicks + 1) + ")");
+        phase = Phase.SORTING;
+        phaseTicks = 0;
+    }
+
+    private int filterSlot(ContainerView view) {
+        for (SlotView slot : view.slots()) {
+            if (!slot.playerInventory() && !slot.isEmpty() && context.guiRules().controlOf(slot.item()) == HugoControl.FILTER) {
+                return slot.index();
+            }
+        }
+        return -1;
     }
 
     private void reset(Minecraft client) {
