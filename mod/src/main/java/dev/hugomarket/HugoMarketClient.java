@@ -12,6 +12,7 @@ import dev.hugomarket.module.ahsearch.AhSearchModule;
 import dev.hugomarket.module.calc.CalcModule;
 import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.dumper.DumperModule;
+import dev.hugomarket.module.orders.OrdersModule;
 import dev.hugomarket.module.sellassist.SellAssistModule;
 import dev.hugomarket.module.sync.SyncModule;
 import dev.hugomarket.module.tooltips.TooltipsModule;
@@ -54,7 +55,7 @@ public final class HugoMarketClient implements ClientModInitializer {
         userData.load();
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market, userData, dataDir);
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
-                new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new SyncModule()));
+                new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), new SyncModule()));
         registry.start();
         KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_UNKNOWN);
         scheduler.onTick(client -> {

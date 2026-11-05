@@ -17,6 +17,7 @@ public final class MarketSession {
     private static final int MAX_WANTED = 500;
 
     private final ListingIndex index = new ListingIndex(MAX_AGE_MS);
+    private final OrderBook orders = new OrderBook();
     private final PriceStore backend;
     private final Map<String, PriceStats> statsByKey = new HashMap<>();
     private final Map<String, Long> wanted = new LinkedHashMap<>();
@@ -30,6 +31,16 @@ public final class MarketSession {
 
     public PriceStore backend() {
         return backend;
+    }
+
+    public OrderBook orders() {
+        return orders;
+    }
+
+    public void ordersSeen(List<dev.hugomarket.model.Order> page, long seenAt) {
+        orders.pageSeen(page, seenAt);
+        version++;
+        notifyChange();
     }
 
     public int version() {
