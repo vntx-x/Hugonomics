@@ -10,10 +10,11 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
 public final class MonitorModule implements Module {
-    private static final int MIN_INTERVAL_SECONDS = 30;
+    private static final int MIN_INTERVAL_SECONDS = 15;
     private static final int OPEN_TIMEOUT_TICKS = 20 * 10;
     private static final int CLOSE_DELAY_TICKS = 20 * 3;
     private static final int META_RECHECK_TICKS = 20 * 60 * 5;
+    private static final int OFFLINE_EXIT_TICKS = 20 * 60;
 
     private enum Phase {
         IDLE,
@@ -31,6 +32,8 @@ public final class MonitorModule implements Module {
     private int metaTicks;
     private Phase phase = Phase.IDLE;
     private int pagesReported;
+    private int offlineTicks;
+    private boolean headless;
 
     @Override
     public String id() {
@@ -61,6 +64,7 @@ public final class MonitorModule implements Module {
             HugoMarket.LOGGER.info("monitor idle, logged in account is not {}", account);
             return;
         }
+        headless = config.monitorHeadless;
         enabled = true;
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(this::tick);
@@ -96,7 +100,16 @@ public final class MonitorModule implements Module {
             metaTicks = 0;
             checkMeta();
         }
-        if (!allowedByServer || client.player == null || !context.server().active()) {
+        if (client.player == null || !context.server().active()) {
+            phase = Phase.IDLE;
+            if (headless && ++offlineTicks >= OFFLINE_EXIT_TICKS) {
+                HugoMarket.LOGGER.warn("monitor offline for 60 s, exiting so the supervisor restarts the client");
+                client.stop();
+            }
+            return;
+        }
+        offlineTicks = 0;
+        if (!allowedByServer) {
             phase = Phase.IDLE;
             return;
         }

@@ -1,0 +1,29 @@
+{
+  "modules": {
+    "sync": true,
+    "monitor": true,
+    "ahsearch": false,
+    "sellassist": false,
+    "tooltips": false,
+    "containervalue": false,
+    "calculator": false,
+    "orders": false,
+    "sellstats": false,
+    "market": false,
+    "alerts": false,
+    "myauctions": false,
+    "farm": false,
+    "minutetest": false,
+    "trades": false,
+    "colorcodes": false,
+    "networth": false,
+    "dumper": false
+  },
+  "debugAnyServer": false,
+  "backendUrl": "https://hugomarket.duckdns.org",
+  "clientId": "MONITOR_CLIENT_ID",
+  "tutorialShown": true,
+  "monitorIntervalSeconds": 20,
+  "monitorAccount": "KOVAAV",
+  "monitorHeadless": true
+}

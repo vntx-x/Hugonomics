@@ -11,6 +11,7 @@ public final class ModConfig {
     public boolean tutorialShown = false;
     public int monitorIntervalSeconds = 45;
     public String monitorAccount = "";
+    public boolean monitorHeadless = false;
 
     public boolean isModuleEnabled(String id, boolean fallback) {
         Boolean value = modules.get(id);
