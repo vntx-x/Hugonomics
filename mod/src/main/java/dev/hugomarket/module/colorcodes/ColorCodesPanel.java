@@ -19,7 +19,7 @@ final class ColorCodesPanel extends OverlayPanel {
     static final int WIDTH = 270;
     private static final int PREVIEW_HEIGHT = 18;
     private static final int SWATCH_HEIGHT = 12;
-    private static final int TEXT_MAX = 400;
+    private static final int TEXT_MAX = 120;
     private static final String[][] FORMATS = {
             {"hugomarket.colors.bold", "&l"}, {"hugomarket.colors.italic", "&o"}, {"hugomarket.colors.underline", "&n"},
             {"hugomarket.colors.strike", "&m"}, {"hugomarket.colors.magic", "&k"}, {"hugomarket.colors.reset", "&r"},
@@ -33,11 +33,6 @@ final class ColorCodesPanel extends OverlayPanel {
     private final TextField text;
     private final List<Swatch> swatches = new ArrayList<>();
     private final List<Chip> formats = new ArrayList<>();
-    private final TextField hex;
-    private final Chip insertHex;
-    private final TextField gradientFrom;
-    private final TextField gradientTo;
-    private final Chip applyGradient;
     private final Chip toChat;
     private final Chip copy;
     private final Chip clear;
@@ -57,11 +52,6 @@ final class ColorCodesPanel extends OverlayPanel {
         for (String[] format : FORMATS) {
             formats.add(add(new Chip(I18n.get(format[0]), () -> false, () -> text.insertAtCaret(format[1]))));
         }
-        hex = add(new TextField("#RRGGBB", "", 7, value -> { }));
-        insertHex = add(new Chip(I18n.get("hugomarket.colors.insert_hex"), () -> false, this::insertHex));
-        gradientFrom = add(new TextField("#55FF55", "", 7, value -> { }));
-        gradientTo = add(new TextField("#C77DFF", "", 7, value -> { }));
-        applyGradient = add(new Chip(I18n.get("hugomarket.colors.gradient"), () -> false, this::applyGradient));
         toChat = add(new Chip(I18n.get("hugomarket.colors.to_chat"), () -> false, this::toChat));
         copy = add(new Chip(I18n.get("hugomarket.colors.copy"), () -> false, this::copy));
         clear = add(new Chip(I18n.get("hugomarket.colors.clear"), () -> false, text::clear));
@@ -70,8 +60,7 @@ final class ColorCodesPanel extends OverlayPanel {
 
     static int preferredHeight() {
         return Theme.PADDING * 2 + Theme.CHIP_HEIGHT + Theme.GAP + Theme.FIELD_HEIGHT + Theme.GAP + PREVIEW_HEIGHT + Theme.GAP
-                + SWATCH_HEIGHT + Theme.GAP + Theme.CHIP_HEIGHT + Theme.GAP + Theme.FIELD_HEIGHT + Theme.GAP + Theme.FIELD_HEIGHT
-                + Theme.GAP + Theme.CHIP_HEIGHT;
+                + SWATCH_HEIGHT + Theme.GAP + Theme.CHIP_HEIGHT + Theme.GAP + Theme.CHIP_HEIGHT;
     }
 
     void focus() {
@@ -99,14 +88,6 @@ final class ColorCodesPanel extends OverlayPanel {
             formats.get(i).setBounds(innerX + i * (formatWidth + Theme.GAP), cursorY, formatWidth, Theme.CHIP_HEIGHT);
         }
         cursorY += Theme.CHIP_HEIGHT + Theme.GAP;
-        int fieldWidth = 58;
-        hex.setBounds(innerX, cursorY, fieldWidth, Theme.FIELD_HEIGHT);
-        insertHex.setBounds(innerX + fieldWidth + Theme.GAP, cursorY, 70, Theme.FIELD_HEIGHT);
-        cursorY += Theme.FIELD_HEIGHT + Theme.GAP;
-        gradientFrom.setBounds(innerX, cursorY, fieldWidth, Theme.FIELD_HEIGHT);
-        gradientTo.setBounds(innerX + fieldWidth + Theme.GAP, cursorY, fieldWidth, Theme.FIELD_HEIGHT);
-        applyGradient.setBounds(innerX + (fieldWidth + Theme.GAP) * 2, cursorY, 70, Theme.FIELD_HEIGHT);
-        cursorY += Theme.FIELD_HEIGHT + Theme.GAP;
         int third = (innerWidth - Theme.GAP * 2) / 3;
         toChat.setBounds(innerX, cursorY, third, Theme.CHIP_HEIGHT);
         copy.setBounds(innerX + third + Theme.GAP, cursorY, third, Theme.CHIP_HEIGHT);
@@ -134,25 +115,6 @@ final class ColorCodesPanel extends OverlayPanel {
         int visible = state.visibleLength();
         String base = I18n.get("hugomarket.colors.counter", visible, state.target().limit, state.command().length());
         return state.overLimit() ? "! " + base : base;
-    }
-
-    private void insertHex() {
-        int rgb = ColorCodes.parseHex(hex.value().trim());
-        if (rgb >= 0) {
-            text.insertAtCaret("&#" + ColorCodes.hex(rgb));
-        }
-    }
-
-    private void applyGradient() {
-        int from = ColorCodes.parseHex(gradientFrom.value().trim());
-        int to = ColorCodes.parseHex(gradientTo.value().trim());
-        if (from < 0) {
-            from = 0x55FF55;
-        }
-        if (to < 0) {
-            to = 0xC77DFF;
-        }
-        text.setValue(ColorCodes.gradient(text.value(), from, to));
     }
 
     private void toChat() {
