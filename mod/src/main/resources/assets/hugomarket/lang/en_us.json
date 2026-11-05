@@ -33,7 +33,7 @@
   "hugomarket.help.market.2": "Profit: today, 7 days, 30 days with income (server sales), spending (AH purchases) and balance, plus recent trades.",
   "hugomarket.help.market.3": "Prices come from the shared server of all users. What you see in the AH is reported anonymously; seller names leave only hashed.",
   "hugomarket.help.calc.title": "Calculator",
-  "hugomarket.help.calc.1": "Press N to open it next to any container or as its own screen. Key pad, K/M/B, percent, brackets, history, copy, → Price fills the anvil field.",
+  "hugomarket.help.calc.1": "Sits left of every container by default, N hides and shows it (remembered). Without a container N opens it as its own screen. Key pad, K/M/B, percent, brackets, history, copy, → Price fills the anvil field.",
   "hugomarket.help.calc.2": "In chat: =12*48k shows the result live above the input without sending.",
   "hugomarket.help.menu.title": "Menu and keys",
   "hugomarket.help.menu.1": "Mod Menu → Hugonomics: modules on/off, overview, market, profit. Own keys under Controls → Hugonomics (menu, market, calculator N, dumper F8).",

@@ -3,6 +3,9 @@ package dev.hugomarket.config;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
+import dev.hugomarket.ui.widget.Chip;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
@@ -18,7 +21,7 @@ import net.minecraft.client.input.MouseButtonEvent;
 *///?}
 
 public final class HelpScreen extends Screen {
-    private static final int WIDTH = 400;
+    private static final int WIDTH = 420;
     private static final int MARGIN = 16;
     private static final String[] SECTIONS = {"ah", "sell", "orders", "chests", "shop", "market", "calc", "menu", "rules"};
 
@@ -52,28 +55,37 @@ public final class HelpScreen extends Screen {
         return false;
     }
 
-    //? if >=1.21.9 {
-    /*@Override
-    public boolean keyPressed(KeyEvent event) {
-        if (event.key() == GLFW.GLFW_KEY_ESCAPE) {
-            onClose();
-            return true;
-        }
-        return super.keyPressed(event);
-    }
-
-    @Override
-    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
-        return super.mouseClicked(event, doubleClick);
-    }
-    *///?} else {
-    @Override
-    public boolean keyPressed(int key, int scancode, int modifiers) {
+    private boolean handleKey(int key) {
         if (key == GLFW.GLFW_KEY_ESCAPE) {
             onClose();
             return true;
         }
-        return super.keyPressed(key, scancode, modifiers);
+        if (key == GLFW.GLFW_KEY_RIGHT || key == GLFW.GLFW_KEY_LEFT) {
+            panel.step(key == GLFW.GLFW_KEY_RIGHT ? 1 : -1);
+            return true;
+        }
+        return false;
+    }
+
+    //? if >=1.21.9 {
+    /*@Override
+    public boolean keyPressed(KeyEvent event) {
+        return handleKey(event.key()) || super.keyPressed(event);
+    }
+
+    @Override
+    public boolean mouseClicked(MouseButtonEvent event, boolean doubleClick) {
+        return panel.mouseClicked(event.x(), event.y(), event.button()) || super.mouseClicked(event, doubleClick);
+    }
+    *///?} else {
+    @Override
+    public boolean keyPressed(int key, int scancode, int modifiers) {
+        return handleKey(key) || super.keyPressed(key, scancode, modifiers);
+    }
+
+    @Override
+    public boolean mouseClicked(double mouseX, double mouseY, int button) {
+        return panel.mouseClicked(mouseX, mouseY, button) || super.mouseClicked(mouseX, mouseY, button);
     }
     //?}
 
@@ -83,62 +95,90 @@ public final class HelpScreen extends Screen {
     }
 
     private static final class HelpPanel extends OverlayPanel {
-        private record Line(String text, int color, int indent) {
-        }
+        private static final int LINE_HEIGHT = 11;
+        private static final int HEADER_HEIGHT = 14;
 
-        private final List<Line> source = new ArrayList<>();
-        private List<Line> wrapped = List.of();
+        private final List<Chip> tabs = new ArrayList<>();
+        private final List<String> tabLabels = new ArrayList<>();
+        private final List<List<String>> sections = new ArrayList<>();
+        private int selected;
+        private List<String> wrapped = List.of();
         private int wrappedWidth = -1;
+        private int wrappedSection = -1;
         private int scroll;
+        private int contentTop;
 
         HelpPanel() {
-            source.add(new Line(I18n.get("hugomarket.help.title"), Theme.ACCENT, 0));
-            source.add(new Line(I18n.get("hugomarket.help.intro"), Theme.TEXT_DIM, 0));
-            source.add(new Line("", Theme.TEXT, 0));
-            for (String section : SECTIONS) {
-                source.add(new Line(I18n.get("hugomarket.help." + section + ".title"), Theme.ACCENT, 0));
-                for (int i = 1; i <= 8; i++) {
-                    String key = "hugomarket.help." + section + "." + i;
+            for (int i = 0; i < SECTIONS.length; i++) {
+                int index = i;
+                String section = SECTIONS[i];
+                String label = I18n.get("hugomarket.help." + section + ".tab");
+                tabLabels.add(label);
+                tabs.add(add(new Chip(label, () -> selected == index, () -> select(index))));
+                List<String> lines = new ArrayList<>();
+                for (int n = 1; n <= 8; n++) {
+                    String key = "hugomarket.help." + section + "." + n;
                     if (!I18n.exists(key)) {
                         break;
                     }
-                    source.add(new Line("• " + I18n.get(key), Theme.TEXT, 6));
+                    lines.add(I18n.get(key));
                 }
-                source.add(new Line("", Theme.TEXT, 0));
+                sections.add(lines);
             }
+        }
+
+        void step(int delta) {
+            select(Math.floorMod(selected + delta, SECTIONS.length));
+        }
+
+        private void select(int index) {
+            selected = index;
+            scroll = 0;
         }
 
         @Override
         protected void layout() {
+            int innerX = x + Theme.PADDING;
+            int innerWidth = width - Theme.PADDING * 2;
+            int cursorX = innerX;
+            int cursorY = y + Theme.PADDING + HEADER_HEIGHT;
+            int chipHeight = Theme.CHIP_HEIGHT + 2;
+            Font font = Minecraft.getInstance().font;
+            for (int i = 0; i < tabs.size(); i++) {
+                Chip tab = tabs.get(i);
+                int chipWidth = font.width(tabLabels.get(i)) + 14;
+                if (cursorX + chipWidth > innerX + innerWidth) {
+                    cursorX = innerX;
+                    cursorY += chipHeight + Theme.GAP;
+                }
+                tab.setBounds(cursorX, cursorY, chipWidth, chipHeight);
+                cursorX += chipWidth + Theme.GAP;
+            }
+            contentTop = cursorY + chipHeight + Theme.GAP * 2;
             wrappedWidth = -1;
         }
 
         private void wrap(Gfx gfx) {
-            int innerWidth = width - Theme.PADDING * 2;
-            if (wrappedWidth == innerWidth) {
+            int innerWidth = width - Theme.PADDING * 2 - 8;
+            if (wrappedWidth == innerWidth && wrappedSection == selected) {
                 return;
             }
             wrappedWidth = innerWidth;
-            List<Line> out = new ArrayList<>();
-            for (Line line : source) {
-                int available = innerWidth - line.indent();
-                if (line.text().isEmpty() || gfx.textWidth(line.text()) <= available) {
-                    out.add(line);
-                    continue;
-                }
-                StringBuilder current = new StringBuilder();
-                for (String word : line.text().split(" ")) {
-                    String candidate = current.isEmpty() ? word : current + " " + word;
-                    if (gfx.textWidth(candidate) > available && !current.isEmpty()) {
-                        out.add(new Line(current.toString(), line.color(), line.indent()));
-                        current = new StringBuilder("  " + word);
+            wrappedSection = selected;
+            List<String> out = new ArrayList<>();
+            for (String line : sections.get(selected)) {
+                StringBuilder current = new StringBuilder("• ");
+                for (String word : line.split(" ")) {
+                    String candidate = current.length() <= 2 ? current + word : current + " " + word;
+                    if (gfx.textWidth(candidate) > innerWidth && current.length() > 2) {
+                        out.add(current.toString());
+                        current = new StringBuilder("   " + word);
                     } else {
                         current = new StringBuilder(candidate);
                     }
                 }
-                if (!current.isEmpty()) {
-                    out.add(new Line(current.toString(), line.color(), line.indent()));
-                }
+                out.add(current.toString());
+                out.add("");
             }
             wrapped = out;
         }
@@ -146,25 +186,33 @@ public final class HelpScreen extends Screen {
         @Override
         public void render(Gfx gfx, int mouseX, int mouseY) {
             super.render(gfx, mouseX, mouseY);
+            gfx.text(I18n.get("hugomarket.help.title"), x + Theme.PADDING, y + Theme.PADDING, Theme.ACCENT);
             wrap(gfx);
-            int lineHeight = 11;
-            int innerHeight = height - Theme.PADDING * 2;
-            int maxScroll = Math.max(0, wrapped.size() * lineHeight - innerHeight);
+            int innerX = x + Theme.PADDING;
+            int innerWidth = width - Theme.PADDING * 2;
+            int innerHeight = y + height - Theme.PADDING - contentTop;
+            gfx.fill(innerX, contentTop - Theme.GAP, innerWidth, innerHeight + Theme.GAP, Theme.FIELD_BG);
+            gfx.textNoShadow(I18n.get("hugomarket.help." + SECTIONS[selected] + ".title"), innerX + 4, contentTop + 1, Theme.ACCENT);
+            int listTop = contentTop + LINE_HEIGHT + Theme.GAP;
+            int listHeight = innerHeight - LINE_HEIGHT - Theme.GAP;
+            int maxScroll = Math.max(0, wrapped.size() * LINE_HEIGHT - listHeight);
             scroll = Math.max(0, Math.min(scroll, maxScroll));
-            gfx.scissor(x + Theme.PADDING, y + Theme.PADDING, width - Theme.PADDING * 2, innerHeight);
-            int lineY = y + Theme.PADDING - scroll;
-            for (Line line : wrapped) {
-                if (lineY + lineHeight >= y && lineY <= y + height) {
-                    gfx.textNoShadow(line.text(), x + Theme.PADDING + line.indent(), lineY, line.color());
+            gfx.scissor(innerX, listTop, innerWidth, listHeight);
+            int lineY = listTop - scroll;
+            for (String line : wrapped) {
+                if (lineY + LINE_HEIGHT >= listTop && lineY <= listTop + listHeight) {
+                    gfx.textNoShadow(line, innerX + 4, lineY, Theme.TEXT);
                 }
-                lineY += lineHeight;
+                lineY += LINE_HEIGHT;
             }
             gfx.unscissor();
             if (maxScroll > 0) {
-                int barHeight = Math.max(8, innerHeight * innerHeight / (wrapped.size() * lineHeight));
-                int barY = y + Theme.PADDING + (innerHeight - barHeight) * scroll / maxScroll;
-                gfx.fill(x + width - 3, barY, 2, barHeight, Theme.TEXT_DIM);
+                int barHeight = Math.max(8, listHeight * listHeight / (wrapped.size() * LINE_HEIGHT));
+                int barY = listTop + (listHeight - barHeight) * scroll / maxScroll;
+                gfx.fill(innerX + innerWidth - 3, barY, 2, barHeight, Theme.TEXT_DIM);
             }
+            String hint = I18n.get("hugomarket.help.nav");
+            gfx.textNoShadow(hint, x + width - Theme.PADDING - gfx.textWidth(hint), y + Theme.PADDING + 1, Theme.TEXT_DIM);
         }
 
         @Override

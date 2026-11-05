@@ -33,7 +33,7 @@
   "hugomarket.help.market.2": "Profit: Heute, 7 Tage, 30 Tage mit Einnahmen (Server-Verkäufe), Ausgaben (AH-Käufe) und Saldo, dazu die letzten Trades.",
   "hugomarket.help.market.3": "Preise kommen vom gemeinsamen Server aller Nutzer. Was du im AH siehst, wird anonym gemeldet; Verkäufernamen gehen nur gehasht raus.",
   "hugomarket.help.calc.title": "Rechner",
-  "hugomarket.help.calc.1": "Taste N öffnet ihn neben jedem Container oder als eigenes Fenster. Tastenfeld, K/M/B, Prozent, Klammern, Verlauf, Kopieren, → Preis schreibt ins Amboss-Feld.",
+  "hugomarket.help.calc.1": "Steht standardmäßig links neben jedem Container, Taste N blendet ihn aus und wieder ein (wird gemerkt). Ohne Container öffnet N ein eigenes Fenster. Tastenfeld, K/M/B, Prozent, Klammern, Verlauf, Kopieren, → Preis schreibt ins Amboss-Feld.",
   "hugomarket.help.calc.2": "Im Chat: =12*48k zeigt das Ergebnis live über dem Eingabefeld, ohne zu senden.",
   "hugomarket.help.menu.title": "Menü und Tasten",
   "hugomarket.help.menu.1": "Mod Menu → Hugonomics: Module an/aus, Übersicht, Markt, Profit. Eigene Tasten unter Steuerung → Hugonomics (Menü, Markt, Rechner N, Dumper F8).",

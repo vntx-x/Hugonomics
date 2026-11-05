@@ -11,6 +11,7 @@ public final class ModConfig {
     public String backendUrl = "https://hugomarket.duckdns.org";
     public String clientId = null;
     public boolean tutorialShown = false;
+    public boolean calculatorOpen = true;
     public int monitorIntervalSeconds = 45;
     public String monitorAccount = "";
     public boolean monitorHeadless = false;

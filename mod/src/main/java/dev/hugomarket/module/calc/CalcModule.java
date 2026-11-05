@@ -36,6 +36,7 @@ public final class CalcModule implements Module, OverlayProvider {
     public void onEnable(ModuleContext context) {
         this.context = context;
         key = KeyBindings.register(KEY_NAME, GLFW.GLFW_KEY_N);
+        state.setOpen(context.config().get().calculatorOpen);
         context.scheduler().onTick(this::tick);
         context.overlays().addProvider(this);
         context.overlays().addKeyHook(this::onScreenKey);
@@ -52,9 +53,6 @@ public final class CalcModule implements Module, OverlayProvider {
     public List<OverlayPanel> createPanels(AbstractContainerScreen<?> screen) {
         panel = new CalcPanel(state, this::closePanel);
         PanelPlacement.leftOf(screen, panel, CalcPanel.WIDTH, CalcPanel.preferredHeight());
-        if (state.isOpen()) {
-            panel.focus();
-        }
         return List.of(panel);
     }
 
@@ -74,7 +72,7 @@ public final class CalcModule implements Module, OverlayProvider {
         if (state.isOpen()) {
             closePanel();
         } else {
-            state.setOpen(true);
+            remember(true);
             panel.setVisible(true);
             panel.focus();
         }
@@ -82,10 +80,18 @@ public final class CalcModule implements Module, OverlayProvider {
     }
 
     private void closePanel() {
-        state.setOpen(false);
+        remember(false);
         if (panel != null) {
             panel.unfocus();
             panel.setVisible(false);
+        }
+    }
+
+    private void remember(boolean open) {
+        state.setOpen(open);
+        if (context.config().get().calculatorOpen != open) {
+            context.config().get().calculatorOpen = open;
+            context.config().save();
         }
     }
 }
