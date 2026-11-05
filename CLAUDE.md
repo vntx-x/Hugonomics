@@ -98,5 +98,14 @@ Mod (`mod/`, Stonecutter-Ziele 1.21.5, 1.21.8, 1.21.10, 1.21.11; aktiv ist 1.21.
 Jars liegen unter `mod/versions/<ziel>/build/libs/`. Dumps landen im Run-Verzeichnis unter
 `config/hugomarket/dumps/`.
 
-Backend (`backend/`): `docker compose up -d db` startet Postgres (Zugangsdaten aus `.env`,
-Vorlage `.env.example`). Node-Projekt folgt in Phase 1.
+Backend (`backend/`, Node 24 + TypeScript):
+
+```
+npm install
+npm run typecheck && npm run lint && npm test   Pflicht vor Commit
+npm run dev                                     lokaler Server ohne Datenbank (Memory-Store)
+docker compose up -d --build                    Postgres + API (Zugangsdaten aus .env)
+docker compose exec api node dist/db/migrate.js Tabellen anlegen
+```
+
+Deployment siehe `docs/deploy.md`.

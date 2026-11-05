@@ -1,6 +1,7 @@
 package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Money;
+import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -25,9 +26,9 @@ final class AhSearchPanel extends OverlayPanel {
     private final ListView<ListingIndex.Entry> results;
     private final Runnable changeListener = this::refresh;
 
-    AhSearchPanel(AbstractContainerScreen<?> screen, AhSearchState state) {
+    AhSearchPanel(AbstractContainerScreen<?> screen, AhSearchState state, MarketSession market) {
         this.state = state;
-        this.highlighter = new SlotHighlighter(screen, state);
+        this.highlighter = new SlotHighlighter(screen, state, market);
         search = add(new TextField(I18n.get("hugomarket.ah.search"), state.query().text(),
                 text -> state.setQuery(state.query().withText(text))));
         chips = List.of(

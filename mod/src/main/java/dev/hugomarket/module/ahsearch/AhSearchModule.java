@@ -58,7 +58,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
             panel = null;
             return List.of();
         }
-        panel = new AhSearchPanel(screen, state);
+        panel = new AhSearchPanel(screen, state, context.market());
         PanelPlacement.rightOf(screen, panel, PANEL_WIDTH);
         return List.of(panel);
     }

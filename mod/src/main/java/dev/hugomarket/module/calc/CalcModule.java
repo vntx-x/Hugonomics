@@ -39,6 +39,7 @@ public final class CalcModule implements Module, OverlayProvider {
         context.scheduler().onTick(this::tick);
         context.overlays().addProvider(this);
         context.overlays().addKeyHook(this::onScreenKey);
+        new ChatInlineCalc().register();
     }
 
     @Override

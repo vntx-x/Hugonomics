@@ -21,6 +21,19 @@ Leitplanken, nicht verhandelbar:
   keine Keys.
 - Verkäufernamen verlassen den Client nur gehasht.
 
+## 1a. Stand (2026-11-05, Abend)
+
+Fertig und ingame getestet: Dumper, AH-Such-Panel (Suche, Sortierung, Filter, Markierung,
+Session-Index). Fertig, gebaut, noch ohne Ingame-Rückmeldung: Verkaufs-Vorschlag im Amboss,
+Preis-Tooltips, Container-Wert-Panel, Rechner (Panel, eigener Screen, Chat-Kurzform
+`=…`), Modul-Menü mit Mod-Menu-Eintrag, Backend-Sync (aus, bis `backendUrl` gesetzt ist),
+Unter-Marktpreis-Rahmen. Backend-MVP (Fastify, Postgres, Konsens, Preise, Meta) mit Tests,
+noch nicht deployt (`docs/deploy.md`).
+
+Offen aus dem MVP: automatisches Blättern (gesperrt bis Freigabe), Watchlist, Preis-Vorlagen
+pro Item, Kategorie-Panel neben dem Rechner (braucht Backend-Volumen), Sprachumschaltung
+unabhängig von der Spielsprache, Tutorial.
+
 ## 2. Recherche-Stand
 
 ### 2.1 HugoSMP
