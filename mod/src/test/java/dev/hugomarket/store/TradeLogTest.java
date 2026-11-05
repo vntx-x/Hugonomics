@@ -31,7 +31,8 @@ class TradeLogTest {
 
         TradeLog.Summary month = log.since(now - 30 * 24 * 3600_000L);
         assertEquals(3_000, month.spentCents());
-        assertEquals(2, log.today(now, ZoneOffset.UTC).sells() + log.today(now, ZoneOffset.UTC).buys() - 0 == 2 ? 2 : -1);
+        assertEquals(4, log.size());
+        assertEquals(0, log.today(now + 2 * 24 * 3600_000L, ZoneOffset.UTC).sells());
     }
 
     @Test
