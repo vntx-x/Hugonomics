@@ -76,11 +76,15 @@ public final class AhSearchModule implements Module, OverlayProvider {
         }
         ahOpen = true;
         AhListingParser.AhPage page = parser.parse(update.view());
+        List<Listing> market = new ArrayList<>(page.listings().size());
         List<ItemStack> stacks = new ArrayList<>(page.listings().size());
         for (Listing listing : page.listings()) {
-            stacks.add(update.snapshot().slots().get(listing.slot()).stack());
+            if (page.isMarket() && listing.isMarketListing()) {
+                market.add(listing);
+                stacks.add(update.snapshot().slots().get(listing.slot()).stack());
+            }
         }
-        state.pageSeen(page.listings(), stacks, update.snapshot().capturedAt());
+        state.pageSeen(market, stacks, update.snapshot().capturedAt());
         if (panel != null) {
             PanelPlacement.rightOf(update.screen(), panel, PANEL_WIDTH);
         }

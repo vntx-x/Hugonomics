@@ -40,8 +40,18 @@ GUI-Glyph (unten angegeben). Jedes Item eines Hugo-GUIs trägt
 - Filter-Lore: Sortierung `Neueste Auktionen / Älteste Auktionen / Niedrigster Preis /
   Höchster Preis`, Stack-Filter `Alle / Nur ganze Stacks / Nur einzelne Items`, aktive Option
   mit `> ` markiert. Linksklick Sortierung, Rechtsklick Stack-Filter.
-- "Deine Auktionen"-Lore: Ansichten `Alle / Laufende / Verkaufte / Gekaufte / Abgelaufene`,
-  dazu `Insgesamt ausgegeben: $7.454.495`, `Insgesamt verdient: $6.972.083`.
+- "Deine Auktionen"-Lore: Ansichten `Alle Auktionen anzeigen / Laufende Auktionen /
+  Verkaufte Auktionen / Gekaufte Auktionen / Abgelaufene Auktionen`, aktive mit `> `, dazu
+  `Insgesamt ausgegeben: $7.454.495`, `Insgesamt verdient: $6.972.083`. Ein Klick wechselt die
+  Ansicht in derselben GUI (gleicher Titel, gleiche Steuer-Items).
+- Eigene Ansichten: Items tragen `Verkäufer: Du` und eine Zeile `Status: Laufend`,
+  `Status: Verkauft`, `Status: Gekauft` (dort steht der echte Verkäufer) oder
+  `Status: Abgelaufen`; laufende zusätzlich `Klicken: Stornieren`. Verkaufte und gekaufte
+  Einträge haben keine Restzeit. Diese Ansichten sind Historie, keine Marktdaten.
+- Item-eigene Lore steht vor den Preiszeilen (Event-Items wie `Maras Laterne ★★` mit
+  mehreren Zeilen, `Errungen von X · seelengebunden`), manchmal auch danach
+  (`Signiert von X am 25.07.2026`). Preis, Verkäufer und Restzeit werden deshalb per
+  Zeilenmuster gesucht, nicht per Position.
 
 ### AH-Einstellen: Titel `ꐷ` (U+A437), `generic_9x1`, secured `auction`
 
@@ -141,6 +151,6 @@ Dollarzeichen vorangestellt, Tausenderpunkt, Dezimalkomma: `$1.720.000.000`, `$4
 
 ## Noch nicht gesehen
 
-Deine-Auktionen-Liste, Verkaufsmeldung für den Verkäufer, Meldung nach dem Einstellen,
-Shop, `/pay`, `/msg`, Spawner-Items, Oraxen/Nexo-Custom-Items. Ein Trade-Fenster gibt es
-auf Hugo nicht.
+Verkaufsmeldung für den Verkäufer, Meldung nach dem Einstellen, Shop, `/pay`, `/msg`,
+Spawner-Items, Oraxen/Nexo-Custom-Items (nur Event-Items mit `item_model` gesehen). Ein
+Trade-Fenster gibt es auf Hugo nicht.

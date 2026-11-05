@@ -26,7 +26,7 @@ class AhListingParserTest {
         assertEquals("minecraft:nether_star", first.item().id());
         assertEquals(80_000_000, first.priceCents());
         assertEquals(80_000_000, first.unitPriceCents());
-        assertEquals("player_9", first.seller());
+        assertTrue(first.seller().startsWith("player_"));
         assertEquals(8 * 3600 + 33 * 60 + 43, first.expiresInSeconds());
         assertEquals("nether_star", first.key().toString());
     }

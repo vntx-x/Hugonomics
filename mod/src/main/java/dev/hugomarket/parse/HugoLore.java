@@ -21,6 +21,7 @@ public final class HugoLore {
     private static final Pattern FEE = Pattern.compile("^Erstellgebühr: " + MONEY + "$");
     private static final Pattern SPENT = Pattern.compile("^Insgesamt ausgegeben: " + MONEY + "$");
     private static final Pattern EARNED = Pattern.compile("^Insgesamt verdient: " + MONEY + "$");
+    private static final Pattern STATUS = Pattern.compile("^Status: (\\S+)$");
 
     public record Worth(long valueCents, long bonusCents, double multiplier) {
         public long baseCents() {
@@ -63,6 +64,11 @@ public final class HugoLore {
 
     public static Optional<String> seller(List<String> lore) {
         Matcher m = find(lore, SELLER);
+        return m == null ? Optional.empty() : Optional.of(m.group(1));
+    }
+
+    public static Optional<String> status(List<String> lore) {
+        Matcher m = find(lore, STATUS);
         return m == null ? Optional.empty() : Optional.of(m.group(1));
     }
 

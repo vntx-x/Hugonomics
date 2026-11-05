@@ -59,7 +59,8 @@ class ListingIndexTest {
             assertTrue(haystack.contains("nether") && haystack.contains("star"));
         }
         assertTrue(index.query(SearchQuery.EMPTY.withText("NETHER_STAR")).size() >= 20);
-        assertTrue(index.query(SearchQuery.EMPTY.withText("player_9")).size() >= 20);
+        String starSeller = pageTwo.stream().filter(l -> l.item().id().equals("minecraft:nether_star")).findFirst().orElseThrow().seller();
+        assertTrue(index.query(SearchQuery.EMPTY.withText(starSeller)).size() >= 20);
         assertEquals(0, index.query(SearchQuery.EMPTY.withText("gibtsnicht")).size());
     }
 

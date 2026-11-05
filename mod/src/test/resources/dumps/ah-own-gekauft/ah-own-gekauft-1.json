@@ -1,0 +1,4066 @@
+{
+  "ts": "2026-11-05T10:06:48.869Z",
+  "server": "hugosmp.net",
+  "minecraft": "1.21.5",
+  "mod": "0.0.1",
+  "title": "ꐭ",
+  "titleJson": {
+    "text": "ꐭ",
+    "color": "white"
+  },
+  "menuType": "minecraft:generic_9x6",
+  "containerId": 60,
+  "containerSlots": 54,
+  "slotCount": 90,
+  "slots": [
+    {
+      "index": 0,
+      "player": false,
+      "id": "minecraft:cut_sandstone",
+      "count": 5,
+      "name": "Cut Sandstone",
+      "nameJson": {
+        "translate": "block.minecraft.cut_sandstone"
+      },
+      "lore": [
+        "",
+        "Preis: $50",
+        "Verkäufer: player_51",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Cut Sandstone",
+        "",
+        "Preis: $50",
+        "Verkäufer: player_51",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:cut_sandstone",
+        "count": 5,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$50\n§fVerkäufer: player_51\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$50",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_51",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 1,
+      "player": false,
+      "id": "minecraft:bone",
+      "count": 19,
+      "name": "Bone",
+      "nameJson": {
+        "translate": "item.minecraft.bone"
+      },
+      "lore": [
+        "",
+        "Preis: $99",
+        "Verkäufer: player_44",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Bone",
+        "",
+        "Preis: $99",
+        "Verkäufer: player_44",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:bone",
+        "count": 19,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$99\n§fVerkäufer: player_44\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$99",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_44",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 2,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$100\n§fVerkäufer: player_48\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$100",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_48",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 3,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$100\n§fVerkäufer: player_48\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$100",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_48",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 4,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$100\n§fVerkäufer: player_48\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$100",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_48",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 5,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $100",
+        "Verkäufer: player_48",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$100\n§fVerkäufer: player_48\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$100",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_48",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 6,
+      "player": false,
+      "id": "minecraft:golden_shovel",
+      "count": 1,
+      "name": "Golden Shovel",
+      "nameJson": {
+        "translate": "item.minecraft.golden_shovel"
+      },
+      "lore": [
+        "",
+        "Preis: $100",
+        "Verkäufer: player_43",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Golden Shovel",
+        "§b Silk Touch",
+        "",
+        "Preis: $100",
+        "Verkäufer: player_43",
+        "Status: Gekauft",
+        "",
+        "When in Main Hand:",
+        " 2.5 Attack Damage",
+        " 1 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:golden_shovel",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$100\n§fVerkäufer: player_43\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:silk_touch": 1
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$100",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_43",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 7,
+      "player": false,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 64,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [
+        "",
+        "Preis: $150",
+        "Verkäufer: player_52",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Cobbled Deepslate",
+        "",
+        "Preis: $150",
+        "Verkäufer: player_52",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$150\n§fVerkäufer: player_52\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$150",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_52",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 8,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $199",
+        "Verkäufer: player_45",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $199",
+        "Verkäufer: player_45",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$199\n§fVerkäufer: player_45\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$199",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_45",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 9,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_55",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_55",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_55\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_55",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 10,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_55",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_55",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_55\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_55",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 11,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_55",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_55",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_55\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_55",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 12,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 36,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_46",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_46",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 36,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_46\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_46",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 13,
+      "player": false,
+      "id": "minecraft:bone_meal",
+      "count": 64,
+      "name": "Bone Meal",
+      "nameJson": {
+        "translate": "item.minecraft.bone_meal"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_53",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Bone Meal",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_53",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:bone_meal",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_53\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_53",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 14,
+      "player": false,
+      "id": "minecraft:bone_meal",
+      "count": 64,
+      "name": "Bone Meal",
+      "nameJson": {
+        "translate": "item.minecraft.bone_meal"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_53",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Bone Meal",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_53",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:bone_meal",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_53\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_53",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 15,
+      "player": false,
+      "id": "minecraft:oak_sapling",
+      "count": 16,
+      "name": "Oak Sapling",
+      "nameJson": {
+        "translate": "block.minecraft.oak_sapling"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_54",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Oak Sapling",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_54",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:oak_sapling",
+        "count": 16,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_54\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_54",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 16,
+      "player": false,
+      "id": "minecraft:oak_sapling",
+      "count": 31,
+      "name": "Oak Sapling",
+      "nameJson": {
+        "translate": "block.minecraft.oak_sapling"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_49",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Oak Sapling",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_49",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:oak_sapling",
+        "count": 31,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_49\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_49",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 17,
+      "player": false,
+      "id": "minecraft:oak_leaves",
+      "count": 64,
+      "name": "Oak Leaves",
+      "nameJson": {
+        "translate": "block.minecraft.oak_leaves"
+      },
+      "lore": [
+        "",
+        "Preis: $200",
+        "Verkäufer: player_56",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Oak Leaves",
+        "",
+        "Preis: $200",
+        "Verkäufer: player_56",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:oak_leaves",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$200\n§fVerkäufer: player_56\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$200",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_56",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 18,
+      "player": false,
+      "id": "minecraft:lever",
+      "count": 1,
+      "name": "Lever",
+      "nameJson": {
+        "translate": "block.minecraft.lever"
+      },
+      "lore": [
+        "",
+        "Preis: $230",
+        "Verkäufer: player_57",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Lever",
+        "",
+        "Preis: $230",
+        "Verkäufer: player_57",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:lever",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$230\n§fVerkäufer: player_57\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$230",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_57",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 19,
+      "player": false,
+      "id": "minecraft:water_bucket",
+      "count": 1,
+      "name": "Water Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.water_bucket"
+      },
+      "lore": [
+        "",
+        "Preis: $288",
+        "Verkäufer: player_59",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Water Bucket",
+        "",
+        "Preis: $288",
+        "Verkäufer: player_59",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:water_bucket",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$288\n§fVerkäufer: player_59\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$288",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_59",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 20,
+      "player": false,
+      "id": "minecraft:water_bucket",
+      "count": 1,
+      "name": "Water Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.water_bucket"
+      },
+      "lore": [
+        "",
+        "Preis: $288",
+        "Verkäufer: player_59",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Water Bucket",
+        "",
+        "Preis: $288",
+        "Verkäufer: player_59",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:water_bucket",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$288\n§fVerkäufer: player_59\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$288",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_59",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 21,
+      "player": false,
+      "id": "minecraft:slime_block",
+      "count": 1,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [
+        "",
+        "Preis: $299",
+        "Verkäufer: player_50",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Slime Block",
+        "",
+        "Preis: $299",
+        "Verkäufer: player_50",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$299\n§fVerkäufer: player_50\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$299",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_50",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 22,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$299\n§fVerkäufer: player_58\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$299",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_58",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 23,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$299\n§fVerkäufer: player_58\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$299",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_58",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 24,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$299\n§fVerkäufer: player_58\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$299",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_58",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 25,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$299\n§fVerkäufer: player_58\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$299",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_58",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 26,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $299",
+        "Verkäufer: player_58",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$299\n§fVerkäufer: player_58\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$299",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_58",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 27,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 28,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 29,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 30,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 31,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 32,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 33,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 34,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 35,
+      "player": false,
+      "id": "minecraft:netherrack",
+      "count": 64,
+      "name": "Netherrack",
+      "nameJson": {
+        "translate": "block.minecraft.netherrack"
+      },
+      "lore": [
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "tooltip": [
+        "Netherrack",
+        "",
+        "Preis: $300",
+        "Verkäufer: player_47",
+        "Status: Gekauft"
+      ],
+      "stack": {
+        "id": "minecraft:netherrack",
+        "count": 64,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction",
+              "minecraft:display_extra_lore": "\n§fPreis: §a$300\n§fVerkäufer: player_47\n§fStatus: §bGekauft"
+            }
+          },
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Preis: ",
+              "extra": [
+                {
+                  "text": "$300",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Verkäufer: player_47",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Status: ",
+              "extra": [
+                {
+                  "text": "Gekauft",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "aqua"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "index": 45,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Aktualisieren",
+      "nameJson": {
+        "text": "Aktualisieren",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Aktualisieren"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/59/07/7c3b96a05f018f56",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20005.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "red_refresh_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Aktualisieren",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 46,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Suche",
+      "nameJson": {
+        "text": "Suche",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Suche"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/b6/d0/c0da212ea32a70ea",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20000.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "red_search_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Suche",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 48,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Vorherige Seite",
+      "nameJson": {
+        "text": "Vorherige Seite",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Vorherige Seite"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/92/33/5aa873d8601ba138",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20001.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "blue_previous_page_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Vorherige Seite",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 49,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Filter",
+      "nameJson": {
+        "text": "Filter",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [
+        "",
+        "Neueste Auktionen",
+        "Älteste Auktionen",
+        "> Niedrigster Preis",
+        "Höchster Preis",
+        "",
+        "Klicken, um den Filter zu ändern"
+      ],
+      "tooltip": [
+        "Filter",
+        "",
+        "Neueste Auktionen",
+        "Älteste Auktionen",
+        "> Niedrigster Preis",
+        "Höchster Preis",
+        "",
+        "Klicken, um den Filter zu ändern"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Neueste Auktionen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Älteste Auktionen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "> Niedrigster Preis",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "aqua"
+            },
+            {
+              "text": "Höchster Preis",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um den Filter zu ändern",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ],
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/ab/0f/7b434613b9ddc0ca",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20003.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "blue_filter_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Filter",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 50,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Nächste Seite",
+      "nameJson": {
+        "text": "Nächste Seite",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Nächste Seite"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/85/41/fedfe38a568810d8",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20002.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "blue_next_page_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Nächste Seite",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 52,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Deine Auktionen",
+      "nameJson": {
+        "text": "Deine Auktionen",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [
+        "",
+        "Alle Auktionen anzeigen",
+        "Laufende Auktionen",
+        "Verkaufte Auktionen",
+        "> Gekaufte Auktionen",
+        "Abgelaufene Auktionen",
+        "",
+        "Insgesamt ausgegeben: $7.454.495",
+        "Insgesamt verdient: $6.972.083",
+        "",
+        "Klicken, um zu wechseln"
+      ],
+      "tooltip": [
+        "Deine Auktionen",
+        "",
+        "Alle Auktionen anzeigen",
+        "Laufende Auktionen",
+        "Verkaufte Auktionen",
+        "> Gekaufte Auktionen",
+        "Abgelaufene Auktionen",
+        "",
+        "Insgesamt ausgegeben: $7.454.495",
+        "Insgesamt verdient: $6.972.083",
+        "",
+        "Klicken, um zu wechseln"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:lore": [
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Alle Auktionen anzeigen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Laufende Auktionen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "Verkaufte Auktionen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "> Gekaufte Auktionen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "aqua"
+            },
+            {
+              "text": "Abgelaufene Auktionen",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "gray"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Insgesamt ausgegeben: ",
+              "extra": [
+                {
+                  "text": "$7.454.495",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "Insgesamt verdient: ",
+              "extra": [
+                {
+                  "text": "$6.972.083",
+                  "strikethrough": false,
+                  "obfuscated": false,
+                  "italic": false,
+                  "underlined": false,
+                  "color": "green"
+                }
+              ],
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "white"
+            },
+            {
+              "text": "",
+              "italic": false
+            },
+            {
+              "text": "Klicken, um zu wechseln",
+              "strikethrough": false,
+              "obfuscated": false,
+              "bold": false,
+              "italic": false,
+              "underlined": false,
+              "color": "yellow"
+            }
+          ],
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/4f/70/da177eacd02a873e",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20006.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "orange_chest_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Deine Auktionen",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 53,
+      "player": false,
+      "id": "minecraft:paper",
+      "count": 1,
+      "name": "Auktion erstellen",
+      "nameJson": {
+        "text": "Auktion erstellen",
+        "strikethrough": false,
+        "obfuscated": false,
+        "bold": false,
+        "italic": false,
+        "underlined": false,
+        "color": "white"
+      },
+      "lore": [],
+      "tooltip": [
+        "Auktion erstellen"
+      ],
+      "stack": {
+        "id": "minecraft:paper",
+        "count": 1,
+        "components": {
+          "minecraft:item_model": "hugosmp:668dbfbac74c/0ce8607e06cf/1ad27f83d3fd/ea8b168274be/item/62/60/98766cdbd4d12c66",
+          "minecraft:custom_model_data": {
+            "floats": [
+              20004.0
+            ]
+          },
+          "minecraft:item_name": {
+            "text": "green_plus_icon",
+            "color": "white"
+          },
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:secured": "auction"
+            }
+          },
+          "minecraft:custom_name": {
+            "text": "Auktion erstellen",
+            "strikethrough": false,
+            "obfuscated": false,
+            "bold": false,
+            "italic": false,
+            "underlined": false,
+            "color": "white"
+          }
+        }
+      }
+    },
+    {
+      "index": 54,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 55,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 40,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 40
+      }
+    },
+    {
+      "index": 56,
+      "player": true,
+      "id": "minecraft:crying_obsidian",
+      "count": 64,
+      "name": "Crying Obsidian",
+      "nameJson": {
+        "translate": "block.minecraft.crying_obsidian"
+      },
+      "lore": [],
+      "tooltip": [
+        "Crying Obsidian"
+      ],
+      "stack": {
+        "id": "minecraft:crying_obsidian",
+        "count": 64
+      }
+    },
+    {
+      "index": 63,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 64,
+      "player": true,
+      "id": "minecraft:bucket",
+      "count": 2,
+      "name": "Bucket",
+      "nameJson": {
+        "translate": "item.minecraft.bucket"
+      },
+      "lore": [],
+      "tooltip": [
+        "Bucket"
+      ],
+      "stack": {
+        "id": "minecraft:bucket",
+        "count": 2
+      }
+    },
+    {
+      "index": 65,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate",
+      "count": 61,
+      "name": "Cobbled Deepslate",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate",
+        "count": 61
+      }
+    },
+    {
+      "index": 67,
+      "player": true,
+      "id": "minecraft:slime_block",
+      "count": 18,
+      "name": "Slime Block",
+      "nameJson": {
+        "translate": "block.minecraft.slime_block"
+      },
+      "lore": [],
+      "tooltip": [
+        "Slime Block"
+      ],
+      "stack": {
+        "id": "minecraft:slime_block",
+        "count": 18
+      }
+    },
+    {
+      "index": 72,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 73,
+      "player": true,
+      "id": "minecraft:totem_of_undying",
+      "count": 1,
+      "name": "Totem of Undying",
+      "nameJson": {
+        "translate": "item.minecraft.totem_of_undying"
+      },
+      "lore": [],
+      "tooltip": [
+        "Totem of Undying"
+      ],
+      "stack": {
+        "id": "minecraft:totem_of_undying",
+        "count": 1
+      }
+    },
+    {
+      "index": 74,
+      "player": true,
+      "id": "minecraft:redstone",
+      "count": 56,
+      "name": "Redstone Dust",
+      "nameJson": {
+        "translate": "item.minecraft.redstone"
+      },
+      "lore": [],
+      "tooltip": [
+        "Redstone Dust"
+      ],
+      "stack": {
+        "id": "minecraft:redstone",
+        "count": 56
+      }
+    },
+    {
+      "index": 75,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 18,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 18
+      }
+    },
+    {
+      "index": 76,
+      "player": true,
+      "id": "minecraft:cobbled_deepslate_stairs",
+      "count": 64,
+      "name": "Cobbled Deepslate Stairs",
+      "nameJson": {
+        "translate": "block.minecraft.cobbled_deepslate_stairs"
+      },
+      "lore": [],
+      "tooltip": [
+        "Cobbled Deepslate Stairs"
+      ],
+      "stack": {
+        "id": "minecraft:cobbled_deepslate_stairs",
+        "count": 64
+      }
+    },
+    {
+      "index": 80,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 53,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 53
+      }
+    },
+    {
+      "index": 81,
+      "player": true,
+      "id": "minecraft:diamond_sword",
+      "count": 1,
+      "name": "Diamond Sword",
+      "nameJson": {
+        "translate": "item.minecraft.diamond_sword"
+      },
+      "lore": [],
+      "tooltip": [
+        "Diamond Sword",
+        "§a Sharpness ",
+        "§d Looting §f2",
+        "",
+        "When in Main Hand:",
+        " 7 Attack Damage",
+        " 1.6 Attack Speed"
+      ],
+      "stack": {
+        "id": "minecraft:diamond_sword",
+        "count": 1,
+        "components": {
+          "minecraft:custom_data": {
+            "PublicBukkitValues": {
+              "minecraft:disable_worth": 1
+            }
+          },
+          "minecraft:enchantments": {
+            "minecraft:looting": 2,
+            "minecraft:sharpness": 1
+          },
+          "minecraft:damage": 1192
+        }
+      }
+    },
+    {
+      "index": 85,
+      "player": true,
+      "id": "minecraft:glass",
+      "count": 42,
+      "name": "Glass",
+      "nameJson": {
+        "translate": "block.minecraft.glass"
+      },
+      "lore": [],
+      "tooltip": [
+        "Glass"
+      ],
+      "stack": {
+        "id": "minecraft:glass",
+        "count": 42
+      }
+    },
+    {
+      "index": 87,
+      "player": true,
+      "id": "minecraft:ender_pearl",
+      "count": 3,
+      "name": "Ender Pearl",
+      "nameJson": {
+        "translate": "item.minecraft.ender_pearl"
+      },
+      "lore": [],
+      "tooltip": [
+        "Ender Pearl"
+      ],
+      "stack": {
+        "id": "minecraft:ender_pearl",
+        "count": 3
+      }
+    },
+    {
+      "index": 89,
+      "player": true,
+      "id": "minecraft:cooked_beef",
+      "count": 61,
+      "name": "Steak",
+      "nameJson": {
+        "translate": "item.minecraft.cooked_beef"
+      },
+      "lore": [],
+      "tooltip": [
+        "Steak"
+      ],
+      "stack": {
+        "id": "minecraft:cooked_beef",
+        "count": 61
+      }
+    }
+  ]
+}
