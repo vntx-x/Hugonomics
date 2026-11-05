@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "${id}",
+  "version": "${version}",
+  "name": "${name}",
+  "description": "Auction house, orders and market tools for HugoSMP.",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.hugomarket.HugoMarketClient"
+    ]
+  },
+  "mixins": [
+    "hugomarket.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft}",
+    "java": ">=21"
+  }
+}
