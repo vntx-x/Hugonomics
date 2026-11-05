@@ -102,7 +102,7 @@ public final class HugoMarketClient implements ClientModInitializer {
                 trades.attach(sellStats.stats());
             }
         }
-        KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_H);
+        KeyMapping menuKey = KeyBindings.register("key.hugomarket.menu", GLFW.GLFW_KEY_J);
         scheduler.onTick(client -> {
             while (menuKey.consumeClick()) {
                 if (client.screen == null) {
