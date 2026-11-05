@@ -1,0 +1,21 @@
+services:
+  api:
+    networks:
+      - default
+      - coolify
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: coolify
+      traefik.http.routers.hugomarket.rule: Host(`${API_HOST:?set API_HOST in .env}`)
+      traefik.http.routers.hugomarket.entrypoints: https
+      traefik.http.routers.hugomarket.tls: "true"
+      traefik.http.routers.hugomarket.tls.certresolver: letsencrypt
+      traefik.http.routers.hugomarket-http.rule: Host(`${API_HOST:?set API_HOST in .env}`)
+      traefik.http.routers.hugomarket-http.entrypoints: http
+      traefik.http.routers.hugomarket-http.middlewares: hugomarket-redirect
+      traefik.http.middlewares.hugomarket-redirect.redirectscheme.scheme: https
+      traefik.http.services.hugomarket.loadbalancer.server.port: "8080"
+
+networks:
+  coolify:
+    external: true
