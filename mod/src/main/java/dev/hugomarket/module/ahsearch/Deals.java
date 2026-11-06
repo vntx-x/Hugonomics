@@ -8,7 +8,7 @@ import java.util.OptionalDouble;
 
 public final class Deals {
     public static final double BARGAIN_FACTOR = 0.85;
-    public static final double IMPLAUSIBLE_FACTOR = 0.2;
+    public static final double SUSPICIOUS_FACTOR = 0.2;
     public static final int MIN_LISTINGS = 3;
 
     private Deals() {
@@ -22,7 +22,11 @@ public final class Deals {
     }
 
     public static boolean isBargain(double ratio) {
-        return ratio >= IMPLAUSIBLE_FACTOR && ratio <= BARGAIN_FACTOR;
+        return ratio <= BARGAIN_FACTOR;
+    }
+
+    public static boolean isSuspicious(double ratio) {
+        return ratio < SUSPICIOUS_FACTOR;
     }
 
     public static boolean isBargain(PriceStats stats, Listing listing) {
@@ -35,6 +39,7 @@ public final class Deals {
         if (percent == 0) {
             return "±0 %";
         }
-        return String.format(Locale.ROOT, "%s%d %%", percent > 0 ? "+" : "−", Math.abs(percent));
+        String text = String.format(Locale.ROOT, "%s%d %%", percent > 0 ? "+" : "−", Math.abs(percent));
+        return isSuspicious(ratio) ? text + " ?" : text;
     }
 }

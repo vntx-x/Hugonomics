@@ -59,7 +59,7 @@ final class DealsScreen extends Screen {
 
     @Override
     public void tick() {
-        if (++ticks % 600 == 0) {
+        if (++ticks % 100 == 0) {
             refresh.run();
         }
     }
@@ -216,7 +216,8 @@ final class DealsScreen extends Screen {
             if (!stack.isEmpty()) {
                 gfx.item(stack, rowX + 3, rowY + (rowHeight - ICON_SIZE) / 2);
             }
-            gfx.fill(rowX, rowY + 1, 2, rowHeight - 2, Theme.BARGAIN_FRAME);
+            int mark = Deals.isSuspicious(deal.ratio()) ? Theme.WATCH_FRAME : Theme.BARGAIN_FRAME;
+            gfx.fill(rowX, rowY + 1, 2, rowHeight - 2, mark);
             String profit = "+" + Money.compact(deal.profitCents());
             String discount = Deals.deltaText(deal.ratio());
             int rightWidth = Math.max(gfx.textWidth(profit), gfx.textWidth(discount));
@@ -228,7 +229,7 @@ final class DealsScreen extends Screen {
             gfx.textNoShadow(gfx.clip(name, nameWidth), textX, rowY + 2, Theme.TEXT);
             gfx.textNoShadow(gfx.clip(detail, nameWidth), textX, rowY + 11, Theme.TEXT_DIM);
             gfx.textNoShadow(profit, rowX + rowWidth - gfx.textWidth(profit) - 3, rowY + 2, Theme.PRICE);
-            gfx.textNoShadow(discount, rowX + rowWidth - gfx.textWidth(discount) - 3, rowY + 11, Theme.BARGAIN_FRAME);
+            gfx.textNoShadow(discount, rowX + rowWidth - gfx.textWidth(discount) - 3, rowY + 11, mark);
         }
 
         private static long ageMinutes(ListingIndex.Entry entry) {

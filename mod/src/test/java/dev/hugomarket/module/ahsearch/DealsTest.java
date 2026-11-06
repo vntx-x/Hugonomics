@@ -38,8 +38,11 @@ class DealsTest {
     }
 
     @Test
-    void implausiblyCheapIsNoBargain() {
-        assertFalse(Deals.isBargain(stats(100_000_00, 5), listing(2_900_00)));
+    void veryCheapStaysBargainButIsMarked() {
+        assertTrue(Deals.isBargain(stats(100_000_00, 5), listing(2_900_00)));
+        assertTrue(Deals.isSuspicious(0.029));
+        assertFalse(Deals.isSuspicious(0.5));
+        assertEquals("−97 % ?", Deals.deltaText(0.029));
     }
 
     @Test

@@ -135,7 +135,8 @@ final class AhSearchPanel extends OverlayPanel {
         int priceY = delta.isEmpty() ? rowY + 6 : rowY + 2;
         gfx.textNoShadow(price, rowX + rowWidth - gfx.textWidth(price) - 3, priceY, Theme.PRICE);
         if (!delta.isEmpty()) {
-            int deltaColor = bargain ? Theme.BARGAIN_FRAME : ratio.getAsDouble() > 1.15 ? Theme.DANGER : Theme.TEXT_DIM;
+            int deltaColor = Deals.isSuspicious(ratio.getAsDouble()) ? Theme.WATCH_FRAME
+                    : bargain ? Theme.BARGAIN_FRAME : ratio.getAsDouble() > 1.15 ? Theme.DANGER : Theme.TEXT_DIM;
             gfx.textNoShadow(delta, rowX + rowWidth - gfx.textWidth(delta) - 3, rowY + 11, deltaColor);
         }
     }
