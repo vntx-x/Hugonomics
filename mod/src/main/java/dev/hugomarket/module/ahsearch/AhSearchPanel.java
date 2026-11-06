@@ -2,6 +2,7 @@ package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Money;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.ui.CopyName;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -98,6 +99,8 @@ final class AhSearchPanel extends OverlayPanel {
     private void rowClicked(ListingIndex.Entry entry, int button) {
         if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
             state.toggleWatch(entry.listing());
+        } else if (button == GLFW.GLFW_MOUSE_BUTTON_LEFT) {
+            CopyName.copy(entry.listing().item().displayName());
         }
     }
 
@@ -113,7 +116,7 @@ final class AhSearchPanel extends OverlayPanel {
         int textX = rowX + ICON_SIZE + 6;
         int nameWidth = rowWidth - ICON_SIZE - 12 - rightWidth;
         boolean watched = state.isWatched(entry.listing());
-        boolean bargain = ratio.isPresent() && ratio.getAsDouble() <= Deals.BARGAIN_FACTOR;
+        boolean bargain = ratio.isPresent() && Deals.isBargain(ratio.getAsDouble());
         if (bargain) {
             gfx.fill(rowX, rowY + 1, 2, rowHeight - 2, Theme.BARGAIN_FRAME);
         }

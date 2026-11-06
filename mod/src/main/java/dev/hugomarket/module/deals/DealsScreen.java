@@ -6,6 +6,7 @@ import dev.hugomarket.module.ahsearch.ListingIndex;
 import dev.hugomarket.module.ahsearch.SearchQuery;
 import dev.hugomarket.store.Fees;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.ui.CopyName;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -151,8 +152,8 @@ final class DealsScreen extends Screen {
             }));
             byProfit = add(new Chip(I18n.get("hugomarket.deals.by_profit"), () -> order == DealFinder.Order.PROFIT, () -> setOrder(DealFinder.Order.PROFIT)));
             byDiscount = add(new Chip(I18n.get("hugomarket.deals.by_discount"), () -> order == DealFinder.Order.DISCOUNT, () -> setOrder(DealFinder.Order.DISCOUNT)));
-            list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, (deal, button) -> {
-            }));
+            list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow,
+                    (deal, button) -> CopyName.copy(deal.entry().listing().item().displayName())));
             setHeaderRight(() -> I18n.get("hugomarket.deals.count", list.rowCount(), market.size()));
             list.setHoverRenderer((gfx, deal, mouseX, mouseY) -> {
                 ItemStack stack = icon(deal.entry());

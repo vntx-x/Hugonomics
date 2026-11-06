@@ -10,6 +10,7 @@ import dev.hugomarket.module.sync.PriceJson;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStats;
 import dev.hugomarket.store.UserData;
+import dev.hugomarket.ui.CopyName;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -61,8 +62,8 @@ final class MarketPanel extends OverlayPanel {
         this.market = market;
         this.userData = userData;
         this.requestListings = requestListings;
-        live = add(new ListView<>(Theme.ROW_HEIGHT, this::renderLiveRow, (entry, button) -> {
-        }));
+        live = add(new ListView<>(Theme.ROW_HEIGHT, this::renderLiveRow,
+                (entry, button) -> CopyName.copy(entry.listing().item().displayName())));
         market.onChange(this::refreshLive);
         setTitle(I18n.get("hugomarket.market.title"));
         setHeaderRight(this::statusText);
