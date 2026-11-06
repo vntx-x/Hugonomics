@@ -32,7 +32,7 @@ describe("snapshot job", () => {
     const points = response.json().points;
     expect(points).toHaveLength(2);
     expect(points[0].lowestUnitCents).toBe(1_000);
-    expect(points[0].medianUnitCents).toBe(1_100);
+    expect(points[0].medianUnitCents).toBe(1_000);
     expect(points[1].bucketTs - points[0].bucketTs).toBe(SNAPSHOT_BUCKET_MS);
 
     const bad = await app.inject({ method: "GET", url: "/v1/items/emerald/history?range=2y" });

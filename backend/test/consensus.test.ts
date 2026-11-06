@@ -93,6 +93,16 @@ describe("price info", () => {
     expect(info.confirmed).toBe(false);
   });
 
+  it("weights the median by units so single overpriced items do not win", () => {
+    const stacks = [64, 64, 22].map((count, i) => ({
+      ...mergeObservation(undefined, observation({ count, priceCents: 37 * count, sellerHash: `s${i}`.padStart(32, "0") }), "c1", 1_000, rules),
+      confirmed: true,
+    }));
+    const singles = records([999, 999, 999, 999]);
+    const info = priceInfo("nether_star", [...stacks, ...singles], 2_000, rules)!;
+    expect(info.medianUnitCents).toBe(37);
+  });
+
   it("returns null without listings", () => {
     expect(priceInfo("dragon_egg", [], 2_000, rules)).toBeNull();
   });

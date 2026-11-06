@@ -64,7 +64,7 @@ export function priceInfo(key: string, records: ListingRecord[], now: number, ru
   const confirmedOnly = active.filter((r) => r.confirmed);
   const pool = confirmedOnly.length > 0 ? confirmedOnly : active;
   const sorted = [...pool].sort((a, b) => a.unitPriceCents - b.unitPriceCents);
-  const rawMedian = medianOf(sorted.map((r) => r.unitPriceCents));
+  const rawMedian = unitMedianOf(sorted);
   const trimmed = sorted.filter(
     (r) => r.unitPriceCents * OUTLIER_FACTOR >= rawMedian && r.unitPriceCents <= rawMedian * OUTLIER_FACTOR,
   );
@@ -72,7 +72,7 @@ export function priceInfo(key: string, records: ListingRecord[], now: number, ru
   return {
     key,
     lowestUnitCents: used[0]!.unitPriceCents,
-    medianUnitCents: medianOf(used.map((r) => r.unitPriceCents)),
+    medianUnitCents: unitMedianOf(used),
     listings: used.length,
     units: used.reduce((sum, r) => sum + r.count, 0),
     lastSeen: Math.max(...used.map((r) => r.lastSeen)),
@@ -80,10 +80,15 @@ export function priceInfo(key: string, records: ListingRecord[], now: number, ru
   };
 }
 
-function medianOf(sortedValues: number[]): number {
-  const mid = Math.floor(sortedValues.length / 2);
-  if (sortedValues.length % 2 === 1) {
-    return sortedValues[mid]!;
+function unitMedianOf(sortedByUnitPrice: ListingRecord[]): number {
+  const units = sortedByUnitPrice.reduce((sum, r) => sum + Math.max(1, r.count), 0);
+  const half = Math.ceil(units / 2);
+  let seen = 0;
+  for (const record of sortedByUnitPrice) {
+    seen += Math.max(1, record.count);
+    if (seen >= half) {
+      return record.unitPriceCents;
+    }
   }
-  return Math.round((sortedValues[mid - 1]! + sortedValues[mid]!) / 2);
+  return sortedByUnitPrice[sortedByUnitPrice.length - 1]!.unitPriceCents;
 }

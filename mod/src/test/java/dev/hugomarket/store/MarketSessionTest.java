@@ -25,7 +25,9 @@ class MarketSessionTest {
         assertEquals(3, odd.listings());
         assertEquals(6, odd.units());
         PriceStats even = PriceStats.of(new long[]{400, 100, 300, 200}, new int[]{1, 1, 1, 1}, 7);
-        assertEquals(250, even.medianUnitCents());
+        assertEquals(200, even.medianUnitCents());
+        PriceStats rockets = PriceStats.of(new long[]{37, 37, 37, 999, 999, 999}, new int[]{64, 64, 22, 1, 1, 1}, 7);
+        assertEquals(37, rockets.medianUnitCents());
         assertNull(PriceStats.of(new long[0], new int[0], 0));
         assertEquals(95, odd.suggestUndercut(0.95));
     }

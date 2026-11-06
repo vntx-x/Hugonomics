@@ -7,15 +7,24 @@ public record PriceStats(long lowestUnitCents, long medianUnitCents, int listing
         if (unitPrices.length == 0) {
             return null;
         }
-        long[] sorted = unitPrices.clone();
-        Arrays.sort(sorted);
+        Integer[] order = new Integer[unitPrices.length];
         int units = 0;
-        for (int count : counts) {
-            units += count;
+        for (int i = 0; i < order.length; i++) {
+            order[i] = i;
+            units += Math.max(1, counts[i]);
         }
-        int mid = sorted.length / 2;
-        long median = sorted.length % 2 == 1 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
-        return new PriceStats(sorted[0], median, sorted.length, units, lastSeen);
+        Arrays.sort(order, (a, b) -> Long.compare(unitPrices[a], unitPrices[b]));
+        long half = (units + 1) / 2;
+        long seen = 0;
+        long median = unitPrices[order[order.length - 1]];
+        for (Integer index : order) {
+            seen += Math.max(1, counts[index]);
+            if (seen >= half) {
+                median = unitPrices[index];
+                break;
+            }
+        }
+        return new PriceStats(unitPrices[order[0]], median, unitPrices.length, units, lastSeen);
     }
 
     public long suggestUndercut(double factor) {
