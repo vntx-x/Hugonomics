@@ -70,6 +70,10 @@ public final class ListingIndex {
     public record RemoteEntry(String id, Listing listing, long lastSeen, long expiresAt) {
     }
 
+    public static String remoteId(String backendId) {
+        return REMOTE_PREFIX + backendId;
+    }
+
     public static boolean isRemote(Entry entry) {
         return entry.id().startsWith(REMOTE_PREFIX);
     }
@@ -97,6 +101,10 @@ public final class ListingIndex {
 
     private static String localKey(Listing listing, long second) {
         return listing.key() + "|" + listing.item().count() + "|" + listing.priceCents() + "|" + second;
+    }
+
+    public boolean remove(String id) {
+        return entries.remove(id) != null;
     }
 
     public void clear() {

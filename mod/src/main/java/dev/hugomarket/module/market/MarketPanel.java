@@ -64,7 +64,7 @@ final class MarketPanel extends OverlayPanel {
         this.userData = userData;
         this.requestListings = requestListings;
         live = add(new ListView<>(Theme.ROW_HEIGHT, this::renderLiveRow,
-                (entry, button) -> AhJump.open(market, entry.listing())));
+                (entry, button) -> AhJump.open(market, entry)));
         market.onChange(this::refreshLive);
         setTitle(I18n.get("hugomarket.market.title"));
         setHeaderRight(this::statusText);

@@ -140,7 +140,7 @@ public final class TradeLogModule implements Module {
         }
         ChatPatterns.auctionSold(line).ifPresent(sale -> {
             log.record(new TradeLog.Trade(System.currentTimeMillis(), TradeLog.Kind.AH_SELL, AhTotalsTracker.KEY, sale.item(),
-                    sale.count(), sale.priceCents(), ""));
+                    sale.count(), sale.priceCents(), sale.buyer()));
             totals.noteSale(sale.priceCents());
         });
     }

@@ -173,7 +173,7 @@ final class AhSearchPanel extends OverlayPanel {
         if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
             state.toggleWatch(entry.listing());
         } else if (button == GLFW.GLFW_MOUSE_BUTTON_LEFT) {
-            AhJump.open(market, entry.listing());
+            AhJump.open(market, entry);
         }
     }
 

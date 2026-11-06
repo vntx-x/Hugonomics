@@ -154,7 +154,7 @@ final class DealsScreen extends Screen {
             byProfit = add(new Chip(I18n.get("hugomarket.deals.by_profit"), () -> order == DealFinder.Order.PROFIT, () -> setOrder(DealFinder.Order.PROFIT)));
             byDiscount = add(new Chip(I18n.get("hugomarket.deals.by_discount"), () -> order == DealFinder.Order.DISCOUNT, () -> setOrder(DealFinder.Order.DISCOUNT)));
             list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow,
-                    (deal, button) -> AhJump.open(market, deal.entry().listing())));
+                    (deal, button) -> AhJump.open(market, deal.entry())));
             setHeaderRight(() -> I18n.get("hugomarket.deals.count", list.rowCount(), market.size()));
             list.setHoverRenderer((gfx, deal, mouseX, mouseY) -> {
                 ItemStack stack = icon(deal.entry());

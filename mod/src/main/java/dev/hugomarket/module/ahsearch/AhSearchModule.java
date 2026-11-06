@@ -6,6 +6,7 @@ import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.parse.AhListingParser;
+import dev.hugomarket.store.AhFocus;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.OverlayProvider;
 import dev.hugomarket.ui.PanelPlacement;
@@ -23,6 +24,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
     private AhListingParser parser;
     private AhSearchPanel panel;
     private PriceHistoryCache history;
+    private AhJumpFlow jump;
     private boolean ahOpen;
 
     @Override
@@ -41,7 +43,9 @@ public final class AhSearchModule implements Module, OverlayProvider {
         state = new AhSearchState(context.market(), context.userData());
         parser = new AhListingParser(context.guiRules());
         history = new PriceHistoryCache(context.hasBackend() ? context.backend() : null, context.scheduler());
+        jump = new AhJumpFlow(context);
         context.scheduler().onTick(client -> {
+            jump.tick(client);
             if (panel != null) {
                 panel.tick();
             }
@@ -65,9 +69,10 @@ public final class AhSearchModule implements Module, OverlayProvider {
             panel = null;
             return List.of();
         }
-        String focus = context.market().takeAhFocus();
+        AhFocus focus = context.market().takeAhFocus();
         if (focus != null) {
-            state.setQuery(state.query().withText(focus));
+            state.setQuery(state.query().withText(focus.key()));
+            jump.start(focus);
         }
         panel = new AhSearchPanel(screen, state, context.market(), history);
         PanelPlacement.rightOf(screen, panel, PANEL_WIDTH);
@@ -97,6 +102,9 @@ public final class AhSearchModule implements Module, OverlayProvider {
             }
         }
         state.pageSeen(market, stacks, update.snapshot().capturedAt());
+        if (page.isMarket()) {
+            jump.onPage(update, page);
+        }
         if (panel != null) {
             PanelPlacement.rightOf(update.screen(), panel, PANEL_WIDTH);
         }

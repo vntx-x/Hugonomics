@@ -1,6 +1,7 @@
 package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Listing;
+import dev.hugomarket.store.AhFocus;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.ui.GermanItemNames;
 import net.minecraft.client.Minecraft;
@@ -11,13 +12,14 @@ public final class AhJump {
     private AhJump() {
     }
 
-    public static void open(MarketSession market, Listing listing) {
+    public static void open(MarketSession market, ListingIndex.Entry entry) {
         Minecraft client = Minecraft.getInstance();
         if (client.player == null) {
             return;
         }
+        Listing listing = entry.listing();
         String term = AhSearchTerm.of(listing, GermanItemNames::of);
-        market.requestAhFocus(listing.key().toString());
+        market.requestAhFocus(new AhFocus(listing.key().toString(), listing.priceCents(), listing.item().count(), entry.id()));
         if (client.screen != null && !(client.screen instanceof AbstractContainerScreen<?>)) {
             client.setScreen(null);
         }

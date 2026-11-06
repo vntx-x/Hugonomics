@@ -8,13 +8,16 @@ import dev.hugomarket.module.ahsearch.SearchQuery;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.SequencedSet;
 
 public final class MarketSession {
     private static final long MAX_AGE_MS = 15 * 60_000;
     private static final long BACKEND_PREFERENCE_MS = 10 * 60_000;
     private static final int MAX_WANTED = 500;
+    private static final int MAX_GONE = 500;
 
     private final ListingIndex index = new ListingIndex(MAX_AGE_MS);
     private final OrderBook orders = new OrderBook();
@@ -23,7 +26,8 @@ public final class MarketSession {
     private final Map<String, Long> wanted = new LinkedHashMap<>();
     private final List<Runnable> changeListeners = new ArrayList<>();
     private boolean statsDirty;
-    private String ahFocus;
+    private AhFocus ahFocus;
+    private final SequencedSet<String> gone = new LinkedHashSet<>();
     private int version;
 
     public MarketSession(PriceStore backend) {
@@ -44,12 +48,12 @@ public final class MarketSession {
         notifyChange();
     }
 
-    public void requestAhFocus(String key) {
-        ahFocus = key;
+    public void requestAhFocus(AhFocus focus) {
+        ahFocus = focus;
     }
 
-    public String takeAhFocus() {
-        String focus = ahFocus;
+    public AhFocus takeAhFocus() {
+        AhFocus focus = ahFocus;
         ahFocus = null;
         return focus;
     }
@@ -74,13 +78,31 @@ public final class MarketSession {
         return ids;
     }
 
+    public void markGone(String id) {
+        if (gone.size() >= MAX_GONE) {
+            gone.removeFirst();
+        }
+        gone.add(id);
+        if (index.remove(id)) {
+            statsDirty = true;
+            version++;
+            notifyChange();
+        }
+    }
+
     public void backendUpdated() {
         version++;
         notifyChange();
     }
 
     public void replaceRemoteListings(List<ListingIndex.RemoteEntry> remote, long now) {
-        index.replaceRemote(remote, now);
+        List<ListingIndex.RemoteEntry> alive = new ArrayList<>(remote.size());
+        for (ListingIndex.RemoteEntry entry : remote) {
+            if (!gone.contains(ListingIndex.remoteId(entry.id()))) {
+                alive.add(entry);
+            }
+        }
+        index.replaceRemote(alive, now);
         statsDirty = true;
         version++;
         notifyChange();
