@@ -173,8 +173,8 @@ public final class MonitorModule implements Module {
             return;
         }
         offlineTicks = 0;
-        if (sneak && client.screen == null) {
-            client.options.keyShift.setDown(true);
+        if (sneak) {
+            keepSneaking(client);
         }
         if (!allowedByServer) {
             if (phase != Phase.IDLE) {
@@ -243,6 +243,16 @@ public final class MonitorModule implements Module {
                     reset(client, SORT_CLICK_DELAY_TICKS);
                 }
             }
+        }
+    }
+
+    private void keepSneaking(Minecraft client) {
+        // Toggle mode survives open screens; held mode is released whenever chat or a container opens.
+        if (!client.options.toggleCrouch().get()) {
+            client.options.toggleCrouch().set(true);
+        }
+        if (!client.options.keyShift.isDown()) {
+            client.options.keyShift.setDown(true);
         }
     }
 
