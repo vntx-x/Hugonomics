@@ -101,7 +101,8 @@ public final class AhSearchState {
     }
 
     public boolean matchesCurrentPage(Listing listing) {
-        return query.matches(listing, userData::isWatched);
+        return query.matches(listing, userData::isWatched)
+                && (!query.onlyDeals() || Deals.isBargain(session.stats(listing.key()), listing));
     }
 
     public OptionalDouble deal(Listing listing) {
@@ -119,6 +120,10 @@ public final class AhSearchState {
 
     private void runQuery() {
         List<ListingIndex.Entry> found = session.index().query(query, userData::isWatched);
+        if (query.onlyDeals()) {
+            found = new ArrayList<>(found);
+            found.removeIf(e -> !e.listing().isMarketListing() || !Deals.isBargain(session.stats(e.listing().key()), e.listing()));
+        }
         if (query.sort() == SearchQuery.Sort.DEAL) {
             found = new ArrayList<>(found);
             found.sort(Comparator.comparingDouble(e -> deal(e.listing()).orElse(Double.MAX_VALUE)));

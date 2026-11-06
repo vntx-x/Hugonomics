@@ -23,6 +23,7 @@ public final class MarketSession {
     private final Map<String, Long> wanted = new LinkedHashMap<>();
     private final List<Runnable> changeListeners = new ArrayList<>();
     private boolean statsDirty;
+    private String ahFocus;
     private int version;
 
     public MarketSession(PriceStore backend) {
@@ -41,6 +42,16 @@ public final class MarketSession {
         orders.pageSeen(page, seenAt);
         version++;
         notifyChange();
+    }
+
+    public void requestAhFocus(String key) {
+        ahFocus = key;
+    }
+
+    public String takeAhFocus() {
+        String focus = ahFocus;
+        ahFocus = null;
+        return focus;
     }
 
     public int version() {

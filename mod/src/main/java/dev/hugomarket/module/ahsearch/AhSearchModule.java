@@ -22,6 +22,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
     private ModuleContext context;
     private AhListingParser parser;
     private AhSearchPanel panel;
+    private PriceHistoryCache history;
     private boolean ahOpen;
 
     @Override
@@ -39,6 +40,12 @@ public final class AhSearchModule implements Module, OverlayProvider {
         this.context = context;
         state = new AhSearchState(context.market(), context.userData());
         parser = new AhListingParser(context.guiRules());
+        history = new PriceHistoryCache(context.hasBackend() ? context.backend() : null, context.scheduler());
+        context.scheduler().onTick(client -> {
+            if (panel != null) {
+                panel.tick();
+            }
+        });
         context.screens().onUpdate(this::onScreenUpdate);
         context.screens().onClose(this::onScreenClosed);
         context.overlays().addProvider(this);
@@ -58,7 +65,11 @@ public final class AhSearchModule implements Module, OverlayProvider {
             panel = null;
             return List.of();
         }
-        panel = new AhSearchPanel(screen, state, context.market());
+        String focus = context.market().takeAhFocus();
+        if (focus != null) {
+            state.setQuery(state.query().withText(focus));
+        }
+        panel = new AhSearchPanel(screen, state, context.market(), history);
         PanelPlacement.rightOf(screen, panel, PANEL_WIDTH);
         return List.of(panel);
     }

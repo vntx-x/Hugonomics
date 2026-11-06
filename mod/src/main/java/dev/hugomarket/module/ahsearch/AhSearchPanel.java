@@ -1,11 +1,13 @@
 package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Money;
+import dev.hugomarket.module.sync.PriceJson;
 import dev.hugomarket.store.MarketSession;
-import dev.hugomarket.ui.CopyName;
+import dev.hugomarket.ui.ItemLabel;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
+import dev.hugomarket.ui.widget.ChartWidget;
 import dev.hugomarket.ui.widget.Chip;
 import dev.hugomarket.ui.widget.Label;
 import dev.hugomarket.ui.widget.ListView;
@@ -15,6 +17,7 @@ import net.minecraft.client.resources.language.I18n;
 import net.minecraft.world.item.ItemStack;
 import org.lwjgl.glfw.GLFW;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.OptionalDouble;
 
@@ -22,8 +25,11 @@ final class AhSearchPanel extends OverlayPanel {
     private static final int ICON_SIZE = 16;
     private static final int CAPTION_WIDTH = 34;
     private static final String STAR = "★ ";
+    private static final int HISTORY_HEIGHT = 50;
+    private static final int HOVER_DELAY_TICKS = 6;
 
     private final AhSearchState state;
+    private final MarketSession market;
     private final SlotHighlighter highlighter;
     private final TextField search;
     private final Label sortCaption;
@@ -31,9 +37,21 @@ final class AhSearchPanel extends OverlayPanel {
     private final List<Chip> sortChips;
     private final List<Chip> filterChips;
     private final ListView<ListingIndex.Entry> results;
+    private final PriceHistoryCache history;
+    private final ChartWidget chart;
+    private ListingIndex.Entry hovered;
+    private String pendingKey;
+    private String shownKey;
+    private int hoverTicks;
+    private int historyTitleY;
+    private String historyTitle = I18n.get("hugomarket.ah.history.hint");
+    private String trendText = "";
+    private int trendColor = Theme.TEXT_DIM;
 
-    AhSearchPanel(AbstractContainerScreen<?> screen, AhSearchState state, MarketSession market) {
+    AhSearchPanel(AbstractContainerScreen<?> screen, AhSearchState state, MarketSession market, PriceHistoryCache history) {
         this.state = state;
+        this.market = market;
+        this.history = history;
         this.highlighter = new SlotHighlighter(screen, state, market);
         setTitle(I18n.get("hugomarket.ah.title"));
         setHeaderRight(() -> I18n.get("hugomarket.ah.status", state.results().size(), state.indexedCount()));
@@ -56,9 +74,14 @@ final class AhSearchPanel extends OverlayPanel {
                 add(new Chip(I18n.get("hugomarket.ah.filter.enchanted"), () -> state.query().onlyEnchanted(),
                         () -> state.setQuery(state.query().toggleEnchanted()))),
                 add(new Chip(I18n.get("hugomarket.ah.filter.watched"), () -> state.query().onlyWatched(),
-                        () -> state.setQuery(state.query().toggleWatched()))));
+                        () -> state.setQuery(state.query().toggleWatched()))),
+                add(new Chip(I18n.get("hugomarket.ah.filter.deals"), () -> state.query().onlyDeals(),
+                        () -> state.setQuery(state.query().toggleDeals()))));
+        chart = add(new ChartWidget());
+        chart.setEmptyText(I18n.get("hugomarket.ah.history.empty"));
         results = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, this::rowClicked));
         results.setHoverRenderer((gfx, entry, mouseX, mouseY) -> {
+            hovered = entry;
             ItemStack stack = state.icon(entry);
             if (!stack.isEmpty()) {
                 gfx.itemTooltip(stack, mouseX, mouseY);
@@ -78,7 +101,57 @@ final class AhSearchPanel extends OverlayPanel {
         cursorY = chipRow(sortCaption, sortChips, innerX, cursorY, innerWidth);
         cursorY = chipRow(filterCaption, filterChips, innerX, cursorY, innerWidth);
         cursorY += Theme.GAP;
-        results.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
+        int historyTop = y + height - Theme.PADDING - HISTORY_HEIGHT;
+        results.setBounds(innerX, cursorY, innerWidth, historyTop - Theme.GAP - cursorY);
+        historyTitleY = historyTop;
+        chart.setBounds(innerX, historyTop + Theme.LINE, innerWidth, HISTORY_HEIGHT - Theme.LINE);
+    }
+
+    @Override
+    public void render(Gfx gfx, int mouseX, int mouseY) {
+        hovered = null;
+        super.render(gfx, mouseX, mouseY);
+        if (!isVisible()) {
+            return;
+        }
+        int innerX = x + Theme.PADDING;
+        int innerWidth = width - Theme.PADDING * 2;
+        gfx.fill(innerX, historyTitleY - Theme.GAP / 2 - 1, innerWidth, 1, Theme.PANEL_BORDER);
+        int trendWidth = trendText.isEmpty() ? 0 : gfx.textWidth(trendText) + Theme.GAP;
+        gfx.textNoShadow(gfx.clip(historyTitle, innerWidth - trendWidth), innerX, historyTitleY + 1, Theme.TEXT_DIM);
+        if (!trendText.isEmpty()) {
+            gfx.textNoShadow(trendText, innerX + innerWidth - gfx.textWidth(trendText), historyTitleY + 1, trendColor);
+        }
+    }
+
+    void tick() {
+        String key = hovered == null || hovered.listing().key().filled() ? null : hovered.listing().key().toString();
+        if (key == null || !key.equals(pendingKey)) {
+            pendingKey = key;
+            hoverTicks = 0;
+            return;
+        }
+        if (++hoverTicks != HOVER_DELAY_TICKS || key.equals(shownKey)) {
+            return;
+        }
+        shownKey = key;
+        String name = ItemLabel.of(hovered.listing().key(), hovered.listing().item().displayName());
+        historyTitle = I18n.get("hugomarket.ah.history.title", name);
+        trendText = "";
+        chart.setPoints(List.of());
+        history.load(key, points -> {
+            if (!key.equals(shownKey)) {
+                return;
+            }
+            List<ChartWidget.Point> chartPoints = new ArrayList<>(points.size());
+            for (PriceJson.HistoryPoint point : points) {
+                chartPoints.add(new ChartWidget.Point(point.ts(), point.lowestUnitCents(), point.medianUnitCents()));
+            }
+            chart.setPoints(chartPoints);
+            OptionalDouble trend = PriceTrend.ratio(points);
+            trendText = trend.isPresent() ? I18n.get("hugomarket.ah.history.trend", Deals.deltaText(trend.getAsDouble())) : "";
+            trendColor = trend.isPresent() && trend.getAsDouble() >= 1 ? Theme.BARGAIN_FRAME : Theme.DANGER;
+        });
     }
 
     private int chipRow(Label caption, List<Chip> chips, int innerX, int cursorY, int innerWidth) {
@@ -100,7 +173,7 @@ final class AhSearchPanel extends OverlayPanel {
         if (button == GLFW.GLFW_MOUSE_BUTTON_RIGHT) {
             state.toggleWatch(entry.listing());
         } else if (button == GLFW.GLFW_MOUSE_BUTTON_LEFT) {
-            CopyName.copy(entry.listing().item().displayName());
+            AhJump.open(market, entry.listing());
         }
     }
 
@@ -120,7 +193,7 @@ final class AhSearchPanel extends OverlayPanel {
         if (bargain) {
             gfx.fill(rowX, rowY + 1, 2, rowHeight - 2, Theme.BARGAIN_FRAME);
         }
-        String name = entry.listing().item().displayName();
+        String name = ItemLabel.of(entry.listing().key(), entry.listing().item().displayName());
         if (entry.listing().item().count() > 1) {
             name = entry.listing().item().count() + "x " + name;
         }

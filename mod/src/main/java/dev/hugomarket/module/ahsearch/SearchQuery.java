@@ -5,7 +5,8 @@ import dev.hugomarket.model.Listing;
 import java.util.Locale;
 import java.util.function.Predicate;
 
-public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boolean onlyEnchanted, boolean onlyWatched, Sort sort) {
+public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boolean onlyEnchanted, boolean onlyWatched,
+                          boolean onlyDeals, Sort sort) {
     public enum Sort {
         UNIT_ASC,
         UNIT_DESC,
@@ -14,27 +15,31 @@ public record SearchQuery(String text, long minUnitCents, long maxUnitCents, boo
         DEAL
     }
 
-    public static final SearchQuery EMPTY = new SearchQuery("", 0, Long.MAX_VALUE, false, false, Sort.UNIT_ASC);
+    public static final SearchQuery EMPTY = new SearchQuery("", 0, Long.MAX_VALUE, false, false, false, Sort.UNIT_ASC);
     public static final Predicate<String> NOTHING_WATCHED = key -> false;
 
     public SearchQuery withText(String newText) {
-        return new SearchQuery(newText, minUnitCents, maxUnitCents, onlyEnchanted, onlyWatched, sort);
+        return new SearchQuery(newText, minUnitCents, maxUnitCents, onlyEnchanted, onlyWatched, onlyDeals, sort);
     }
 
     public SearchQuery withSort(Sort newSort) {
-        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, onlyWatched, newSort);
+        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, onlyWatched, onlyDeals, newSort);
     }
 
     public SearchQuery toggleEnchanted() {
-        return new SearchQuery(text, minUnitCents, maxUnitCents, !onlyEnchanted, onlyWatched, sort);
+        return new SearchQuery(text, minUnitCents, maxUnitCents, !onlyEnchanted, onlyWatched, onlyDeals, sort);
     }
 
     public SearchQuery toggleWatched() {
-        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, !onlyWatched, sort);
+        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, !onlyWatched, onlyDeals, sort);
+    }
+
+    public SearchQuery toggleDeals() {
+        return new SearchQuery(text, minUnitCents, maxUnitCents, onlyEnchanted, onlyWatched, !onlyDeals, sort);
     }
 
     public boolean isDefault() {
-        return text.isBlank() && !onlyEnchanted && !onlyWatched && minUnitCents <= 0 && maxUnitCents == Long.MAX_VALUE;
+        return text.isBlank() && !onlyEnchanted && !onlyWatched && !onlyDeals && minUnitCents <= 0 && maxUnitCents == Long.MAX_VALUE;
     }
 
     public boolean matches(Listing listing) {

@@ -2,6 +2,7 @@ package dev.hugomarket.module.market;
 
 import dev.hugomarket.model.ItemKey;
 import dev.hugomarket.model.Money;
+import dev.hugomarket.module.ahsearch.AhJump;
 import dev.hugomarket.module.ahsearch.ListingIndex;
 import dev.hugomarket.module.ahsearch.SearchQuery;
 import dev.hugomarket.module.calc.CalcEngine;
@@ -10,7 +11,7 @@ import dev.hugomarket.module.sync.PriceJson;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStats;
 import dev.hugomarket.store.UserData;
-import dev.hugomarket.ui.CopyName;
+import dev.hugomarket.ui.ItemLabel;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -63,7 +64,7 @@ final class MarketPanel extends OverlayPanel {
         this.userData = userData;
         this.requestListings = requestListings;
         live = add(new ListView<>(Theme.ROW_HEIGHT, this::renderLiveRow,
-                (entry, button) -> CopyName.copy(entry.listing().item().displayName())));
+                (entry, button) -> AhJump.open(market, entry.listing())));
         market.onChange(this::refreshLive);
         setTitle(I18n.get("hugomarket.market.title"));
         setHeaderRight(this::statusText);
@@ -76,7 +77,7 @@ final class MarketPanel extends OverlayPanel {
             refreshList();
         }));
         list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, (item, button) -> select(item)));
-        detailTitle = add(new Label(() -> selected == null ? "" : selected.displayName(), Theme.ACCENT));
+        detailTitle = add(new Label(() -> selected == null ? "" : ItemLabel.of(ItemKey.parse(selected.key()), selected.displayName()), Theme.ACCENT));
         back = add(new Chip(I18n.get("hugomarket.market.back"), () -> false, () -> select(null)));
         for (String r : RANGES) {
             rangeChips.add(add(new Chip(r, () -> range.equals(r), () -> setRange(r))));
@@ -328,8 +329,9 @@ final class MarketPanel extends OverlayPanel {
         int priceWidth = gfx.textWidth(price);
         int textX = rowX + ICON_SIZE + 4;
         int nameWidth = rowWidth - ICON_SIZE - 8 - priceWidth;
-        String variant = ItemKey.parse(item.key()).variant();
-        gfx.textNoShadow(gfx.clip(item.displayName(), nameWidth), textX, rowY + 2, Theme.TEXT);
+        ItemKey key = ItemKey.parse(item.key());
+        String variant = key.variant();
+        gfx.textNoShadow(gfx.clip(ItemLabel.of(key, item.displayName()), nameWidth), textX, rowY + 2, Theme.TEXT);
         String detail = variant.isEmpty() ? I18n.get("hugomarket.market.row", item.activeListings()) : variant;
         gfx.textNoShadow(gfx.clip(detail, nameWidth), textX, rowY + 11, Theme.TEXT_DIM);
         gfx.textNoShadow(price, rowX + rowWidth - priceWidth - 3, rowY + 6, Theme.PRICE);

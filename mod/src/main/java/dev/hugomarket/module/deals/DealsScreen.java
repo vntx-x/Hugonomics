@@ -1,12 +1,13 @@
 package dev.hugomarket.module.deals;
 
 import dev.hugomarket.model.Money;
+import dev.hugomarket.module.ahsearch.AhJump;
 import dev.hugomarket.module.ahsearch.Deals;
 import dev.hugomarket.module.ahsearch.ListingIndex;
 import dev.hugomarket.module.ahsearch.SearchQuery;
 import dev.hugomarket.store.Fees;
 import dev.hugomarket.store.MarketSession;
-import dev.hugomarket.ui.CopyName;
+import dev.hugomarket.ui.ItemLabel;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
@@ -153,7 +154,7 @@ final class DealsScreen extends Screen {
             byProfit = add(new Chip(I18n.get("hugomarket.deals.by_profit"), () -> order == DealFinder.Order.PROFIT, () -> setOrder(DealFinder.Order.PROFIT)));
             byDiscount = add(new Chip(I18n.get("hugomarket.deals.by_discount"), () -> order == DealFinder.Order.DISCOUNT, () -> setOrder(DealFinder.Order.DISCOUNT)));
             list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow,
-                    (deal, button) -> CopyName.copy(deal.entry().listing().item().displayName())));
+                    (deal, button) -> AhJump.open(market, deal.entry().listing())));
             setHeaderRight(() -> I18n.get("hugomarket.deals.count", list.rowCount(), market.size()));
             list.setHoverRenderer((gfx, deal, mouseX, mouseY) -> {
                 ItemStack stack = icon(deal.entry());
@@ -223,7 +224,7 @@ final class DealsScreen extends Screen {
             int rightWidth = Math.max(gfx.textWidth(profit), gfx.textWidth(discount));
             int textX = rowX + ICON_SIZE + 6;
             int nameWidth = rowWidth - ICON_SIZE - 12 - rightWidth;
-            String name = (entry.listing().item().count() > 1 ? entry.listing().item().count() + "x " : "") + entry.listing().item().displayName();
+            String name = (entry.listing().item().count() > 1 ? entry.listing().item().count() + "x " : "") + ItemLabel.of(entry.listing().key(), entry.listing().item().displayName());
             String detail = I18n.get("hugomarket.deals.row", Money.format(entry.listing().priceCents()),
                     Money.format(entry.listing().unitPriceCents()), ageMinutes(entry));
             gfx.textNoShadow(gfx.clip(name, nameWidth), textX, rowY + 2, Theme.TEXT);
