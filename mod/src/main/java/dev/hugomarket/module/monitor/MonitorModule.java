@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.SequencedSet;
+import java.util.concurrent.ThreadLocalRandom;
 
 public final class MonitorModule implements Module {
     private static final int MIN_INTERVAL_SECONDS = 3;
@@ -52,6 +53,8 @@ public final class MonitorModule implements Module {
     private boolean allowedByServer;
     private int intervalTicks;
     private int refreshTicks;
+    private int refreshMaxTicks;
+    private int nextRefreshTicks;
     private int sweepEvery;
     private int ticksUntilNext;
     private int phaseTicks;
@@ -98,6 +101,8 @@ public final class MonitorModule implements Module {
         ModConfig config = context.config().get();
         intervalTicks = Math.max(MIN_INTERVAL_SECONDS, config.monitorIntervalSeconds) * 20;
         refreshTicks = Math.max(MIN_REFRESH_SECONDS, config.monitorRefreshSeconds) * 20;
+        refreshMaxTicks = Math.max(refreshTicks / 20, config.monitorRefreshMaxSeconds) * 20;
+        nextRefreshTicks = refreshTicks;
         sweepEvery = Math.max(0, config.monitorSweepEvery);
         ticksUntilNext = 20 * 5;
         account = config.monitorAccount == null ? "" : config.monitorAccount.trim();
@@ -123,8 +128,8 @@ public final class MonitorModule implements Module {
         context.screens().onUpdate(this::onScreenUpdate);
         context.scheduler().onTick(this::tick);
         checkMeta();
-        HugoMarket.LOGGER.info("monitor enabled, refresh {} s, sweep every {}", refreshTicks / 20, sweepEvery);
-        log.line("enabled as " + account + ", refresh " + refreshTicks / 20 + " s, sweep every " + sweepEvery
+        HugoMarket.LOGGER.info("monitor enabled, refresh {}-{} s, sweep every {}", refreshTicks / 20, refreshMaxTicks / 20, sweepEvery);
+        log.line("enabled as " + account + ", refresh " + refreshTicks / 20 + "-" + refreshMaxTicks / 20 + " s, sweep every " + sweepEvery
                 + " refreshes, queries " + queries);
     }
 
@@ -212,9 +217,10 @@ public final class MonitorModule implements Module {
                     reset(client, intervalTicks);
                     return;
                 }
-                if (++phaseTicks < refreshTicks) {
+                if (++phaseTicks < nextRefreshTicks) {
                     return;
                 }
+                nextRefreshTicks = ThreadLocalRandom.current().nextInt(refreshTicks, refreshMaxTicks + 1);
                 if (sweepEvery > 0 && !queries.isEmpty() && refreshesSinceSweep >= sweepEvery) {
                     refreshesSinceSweep = 0;
                     sweeping = true;

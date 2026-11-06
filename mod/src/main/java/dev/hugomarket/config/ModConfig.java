@@ -13,8 +13,9 @@ public final class ModConfig {
     public boolean tutorialShown = false;
     public boolean calculatorOpen = true;
     public int monitorIntervalSeconds = 45;
-    public int monitorRefreshSeconds = 5;
-    public int monitorSweepEvery = 12;
+    public int monitorRefreshSeconds = 3;
+    public int monitorRefreshMaxSeconds = 7;
+    public int monitorSweepEvery = 0;
     public String monitorAccount = "";
     public boolean monitorHeadless = false;
     public boolean monitorSneak = true;
