@@ -11,6 +11,7 @@ import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.net.BackendClient;
+import dev.hugomarket.net.RejectedRequestException;
 import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.store.PriceStats;
 import net.minecraft.client.Minecraft;
@@ -177,6 +178,12 @@ public final class SyncModule implements Module {
             return;
         }
         client.post("/v1/observations", batch).whenComplete((result, error) -> context.scheduler().post(() -> {
+            if (error != null && RejectedRequestException.isRejection(error)) {
+                // A batch the backend refuses would block the queue forever, so drop it and keep going.
+                HugoMarket.LOGGER.warn("backend rejected an observation batch, dropping it: {}", error.getMessage());
+                uploadNext(remaining - 1);
+                return;
+            }
             if (error != null) {
                 queue.addFirst(batch);
                 uploading = false;

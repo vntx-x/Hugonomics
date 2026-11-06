@@ -30,6 +30,7 @@ public final class MonitorModule implements Module {
     private static final int CLOSE_DELAY_TICKS = 20 * 3;
     private static final int UNCHANGED_REFRESH_TICKS = 20 * 2;
     private static final int META_RECHECK_TICKS = 20 * 60 * 5;
+    private static final int META_RETRY_TICKS = 20 * 30;
     private static final int OFFLINE_EXIT_TICKS = 20 * 60;
     private static final int STATS_EVERY_REFRESHES = 60;
     private static final int SEEN_MEMORY = 500;
@@ -143,6 +144,7 @@ public final class MonitorModule implements Module {
         context.backend().get("/v1/meta").whenComplete((meta, error) -> context.scheduler().post(() -> {
             if (error != null) {
                 allowedByServer = false;
+                metaTicks = META_RECHECK_TICKS - META_RETRY_TICKS;
                 log.line("meta unavailable: " + error);
                 return;
             }

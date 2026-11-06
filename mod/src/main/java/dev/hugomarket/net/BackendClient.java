@@ -60,14 +60,20 @@ public final class BackendClient {
         HttpRequest request = builder.timeout(TIMEOUT).header("User-Agent", userAgent).build();
         return http.sendAsync(request, HttpResponse.BodyHandlers.ofString(StandardCharsets.UTF_8))
                 .thenApply(response -> {
-                    if (response.statusCode() / 100 != 2) {
-                        throw new IllegalStateException("http " + response.statusCode());
+                    int status = response.statusCode();
+                    if (status / 100 == 4 && status != 429) {
+                        failures.set(0);
+                        throw new RejectedRequestException(status, response.body());
+                    }
+                    if (status / 100 != 2) {
+                        throw new IllegalStateException("http " + status);
                     }
                     failures.set(0);
                     return JsonParser.parseString(response.body()).getAsJsonObject();
                 })
                 .whenComplete((result, error) -> {
-                    if (error != null && failures.incrementAndGet() >= FAILURES_BEFORE_PAUSE) {
+                    if (error != null && !RejectedRequestException.isRejection(error)
+                            && failures.incrementAndGet() >= FAILURES_BEFORE_PAUSE) {
                         failures.set(0);
                         pausedUntil.set(System.currentTimeMillis() + PAUSE_MS);
                         HugoMarket.LOGGER.warn("backend paused for 60 s after repeated failures: {}", error.toString());
