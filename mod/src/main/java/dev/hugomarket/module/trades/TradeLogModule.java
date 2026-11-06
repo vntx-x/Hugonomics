@@ -18,10 +18,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.world.inventory.Slot;
 
+import java.time.ZoneId;
 import java.util.List;
 
 public final class TradeLogModule implements Module {
     private static final long BUY_CONFIRM_WINDOW_MS = 15_000;
+    private static final int STATUS_INTERVAL_TICKS = 20 * 2;
 
     private ModuleContext context;
     private AhListingParser parser;
@@ -33,6 +35,7 @@ public final class TradeLogModule implements Module {
     private Listing clicked;
     private long clickedAt;
     private boolean enabled;
+    private int ticks;
 
     @Override
     public String id() {
@@ -59,6 +62,11 @@ public final class TradeLogModule implements Module {
         samples = new TextLog(context.dataDir().resolve("actionbar-samples.log"));
         ClientReceiveMessageEvents.GAME.register((message, overlay) -> onGameMessage(message.getString(), overlay));
         context.menu().add("hugomarket.profit.open", this::openProfit);
+        context.scheduler().onTick(client -> {
+            if (enabled && ++ticks % STATUS_INTERVAL_TICKS == 0) {
+                context.status().setToday(log.today(System.currentTimeMillis(), ZoneId.systemDefault()).netCents());
+            }
+        });
     }
 
     @Override

@@ -1,21 +1,15 @@
 package dev.hugomarket.module.networth;
 
-import dev.hugomarket.container.ItemViews;
-import dev.hugomarket.model.ItemView;
 import dev.hugomarket.model.Money;
-import dev.hugomarket.store.ContainerValuation;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
 import dev.hugomarket.ui.widget.Label;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.player.Inventory;
-import net.minecraft.world.item.ItemStack;
 import org.lwjgl.glfw.GLFW;
 
 import java.util.ArrayList;
@@ -86,8 +80,8 @@ final class NetWorthScreen extends Screen {
         NetWorthPanel(NetWorthStore store, MarketSession market) {
             setTitle(I18n.get("hugomarket.networth.title"));
             long now = System.currentTimeMillis();
-            long inventory = inventoryValue(market);
-            long total = inventory + store.balance().cents() + store.enderchest().cents() + store.auctions().cents();
+            long inventory = NetWorthTotal.inventory(market);
+            long total = NetWorthTotal.total(store, market);
             String balance = store.balance().known()
                     ? I18n.get("hugomarket.networth.line", Money.format(store.balance().cents()), age(now, store.balance().at()))
                     : I18n.get("hugomarket.networth.unknown");
@@ -117,22 +111,6 @@ final class NetWorthScreen extends Screen {
                 return I18n.get("hugomarket.networth.age_h", seconds / 3600);
             }
             return I18n.get("hugomarket.networth.age_d", seconds / 86_400);
-        }
-
-        private static long inventoryValue(MarketSession market) {
-            Minecraft client = Minecraft.getInstance();
-            if (client.player == null) {
-                return 0;
-            }
-            Inventory inventory = client.player.getInventory();
-            List<ItemView> items = new ArrayList<>();
-            for (int i = 0; i < inventory.getContainerSize(); i++) {
-                ItemStack stack = inventory.getItem(i);
-                if (!stack.isEmpty()) {
-                    items.add(ItemViews.of(stack));
-                }
-            }
-            return ContainerValuation.ofItems(items, market).ahLowestCents();
         }
 
         @Override

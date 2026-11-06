@@ -244,6 +244,8 @@
   "hugomarket.ah.filter.enchanted": "Enchanted",
   "hugomarket.ah.filter.watched": "★ Watch",
   "hugomarket.ah.filter.deals": "Deals",
+  "hugomarket.status.today": "Heute %s",
+  "hugomarket.status.worth": "Vermögen %s",
   "hugomarket.ah.jump.found": "Angebot gefunden, es ist auf der Seite markiert",
   "hugomarket.ah.jump.gone": "Angebot ist weg (verkauft oder zurückgezogen), aus der Liste entfernt",
   "hugomarket.ah.jump.further": "Angebot liegt weiter hinten, nächste Seite",

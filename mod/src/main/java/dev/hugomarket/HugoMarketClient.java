@@ -36,6 +36,7 @@ import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStore;
 import dev.hugomarket.store.RemoteListingsFeed;
+import dev.hugomarket.store.StatusBoard;
 import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.KeyBindings;
 import dev.hugomarket.ui.MenuButtonPanel;
@@ -83,8 +84,9 @@ public final class HugoMarketClient implements ClientModInitializer {
             client.setScreen(new HelpScreen(client.screen));
         });
         RemoteListingsFeed listings = backend == null ? null : new RemoteListingsFeed(backend, scheduler, market);
+        StatusBoard status = new StatusBoard();
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
-                userData, backend, listings, menuActions, dataDir);
+                userData, backend, listings, menuActions, status, dataDir);
         new FirstStartHint(config, server, scheduler).register();
         SellStatsModule sellStats = new SellStatsModule();
         FarmModule farm = new FarmModule();
@@ -115,7 +117,7 @@ public final class HugoMarketClient implements ClientModInitializer {
             }
         });
         overlays.addProvider(screen -> server.active()
-                ? List.of(new MenuButtonPanel(screen, () -> {
+                ? List.of(new MenuButtonPanel(screen, status, () -> {
                     var client = net.minecraft.client.Minecraft.getInstance();
                     client.setScreen(new MenuScreen(client.screen, registry, menuActions));
                 }))

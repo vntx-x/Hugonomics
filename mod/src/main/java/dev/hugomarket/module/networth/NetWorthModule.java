@@ -18,6 +18,7 @@ import java.util.OptionalLong;
 
 public final class NetWorthModule implements Module {
     private static final int SCAN_INTERVAL_TICKS = 20;
+    private static final int STATUS_INTERVAL_TICKS = 20 * 5;
 
     private ModuleContext context;
     private NetWorthStore store;
@@ -63,6 +64,9 @@ public final class NetWorthModule implements Module {
     private void tick(Minecraft client) {
         if (!enabled || ++ticks % SCAN_INTERVAL_TICKS != 0 || !context.server().active()) {
             return;
+        }
+        if (ticks % STATUS_INTERVAL_TICKS == 0 && store.balance().known()) {
+            context.status().setNetWorth(NetWorthTotal.total(store, context.market()));
         }
         List<String> lines = Sidebar.lines(client);
         if (lines.equals(lastSidebar)) {

@@ -7,6 +7,7 @@ import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.HugoGuiRules;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.RemoteListingsFeed;
+import dev.hugomarket.store.StatusBoard;
 import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.OverlayManager;
 
@@ -25,6 +26,7 @@ public record ModuleContext(
         BackendClient backend,
         RemoteListingsFeed listings,
         MenuActions menu,
+        StatusBoard status,
         Path dataDir
 ) {
     public boolean hasBackend() {
