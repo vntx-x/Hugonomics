@@ -28,6 +28,9 @@ public final class ItemKeyFactory {
         if (!customModel && !item.customModelData().isEmpty()) {
             features.add("cmd" + Math.round(item.customModelData().get(0)));
         }
+        if (item.hasContents()) {
+            features.add(ItemKey.FILLED);
+        }
         features.sort(null);
         boolean renamed = item.customName() != null && !customModel;
         return new ItemKey(base, String.join(";", features), renamed);

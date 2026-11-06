@@ -108,6 +108,13 @@ public final class AhSearchState {
         return Deals.ratio(session.stats(listing.key()), listing);
     }
 
+    private static double dealRank(OptionalDouble ratio) {
+        if (ratio.isEmpty() || ratio.getAsDouble() < Deals.IMPLAUSIBLE_FACTOR) {
+            return Double.MAX_VALUE;
+        }
+        return ratio.getAsDouble();
+    }
+
     private void requery() {
         requerying = true;
         try {
@@ -121,7 +128,7 @@ public final class AhSearchState {
         List<ListingIndex.Entry> found = session.index().query(query, userData::isWatched);
         if (query.sort() == SearchQuery.Sort.DEAL) {
             found = new ArrayList<>(found);
-            found.sort(Comparator.comparingDouble(e -> deal(e.listing()).orElse(Double.MAX_VALUE)));
+            found.sort(Comparator.comparingDouble(e -> dealRank(deal(e.listing()))));
         }
         results = found;
         notifyChange();

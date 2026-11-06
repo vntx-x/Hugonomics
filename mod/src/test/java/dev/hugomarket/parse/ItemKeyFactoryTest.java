@@ -78,6 +78,17 @@ class ItemKeyFactoryTest {
     }
 
     @Test
+    void filledContainerGetsOwnKey() {
+        ItemView diamond = item("minecraft:diamond", Map.of(), Map.of(), null, null, List.of(), null, null);
+        ItemView kit = new ItemView("minecraft:shulker_box", 1, "Mace&Elytra Kit", List.of(), Map.of(), Map.of(), null, null,
+                List.of(), null, "Mace&Elytra Kit", Map.of(), List.of(diamond));
+        ItemKey key = ItemKeyFactory.of(kit);
+        assertEquals("shulker_box#filled", key.toString());
+        assertTrue(key.filled());
+        assertFalse(ItemKeyFactory.of(item("minecraft:shulker_box", Map.of(), Map.of(), null, null, List.of(), null, null)).filled());
+    }
+
+    @Test
     void parseRoundTrips() {
         assertEquals(new ItemKey("elytra", "mending1;unbreaking3", false), ItemKey.parse("elytra#mending1;unbreaking3"));
         assertEquals(new ItemKey("nether_star", "", false), ItemKey.parse("nether_star"));

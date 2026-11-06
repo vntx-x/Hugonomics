@@ -38,6 +38,19 @@ class DealsTest {
     }
 
     @Test
+    void implausiblyCheapIsNoBargain() {
+        assertFalse(Deals.isBargain(stats(100_000_00, 5), listing(2_900_00)));
+    }
+
+    @Test
+    void filledContainersHaveNoMarketRatio() {
+        ItemView diamond = new ItemView("minecraft:diamond", 1, "Diamant", List.of(), Map.of(), Map.of(), null, null, List.of(), null, null, Map.of(), List.of());
+        ItemView kit = new ItemView("minecraft:shulker_box", 1, "Kit", List.of(), Map.of(), Map.of(), null, null, List.of(), null, "Kit", Map.of(), List.of(diamond));
+        Listing listing = new Listing(0, kit, ItemKeyFactory.of(kit), 10_000_000_00L, "seller", 3600, ListingStatus.ACTIVE, false);
+        assertTrue(Deals.ratio(stats(2_900_00, 50), listing).isEmpty());
+    }
+
+    @Test
     void formatsDelta() {
         assertEquals("−12 %", Deals.deltaText(0.88));
         assertEquals("+30 %", Deals.deltaText(1.3));

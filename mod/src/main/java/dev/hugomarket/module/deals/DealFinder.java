@@ -37,7 +37,7 @@ public final class DealFinder {
             }
             PriceStats priceStats = stats.apply(entry.listing().key());
             double ratio = Deals.ratio(priceStats, entry.listing()).orElse(Double.NaN);
-            if (Double.isNaN(ratio) || ratio > Deals.BARGAIN_FACTOR) {
+            if (Double.isNaN(ratio) || !Deals.isBargain(ratio)) {
                 continue;
             }
             long resale = priceStats.medianUnitCents() * entry.listing().item().count();
