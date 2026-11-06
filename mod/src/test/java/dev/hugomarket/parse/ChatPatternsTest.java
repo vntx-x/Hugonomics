@@ -46,6 +46,13 @@ class ChatPatternsTest {
         assertEquals("", bare.item());
         assertTrue(ChatPatterns.auctionSold("[HugoSMP] Du hast die Auktion erfolgreich gekauft!").isEmpty());
         assertTrue(ChatPatterns.auctionSold("Spieler123: ich hab alles verkauft lol").isEmpty());
+        ChatPatterns.Sale bought = ChatPatterns.auctionSold("Auktion gekauft: seller_1 hat 64x Spitzer Tropfstein für $20.000 gekauft.").orElseThrow();
+        assertEquals(20_000_00L, bought.priceCents());
+        assertEquals(64, bought.count());
+        assertEquals("Spitzer Tropfstein", bought.item());
+        assertEquals("seller_1", bought.buyer());
+        assertEquals(1, ChatPatterns.auctionSold("Auktion gekauft: seller_2 hat Elytren für $1.500.000 gekauft.").orElseThrow().count());
+        assertTrue(ChatPatterns.auctionSold("Spieler123: Auktion gekauft: lol").isEmpty());
     }
 
     @Test

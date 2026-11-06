@@ -21,7 +21,13 @@ public final class ChatPatterns {
     public record Payout(long totalCents, long baseCents, long bonusCents, double multiplier) {
     }
 
-    public record Sale(long priceCents, int count, String item) {
+    private static final Pattern BOUGHT_FROM_YOU = Pattern.compile(
+            "^Auktion gekauft: (\\S+) hat (?:(\\d+)x )?(.+?) für " + MONEY + " gekauft\\.?$");
+
+    public record Sale(long priceCents, int count, String item, String buyer) {
+        public Sale(long priceCents, int count, String item) {
+            this(priceCents, count, item, "");
+        }
     }
 
     private ChatPatterns() {
@@ -58,6 +64,12 @@ public final class ChatPatterns {
 
     public static Optional<Sale> auctionSold(String text) {
         String line = normalize(text);
+        Matcher bought = BOUGHT_FROM_YOU.matcher(line);
+        if (bought.matches()) {
+            long cents = Money.parseCents(bought.group(4)).orElse(-1);
+            int count = bought.group(2) == null ? 1 : Integer.parseInt(bought.group(2));
+            return cents <= 0 ? Optional.empty() : Optional.of(new Sale(cents, count, bought.group(3).trim(), bought.group(1)));
+        }
         if (!SOLD_WORD.matcher(line).find() || line.contains("gekauft")) {
             return Optional.empty();
         }
