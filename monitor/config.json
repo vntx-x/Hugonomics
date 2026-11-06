@@ -24,6 +24,8 @@
   "clientId": "MONITOR_CLIENT_ID",
   "tutorialShown": true,
   "monitorIntervalSeconds": 15,
+  "monitorRefreshSeconds": 5,
+  "monitorSweepEvery": 12,
   "monitorAccount": "KOVAAV",
   "monitorHeadless": true,
   "monitorQueries": ["elytra", "mace", "netherite", "shulker", "trident", "beacon", "enchanted", "diamond", "emerald",
