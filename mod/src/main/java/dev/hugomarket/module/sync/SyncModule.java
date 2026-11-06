@@ -23,15 +23,15 @@ import java.util.Map;
 import java.util.UUID;
 
 public final class SyncModule implements Module {
-    private static final int UPLOAD_INTERVAL_TICKS = 20 * 30;
+    private static final int UPLOAD_INTERVAL_TICKS = 20 * 5;
     private static final int PRICE_INTERVAL_TICKS = 20 * 15;
     private static final int SAVE_INTERVAL_TICKS = 20 * 60;
     private static final int MAX_QUEUE = 200;
     private static final int MAX_UPLOADS_PER_FLUSH = 5;
     private static final int MAX_KEYS_PER_REQUEST = 200;
     private static final long MIN_RESEND_GAP_MS = 60_000;
-    private static final int LISTINGS_INTERVAL_TICKS = 20 * 30;
-    private static final long LISTINGS_MIN_GAP_MS = 25_000;
+    private static final int LISTINGS_INTERVAL_TICKS = 20 * 5;
+    private static final long LISTINGS_MIN_GAP_MS = 4_000;
 
     private ModuleContext context;
     private AhListingParser parser;

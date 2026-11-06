@@ -254,6 +254,12 @@ final class MarketPanel extends OverlayPanel {
         search.setFocused(true);
     }
 
+    void tick() {
+        if (selected != null) {
+            requestListings.run();
+        }
+    }
+
     private void select(PriceJson.ItemSummary item) {
         selected = item;
         search.setFocused(false);

@@ -79,14 +79,15 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
     return { serverTime: now(), prices: await prices.prices(unique, now()) };
   });
 
-  app.get<{ Querystring: { maxAge?: string; limit?: string } }>("/v1/listings", async (request, reply) => {
+  app.get<{ Querystring: { maxAge?: string; limit?: string; since?: string } }>("/v1/listings", async (request, reply) => {
     if (!queryLimiter.allow(request.ip, now())) {
       return reply.code(429).send({ error: "rate_limited" });
     }
     const maxAge = Math.min(deps.config.activeWindowMs, Math.max(60_000, Number(request.query.maxAge ?? 20 * 60_000) || 20 * 60_000));
     const limit = Math.min(MAX_LISTINGS, Math.max(1, Number(request.query.limit ?? MAX_LISTINGS) || MAX_LISTINGS));
     const current = now();
-    const records = (await deps.store.activeListings(current - maxAge))
+    const since = Math.max(current - maxAge, Number(request.query.since ?? 0) || 0);
+    const records = (await deps.store.activeListings(since))
       .filter((r) => r.expiresAt <= 0 || r.expiresAt > current)
       .sort((a, b) => b.lastSeen - a.lastSeen)
       .slice(0, limit)

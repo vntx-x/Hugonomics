@@ -18,7 +18,10 @@ final class MarketScreen extends Screen {
 
     private final Screen parent;
     private final MarketPanel panel;
+    private static final int REFRESH_TICKS = 100;
+
     private final MarketData data;
+    private int ticks;
 
     MarketScreen(Screen parent, MarketPanel panel, MarketData data) {
         super(Component.translatable("hugomarket.market.title"));
@@ -33,6 +36,13 @@ final class MarketScreen extends Screen {
         panel.setBounds((width - panelWidth) / 2, MARGIN, panelWidth, height - MARGIN * 2);
         panel.focusSearch();
         data.refreshItems(System.currentTimeMillis());
+    }
+
+    @Override
+    public void tick() {
+        if (++ticks % REFRESH_TICKS == 0) {
+            panel.tick();
+        }
     }
 
     @Override

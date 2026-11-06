@@ -8,7 +8,7 @@ import net.minecraft.client.Minecraft;
 import org.lwjgl.glfw.GLFW;
 
 public final class MarketModule implements Module {
-    private static final long LISTINGS_MAX_STALE_MS = 20_000;
+    private static final long LISTINGS_MAX_STALE_MS = 4_000;
 
     private ModuleContext context;
     private MarketData data;

@@ -6,7 +6,7 @@ import dev.hugomarket.store.Fees;
 import net.minecraft.client.Minecraft;
 
 public final class DealsModule implements Module {
-    private static final long MAX_STALE_MS = 20_000;
+    private static final long MAX_STALE_MS = 4_000;
 
     private ModuleContext context;
     private Fees fees;

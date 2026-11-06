@@ -60,6 +60,24 @@ describe("api", () => {
     expect(body.listings[0].id).toHaveLength(32);
   });
 
+  it("returns only listings seen after since", async () => {
+    const { app, advance, time } = server();
+    await app.inject({ method: "POST", url: "/v1/observations", payload: batch(CLIENT_A, new Date(time()).toISOString()) });
+    advance(10_000);
+    const cursor = time();
+    advance(10_000);
+    await app.inject({
+      method: "POST",
+      url: "/v1/observations",
+      payload: batch(CLIENT_A, new Date(time()).toISOString(), 70_000_000),
+    });
+    const all = await app.inject({ method: "GET", url: "/v1/listings?maxAge=600000" });
+    expect(all.json().listings).toHaveLength(2);
+    const delta = await app.inject({ method: "GET", url: `/v1/listings?maxAge=600000&since=${cursor}` });
+    expect(delta.json().listings).toHaveLength(1);
+    expect(delta.json().listings[0].priceCents).toBe(70_000_000);
+  });
+
   it("serves legal pages", async () => {
     const { app } = server();
     const home = await app.inject({ method: "GET", url: "/" });
