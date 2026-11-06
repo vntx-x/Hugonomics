@@ -50,7 +50,8 @@ Dokument regelt, wie Code hier geschrieben wird.
 - Keine Aktion im AH, in Orders oder im Shop ohne Klick des Spielers. Kein Auto-Kauf, kein
   Sniping, keine Paket-Manipulation.
 - Text ins Chat-/Anvil-Feld setzen ist erlaubt, Absenden nicht. Ausnahme: ein einzelner
-  `/ah <suchbegriff>` direkt auf Klick des Spielers (Suche öffnen, nie Kaufen oder Blättern).
+  `/ah <suchbegriff>` direkt auf Klick des Spielers. Danach darf die Mod sortieren und bis zu 15
+  Seiten blättern, um genau dieses Angebot zu finden. Kaufen klickt immer der Spieler.
 - Module mit Server-Aktionen (`ahpaging`, `sellmacro`, `monitor`, `cmdhotkeys`) sind nur mit
   Freigabe-Flag aus `/v1/meta` plus lokaler Bestätigung aktivierbar und benutzen den echten
   Klick-Pfad (`handleInventoryMouseClick`) mit konfigurierbaren Verzögerungen.

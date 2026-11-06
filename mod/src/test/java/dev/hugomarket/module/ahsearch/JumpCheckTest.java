@@ -22,24 +22,34 @@ class JumpCheckTest {
     private static List<Listing> page(int size, long from) {
         List<Listing> out = new ArrayList<>();
         for (int i = 0; i < size; i++) {
-            out.add(listing(from + i * 100, 64));
+            out.add(listing(from + i * 100L, 64));
         }
         return out;
     }
 
+    private static AhFocus focus(long price) {
+        return new AhFocus("firework_rocket", price, 64, "x");
+    }
+
     @Test
     void findsMatchingOffer() {
-        assertEquals(JumpCheck.Outcome.FOUND, JumpCheck.check(page(36, 2_000), 36, new AhFocus("firework_rocket", 2_300, 64, "x")));
+        assertEquals(JumpCheck.Outcome.FOUND, JumpCheck.check(page(36, 2_000), true, focus(2_300)));
     }
 
     @Test
-    void cheaperThanPageButMissingIsGone() {
-        assertEquals(JumpCheck.Outcome.GONE, JumpCheck.check(page(36, 2_000), 36, new AhFocus("firework_rocket", 2_050, 64, "x")));
-        assertEquals(JumpCheck.Outcome.GONE, JumpCheck.check(page(5, 2_000), 36, new AhFocus("firework_rocket", 99_999, 64, "x")));
+    void pricierThanPageGoesToNextPage() {
+        assertEquals(JumpCheck.Outcome.NEXT_PAGE, JumpCheck.check(page(36, 2_000), true, focus(99_999)));
     }
 
     @Test
-    void pricierThanFullPageIsFurther() {
-        assertEquals(JumpCheck.Outcome.FURTHER, JumpCheck.check(page(36, 2_000), 36, new AhFocus("firework_rocket", 99_999, 64, "x")));
+    void goneWhenPassedOrNoMorePages() {
+        assertEquals(JumpCheck.Outcome.GONE, JumpCheck.check(page(36, 5_000), true, focus(2_050)));
+        assertEquals(JumpCheck.Outcome.GONE, JumpCheck.check(page(10, 2_000), false, focus(99_999)));
+        assertEquals(JumpCheck.Outcome.GONE, JumpCheck.check(List.of(), true, focus(2_050)));
+    }
+
+    @Test
+    void cheaperButNotYetPassedKeepsLooking() {
+        assertEquals(JumpCheck.Outcome.NEXT_PAGE, JumpCheck.check(page(36, 2_000), true, focus(2_050)));
     }
 }

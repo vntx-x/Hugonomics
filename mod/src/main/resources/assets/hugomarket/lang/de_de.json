@@ -248,7 +248,7 @@
   "hugomarket.status.worth": "Vermögen %s",
   "hugomarket.ah.jump.found": "Angebot gefunden, es ist auf der Seite markiert",
   "hugomarket.ah.jump.gone": "Angebot ist weg (verkauft oder zurückgezogen), aus der Liste entfernt",
-  "hugomarket.ah.jump.further": "Angebot liegt weiter hinten, nächste Seite",
+  "hugomarket.ah.jump.further": "Angebot nicht in den ersten 15 Seiten gefunden",
   "hugomarket.ah.history.hint": "Über ein Angebot fahren für den Preisverlauf (7 Tage)",
   "hugomarket.ah.history.title": "%s · 7 Tage",
   "hugomarket.ah.history.trend": "%s in 7 T",

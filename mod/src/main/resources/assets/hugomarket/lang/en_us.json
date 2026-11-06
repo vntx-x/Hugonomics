@@ -248,7 +248,7 @@
   "hugomarket.status.worth": "Net worth %s",
   "hugomarket.ah.jump.found": "Offer found, it is marked on the page",
   "hugomarket.ah.jump.gone": "Offer is gone (sold or cancelled), removed from the list",
-  "hugomarket.ah.jump.further": "Offer is further back, use the next page",
+  "hugomarket.ah.jump.further": "Offer not found in the first 15 pages",
   "hugomarket.ah.history.hint": "Hover an offer for its 7 day price history",
   "hugomarket.ah.history.title": "%s · 7 days",
   "hugomarket.ah.history.trend": "%s in 7 d",

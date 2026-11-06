@@ -2,8 +2,8 @@ package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.container.ScreenUpdate;
 import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.model.ContainerView;
 import dev.hugomarket.model.HugoControl;
-import dev.hugomarket.model.ScreenKind;
 import dev.hugomarket.model.SlotView;
 import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.store.AhFocus;
@@ -15,15 +15,24 @@ import net.minecraft.world.inventory.ClickType;
 final class AhJumpFlow {
     private static final String CHEAPEST_FIRST = "Niedrigster Preis";
     private static final int MAX_SORT_CLICKS = 3;
-    private static final int CLICK_DELAY_TICKS = 6;
-    private static final int TIMEOUT_TICKS = 20 * 8;
+    private static final int MAX_PAGES = 15;
+    // Hugo fills the page over several slot packets; wait until it stops changing before judging it.
+    private static final int SETTLE_TICKS = 4;
+    private static final int TIMEOUT_TICKS = 20 * 20;
+    // Clicking "next" on the last page sends nothing back, so silence after a page click means the end.
+    private static final int NO_ANSWER_TICKS = 30;
 
     private final ModuleContext context;
     private AhFocus focus;
     private AbstractContainerScreen<?> screen;
+    private AhListingParser.AhPage page;
     private int filterSlot = -1;
+    private int nextSlot = -1;
     private int sortClicks;
-    private int clickInTicks = -1;
+    private int pages;
+    private int settleTicks = -1;
+    private int awaitingTicks = -1;
+    private boolean pagedLast;
     private int ageTicks;
 
     AhJumpFlow(ModuleContext context) {
@@ -32,34 +41,24 @@ final class AhJumpFlow {
 
     void start(AhFocus focus) {
         this.focus = focus;
+        page = null;
         sortClicks = 0;
-        clickInTicks = -1;
+        pages = 0;
+        settleTicks = -1;
+        awaitingTicks = -1;
+        pagedLast = false;
         ageTicks = 0;
     }
 
     void onPage(ScreenUpdate update, AhListingParser.AhPage page) {
-        if (focus == null || clickInTicks >= 0) {
+        if (focus == null) {
             return;
         }
-        screen = update.screen();
-        if (page.filter() != null && !CHEAPEST_FIRST.equals(page.filter().sort()) && sortClicks < MAX_SORT_CLICKS) {
-            filterSlot = filterSlot(update);
-            if (filterSlot >= 0) {
-                clickInTicks = CLICK_DELAY_TICKS;
-                return;
-            }
-        }
-        JumpCheck.Outcome outcome = JumpCheck.check(page.listings(), capacity(update), focus);
-        Minecraft client = Minecraft.getInstance();
-        switch (outcome) {
-            case FOUND -> client.gui.setOverlayMessage(Component.translatable("hugomarket.ah.jump.found"), false);
-            case GONE -> {
-                context.market().markGone(focus.entryId());
-                client.gui.setOverlayMessage(Component.translatable("hugomarket.ah.jump.gone"), false);
-            }
-            case FURTHER -> client.gui.setOverlayMessage(Component.translatable("hugomarket.ah.jump.further"), false);
-        }
-        focus = null;
+        this.screen = update.screen();
+        this.page = page;
+        filterSlot = controlSlot(update.view(), HugoControl.FILTER);
+        nextSlot = controlSlot(update.view(), HugoControl.NEXT_PAGE);
+        settleTicks = SETTLE_TICKS;
     }
 
     void tick(Minecraft client) {
@@ -67,38 +66,67 @@ final class AhJumpFlow {
             return;
         }
         if (++ageTicks > TIMEOUT_TICKS) {
+            finish(client, "hugomarket.ah.jump.further");
+            return;
+        }
+        if (awaitingTicks >= 0 && settleTicks < 0 && ++awaitingTicks > NO_ANSWER_TICKS) {
+            awaitingTicks = -1;
+            if (pagedLast) {
+                context.market().markGone(focus.entryId());
+                finish(client, "hugomarket.ah.jump.gone");
+            } else {
+                finish(client, "hugomarket.ah.jump.further");
+            }
+            return;
+        }
+        if (settleTicks < 0 || --settleTicks > 0) {
+            return;
+        }
+        awaitingTicks = -1;
+        settleTicks = -1;
+        if (client.gameMode == null || client.player == null || screen == null || client.screen != screen || page == null) {
             focus = null;
             return;
         }
-        if (clickInTicks < 0 || --clickInTicks > 0) {
+        if (page.filter() != null && !CHEAPEST_FIRST.equals(page.filter().sort()) && sortClicks < MAX_SORT_CLICKS && filterSlot >= 0) {
+            click(client, filterSlot);
+            pagedLast = false;
+            sortClicks++;
             return;
         }
-        clickInTicks = -1;
-        if (client.gameMode == null || client.player == null || screen == null || client.screen != screen) {
-            focus = null;
-            return;
+        switch (JumpCheck.check(page.listings(), nextSlot >= 0, focus)) {
+            case FOUND -> finish(client, "hugomarket.ah.jump.found");
+            case GONE -> {
+                context.market().markGone(focus.entryId());
+                finish(client, "hugomarket.ah.jump.gone");
+            }
+            case NEXT_PAGE -> {
+                if (++pages > MAX_PAGES) {
+                    finish(client, "hugomarket.ah.jump.further");
+                } else {
+                    click(client, nextSlot);
+                    pagedLast = true;
+                }
+            }
         }
-        client.gameMode.handleInventoryMouseClick(screen.getMenu().containerId, filterSlot, 0, ClickType.PICKUP, client.player);
-        sortClicks++;
     }
 
-    private int filterSlot(ScreenUpdate update) {
-        for (SlotView slot : update.view().slots()) {
-            if (!slot.playerInventory() && !slot.isEmpty() && context.guiRules().controlOf(slot.item()) == HugoControl.FILTER) {
+    private void finish(Minecraft client, String message) {
+        client.gui.setOverlayMessage(Component.translatable(message), false);
+        focus = null;
+    }
+
+    private void click(Minecraft client, int slot) {
+        awaitingTicks = 0;
+        client.gameMode.handleInventoryMouseClick(screen.getMenu().containerId, slot, 0, ClickType.PICKUP, client.player);
+    }
+
+    private int controlSlot(ContainerView view, HugoControl control) {
+        for (SlotView slot : view.slots()) {
+            if (!slot.playerInventory() && !slot.isEmpty() && context.guiRules().controlOf(slot.item()) == control) {
                 return slot.index();
             }
         }
         return -1;
-    }
-
-    private int capacity(ScreenUpdate update) {
-        var rule = context.guiRules().rule(ScreenKind.AH_LIST);
-        int count = 0;
-        for (SlotView slot : update.view().slots()) {
-            if (!slot.playerInventory() && rule.isContentSlot(slot.index())) {
-                count++;
-            }
-        }
-        return count;
     }
 }
