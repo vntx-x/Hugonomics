@@ -17,10 +17,16 @@ import net.minecraft.world.inventory.ClickType;
 import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.SequencedSet;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public final class MonitorModule implements Module {
@@ -31,6 +37,9 @@ public final class MonitorModule implements Module {
     private static final int UNCHANGED_REFRESH_TICKS = 20 * 2;
     private static final int META_RECHECK_TICKS = 20 * 60 * 5;
     private static final int META_RETRY_TICKS = 20 * 30;
+    private static final int COMMAND_POLL_TICKS = 20;
+    private static final String COMMAND_FILE = "monitor-commands.txt";
+    private static final Set<String> ALLOWED_COMMANDS = Set.of("tpaccept", "tpdeny");
     private static final int OFFLINE_EXIT_TICKS = 20 * 60;
     private static final int STATS_EVERY_REFRESHES = 60;
     private static final int SEEN_MEMORY = 500;
@@ -175,6 +184,9 @@ public final class MonitorModule implements Module {
             return;
         }
         offlineTicks = 0;
+        if (metaTicks % COMMAND_POLL_TICKS == 0) {
+            runQueuedCommands(client);
+        }
         if (sneak) {
             keepSneaking(client);
         }
@@ -245,6 +257,31 @@ public final class MonitorModule implements Module {
                     reset(client, SORT_CLICK_DELAY_TICKS);
                 }
             }
+        }
+    }
+
+    private void runQueuedCommands(Minecraft client) {
+        Path file = context.dataDir().resolve(COMMAND_FILE);
+        if (!Files.exists(file)) {
+            return;
+        }
+        try {
+            List<String> lines = Files.readAllLines(file, StandardCharsets.UTF_8);
+            Files.delete(file);
+            for (String line : lines) {
+                String command = line.trim().toLowerCase(Locale.ROOT);
+                if (command.startsWith("/")) {
+                    command = command.substring(1);
+                }
+                if (ALLOWED_COMMANDS.contains(command)) {
+                    client.player.connection.sendCommand(command);
+                    log.line("sent queued /" + command);
+                } else if (!command.isEmpty()) {
+                    log.line("ignored queued command '" + command + "'");
+                }
+            }
+        } catch (IOException e) {
+            log.line("command file unreadable: " + e);
         }
     }
 
