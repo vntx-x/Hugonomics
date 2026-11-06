@@ -2,6 +2,7 @@ package dev.hugomarket.module.ahsearch;
 
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.store.MarketSession;
+import dev.hugomarket.ui.GermanItemNames;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.inventory.AbstractContainerScreen;
 import net.minecraft.network.chat.Component;
@@ -15,7 +16,7 @@ public final class AhJump {
         if (client.player == null) {
             return;
         }
-        String term = AhSearchTerm.of(listing);
+        String term = AhSearchTerm.of(listing, GermanItemNames::of);
         market.requestAhFocus(listing.key().toString());
         if (client.screen != null && !(client.screen instanceof AbstractContainerScreen<?>)) {
             client.setScreen(null);
