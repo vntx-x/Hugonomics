@@ -26,6 +26,9 @@ final class AhSearchPanel extends OverlayPanel {
     private static final int CAPTION_WIDTH = 34;
     private static final String STAR = "★ ";
     private static final int HISTORY_HEIGHT = 50;
+    private static final int MAX_HISTORY_HEIGHT = 110;
+    private static final int WIDE_ROW = 280;
+    private static final int DETAIL_COLUMN = 64;
     private static final int HOVER_DELAY_TICKS = 6;
 
     private final AhSearchState state;
@@ -54,6 +57,7 @@ final class AhSearchPanel extends OverlayPanel {
         this.history = history;
         this.highlighter = new SlotHighlighter(screen, state, market);
         setTitle(I18n.get("hugomarket.ah.title"));
+        setSidebar(true);
         setHeaderRight(() -> I18n.get("hugomarket.ah.status", state.results().size(), state.indexedCount()));
         search = add(new TextField(I18n.get("hugomarket.ah.search"), state.query().text(),
                 text -> state.setQuery(state.query().withText(text))));
@@ -101,10 +105,11 @@ final class AhSearchPanel extends OverlayPanel {
         cursorY = chipRow(sortCaption, sortChips, innerX, cursorY, innerWidth);
         cursorY = chipRow(filterCaption, filterChips, innerX, cursorY, innerWidth);
         cursorY += Theme.GAP;
-        int historyTop = y + height - Theme.PADDING - HISTORY_HEIGHT;
+        int historyHeight = Math.max(HISTORY_HEIGHT, Math.min(MAX_HISTORY_HEIGHT, height / 4));
+        int historyTop = y + height - Theme.PADDING - historyHeight;
         results.setBounds(innerX, cursorY, innerWidth, historyTop - Theme.GAP - cursorY);
         historyTitleY = historyTop;
-        chart.setBounds(innerX, historyTop + Theme.LINE, innerWidth, HISTORY_HEIGHT - Theme.LINE);
+        chart.setBounds(innerX, historyTop + Theme.LINE, innerWidth, historyHeight - Theme.LINE);
     }
 
     @Override
@@ -188,6 +193,16 @@ final class AhSearchPanel extends OverlayPanel {
         int rightWidth = Math.max(gfx.textWidth(price), gfx.textWidth(delta));
         int textX = rowX + ICON_SIZE + 6;
         int nameWidth = rowWidth - ICON_SIZE - 12 - rightWidth;
+        if (rowWidth >= WIDE_ROW) {
+            nameWidth -= DETAIL_COLUMN;
+            int detailX = rowX + rowWidth - rightWidth - 9 - DETAIL_COLUMN;
+            gfx.textNoShadow(I18n.get("hugomarket.ah.total", Money.compact(entry.listing().priceCents())), detailX, rowY + 2, Theme.TEXT_DIM);
+            long left = entry.expiresAt() <= 0 ? -1 : (entry.expiresAt() - System.currentTimeMillis()) / 60_000;
+            if (left >= 0) {
+                String expiry = left >= 120 ? I18n.get("hugomarket.ah.left_hours", left / 60) : I18n.get("hugomarket.ah.left_minutes", left);
+                gfx.textNoShadow(expiry, detailX, rowY + 11, left < 30 ? Theme.WATCH_FRAME : Theme.TEXT_PLACEHOLDER);
+            }
+        }
         boolean watched = state.isWatched(entry.listing());
         boolean bargain = ratio.isPresent() && Deals.isBargain(ratio.getAsDouble());
         if (bargain) {

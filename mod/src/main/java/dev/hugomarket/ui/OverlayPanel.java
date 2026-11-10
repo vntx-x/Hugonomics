@@ -15,6 +15,7 @@ public abstract class OverlayPanel {
     private boolean visible = true;
     private String title;
     private Supplier<String> headerRight;
+    private boolean sidebar;
 
     public static int headerHeight() {
         return Theme.HEADER_HEIGHT + Theme.GAP;
@@ -30,6 +31,10 @@ public abstract class OverlayPanel {
 
     protected void setTitle(String title) {
         this.title = title;
+    }
+
+    protected void setSidebar(boolean sidebar) {
+        this.sidebar = sidebar;
     }
 
     protected void setHeaderRight(Supplier<String> headerRight) {
@@ -63,13 +68,18 @@ public abstract class OverlayPanel {
     }
 
     protected void renderFrame(Gfx gfx) {
-        gfx.fill(x + 2, y + 2, width, height, Theme.PANEL_SHADOW);
-        gfx.fill(x, y, width, height, Theme.PANEL_BG);
-        gfx.border(x, y, width, height, Theme.PANEL_BORDER);
+        if (sidebar) {
+            gfx.fill(x, y, width, height, Theme.SIDEBAR_BG);
+            gfx.border(x, y, width, height, Theme.SIDEBAR_BORDER);
+        } else {
+            gfx.fill(x + 2, y + 2, width, height, Theme.PANEL_SHADOW);
+            gfx.fill(x, y, width, height, Theme.PANEL_BG);
+            gfx.border(x, y, width, height, Theme.PANEL_BORDER);
+        }
         if (title == null) {
             return;
         }
-        gfx.fill(x + 1, y + 1, width - 2, Theme.HEADER_HEIGHT, Theme.HEADER_BG);
+        gfx.fill(x + 1, y + 1, width - 2, Theme.HEADER_HEIGHT, sidebar ? Theme.SIDEBAR_HEADER_BG : Theme.HEADER_BG);
         gfx.fill(x + 1, y + 1 + Theme.HEADER_HEIGHT, width - 2, 1, Theme.PANEL_BORDER);
         int textY = y + 1 + (Theme.HEADER_HEIGHT - gfx.lineHeight()) / 2 + 1;
         int rightWidth = 0;

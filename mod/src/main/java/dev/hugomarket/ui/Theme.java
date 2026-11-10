@@ -5,6 +5,9 @@ public final class Theme {
     public static final int PANEL_BORDER = 0xFF6B34A3;
     public static final int PANEL_SHADOW = 0x70000000;
     public static final int HEADER_BG = 0xFF1E1530;
+    public static final int SIDEBAR_BG = 0xA00C0A12;
+    public static final int SIDEBAR_BORDER = 0x806B34A3;
+    public static final int SIDEBAR_HEADER_BG = 0xC01E1530;
     public static final int FIELD_BG = 0xFF1B1823;
     public static final int FIELD_BORDER = 0xFF3A3344;
     public static final int FIELD_BORDER_FOCUS = 0xFFC77DFF;

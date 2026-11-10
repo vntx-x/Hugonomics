@@ -25,6 +25,18 @@ public final class PanelPlacement {
         panel.setBounds(accessor.hugomarket$leftPos() - GAP - width, accessor.hugomarket$topPos(), width, height);
     }
 
+    public static void sidebarRight(AbstractContainerScreen<?> screen, OverlayPanel panel, int minWidth) {
+        AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
+        var window = Minecraft.getInstance().getWindow();
+        int left = accessor.hugomarket$leftPos() + accessor.hugomarket$imageWidth() + GAP;
+        int width = window.getGuiScaledWidth() - left - GAP;
+        if (width < minWidth) {
+            rightOf(screen, panel, minWidth);
+            return;
+        }
+        panel.setBounds(left, GAP, width, window.getGuiScaledHeight() - GAP * 2);
+    }
+
     public static void rightOf(AbstractContainerScreen<?> screen, OverlayPanel panel, int preferredWidth, int height) {
         rightOf(screen, panel, preferredWidth, height, 0);
     }

@@ -75,7 +75,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
             jump.start(focus);
         }
         panel = new AhSearchPanel(screen, state, context.market(), history);
-        PanelPlacement.rightOf(screen, panel, PANEL_WIDTH);
+        PanelPlacement.sidebarRight(screen, panel, PANEL_WIDTH);
         return List.of(panel);
     }
 
@@ -106,7 +106,7 @@ public final class AhSearchModule implements Module, OverlayProvider {
             jump.onPage(update, page);
         }
         if (panel != null) {
-            PanelPlacement.rightOf(update.screen(), panel, PANEL_WIDTH);
+            PanelPlacement.sidebarRight(update.screen(), panel, PANEL_WIDTH);
         }
     }
 
