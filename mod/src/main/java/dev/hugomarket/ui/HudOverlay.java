@@ -1,10 +1,12 @@
 package dev.hugomarket.ui;
 
 import dev.hugomarket.HugoMarket;
+import dev.hugomarket.config.ConfigStore;
 import dev.hugomarket.core.ServerDetector;
 import dev.hugomarket.store.HudBoard;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.resources.ResourceLocation;
 
 import java.util.List;
@@ -17,16 +19,17 @@ import net.fabricmc.fabric.api.client.rendering.v1.IdentifiedLayer;
 //?}
 
 public final class HudOverlay {
-    private static final int MARGIN = 4;
-
     private final HudBoard board;
     private final ServerDetector server;
+    private final ConfigStore config;
     private List<HudBoard.Line> measuredFor;
     private int boxWidth;
+    private List<HudBoard.Line> preview;
 
-    public HudOverlay(HudBoard board, ServerDetector server) {
+    public HudOverlay(HudBoard board, ServerDetector server, ConfigStore config) {
         this.board = board;
         this.server = server;
+        this.config = config;
     }
 
     public void register() {
@@ -39,13 +42,21 @@ public final class HudOverlay {
         //?}
     }
 
-    private void draw(GuiGraphics graphics) {
-        List<HudBoard.Line> lines = board.lines();
-        Minecraft client = Minecraft.getInstance();
-        if (lines.isEmpty() || client.options.hideGui || client.screen != null || !server.active()) {
-            return;
+    public ConfigStore config() {
+        return config;
+    }
+
+    List<HudBoard.Line> editLines() {
+        if (!board.lines().isEmpty()) {
+            return board.lines();
         }
-        Gfx gfx = new Gfx(graphics);
+        if (preview == null) {
+            preview = List.of(new HudBoard.Line(I18n.get("hugomarket.hud.preview"), Theme.TEXT));
+        }
+        return preview;
+    }
+
+    int width(Gfx gfx, List<HudBoard.Line> lines) {
         if (lines != measuredFor) {
             measuredFor = lines;
             boxWidth = 0;
@@ -54,13 +65,34 @@ public final class HudOverlay {
             }
             boxWidth += Theme.PADDING * 2;
         }
-        int boxHeight = lines.size() * Theme.LINE + Theme.PADDING * 2 - 2;
-        gfx.fill(MARGIN, MARGIN, boxWidth, boxHeight, Theme.PANEL_BG);
-        gfx.border(MARGIN, MARGIN, boxWidth, boxHeight, Theme.PANEL_BORDER);
-        int textY = MARGIN + Theme.PADDING;
+        return boxWidth;
+    }
+
+    static int height(List<HudBoard.Line> lines) {
+        return lines.size() * Theme.LINE + Theme.PADDING * 2 - 2;
+    }
+
+    void paint(Gfx gfx, List<HudBoard.Line> lines, int left, int top, int border) {
+        int width = width(gfx, lines);
+        int height = height(lines);
+        gfx.fill(left, top, width, height, Theme.PANEL_BG);
+        gfx.border(left, top, width, height, border);
+        int textY = top + Theme.PADDING;
         for (HudBoard.Line line : lines) {
-            gfx.textNoShadow(line.text(), MARGIN + Theme.PADDING, textY, line.color());
+            gfx.textNoShadow(line.text(), left + Theme.PADDING, textY, line.color());
             textY += Theme.LINE;
         }
+    }
+
+    private void draw(GuiGraphics graphics) {
+        List<HudBoard.Line> lines = board.lines();
+        Minecraft client = Minecraft.getInstance();
+        if (lines.isEmpty() || client.options.hideGui || client.screen != null || !server.active()) {
+            return;
+        }
+        Gfx gfx = new Gfx(graphics);
+        int left = HudPlacement.position(config.get().hudX, graphics.guiWidth(), width(gfx, lines));
+        int top = HudPlacement.position(config.get().hudY, graphics.guiHeight(), height(lines));
+        paint(gfx, lines, left, top, Theme.PANEL_BORDER);
     }
 }

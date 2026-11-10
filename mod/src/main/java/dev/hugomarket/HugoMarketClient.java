@@ -43,6 +43,7 @@ import dev.hugomarket.store.RemoteListingsFeed;
 import dev.hugomarket.store.HudBoard;
 import dev.hugomarket.store.StatusBoard;
 import dev.hugomarket.store.UserData;
+import dev.hugomarket.ui.HudEditScreen;
 import dev.hugomarket.ui.HudOverlay;
 import dev.hugomarket.ui.KeyBindings;
 import dev.hugomarket.ui.MenuButtonPanel;
@@ -92,7 +93,12 @@ public final class HugoMarketClient implements ClientModInitializer {
         RemoteListingsFeed listings = backend == null ? null : new RemoteListingsFeed(backend, scheduler, market);
         StatusBoard status = new StatusBoard();
         HudBoard hud = new HudBoard();
-        new HudOverlay(hud, server).register();
+        HudOverlay hudOverlay = new HudOverlay(hud, server, config);
+        hudOverlay.register();
+        menuActions.add("hugomarket.hud.move", () -> {
+            var client = net.minecraft.client.Minecraft.getInstance();
+            client.setScreen(new HudEditScreen(client.screen, hudOverlay));
+        });
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
                 userData, backend, listings, menuActions, status, hud, dataDir);
         new FirstStartHint(config, server, scheduler).register();
