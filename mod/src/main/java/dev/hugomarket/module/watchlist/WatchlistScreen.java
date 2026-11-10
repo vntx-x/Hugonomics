@@ -4,13 +4,17 @@ import dev.hugomarket.model.ItemKey;
 import dev.hugomarket.model.Money;
 import dev.hugomarket.module.ahsearch.AhJump;
 import dev.hugomarket.module.ahsearch.Deals;
+import dev.hugomarket.module.ahsearch.PriceHistoryCache;
+import dev.hugomarket.module.ahsearch.PriceTrend;
 import dev.hugomarket.module.ahsearch.SearchQuery;
+import dev.hugomarket.module.sync.PriceJson;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.UserData;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.ItemLabel;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
+import dev.hugomarket.ui.widget.ChartWidget;
 import dev.hugomarket.ui.widget.ListView;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
@@ -23,8 +27,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import org.lwjgl.glfw.GLFW;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.OptionalDouble;
 
 //? if >=1.21.9 {
 /*import net.minecraft.client.input.KeyEvent;
@@ -40,11 +47,11 @@ final class WatchlistScreen extends Screen {
     private final Runnable refresh;
     private int ticks;
 
-    WatchlistScreen(Screen parent, MarketSession market, UserData userData, Runnable refresh) {
+    WatchlistScreen(Screen parent, MarketSession market, UserData userData, PriceHistoryCache history, Runnable refresh) {
         super(Component.translatable("hugomarket.watchlist.title"));
         this.parent = parent;
         this.refresh = refresh;
-        this.panel = new WatchlistPanel(market, userData);
+        this.panel = new WatchlistPanel(market, userData, history);
     }
 
     @Override
@@ -58,6 +65,7 @@ final class WatchlistScreen extends Screen {
         if (++ticks % 100 == 0) {
             refresh.run();
         }
+        panel.tick();
     }
 
     @Override
@@ -113,21 +121,38 @@ final class WatchlistScreen extends Screen {
 
     private static final class WatchlistPanel extends OverlayPanel {
         private static final int ICON_SIZE = 16;
+        private static final int HOVER_DELAY_TICKS = 6;
 
         private final MarketSession market;
         private final UserData userData;
         private final ListView<WatchlistRows.Row> list;
         private final Map<String, ItemStack> icons = new HashMap<>();
         private final Map<String, String> names = new HashMap<>();
+        private final PriceHistoryCache history;
+        private final ChartWidget chart;
         private int version = -1;
+        private String hoveredKey;
+        private String hoveredName = "";
+        private String pendingKey;
+        private String shownKey;
+        private int hoverTicks;
+        private int chartTitleY;
+        private String chartTitle = I18n.get("hugomarket.ah.history.hint");
+        private String trendText = "";
+        private int trendColor = Theme.TEXT_DIM;
 
-        WatchlistPanel(MarketSession market, UserData userData) {
+        WatchlistPanel(MarketSession market, UserData userData, PriceHistoryCache history) {
             this.market = market;
             this.userData = userData;
+            this.history = history;
             setTitle(I18n.get("hugomarket.watchlist.title"));
             list = add(new ListView<>(Theme.ROW_HEIGHT, this::renderRow, this::clicked));
             setHeaderRight(() -> I18n.get("hugomarket.watchlist.count", list.rowCount()));
+            chart = add(new ChartWidget());
+            chart.setEmptyText(I18n.get("hugomarket.ah.history.empty"));
             list.setHoverRenderer((gfx, row, mouseX, mouseY) -> {
+                hoveredKey = ItemKey.parse(row.key()).filled() ? null : row.key();
+                hoveredName = name(row);
                 ItemStack stack = icon(row);
                 if (!stack.isEmpty()) {
                     gfx.itemTooltip(stack, mouseX, mouseY);
@@ -148,6 +173,35 @@ final class WatchlistScreen extends Screen {
         private void rebuild() {
             version = market.version();
             list.setRows(WatchlistRows.build(userData.watchlist(), market.index().query(SearchQuery.EMPTY), market::stats));
+        }
+
+        void tick() {
+            String key = hoveredKey;
+            if (key == null || !key.equals(pendingKey)) {
+                pendingKey = key;
+                hoverTicks = 0;
+                return;
+            }
+            if (++hoverTicks != HOVER_DELAY_TICKS || key.equals(shownKey)) {
+                return;
+            }
+            shownKey = key;
+            chartTitle = I18n.get("hugomarket.ah.history.title", hoveredName);
+            trendText = "";
+            chart.setPoints(List.of());
+            history.load(key, points -> {
+                if (!key.equals(shownKey)) {
+                    return;
+                }
+                List<ChartWidget.Point> chartPoints = new ArrayList<>(points.size());
+                for (PriceJson.HistoryPoint point : points) {
+                    chartPoints.add(new ChartWidget.Point(point.ts(), point.lowestUnitCents(), point.medianUnitCents()));
+                }
+                chart.setPoints(chartPoints);
+                OptionalDouble trend = PriceTrend.ratio(points);
+                trendText = trend.isPresent() ? I18n.get("hugomarket.ah.history.trend", Deals.deltaText(trend.getAsDouble())) : "";
+                trendColor = trend.isPresent() && trend.getAsDouble() >= 1 ? Theme.BARGAIN_FRAME : Theme.DANGER;
+            });
         }
 
         private ItemStack icon(WatchlistRows.Row row) {
@@ -181,7 +235,12 @@ final class WatchlistScreen extends Screen {
             int innerX = x + Theme.PADDING;
             int innerWidth = width - Theme.PADDING * 2;
             int top = contentTop();
-            list.setBounds(innerX, top, innerWidth, y + height - Theme.PADDING - Theme.LINE - Theme.GAP - top);
+            int bottom = y + height - Theme.PADDING - Theme.LINE - Theme.GAP;
+            int chartHeight = Math.max(50, Math.min(100, (bottom - top) / 3));
+            int chartTop = bottom - chartHeight;
+            chartTitleY = chartTop - Theme.LINE;
+            list.setBounds(innerX, top, innerWidth, chartTitleY - Theme.GAP - top);
+            chart.setBounds(innerX, chartTop, innerWidth, chartHeight);
         }
 
         @Override
@@ -189,7 +248,14 @@ final class WatchlistScreen extends Screen {
             if (market.version() != version) {
                 rebuild();
             }
+            hoveredKey = null;
             super.render(gfx, mouseX, mouseY);
+            int innerWidth = width - Theme.PADDING * 2;
+            int trendWidth = trendText.isEmpty() ? 0 : gfx.textWidth(trendText) + Theme.GAP;
+            gfx.textNoShadow(gfx.clip(chartTitle, innerWidth - trendWidth), x + Theme.PADDING, chartTitleY + 1, Theme.TEXT_DIM);
+            if (!trendText.isEmpty()) {
+                gfx.textNoShadow(trendText, x + Theme.PADDING + innerWidth - gfx.textWidth(trendText), chartTitleY + 1, trendColor);
+            }
             String hint = list.rowCount() == 0 ? I18n.get("hugomarket.watchlist.empty") : I18n.get("hugomarket.watchlist.hint");
             gfx.textNoShadow(gfx.clip(hint, width - Theme.PADDING * 2), x + Theme.PADDING, y + height - Theme.PADDING - Theme.LINE + 2, Theme.TEXT_DIM);
         }

@@ -2,12 +2,14 @@ package dev.hugomarket.module.watchlist;
 
 import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleContext;
+import dev.hugomarket.module.ahsearch.PriceHistoryCache;
 import net.minecraft.client.Minecraft;
 
 public final class WatchlistModule implements Module {
     private static final long MAX_STALE_MS = 4_000;
 
     private ModuleContext context;
+    private PriceHistoryCache history;
 
     @Override
     public String id() {
@@ -22,6 +24,7 @@ public final class WatchlistModule implements Module {
     @Override
     public void onEnable(ModuleContext context) {
         this.context = context;
+        history = new PriceHistoryCache(context.hasBackend() ? context.backend() : null, context.scheduler());
         context.menu().add("hugomarket.watchlist.open", this::open);
     }
 
@@ -33,6 +36,6 @@ public final class WatchlistModule implements Module {
         Runnable refresh = context.hasBackend() ? () -> context.listings().request(MAX_STALE_MS) : () -> { };
         refresh.run();
         Minecraft client = Minecraft.getInstance();
-        client.setScreen(new WatchlistScreen(client.screen, context.market(), context.userData(), refresh));
+        client.setScreen(new WatchlistScreen(client.screen, context.market(), context.userData(), history, refresh));
     }
 }
