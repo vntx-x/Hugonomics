@@ -117,6 +117,20 @@ public final class TradeLog {
         return new Summary(spent, income, buys, sells);
     }
 
+    public long[] dailyNet(long now, ZoneId zone, int days) {
+        LocalDate today = LocalDate.ofInstant(Instant.ofEpochMilli(now), zone);
+        LocalDate first = today.minusDays(days - 1L);
+        long[] net = new long[days];
+        for (Trade trade : trades) {
+            LocalDate day = LocalDate.ofInstant(Instant.ofEpochMilli(trade.ts()), zone);
+            int index = (int) (day.toEpochDay() - first.toEpochDay());
+            if (index >= 0 && index < days) {
+                net[index] += trade.isIncome() ? trade.priceCents() : -trade.priceCents();
+            }
+        }
+        return net;
+    }
+
     public Summary today(long now, ZoneId zone) {
         long startOfDay = LocalDate.ofInstant(Instant.ofEpochMilli(now), zone).atStartOfDay(zone).toInstant().toEpochMilli();
         return since(startOfDay);

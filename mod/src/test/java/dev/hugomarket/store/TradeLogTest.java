@@ -36,6 +36,22 @@ class TradeLogTest {
     }
 
     @Test
+    void sumsNetPerCalendarDay(@TempDir Path dir) {
+        long midnight = 1_762_300_800_000L;
+        long now = midnight + 3600_000L;
+        TradeLog log = new TradeLog(dir.resolve("trades.jsonl"));
+        log.record(trade(midnight - 20 * 24 * 3600_000L, TradeLog.Kind.AH_SELL, 9_999));
+        log.record(trade(midnight - 1_000, TradeLog.Kind.AH_BUY, 3_000));
+        log.record(trade(midnight - 2_000, TradeLog.Kind.AH_SELL, 1_000));
+        log.record(trade(midnight + 1_000, TradeLog.Kind.SHOP_SELL, 4_000));
+        long[] net = log.dailyNet(now, ZoneOffset.UTC, 3);
+        assertEquals(3, net.length);
+        assertEquals(0, net[0]);
+        assertEquals(-2_000, net[1]);
+        assertEquals(4_000, net[2]);
+    }
+
+    @Test
     void persistsAndKeepsOnlyLastMonth(@TempDir Path dir) {
         long now = 1_762_300_000_000L;
         TradeLog log = new TradeLog(dir.resolve("trades.jsonl"));

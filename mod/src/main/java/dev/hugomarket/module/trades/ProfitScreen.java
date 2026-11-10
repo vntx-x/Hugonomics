@@ -6,6 +6,7 @@ import dev.hugomarket.store.TradeLog;
 import dev.hugomarket.ui.Gfx;
 import dev.hugomarket.ui.OverlayPanel;
 import dev.hugomarket.ui.Theme;
+import dev.hugomarket.ui.widget.BarChart;
 import dev.hugomarket.ui.widget.Label;
 import dev.hugomarket.ui.widget.ListView;
 import net.minecraft.client.gui.GuiGraphics;
@@ -15,6 +16,7 @@ import net.minecraft.network.chat.Component;
 import org.lwjgl.glfw.GLFW;
 
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -99,7 +101,12 @@ final class ProfitScreen extends Screen {
         private static final long DAY_MS = 24 * 60 * 60_000;
 
         private final TradeLog log;
+        private static final DateTimeFormatter DAY = DateTimeFormatter.ofPattern("dd.MM");
+        private static final int CHART_DAYS = 14;
+        private static final int CHART_HEIGHT = 60;
+
         private final List<Label> lines;
+        private final BarChart chart;
         private final ListView<TradeLog.Trade> trades;
 
         ProfitPanel(TradeLog log) {
@@ -114,6 +121,14 @@ final class ProfitScreen extends Screen {
                     add(new Label(() -> summaryLine("hugomarket.profit.week", week), Theme.TEXT)),
                     add(new Label(() -> summaryLine("hugomarket.profit.month", month), Theme.TEXT)),
                     add(new Label(() -> I18n.get("hugomarket.profit.hint"))));
+            chart = add(new BarChart());
+            long[] daily = log.dailyNet(now, ZoneId.systemDefault(), CHART_DAYS);
+            String[] dayLabels = new String[CHART_DAYS];
+            LocalDate firstDay = LocalDate.ofInstant(Instant.ofEpochMilli(now), ZoneId.systemDefault()).minusDays(CHART_DAYS - 1L);
+            for (int i = 0; i < CHART_DAYS; i++) {
+                dayLabels[i] = DAY.format(firstDay.plusDays(i));
+            }
+            chart.setData(daily, dayLabels);
             trades = add(new ListView<>(10, this::renderTrade, (trade, button) -> {
             }));
             trades.setRows(log.recent(200));
@@ -151,6 +166,8 @@ final class ProfitScreen extends Screen {
                 cursorY += Theme.LINE;
             }
             cursorY += Theme.GAP;
+            chart.setBounds(innerX, cursorY, innerWidth, CHART_HEIGHT);
+            cursorY += CHART_HEIGHT + Theme.GAP;
             trades.setBounds(innerX, cursorY, innerWidth, y + height - Theme.PADDING - cursorY);
         }
     }
