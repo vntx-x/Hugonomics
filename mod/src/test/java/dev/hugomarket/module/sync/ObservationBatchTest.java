@@ -2,6 +2,7 @@ package dev.hugomarket.module.sync;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import dev.hugomarket.model.ItemView;
 import dev.hugomarket.model.Listing;
 import dev.hugomarket.parse.AhListingParser;
 import dev.hugomarket.parse.HugoGuiRules;
@@ -41,6 +42,18 @@ class ObservationBatchTest {
         List<Listing> own = parser.parse(DumpLoader.container("ah-own-laufend/ah-own-laufend-1.json")).listings();
         JsonObject batch = ObservationBatch.build(own, "11111111-1111-4111-8111-111111111111", "0.0.1", "1.21.5", 0, "p");
         assertEquals(0, batch.getAsJsonArray("listings").size());
+    }
+
+    @Test
+    void blankDisplayNameFallsBackToKey() {
+        Listing real = parser.parse(DumpLoader.container("ah-list/ah-list-2.json")).listings().get(0);
+        ItemView i = real.item();
+        ItemView unnamed = new ItemView(i.id(), i.count(), " ", i.lore(), i.enchantments(), i.storedEnchantments(), i.potion(),
+                i.itemModel(), i.customModelData(), i.spawnerEntity(), i.customName(), i.bukkitValues(), i.contents());
+        Listing listing = new Listing(real.slot(), unnamed, real.key(), real.priceCents(), real.seller(),
+                real.expiresInSeconds(), real.status(), real.own());
+        JsonObject batch = ObservationBatch.build(List.of(listing), "11111111-1111-4111-8111-111111111111", "0.0.1", "1.21.5", 0, "p");
+        assertEquals("nether_star", batch.getAsJsonArray("listings").get(0).getAsJsonObject().get("displayName").getAsString());
     }
 
     @Test

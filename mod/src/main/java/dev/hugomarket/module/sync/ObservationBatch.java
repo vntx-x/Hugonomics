@@ -30,7 +30,7 @@ public final class ObservationBatch {
             JsonObject entry = new JsonObject();
             entry.addProperty("key", listing.key().toString());
             entry.addProperty("baseId", listing.item().id());
-            String name = listing.item().displayName();
+            String name = listing.item().displayName().isBlank() ? listing.key().toString() : listing.item().displayName().strip();
             entry.addProperty("displayName", name.length() > MAX_NAME ? name.substring(0, MAX_NAME) : name);
             entry.addProperty("count", listing.item().count());
             entry.addProperty("priceCents", listing.priceCents());
