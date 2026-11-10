@@ -18,6 +18,8 @@ import dev.hugomarket.module.containervalue.ContainerValueModule;
 import dev.hugomarket.module.deals.DealsModule;
 import dev.hugomarket.module.dumper.DumperModule;
 import dev.hugomarket.module.farm.FarmModule;
+import dev.hugomarket.module.hudstatus.HudStatusModule;
+import dev.hugomarket.module.hudwatch.HudWatchModule;
 import dev.hugomarket.module.market.MarketModule;
 import dev.hugomarket.module.colorcodes.ColorCodesModule;
 import dev.hugomarket.module.minutetest.MinuteTestModule;
@@ -30,6 +32,7 @@ import dev.hugomarket.module.sellstats.SellStatsModule;
 import dev.hugomarket.module.sync.SyncModule;
 import dev.hugomarket.module.tooltips.TooltipsModule;
 import dev.hugomarket.module.trades.TradeLogModule;
+import dev.hugomarket.module.watchalerts.WatchAlertsModule;
 import dev.hugomarket.module.watchlist.WatchlistModule;
 import dev.hugomarket.net.BackendClient;
 import dev.hugomarket.parse.HugoGuiRules;
@@ -37,8 +40,10 @@ import dev.hugomarket.parse.ScreenClassifier;
 import dev.hugomarket.store.MarketSession;
 import dev.hugomarket.store.PriceStore;
 import dev.hugomarket.store.RemoteListingsFeed;
+import dev.hugomarket.store.HudBoard;
 import dev.hugomarket.store.StatusBoard;
 import dev.hugomarket.store.UserData;
+import dev.hugomarket.ui.HudOverlay;
 import dev.hugomarket.ui.KeyBindings;
 import dev.hugomarket.ui.MenuButtonPanel;
 import dev.hugomarket.ui.OverlayManager;
@@ -86,8 +91,10 @@ public final class HugoMarketClient implements ClientModInitializer {
         });
         RemoteListingsFeed listings = backend == null ? null : new RemoteListingsFeed(backend, scheduler, market);
         StatusBoard status = new StatusBoard();
+        HudBoard hud = new HudBoard();
+        new HudOverlay(hud, server).register();
         ModuleContext context = new ModuleContext(config, scheduler, server, containers, screens, guiRules, overlays, market,
-                userData, backend, listings, menuActions, status, dataDir);
+                userData, backend, listings, menuActions, status, hud, dataDir);
         new FirstStartHint(config, server, scheduler).register();
         SellStatsModule sellStats = new SellStatsModule();
         FarmModule farm = new FarmModule();
@@ -96,7 +103,7 @@ public final class HugoMarketClient implements ClientModInitializer {
         registry = new ModuleRegistry(context, List.of(new DumperModule(), new AhSearchModule(), new SellAssistModule(),
                 new TooltipsModule(), new ContainerValueModule(), new CalcModule(), new OrdersModule(), sellStats,
                 new MarketModule(), new AlertsModule(), new MyAuctionsModule(), farm, minuteTest, trades, new ColorCodesModule(),
-                new NetWorthModule(), new DealsModule(), new WatchlistModule(), new SyncModule(), new MonitorModule()));
+                new NetWorthModule(), new DealsModule(), new WatchlistModule(), new HudStatusModule(), new HudWatchModule(), new WatchAlertsModule(), new SyncModule(), new MonitorModule()));
         registry.start();
         if (registry.isRunning(sellStats.id())) {
             if (registry.isRunning(farm.id())) {
