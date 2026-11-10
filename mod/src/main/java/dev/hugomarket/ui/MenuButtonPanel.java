@@ -15,6 +15,7 @@ public final class MenuButtonPanel extends OverlayPanel {
 
     private final Chip button;
     private final StatusBoard status;
+    private final int guiRight;
     private int version = -1;
     private String today = "";
     private String worth = "";
@@ -26,6 +27,7 @@ public final class MenuButtonPanel extends OverlayPanel {
         AbstractContainerScreenAccessor accessor = (AbstractContainerScreenAccessor) screen;
         int left = accessor.hugomarket$leftPos();
         int top = accessor.hugomarket$topPos() + accessor.hugomarket$imageHeight() + GAP_ABOVE;
+        guiRight = left + accessor.hugomarket$imageWidth();
         setBounds(left, top, BUTTON_WIDTH, HEIGHT);
     }
 
@@ -45,11 +47,13 @@ public final class MenuButtonPanel extends OverlayPanel {
         if (today.isEmpty() && worth.isEmpty()) {
             return;
         }
-        int textY = y + (height - gfx.lineHeight()) / 2 + 1;
-        int textX = x + width + TEXT_PADDING;
         int boxWidth = gfx.textWidth(today) + gfx.textWidth(worth) + TEXT_PADDING * 2 + (today.isEmpty() || worth.isEmpty() ? 0 : TEXT_PADDING);
-        gfx.fill(textX - 2, y, boxWidth, height, Theme.PANEL_BG);
-        gfx.border(textX - 2, y, boxWidth, height, Theme.PANEL_BORDER);
+        boolean below = x + width + TEXT_PADDING - 2 + boxWidth > guiRight;
+        int boxY = below ? y + height + GAP_ABOVE : y;
+        int textY = boxY + (height - gfx.lineHeight()) / 2 + 1;
+        int textX = below ? x + 2 : x + width + TEXT_PADDING;
+        gfx.fill(textX - 2, boxY, boxWidth, height, Theme.PANEL_BG);
+        gfx.border(textX - 2, boxY, boxWidth, height, Theme.PANEL_BORDER);
         if (!today.isEmpty()) {
             gfx.textNoShadow(today, textX + 2, textY, todayColor);
             textX += gfx.textWidth(today) + TEXT_PADDING;

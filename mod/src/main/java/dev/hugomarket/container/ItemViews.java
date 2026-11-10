@@ -64,7 +64,8 @@ public final class ItemViews {
                 spawnerEntity(stack),
                 customName == null ? null : customName.getString(),
                 bukkitValues(stack.get(DataComponents.CUSTOM_DATA)),
-                contents(stack.get(DataComponents.CONTAINER), depth));
+                contents(stack.get(DataComponents.CONTAINER), depth),
+                Boolean.TRUE.equals(stack.get(DataComponents.ENCHANTMENT_GLINT_OVERRIDE)));
     }
 
     private static Map<String, Integer> enchantments(ItemEnchantments enchantments) {

@@ -72,6 +72,15 @@ class ItemKeyFactoryTest {
     }
 
     @Test
+    void glintOverrideSeparatesHugoEnchantedApples() {
+        ItemView plain = item("minecraft:golden_apple", Map.of(), Map.of(), null, null, List.of(), null, null);
+        ItemView glowing = new ItemView("minecraft:golden_apple", 1, " Verzauberter goldener Apfel", List.of(), Map.of(), Map.of(),
+                null, null, List.of(), null, " Verzauberter goldener Apfel", Map.of(), List.of(), true);
+        assertEquals("golden_apple", ItemKeyFactory.of(plain).toString());
+        assertEquals("golden_apple#glint", ItemKeyFactory.of(glowing).toString());
+    }
+
+    @Test
     void customModelDataWithoutModelBecomesVariant() {
         ItemKey key = ItemKeyFactory.of(item("minecraft:paper", Map.of(), Map.of(), null, null, List.of(20005f), null, null));
         assertEquals("paper#cmd20005", key.toString());

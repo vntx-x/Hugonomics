@@ -9,6 +9,7 @@ import java.util.Map;
 
 public final class ItemKeyFactory {
     private static final String VANILLA = "minecraft:";
+    private static final String GLINT = "glint";
 
     private ItemKeyFactory() {
     }
@@ -27,6 +28,9 @@ public final class ItemKeyFactory {
         }
         if (!customModel && !item.customModelData().isEmpty()) {
             features.add("cmd" + Math.round(item.customModelData().get(0)));
+        }
+        if (item.glint() && item.enchantments().isEmpty() && item.storedEnchantments().isEmpty()) {
+            features.add(GLINT);
         }
         if (item.hasContents()) {
             features.add(ItemKey.FILLED);
