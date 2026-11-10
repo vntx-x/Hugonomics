@@ -177,7 +177,7 @@ final class DealsScreen extends Screen {
         private void rebuild() {
             version = market.version();
             List<ListingIndex.Entry> entries = market.index().query(SearchQuery.EMPTY);
-            list.setRows(DealFinder.find(entries, market::stats, fees, filter, order));
+            list.setRows(DealFinder.find(entries, market::stats, market.orders()::best, fees, filter, order));
         }
 
         private ItemStack icon(ListingIndex.Entry entry) {
@@ -217,10 +217,10 @@ final class DealsScreen extends Screen {
             if (!stack.isEmpty()) {
                 gfx.item(stack, rowX + 3, rowY + (rowHeight - ICON_SIZE) / 2);
             }
-            int mark = Deals.isSuspicious(deal.ratio()) ? Theme.WATCH_FRAME : Theme.BARGAIN_FRAME;
+            int mark = deal.viaOrder() ? Theme.ACCENT : Deals.isSuspicious(deal.ratio()) ? Theme.WATCH_FRAME : Theme.BARGAIN_FRAME;
             gfx.fill(rowX, rowY + 1, 2, rowHeight - 2, mark);
             String profit = "+" + Money.compact(deal.profitCents());
-            String discount = Deals.deltaText(deal.ratio());
+            String discount = deal.viaOrder() ? I18n.get("hugomarket.deals.to_order") : Deals.deltaText(deal.ratio());
             int rightWidth = Math.max(gfx.textWidth(profit), gfx.textWidth(discount));
             int textX = rowX + ICON_SIZE + 6;
             int nameWidth = rowWidth - ICON_SIZE - 12 - rightWidth;

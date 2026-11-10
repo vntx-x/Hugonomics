@@ -6,6 +6,7 @@ import dev.hugomarket.model.Listing;
 import dev.hugomarket.model.ListingStatus;
 import dev.hugomarket.module.ahsearch.ListingIndex;
 import dev.hugomarket.store.Fees;
+import dev.hugomarket.store.OrderBook;
 import dev.hugomarket.store.PriceStats;
 import org.junit.jupiter.api.Test;
 
@@ -39,7 +40,7 @@ class DealFinderTest {
                 entry("diamond", "Diamant", 1, 95_00),
                 entry("emerald", "Smaragd", 10, 300_00),
                 entry("gold", "Gold", 1, 1_00));
-        List<DealFinder.Deal> deals = DealFinder.find(entries, DealFinderTest::stats, FEES, "", DealFinder.Order.PROFIT);
+        List<DealFinder.Deal> deals = DealFinder.find(entries, DealFinderTest::stats, key -> null, FEES, "", DealFinder.Order.PROFIT);
         assertEquals(2, deals.size());
         assertEquals("Smaragd", deals.get(0).entry().listing().item().displayName());
         assertEquals(500_00 - 5_00 - 300_00, deals.get(0).profitCents());
@@ -47,10 +48,30 @@ class DealFinderTest {
     }
 
     @Test
+    void orderFlipsBeatAhResaleWhenTheyPayMore() {
+        OrderBook.BestOrder goldOrder = new OrderBook.BestOrder("gold", 3_00, 100, "x", 0);
+        OrderBook.BestOrder diamondOrder = new OrderBook.BestOrder("diamond", 200_00, 10, "x", 0);
+        List<ListingIndex.Entry> entries = List.of(entry("gold", "Gold", 10, 20_00), entry("diamond", "Diamant", 1, 95_00));
+        List<DealFinder.Deal> deals = DealFinder.find(entries, DealFinderTest::stats,
+                key -> switch (key) {
+                    case "gold" -> goldOrder;
+                    case "diamond" -> diamondOrder;
+                    default -> null;
+                }, FEES, "", DealFinder.Order.PROFIT);
+        assertEquals(2, deals.size());
+        assertEquals("Diamant", deals.get(0).entry().listing().item().displayName());
+        assertTrue(deals.get(0).viaOrder());
+        assertEquals(105_00, deals.get(0).profitCents());
+        assertTrue(deals.get(1).viaOrder());
+        assertEquals(10_00, deals.get(1).profitCents());
+        assertTrue(Double.isNaN(deals.get(1).ratio()));
+    }
+
+    @Test
     void discountOrderAndFilter() {
         List<ListingIndex.Entry> entries = List.of(entry("diamond", "Diamant", 2, 120_00), entry("emerald", "Smaragd", 10, 300_00));
-        List<DealFinder.Deal> byDiscount = DealFinder.find(entries, DealFinderTest::stats, FEES, "", DealFinder.Order.DISCOUNT);
+        List<DealFinder.Deal> byDiscount = DealFinder.find(entries, DealFinderTest::stats, key -> null, FEES, "", DealFinder.Order.DISCOUNT);
         assertEquals("Diamant", byDiscount.get(0).entry().listing().item().displayName());
-        assertTrue(DealFinder.find(entries, DealFinderTest::stats, FEES, "smar", DealFinder.Order.PROFIT).size() == 1);
+        assertTrue(DealFinder.find(entries, DealFinderTest::stats, key -> null, FEES, "smar", DealFinder.Order.PROFIT).size() == 1);
     }
 }
