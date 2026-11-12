@@ -44,6 +44,8 @@ function datenschutz(info: LegalInfo | null): string {
 <p>Verantwortlich: ${responsible}</p>
 <h2>Was dieser Server verarbeitet</h2>
 <p>Die Hugonomics-Mod sendet Beobachtungen aus dem Auktionshaus von HugoSMP: Item, Anzahl, Preis, Restzeit und einen Hash des Verkäufernamens. Dazu eine zufällig erzeugte Client-ID, die Mod-Version und die Minecraft-Version. Es werden keine Minecraft-Accountnamen, keine Account-UUIDs und keine Koordinaten übertragen.</p>
+<h2>Spawner-Börse (nur wenn du sie benutzt)</h2>
+<p>Wenn du in der Spawner-Börse ein Angebot einstellst, anfragst oder bewertest, bestätigt deine Mod einmal über den Mojang-Sitzungsserver, dass du der Besitzer deines Minecraft-Accounts bist (dasselbe Verfahren wie beim Betreten eines Minecraft-Servers). Dein Login-Token geht dabei nur an Mojang, nie an diesen Server. Gespeichert werden dein Minecraft-Name, ein Hash deiner Account-UUID, deine Angebote (Spawner-Typ, Anzahl, Preis), Anfragen und Gegenangebote sowie abgegebene Sterne-Bewertungen. Dein Name, deine Angebote und deine durchschnittliche Bewertung sind für alle Nutzer der Mod sichtbar, Anfragen nur für die beiden Beteiligten. Angebote laufen nach 3 Tagen ab, Anfragen mit dem Angebot, angenommene Deals 7 Tage nach Annahme. Bewertungen bleiben gespeichert, solange der Dienst läuft. Rechtsgrundlage ist deine Einwilligung durch die Nutzung der Börse (Art. 6 Abs. 1 lit. a DSGVO), Löschung auf Anfrage.</p>
 <h2>Wofür</h2>
 <p>Aus den Beobachtungen werden Marktpreise und Preisverläufe berechnet und allen Nutzern der Mod bereitgestellt. Die Client-ID dient der Missbrauchsabwehr (Ratenbegrenzung, Plausibilitätsprüfung).</p>
 <h2>Speicherdauer</h2>

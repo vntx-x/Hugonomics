@@ -42,6 +42,45 @@ const statements = [
      version text not null,
      observations integer not null
    )`,
+  `create table if not exists spawner_offers (
+     id varchar(32) primary key,
+     type varchar(40) not null,
+     side varchar(4) not null,
+     count integer not null,
+     unit_cents bigint not null,
+     player varchar(16) not null,
+     owner_hash varchar(64) not null,
+     created_at bigint not null,
+     expires_at bigint not null
+   )`,
+  `create index if not exists spawner_offers_expires_at on spawner_offers (expires_at)`,
+  `create table if not exists spawner_requests (
+     id varchar(32) primary key,
+     offer_id varchar(32) not null,
+     type varchar(40) not null,
+     offer_side varchar(4) not null,
+     offer_owner_hash varchar(64) not null,
+     offer_owner_player varchar(16) not null,
+     from_hash varchar(64) not null,
+     from_player varchar(16) not null,
+     count integer not null,
+     unit_cents bigint not null,
+     turn varchar(5) not null,
+     status varchar(8) not null,
+     rounds integer not null,
+     created_at bigint not null,
+     updated_at bigint not null,
+     expires_at bigint not null
+   )`,
+  `create index if not exists spawner_requests_expires_at on spawner_requests (expires_at)`,
+  `create table if not exists spawner_ratings (
+     request_id varchar(32) not null,
+     from_hash varchar(64) not null,
+     to_hash varchar(64) not null,
+     stars integer not null,
+     created_at bigint not null,
+     primary key (request_id, from_hash)
+   )`,
 ];
 
 async function main(): Promise<void> {

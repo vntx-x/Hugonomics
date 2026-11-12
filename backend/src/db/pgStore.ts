@@ -1,9 +1,10 @@
-import { and, asc, desc, eq, gte, inArray, lt, lte, sql } from "drizzle-orm";
+import { and, asc, desc, eq, gt, gte, inArray, lt, lte, sql } from "drizzle-orm";
 import { drizzle, type PostgresJsDatabase } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
+import type { SpawnerOffer, SpawnerRating, SpawnerRequest } from "../domain/spawnerOffers.js";
 import type { ItemSummary, ListingRecord } from "../domain/types.js";
 import type { ClientRecord, SnapshotRecord, Store } from "../store/store.js";
-import { clients, listings, observations, priceSnapshots } from "./schema.js";
+import { clients, listings, observations, priceSnapshots, spawnerOffers, spawnerRatings, spawnerRequests } from "./schema.js";
 
 export class PgStore implements Store {
   private readonly db: PostgresJsDatabase;
@@ -136,6 +137,78 @@ export class PgStore implements Store {
   async client(clientId: string): Promise<ClientRecord | null> {
     const rows = await this.db.select().from(clients).where(eq(clients.clientId, clientId)).limit(1);
     return rows[0] ?? null;
+  }
+
+  async spawnerOffers(now: number): Promise<SpawnerOffer[]> {
+    const rows = await this.db.select().from(spawnerOffers).where(gt(spawnerOffers.expiresAt, now));
+    return rows.map((row) => ({
+      ...row,
+      side: row.side === "buy" ? "buy" : "sell",
+      unitCents: Number(row.unitCents),
+      createdAt: Number(row.createdAt),
+      expiresAt: Number(row.expiresAt),
+    }));
+  }
+
+  async putSpawnerOffer(offer: SpawnerOffer): Promise<void> {
+    await this.db.insert(spawnerOffers).values(offer);
+  }
+
+  async deleteSpawnerOffer(id: string, ownerHash: string): Promise<boolean> {
+    const removed = await this.db
+      .delete(spawnerOffers)
+      .where(and(eq(spawnerOffers.id, id), eq(spawnerOffers.ownerHash, ownerHash)))
+      .returning({ id: spawnerOffers.id });
+    return removed.length > 0;
+  }
+
+  async spawnerRequests(now: number): Promise<SpawnerRequest[]> {
+    const rows = await this.db.select().from(spawnerRequests).where(gt(spawnerRequests.expiresAt, now));
+    return rows.map((row) => ({
+      ...row,
+      offerSide: row.offerSide === "buy" ? "buy" : "sell",
+      turn: row.turn === "owner" ? "owner" : "from",
+      status: row.status === "accepted" || row.status === "declined" ? row.status : "open",
+      unitCents: Number(row.unitCents),
+      createdAt: Number(row.createdAt),
+      updatedAt: Number(row.updatedAt),
+      expiresAt: Number(row.expiresAt),
+    }));
+  }
+
+  async putSpawnerRequest(request: SpawnerRequest): Promise<void> {
+    await this.db
+      .insert(spawnerRequests)
+      .values(request)
+      .onConflictDoUpdate({
+        target: spawnerRequests.id,
+        set: {
+          count: request.count,
+          unitCents: request.unitCents,
+          turn: request.turn,
+          status: request.status,
+          rounds: request.rounds,
+          updatedAt: request.updatedAt,
+          expiresAt: request.expiresAt,
+        },
+      });
+  }
+
+  async spawnerRatings(): Promise<SpawnerRating[]> {
+    const rows = await this.db.select().from(spawnerRatings);
+    return rows.map((row) => ({ ...row, createdAt: Number(row.createdAt) }));
+  }
+
+  async putSpawnerRating(rating: SpawnerRating): Promise<boolean> {
+    const inserted = await this.db.insert(spawnerRatings).values(rating).onConflictDoNothing().returning({ id: spawnerRatings.requestId });
+    return inserted.length > 0;
+  }
+
+  async deleteSpawnerRequests(ids: string[]): Promise<void> {
+    if (ids.length === 0) {
+      return;
+    }
+    await this.db.delete(spawnerRequests).where(inArray(spawnerRequests.id, ids));
   }
 }
 

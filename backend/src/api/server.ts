@@ -1,5 +1,7 @@
 import Fastify, { type FastifyInstance } from "fastify";
 import type { AppConfig } from "../config.js";
+import { MojangSessionVerifier, PlayerAuth, type SessionVerifier } from "../service/playerAuth.js";
+import { registerSpawnerRoutes } from "./spawnerRoutes.js";
 import { EMPTY_SPAWNER_PRICES, type SpawnerPriceList } from "../domain/spawnerPrices.js";
 import { observationBatchSchema, priceBatchSchema } from "../domain/validation.js";
 import { IngestService } from "../service/ingest.js";
@@ -14,6 +16,7 @@ export interface ServerDeps {
   now?: () => number;
   legal?: LegalInfo | null;
   spawnerPrices?: SpawnerPriceList;
+  sessionVerifier?: SessionVerifier;
 }
 
 const HOUR = 60 * 60 * 1000;
@@ -48,6 +51,7 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
   const prices = new PriceService(deps.store, rules);
   const uploadLimiter = new RateLimiter(30, 60_000);
   const queryLimiter = new RateLimiter(120, 60_000);
+  const auth = new PlayerAuth(deps.sessionVerifier ?? new MojangSessionVerifier(), deps.config.pepper);
   const app = Fastify({ logger: false });
 
   app.get("/v1/meta", async () => ({
@@ -126,6 +130,8 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
   });
 
   app.get("/v1/spawners", async () => deps.spawnerPrices ?? EMPTY_SPAWNER_PRICES);
+
+  registerSpawnerRoutes(app, { store: deps.store, auth, prices: deps.spawnerPrices ?? EMPTY_SPAWNER_PRICES, now });
 
   app.get("/healthz", async () => ({ ok: true }));
   registerLegalRoutes(app, deps.legal ?? null);

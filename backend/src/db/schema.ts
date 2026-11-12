@@ -45,6 +45,57 @@ export const priceSnapshots = pgTable(
   (table) => [primaryKey({ columns: [table.itemKey, table.bucketTs] })],
 );
 
+export const spawnerOffers = pgTable(
+  "spawner_offers",
+  {
+    id: varchar("id", { length: 32 }).primaryKey(),
+    type: varchar("type", { length: 40 }).notNull(),
+    side: varchar("side", { length: 4 }).notNull(),
+    count: integer("count").notNull(),
+    unitCents: bigint("unit_cents", { mode: "number" }).notNull(),
+    player: varchar("player", { length: 16 }).notNull(),
+    ownerHash: varchar("owner_hash", { length: 64 }).notNull(),
+    createdAt: bigint("created_at", { mode: "number" }).notNull(),
+    expiresAt: bigint("expires_at", { mode: "number" }).notNull(),
+  },
+  (table) => [index("spawner_offers_expires_at").on(table.expiresAt)],
+);
+
+export const spawnerRequests = pgTable(
+  "spawner_requests",
+  {
+    id: varchar("id", { length: 32 }).primaryKey(),
+    offerId: varchar("offer_id", { length: 32 }).notNull(),
+    type: varchar("type", { length: 40 }).notNull(),
+    offerSide: varchar("offer_side", { length: 4 }).notNull(),
+    offerOwnerHash: varchar("offer_owner_hash", { length: 64 }).notNull(),
+    offerOwnerPlayer: varchar("offer_owner_player", { length: 16 }).notNull(),
+    fromHash: varchar("from_hash", { length: 64 }).notNull(),
+    fromPlayer: varchar("from_player", { length: 16 }).notNull(),
+    count: integer("count").notNull(),
+    unitCents: bigint("unit_cents", { mode: "number" }).notNull(),
+    turn: varchar("turn", { length: 5 }).notNull(),
+    status: varchar("status", { length: 8 }).notNull(),
+    rounds: integer("rounds").notNull(),
+    createdAt: bigint("created_at", { mode: "number" }).notNull(),
+    updatedAt: bigint("updated_at", { mode: "number" }).notNull(),
+    expiresAt: bigint("expires_at", { mode: "number" }).notNull(),
+  },
+  (table) => [index("spawner_requests_expires_at").on(table.expiresAt)],
+);
+
+export const spawnerRatings = pgTable(
+  "spawner_ratings",
+  {
+    requestId: varchar("request_id", { length: 32 }).notNull(),
+    fromHash: varchar("from_hash", { length: 64 }).notNull(),
+    toHash: varchar("to_hash", { length: 64 }).notNull(),
+    stars: integer("stars").notNull(),
+    createdAt: bigint("created_at", { mode: "number" }).notNull(),
+  },
+  (table) => [primaryKey({ columns: [table.requestId, table.fromHash] })],
+);
+
 export const clients = pgTable("clients", {
   clientId: varchar("client_id", { length: 36 }).primaryKey(),
   firstSeen: bigint("first_seen", { mode: "number" }).notNull(),

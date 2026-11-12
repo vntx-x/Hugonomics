@@ -1,3 +1,4 @@
+import type { SpawnerOffer, SpawnerRating, SpawnerRequest } from "../domain/spawnerOffers.js";
 import type { ItemSummary, ListingRecord } from "../domain/types.js";
 
 export interface ClientRecord {
@@ -30,4 +31,12 @@ export interface Store {
   putSnapshots(snapshots: SnapshotRecord[]): Promise<void>;
   history(key: string, from: number, to: number): Promise<SnapshotRecord[]>;
   purge(observationsBefore: number, listingsLastSeenBefore: number): Promise<{ observations: number; listings: number }>;
+  spawnerOffers(now: number): Promise<SpawnerOffer[]>;
+  putSpawnerOffer(offer: SpawnerOffer): Promise<void>;
+  deleteSpawnerOffer(id: string, ownerHash: string): Promise<boolean>;
+  spawnerRequests(now: number): Promise<SpawnerRequest[]>;
+  putSpawnerRequest(request: SpawnerRequest): Promise<void>;
+  deleteSpawnerRequests(ids: string[]): Promise<void>;
+  spawnerRatings(): Promise<SpawnerRating[]>;
+  putSpawnerRating(rating: SpawnerRating): Promise<boolean>;
 }
