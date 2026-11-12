@@ -3,7 +3,6 @@ package dev.hugomarket.module.watchlist;
 import dev.hugomarket.core.Module;
 import dev.hugomarket.core.ModuleContext;
 import dev.hugomarket.module.ahsearch.PriceHistoryCache;
-import dev.hugomarket.module.ahsearch.SearchQuery;
 import net.minecraft.client.Minecraft;
 
 public final class WatchlistModule implements Module {
@@ -37,8 +36,6 @@ public final class WatchlistModule implements Module {
         Runnable refresh = context.hasBackend() ? () -> context.listings().request(MAX_STALE_MS) : () -> { };
         refresh.run();
         Minecraft client = Minecraft.getInstance();
-        WatchlistScreen.Page page = new WatchlistScreen.Page("hugomarket.watchlist.title", "hugomarket.watchlist.hint", "hugomarket.watchlist.empty",
-                () -> WatchlistRows.build(context.userData().watchlist(), context.market().index().query(SearchQuery.EMPTY), context.market()::stats));
-        client.setScreen(new WatchlistScreen(client.screen, page, context.market(), context.userData(), history, refresh));
+        client.setScreen(new WatchlistScreen(client.screen, context.market(), context.userData(), history, refresh));
     }
 }

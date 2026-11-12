@@ -104,7 +104,7 @@ public final class MenuScreen extends Screen {
         private static final float BANNER_SCALE = 1.5f;
         private static final String[] GROUPS = {"ah", "sell", "chests", "shop", "tools", "system"};
         private static final Map<String, String> GROUP_OF = Map.ofEntries(
-                Map.entry("ahsearch", "ah"), Map.entry("myauctions", "ah"), Map.entry("alerts", "ah"), Map.entry("deals", "ah"), Map.entry("spawners", "ah"),
+                Map.entry("ahsearch", "ah"), Map.entry("myauctions", "ah"), Map.entry("alerts", "ah"), Map.entry("deals", "ah"),
                 Map.entry("sellassist", "sell"), Map.entry("orders", "sell"),
                 Map.entry("containervalue", "chests"), Map.entry("farm", "chests"), Map.entry("tooltips", "chests"),
                 Map.entry("sellstats", "shop"), Map.entry("minutetest", "shop"),
