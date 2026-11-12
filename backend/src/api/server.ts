@@ -1,5 +1,6 @@
 import Fastify, { type FastifyInstance } from "fastify";
 import type { AppConfig } from "../config.js";
+import { EMPTY_SPAWNER_PRICES, type SpawnerPriceList } from "../domain/spawnerPrices.js";
 import { observationBatchSchema, priceBatchSchema } from "../domain/validation.js";
 import { IngestService } from "../service/ingest.js";
 import { PriceService } from "../service/prices.js";
@@ -12,6 +13,7 @@ export interface ServerDeps {
   store: Store;
   now?: () => number;
   legal?: LegalInfo | null;
+  spawnerPrices?: SpawnerPriceList;
 }
 
 const HOUR = 60 * 60 * 1000;
@@ -122,6 +124,8 @@ export function buildServer(deps: ServerDeps): FastifyInstance {
     const points = await deps.store.history(request.params.key, to - rangeMs, to);
     return { key: request.params.key, from: to - rangeMs, to, points };
   });
+
+  app.get("/v1/spawners", async () => deps.spawnerPrices ?? EMPTY_SPAWNER_PRICES);
 
   app.get("/healthz", async () => ({ ok: true }));
   registerLegalRoutes(app, deps.legal ?? null);

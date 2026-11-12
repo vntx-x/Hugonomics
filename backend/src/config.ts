@@ -7,6 +7,7 @@ export interface AppConfig {
   confirmGapMs: number;
   monitorFlag: boolean;
   trustedClients: ReadonlySet<string>;
+  spawnerPricesFile: string;
 }
 
 export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
@@ -19,5 +20,6 @@ export function loadConfig(env: NodeJS.ProcessEnv = process.env): AppConfig {
     confirmGapMs: Number(env.CONFIRM_GAP_MS ?? 60 * 1000),
     monitorFlag: env.MONITOR_FLAG === "true",
     trustedClients: new Set((env.TRUSTED_CLIENTS ?? "").split(",").map((s) => s.trim()).filter((s) => s.length > 0)),
+    spawnerPricesFile: env.SPAWNER_PRICES_FILE ?? "data/spawner-prices.json",
   };
 }

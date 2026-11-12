@@ -2,12 +2,13 @@ import { legalFromEnv } from "./api/legal.js";
 import { buildServer } from "./api/server.js";
 import { loadConfig } from "./config.js";
 import { PgStore } from "./db/pgStore.js";
+import { loadSpawnerPrices } from "./domain/spawnerPrices.js";
 import { startJobs } from "./jobs/snapshots.js";
 import { MemoryStore } from "./store/memoryStore.js";
 
 const config = loadConfig();
 const store = config.databaseUrl ? new PgStore(config.databaseUrl) : new MemoryStore();
-const app = buildServer({ config, store, legal: legalFromEnv() });
+const app = buildServer({ config, store, legal: legalFromEnv(), spawnerPrices: loadSpawnerPrices(config.spawnerPricesFile) });
 const stopJobs = startJobs(store, { confirmGapMs: config.confirmGapMs, activeWindowMs: config.activeWindowMs }, (message) =>
   console.log(`[jobs] ${message}`),
 );

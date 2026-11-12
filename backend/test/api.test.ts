@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildServer } from "../src/api/server.js";
 import { loadConfig } from "../src/config.js";
+import { loadSpawnerPrices } from "../src/domain/spawnerPrices.js";
 import { MemoryStore } from "../src/store/memoryStore.js";
 
 const CLIENT_A = "11111111-1111-4111-8111-111111111111";
@@ -44,6 +45,14 @@ describe("api", () => {
     const body = response.json();
     expect(body.fees.auctionListingFeePercent).toBe(1);
     expect(body.flags.sellmacro).toBe(false);
+  });
+
+  it("serves the bundled spawner price list", async () => {
+    const spawnerPrices = loadSpawnerPrices("data/spawner-prices.json");
+    const app = buildServer({ config: loadConfig({}), store: new MemoryStore(), spawnerPrices });
+    const response = await app.inject({ method: "GET", url: "/v1/spawners" });
+    expect(response.statusCode).toBe(200);
+    expect(response.json()).toEqual(spawnerPrices);
   });
 
   it("lists active listings without seller hashes", async () => {
