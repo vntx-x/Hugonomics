@@ -1,6 +1,7 @@
 package dev.hugomarket.store;
 
 import dev.hugomarket.model.ContainerView;
+import dev.hugomarket.model.ItemKey;
 import dev.hugomarket.model.ItemView;
 import dev.hugomarket.model.SlotView;
 import dev.hugomarket.parse.HugoLore;
@@ -65,18 +66,27 @@ public record ContainerValuation(
                     hugoBase += worth.get().baseCents();
                 }
             }
-            PriceStats stats = market.stats(ItemKeyFactory.of(item));
-            if (stats != null) {
-                valued++;
-                ahLowest += stats.lowestUnitCents() * item.count();
-                ahMedian += stats.medianUnitCents() * item.count();
-            } else if (item.hasContents()) {
+            ItemKey key = ItemKeyFactory.of(item);
+            if (item.hasContents()) {
+                addPrice(market.stats(key.withoutFilled()), item.count());
                 for (ItemView inner : item.contents()) {
                     add(inner, market, false);
                 }
-            } else {
+                return;
+            }
+            if (!addPrice(market.stats(key), item.count())) {
                 unvalued++;
             }
+        }
+
+        private boolean addPrice(PriceStats stats, int count) {
+            if (stats == null) {
+                return false;
+            }
+            valued++;
+            ahLowest += stats.lowestUnitCents() * count;
+            ahMedian += stats.medianUnitCents() * count;
+            return true;
         }
 
         ContainerValuation result() {

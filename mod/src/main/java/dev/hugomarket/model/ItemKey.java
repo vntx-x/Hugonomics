@@ -17,6 +17,22 @@ public record ItemKey(String base, String variant, boolean renamed) {
         return false;
     }
 
+    public ItemKey withoutFilled() {
+        if (!filled()) {
+            return this;
+        }
+        StringBuilder rest = new StringBuilder(variant.length());
+        for (String feature : variant.split(";")) {
+            if (!feature.equals(FILLED)) {
+                if (!rest.isEmpty()) {
+                    rest.append(';');
+                }
+                rest.append(feature);
+            }
+        }
+        return new ItemKey(base, rest.toString(), renamed);
+    }
+
     public static ItemKey parse(String text) {
         int hash = text.indexOf('#');
         return hash < 0 ? new ItemKey(text, "", false) : new ItemKey(text.substring(0, hash), text.substring(hash + 1), false);

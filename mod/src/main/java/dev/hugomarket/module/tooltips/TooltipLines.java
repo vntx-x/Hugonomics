@@ -46,15 +46,15 @@ final class TooltipLines {
                 lines.add(profit("hugomarket.tooltip.flip_order", viaOrder.getAsLong()));
             }
         }
-        if (stats != null) {
-            lines.add(line("hugomarket.tooltip.ah", Money.format(stats.lowestUnitCents()), Money.format(stats.medianUnitCents()), stats.listings()));
-            if (item.count() > 1) {
-                lines.add(line("hugomarket.tooltip.ah_stack", Money.format(stats.lowestUnitCents() * item.count())));
-            }
-        } else if (item.hasContents()) {
+        if (item.hasContents()) {
             ContainerValuation contents = ContainerValuation.ofItem(item, market);
             if (contents.hasAhValue()) {
                 lines.add(line("hugomarket.tooltip.contents", Money.compact(contents.ahLowestCents()), contents.valuedByAh(), contents.unvaluedByAh()));
+            }
+        } else if (stats != null) {
+            lines.add(line("hugomarket.tooltip.ah", Money.format(stats.lowestUnitCents()), Money.format(stats.medianUnitCents()), stats.listings()));
+            if (item.count() > 1) {
+                lines.add(line("hugomarket.tooltip.ah_stack", Money.format(stats.lowestUnitCents() * item.count())));
             }
         }
         return lines;
