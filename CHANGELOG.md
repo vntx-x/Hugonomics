@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.1.2 – 2026-11-12
+
+- Spawner-Börse (Knopf „Spawner“ über dem Inventar): Angebote aller Mod-Nutzer pro Spawner-Typ,
+  eigene Angebote zum Kaufen oder Verkaufen, Annehmen oder Gegenangebot, Verhandlung über
+  „Meine Deals“, Sterne-Bewertung nach jedem Deal, Hinweise im Chat bei neuen Anfragen.
+  Anmeldung einmalig über Mojang, das Login-Token geht nur an Mojang
+- Richtpreise pro Spawner-Typ, Deal-Rechner mit Abweichung vom Richtpreis, deutscher Chat-Text zum Kopieren
+- Gestackte Spawner zählen mit ihrer echten Anzahl (Kistenwert, Vermögen, Tooltip)
+- Gefüllte Shulker werden nach ihrem Inhalt bewertet statt nach Kit-Preisen
+- AH-Seitenleiste: durchsichtig über die volle Höhe, Angebote aller Nutzer, Filter Schnäppchen,
+  7-Tage-Verlauf beim Hover, Flip-Gewinn im Tooltip
+- Klick auf ein Angebot sucht es im AH (`/ah <Item>`, sortiert, blättert bis zu 15 Seiten)
+- Schnäppchen-Finder mit Order-Flips, Watchlist-Seite mit Alarm bei neuen Schnäppchen
+- HUD-Box mit Tagesgewinn, Vermögen und Watchlist, frei verschiebbar
+- Verkaufsliste: ganzes Inventar mit Preisvorschlag
+- Profit-Diagramm über 14 Tage, Status „Heute · Vermögen“ neben dem Menü-Knopf
+- Median nach Stückzahl gewichtet, sehr billige Angebote markiert statt versteckt
+- Verzauberter goldener Apfel bekommt einen eigenen Preis
+- Fehlerbehebungen beim Preis-Upload
+
 ## 0.1.1 – 2026-11-05
 
 - Neue Optik: Kopfzeilen mit Titel, Schatten, zentrierte Knöpfe, abwechselnd schattierte Listen
