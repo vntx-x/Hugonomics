@@ -23,10 +23,18 @@ public final class GermanItemNames {
         if (item == Items.AIR) {
             return null;
         }
+        String key = item.getDescriptionId();
+        return german().has(key) ? german().getOrDefault(key, key) : null;
+    }
+
+    public static String text(String key, Object... args) {
+        return String.format(german().getOrDefault(key, key), args);
+    }
+
+    private static ClientLanguage german() {
         if (german == null) {
             german = ClientLanguage.loadFrom(Minecraft.getInstance().getResourceManager(), List.of(LANGUAGE), false);
         }
-        String key = item.getDescriptionId();
-        return german.has(key) ? german.getOrDefault(key, key) : null;
+        return german;
     }
 }

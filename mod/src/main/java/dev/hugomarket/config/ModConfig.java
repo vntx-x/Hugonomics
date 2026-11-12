@@ -12,6 +12,7 @@ public final class ModConfig {
     public String clientId = null;
     public boolean tutorialShown = false;
     public boolean calculatorOpen = true;
+    public boolean spawnerExchangeJoined = false;
     public double hudX = 0;
     public double hudY = 0;
     public int monitorIntervalSeconds = 45;

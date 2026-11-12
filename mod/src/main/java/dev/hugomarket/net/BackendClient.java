@@ -11,7 +11,9 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 import java.time.Duration;
+import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -51,6 +53,31 @@ public final class BackendClient {
         return send(HttpRequest.newBuilder(URI.create(baseUrl + path))
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(body.toString(), StandardCharsets.UTF_8)));
+    }
+
+    public CompletableFuture<JsonObject> get(String path, String bearer) {
+        return send(HttpRequest.newBuilder(URI.create(baseUrl + path)).header("Authorization", "Bearer " + bearer).GET());
+    }
+
+    public CompletableFuture<JsonObject> post(String path, JsonElement body, String bearer) {
+        return send(HttpRequest.newBuilder(URI.create(baseUrl + path))
+                .header("Content-Type", "application/json")
+                .header("Authorization", "Bearer " + bearer)
+                .POST(HttpRequest.BodyPublishers.ofString(body.toString(), StandardCharsets.UTF_8)));
+    }
+
+    public CompletableFuture<JsonObject> delete(String path, String bearer) {
+        return send(HttpRequest.newBuilder(URI.create(baseUrl + path)).header("Authorization", "Bearer " + bearer).DELETE());
+    }
+
+    public <T> CompletableFuture<T> runAsync(Callable<T> task) {
+        return CompletableFuture.supplyAsync(() -> {
+            try {
+                return task.call();
+            } catch (Exception e) {
+                throw new CompletionException(e);
+            }
+        }, executor);
     }
 
     private CompletableFuture<JsonObject> send(HttpRequest.Builder builder) {
