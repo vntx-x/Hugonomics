@@ -1,5 +1,13 @@
 {
-  "updatedAt": "",
-  "source": "",
-  "prices": []
+  "updatedAt": "12.11.2026",
+  "source": "Spielerhandel laut hugosmp-market.net, gewichteter Median der letzten 3 bis 7 Tage",
+  "prices": [
+    { "type": "skeleton", "priceCents": 2760000000 },
+    { "type": "iron_golem", "priceCents": 2660000000 },
+    { "type": "creeper", "priceCents": 1990000000 },
+    { "type": "zombified_piglin", "priceCents": 1900000000 },
+    { "type": "cow", "priceCents": 1550000000 },
+    { "type": "blaze", "priceCents": 1390000000 },
+    { "type": "spider", "priceCents": 1090000000 }
+  ]
 }
