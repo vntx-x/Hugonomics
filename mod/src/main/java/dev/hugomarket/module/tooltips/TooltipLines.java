@@ -56,6 +56,12 @@ final class TooltipLines {
             if (item.count() > 1) {
                 lines.add(line("hugomarket.tooltip.ah_stack", Money.format(stats.lowestUnitCents() * item.count())));
             }
+        } else {
+            OptionalLong reference = market.spawnerPrices().unitCents(ItemKeyFactory.of(item));
+            if (reference.isPresent()) {
+                lines.add(line(item.count() > 1 ? "hugomarket.tooltip.spawner_stack" : "hugomarket.tooltip.spawner",
+                        Money.format(reference.getAsLong()), Money.format(reference.getAsLong() * item.count())));
+            }
         }
         return lines;
     }

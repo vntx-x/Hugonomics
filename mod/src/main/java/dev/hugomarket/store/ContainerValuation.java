@@ -9,6 +9,7 @@ import dev.hugomarket.parse.ItemKeyFactory;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.OptionalLong;
 
 public record ContainerValuation(
         long hugoWorthCents,
@@ -74,7 +75,15 @@ public record ContainerValuation(
                 }
                 return;
             }
-            if (!addPrice(market.stats(key), item.count())) {
+            if (addPrice(market.stats(key), item.count())) {
+                return;
+            }
+            OptionalLong reference = market.spawnerPrices().unitCents(key);
+            if (reference.isPresent()) {
+                valued++;
+                ahLowest += reference.getAsLong() * item.count();
+                ahMedian += reference.getAsLong() * item.count();
+            } else {
                 unvalued++;
             }
         }

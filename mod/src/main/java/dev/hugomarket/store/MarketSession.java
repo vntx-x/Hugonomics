@@ -29,6 +29,7 @@ public final class MarketSession {
     private AhFocus ahFocus;
     private final SequencedSet<String> gone = new LinkedHashSet<>();
     private int version;
+    private SpawnerPrices spawnerPrices = SpawnerPrices.EMPTY;
 
     public MarketSession(PriceStore backend) {
         this.backend = backend;
@@ -40,6 +41,16 @@ public final class MarketSession {
 
     public OrderBook orders() {
         return orders;
+    }
+
+    public SpawnerPrices spawnerPrices() {
+        return spawnerPrices;
+    }
+
+    public void setSpawnerPrices(SpawnerPrices prices) {
+        spawnerPrices = prices;
+        version++;
+        notifyChange();
     }
 
     public void ordersSeen(List<dev.hugomarket.model.Order> page, long seenAt) {
