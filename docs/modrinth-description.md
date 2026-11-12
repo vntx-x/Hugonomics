@@ -29,9 +29,14 @@ Client-side mod for the HugoSMP server. Makes the auction house searchable, show
 - Chests, barrels, ender chest: total value by Hugo and by AH, filled shulker boxes valued by their contents
 - Market screen: all items, search, chart from 1 hour to 31 days, price alerts
 
-## Spawners
-- Spawner exchange from a button in your inventory: reference price per spawner type
-- Deal calculator: amount and price per piece, total, difference to the reference price, copy a ready chat offer
+## Spawner exchange
+- Opens from a button above your inventory
+- Offers from all Hugonomics users per spawner type, post your own buy or sell offers
+- Accept an offer or send a counter offer, negotiate under "My deals", chat notice for new requests
+- Star ratings after every agreed deal, so you can see who is trusted
+- Reference price per type and deal calculator with the difference to it, ready German chat text to copy
+- Sign-in once via Mojang (the same check a server does when you join), your login token only goes to Mojang
+- Paying happens in game, the exchange only brings buyers and sellers together
 - Stacked spawners count with their real amount in chest value and net worth
 
 ## Orders
@@ -46,7 +51,7 @@ Client-side mod for the HugoSMP server. Makes the auction house searchable, show
 - Every module can be switched off, overview of all features in the menu (key J)
 
 ## Data
-AH listings you see are reported anonymously to the Hugonomics server so every user gets current prices. Seller names leave the client only as hashes, coordinates and account data never. Trade log, profits and settings stay on your PC. Can be disabled in the menu ("Backend sync"). Privacy policy: https://hugomarket.duckdns.org/datenschutz
+AH listings you see are reported anonymously to the Hugonomics server so every user gets current prices. Seller names leave the client only as hashes, coordinates and account data never. Trade log, profits and settings stay on your PC. If you use the spawner exchange, your Minecraft name, your offers and your rating are visible to other users. Price sharing can be disabled in the menu ("Backend sync"). Privacy policy: https://hugomarket.duckdns.org/datenschutz
 
 ## Installation
 Fabric Loader, Fabric API, the jar for your Minecraft version (1.21.5, 1.21.6–1.21.8, 1.21.9–1.21.10, 1.21.11). Mod Menu optional.
@@ -84,9 +89,14 @@ Client-Mod für HugoSMP. Macht das Auktionshaus durchsuchbar, zeigt Marktpreise 
 - Kisten, Fässer, Enderchest: Gesamtwert nach Hugo und nach AH, gefüllte Shulker nach ihrem Inhalt bewertet
 - Markt-Screen: alle Items, Suche, Chart für 1 Stunde bis 31 Tage, Preis-Alarme
 
-## Spawner
-- Spawner-Börse über einen Knopf im Inventar: Richtpreis pro Spawner-Typ
-- Deal-Rechner: Anzahl und Preis pro Stück, Gesamtpreis, Abweichung vom Richtpreis, fertiges Chat-Angebot zum Kopieren
+## Spawner-Börse
+- Öffnet über einen Knopf über deinem Inventar
+- Angebote aller Hugonomics-Nutzer pro Spawner-Typ, eigene Kauf- und Verkaufsangebote einstellen
+- Angebot annehmen oder Gegenangebot schicken, Verhandlung unter "Meine Deals", Hinweis im Chat bei neuen Anfragen
+- Sterne-Bewertung nach jedem abgeschlossenen Deal, damit man sieht, wer vertrauenswürdig ist
+- Richtpreis pro Typ und Deal-Rechner mit Abweichung davon, fertiger Chat-Text zum Kopieren
+- Einmalige Anmeldung über Mojang (dieselbe Prüfung wie beim Joinen eines Servers), dein Login-Token geht nur an Mojang
+- Bezahlt wird im Spiel, die Börse bringt Käufer und Verkäufer nur zusammen
 - Gestackte Spawner zählen mit ihrer echten Anzahl beim Kistenwert und Vermögen
 
 ## Orders
@@ -101,7 +111,7 @@ Client-Mod für HugoSMP. Macht das Auktionshaus durchsuchbar, zeigt Marktpreise 
 - Jedes Modul einzeln abschaltbar, Übersicht aller Funktionen im Menü (Taste J)
 
 ## Daten
-Gesehene AH-Listings werden anonym an den Hugonomics-Server gemeldet, damit alle Nutzer aktuelle Preise bekommen. Verkäufernamen gehen nur gehasht raus, Koordinaten und Accountdaten gar nicht. Trade-Log, Gewinne und Einstellungen bleiben auf deinem PC. Im Menü abschaltbar ("Backend-Sync"). Datenschutz: https://hugomarket.duckdns.org/datenschutz
+Gesehene AH-Listings werden anonym an den Hugonomics-Server gemeldet, damit alle Nutzer aktuelle Preise bekommen. Verkäufernamen gehen nur gehasht raus, Koordinaten und Accountdaten gar nicht. Trade-Log, Gewinne und Einstellungen bleiben auf deinem PC. Wenn du die Spawner-Börse nutzt, sehen andere Nutzer deinen Minecraft-Namen, deine Angebote und deine Bewertung. Das Teilen der Preise ist im Menü abschaltbar ("Backend-Sync"). Datenschutz: https://hugomarket.duckdns.org/datenschutz
 
 ## Installation
 Fabric Loader, Fabric API, Jar für deine Minecraft-Version (1.21.5, 1.21.6–1.21.8, 1.21.9–1.21.10, 1.21.11). Mod Menu optional.
