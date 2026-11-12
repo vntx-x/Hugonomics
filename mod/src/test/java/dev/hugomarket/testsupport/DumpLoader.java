@@ -56,7 +56,7 @@ public final class DumpLoader {
         JsonObject c = components == null ? new JsonObject() : components;
         return new ItemView(
                 id,
-                count,
+                count * spawnerStackSize(c.get("minecraft:custom_data")),
                 name,
                 lore,
                 enchantments(c.get("minecraft:enchantments")),
@@ -119,6 +119,14 @@ public final class DumpLoader {
         }
         JsonObject entity = data.getAsJsonObject("SpawnData").getAsJsonObject("entity");
         return entity != null && entity.has("id") ? entity.get("id").getAsString() : null;
+    }
+
+    private static int spawnerStackSize(JsonElement element) {
+        if (element == null || !element.isJsonObject() || !element.getAsJsonObject().has("CustomItems")) {
+            return 1;
+        }
+        JsonObject items = element.getAsJsonObject().getAsJsonObject("CustomItems");
+        return items.has("SpawnerStackSize") ? Math.max(1, items.get("SpawnerStackSize").getAsInt()) : 1;
     }
 
     private static Map<String, String> bukkitValues(JsonElement element) {

@@ -6,7 +6,7 @@ export const listingObservationSchema = z.object({
   key: z.string().min(1).max(200).regex(keyPattern),
   baseId: z.string().min(1).max(120),
   displayName: z.string().min(1).max(120),
-  count: z.number().int().min(1).max(99),
+  count: z.number().int().min(1).max(10_000),
   priceCents: z.number().int().min(1).max(1_000_000_000_000_00),
   sellerHash: z.string().regex(/^[a-f0-9]{16,64}$/),
   expiresInSeconds: z.number().int().min(-1).max(31 * 24 * 3600),

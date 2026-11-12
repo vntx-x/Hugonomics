@@ -10,6 +10,7 @@ import java.util.List;
 public final class ObservationBatch {
     private static final int MAX_LISTINGS = 60;
     private static final int MAX_NAME = 120;
+    private static final int MAX_COUNT = 10_000;
 
     private ObservationBatch() {
     }
@@ -24,7 +25,7 @@ public final class ObservationBatch {
         batch.addProperty("source", "ah_list");
         JsonArray array = new JsonArray();
         for (Listing listing : listings) {
-            if (!listing.isMarketListing() || array.size() >= MAX_LISTINGS) {
+            if (!listing.isMarketListing() || listing.item().count() > MAX_COUNT || array.size() >= MAX_LISTINGS) {
                 continue;
             }
             JsonObject entry = new JsonObject();

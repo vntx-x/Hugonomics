@@ -53,7 +53,7 @@ public final class ItemViews {
         Component customName = stack.get(DataComponents.CUSTOM_NAME);
         return new ItemView(
                 BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(),
-                stack.getCount(),
+                stack.getCount() * spawnerStackSize(stack.get(DataComponents.CUSTOM_DATA)),
                 stack.getHoverName().getString(),
                 List.copyOf(loreLines),
                 enchantments(stack.get(DataComponents.ENCHANTMENTS)),
@@ -92,6 +92,14 @@ public final class ItemViews {
         }
         String id = tag.getCompoundOrEmpty("SpawnData").getCompoundOrEmpty("entity").getStringOr("id", "");
         return id.isEmpty() ? null : id;
+    }
+
+    // Hugo stacks spawners inside one item; the real amount lives in CustomItems.SpawnerStackSize.
+    private static int spawnerStackSize(CustomData data) {
+        if (data == null) {
+            return 1;
+        }
+        return Math.max(1, data.copyTag().getCompoundOrEmpty("CustomItems").getIntOr("SpawnerStackSize", 1));
     }
 
     private static Map<String, String> bukkitValues(CustomData data) {
